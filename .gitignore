@@ -4,6 +4,10 @@ project.properties
 proguard.cfg
 lint.xml
 
+#intellij
+*.iml
+.idea/
+
 # Built application files
 *.apk
 *.ap_
