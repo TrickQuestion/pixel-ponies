@@ -9,6 +9,7 @@ import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.tweeners.Tweener;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.items.armor.Armor;
 import com.watabou.pixeldungeon.scenes.GameScene;
@@ -100,7 +101,11 @@ public class HeroSpriteDef extends MobSpriteDef {
 		String accessoryDescriptor = HERO_EMPTY_PNG;
 		String classDescriptor = hero.heroClass.toString()+"_"+hero.subClass.toString();
 		String collarDescriptor = HERO_EMPTY_PNG;
+
+		// TODO: kludgey
 		String deathDescriptor = classDescriptor.equals("MAGE_WARLOCK") ? "warlock" : "common";
+		deathDescriptor = classDescriptor.equals("EARTH_NONE") ? "earth" : deathDescriptor;
+
 		String facialHairDescriptor = HERO_EMPTY_PNG;
 		String hairDescriptor = HERO_EMPTY_PNG;
 		String helmetDescriptor = HERO_EMPTY_PNG;
@@ -126,6 +131,12 @@ public class HeroSpriteDef extends MobSpriteDef {
 				drawHair = false;
 			}
 		}
+
+		// TODO: kludgey
+		if (classDescriptor.equals("EARTH_NONE") || classDescriptor.equals("EARTH_FARMER")) {
+			drawHair = false;
+		}
+
 
 		if (drawHair){ hairDescriptor = "hero/head/hair/" + classDescriptor + "_HAIR.png"; }
 
@@ -208,6 +219,10 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 		if(hero.subClass.equals(HeroSubClass.WARLOCK)) {
 			descriptor = "warlock";
+		}
+
+		if (hero.heroClass.equals(HeroClass.EARTH)) {
+			descriptor = "earth";
 		}
 
 		return "hero/body/"+descriptor+".png";

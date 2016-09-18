@@ -82,7 +82,7 @@
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
         <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
-        <item>Because of their horn, Unicorns can't equip a mane ring. They can cast Telekinesis at will, however.</item>
+        <item>Because of their horn, Unicorns can\'t equip a mane ring. They can cast Telekinesis at will, however.</item>
         <item>Eating a piece of food will restore 1 charge to all wands.</item>
         <item>Unicorns can fully identify a wand by using it, and begin knowing Scrolls of Identify.</item>
     </string-array>
