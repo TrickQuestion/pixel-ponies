@@ -34,7 +34,7 @@
   <string name="HuntressArmor_ACSpecial">ПРИЗРАЧНЫЕ КЛИНКИ</string>
   <string name="HuntressArmor_NoEnemies">Нет видимых целей</string>
   <string name="HuntressArmor_NotHuntress">Этот доспех доступен лишь охотнице!</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">кожаный доспех</string>
   <string name="LeatherArmor_Desc">Доспех, изготовленный из шкуры монстра. Не столь лёгок, как тканевый доспех, но обеспечивает лучшую защиту.</string>
   <!--STRINGS OF MageArmor CLASS-->

@@ -39,7 +39,7 @@
   <string name="HuntressArmor_ACSpecial">GEISTERHAFTE KLINGEN</string>
   <string name="HuntressArmor_NoEnemies">Es ist kein Gegner zu sehen.</string>
   <string name="HuntressArmor_NotHuntress">Diese Rüstung kann nur von Jägerinnen benutzt werden!</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">Lederrüstung</string>
   <string name="LeatherArmor_Desc">Eine Rüstung hergestellt aus gegerbter Monsterhaut. Sie ist nicht so leicht wie Stoffrüstung, bietet dafür aber besseren Schutz.</string>
   <!--STRINGS OF MageArmor CLASS-->

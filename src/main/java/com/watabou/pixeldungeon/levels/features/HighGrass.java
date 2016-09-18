@@ -23,6 +23,8 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Barkskin;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
+import com.watabou.pixeldungeon.actors.buffs.Harvest;
+import com.watabou.pixeldungeon.actors.buffs.Hunger;
 import com.watabou.pixeldungeon.actors.buffs.Invisibility;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
@@ -35,6 +37,7 @@ import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.levels.Terrain;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
+import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
 public class HighGrass {
@@ -81,6 +84,10 @@ public class HighGrass {
 		if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.SCOUT) {
 			Buff.prolong( ch, Invisibility.class, 5);
 			leaves = 2;
+		}
+
+		if (ch instanceof Hero && ((Hero) ch).buffs().contains(Harvest.class)) {
+			((Hero) ch).buff( Hunger.class ).satisfy((Hunger.STARVING - Hunger.HUNGRY) / 4.0F);
 		}
 		
 		Emitter emitter = CellEmitter.get(pos);

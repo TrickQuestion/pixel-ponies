@@ -34,7 +34,7 @@
   <string name="HuntressArmor_ACSpecial">귀검</string>
   <string name="HuntressArmor_NoEnemies">시야 내에 적 없음</string>
   <string name="HuntressArmor_NotHuntress">이 갑옷은 사냥꾼만 착용 가능하다.</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">가죽 갑옷</string>
   <string name="LeatherArmor_Desc">무두질한 몬스터 가죽으로 만든 갑옷. 천 갑옷만큼 가볍지는 않지만 더 나은 방어력을 제공한다.</string>
   <!--STRINGS OF MageArmor CLASS-->

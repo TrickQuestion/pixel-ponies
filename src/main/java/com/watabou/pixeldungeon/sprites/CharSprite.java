@@ -39,6 +39,7 @@ import com.watabou.pixeldungeon.effects.SystemFloatingText;
 import com.watabou.pixeldungeon.effects.TorchHalo;
 import com.watabou.pixeldungeon.effects.particles.FlameParticle;
 import com.watabou.pixeldungeon.items.potions.PotionOfInvisibility;
+import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Callback;
@@ -79,6 +80,9 @@ public class CharSprite extends CompositeMovieClip implements Tweener.Listener, 
 	protected TorchHalo halo;
 
 	protected EmoIcon emo;
+
+	private Tweener jumpTweener;
+	private Callback jumpCallback;
 
 	private float flashTime = 0;
 
@@ -206,6 +210,16 @@ public class CharSprite extends CompositeMovieClip implements Tweener.Listener, 
 		} else if (tx < fx) {
 			flipHorizontal = true;
 		}
+	}
+
+	public void jump(int from, int to, Callback callback) {
+		jumpCallback = callback;
+
+		int distance = Dungeon.level.distance(from, to);
+		jumpTweener = new JumpTweener(this, worldToCamera(to), distance * 4, distance * 0.1F);
+		jumpTweener.listener = this;
+		getParent().add(jumpTweener);
+		turnTo(from, to);
 	}
 
 	public void die() {

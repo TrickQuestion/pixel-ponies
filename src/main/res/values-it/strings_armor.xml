@@ -39,7 +39,7 @@
   <string name="HuntressArmor_ACSpecial">LAME SPETTRALI</string>
   <string name="HuntressArmor_NoEnemies">Nessun nemico in vista</string>
   <string name="HuntressArmor_NotHuntress">Solo la cacciatrice può usare quest\'armatura!</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">armatura in pelle</string>
   <string name="LeatherArmor_Desc">Armatura fatta con pelle di mostro conciata. Non leggera quanto l\'armatura in stoffa ma fornisce una protezione migliore.</string>
   <!--STRINGS OF MageArmor CLASS-->

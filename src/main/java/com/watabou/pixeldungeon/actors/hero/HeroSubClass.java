@@ -24,6 +24,7 @@ import com.watabou.pixeldungeon.items.armor.AssasinArmor;
 import com.watabou.pixeldungeon.items.armor.BattleMageArmor;
 import com.watabou.pixeldungeon.items.armor.BerserkArmor;
 import com.watabou.pixeldungeon.items.armor.ClassArmor;
+import com.watabou.pixeldungeon.items.armor.FarmerArmor;
 import com.watabou.pixeldungeon.items.armor.FreeRunnerArmor;
 import com.watabou.pixeldungeon.items.armor.GladiatorArmor;
 import com.watabou.pixeldungeon.items.armor.ScoutArmor;
@@ -45,7 +46,8 @@ public enum HeroSubClass {
 	SNIPER(    Game.getVar(R.string.HeroSubClass_NameSnip),   Game.getVar(R.string.HeroSubClass_DescSnip), SniperArmor.class),
 	WARDEN(    Game.getVar(R.string.HeroSubClass_NameWard),   Game.getVar(R.string.HeroSubClass_DescWard), WardenArmor.class),
 	SCOUT(     Game.getVar(R.string.HeroSubClass_NameScout),  Game.getVar(R.string.HeroSubClass_DescScout), ScoutArmor.class),
-	SHAMAN(    Game.getVar(R.string.HeroSubClass_NameShaman), Game.getVar(R.string.HeroSubClass_DescShaman), ShamanArmor.class);
+	SHAMAN(    Game.getVar(R.string.HeroSubClass_NameShaman), Game.getVar(R.string.HeroSubClass_DescShaman), ShamanArmor.class),
+	FARMER(    Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), FarmerArmor.class);
 	
 	private String title;
 	private String desc;

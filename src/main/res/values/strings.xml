@@ -69,30 +69,36 @@
     <string name="Dungeon_DeadEnd">What are you doing here?!</string>
 
     <string-array name="Dungeon_Tips">
-        <item>Don\'t overestimate your strength, use weapons and armor you can handle.</item>
-        <item>Not all doors in the dungeon are visible at first sight. If you are stuck, search for hidden doors.</item>
-        <item>Remember that raising your strength is not the only way to access better equipment, you can go the other way by lowering its strength requirement with Scrolls of Upgrade.</item>
-        <item>You can spend your gold in shops on deeper levels of the dungeon. The first one is on the 6th level.</item>
-        <item>Beware of Goo!</item>
-        <item>Pixel-Mart - all you need for successful adventure!</item>
-        <item>Identify your potions and scrolls as soon as possible. Don\'t put it off to the moment when you actually need them.</item>
-        <item>Being hungry doesn\'t hurt, but starving does hurt.</item>
-        <item>Surprise attacks have a better chance to hit. For example, you can ambush your enemy behind a closed door when you know it is approaching.</item>
-        <item>Don\'t let The Tengu out!</item>
-        <item>Pixel-Mart. Spend money. Live longer.</item>
-        <item>When you\'re attacked by several monsters at the same time, try to retreat behind a door.</item>
-        <item>If you are burning and levitating, you can\'t put the fire out in water.</item>
-        <item>There is no sense in possessing more than one Ankh at the same time, because you will lose them upon resurrecting.</item>
-        <item>DANGER! Heavy machinery can cause injury, loss of limbs or death!</item>
-        <item>Pixel-Mart. A safer life in dungeon.</item>
-        <item>When you upgrade an enchanted weapon, there is a chance to destroy that enchantment.</item>
-        <item>A Well of Transmutation can give you an item that cannot be obtained otherwise.</item>
-        <item>The only way to enchant a weapon is by upgrading it with a Scroll of Weapon Upgrade.</item>
-        <item>No weapons allowed in the presence of His Majesty!</item>
-        <item>Pixel-Mart. Special prices for demon hunters!</item>
-        <item>The text is written in demonic language.</item>
-        <item>The text is written in demonic language.</item>
-        <item>The text is written in demonic language.</item>
+        <item>If you don\'t have enough Honesty for a piece of armor, you\'ll be encumbered. Melee and thrown weapons also have minimum Honesty requirements.</item>
+        <item>Traps and secret doors are can be detected with Generosity. If you can\'t find a way out, try searching.</item>
+        <item>Bows require a minimum Loyalty, and Rings require a minimum Magic. Upgrading items makes them easier to use, and also more powerful.</item>
+        <item>Loyalty helps you dodge, Laughter increases your movement speed, and Kindness makes you stealthier. Magic improves wand power and recharge rate.</item>
+        <item>Beware the Smelly Ooze!</item>
+        <item>Stores appear after you\'ve defeated a Boss. There\'s one adjacent to this room where you can purchase things with Bits.</item>
+        <item>Melee and thrown weapons do more damage with excess Honesty. There\'s no bonus for other items, but they won\'t work well if you don\'t meet the minimum.</item>
+        <item>It helps to identify potions and scrolls early, but you need to be clever about how you do it.</item>
+        <item>If you\'re faster than a monster, you can blindside them by attacking the moment they pop into view.</item>
+        <item>Turn back now, or face the Nightmare Eternal!</item>
+        <item>Items which enhance attributes are rare. It\'s simple to raise Honesty, Loyalty, and Magic, but there are tricks to raising Laughter, Kindness, and Generosity.</item>
+        <item>Use your horse sense when facing danger. For example, you can\'t put out fire in water if you\'re levitating above it, and fire burns longer when it has fuel.</item>
+        <item>Ankhs aren\'t very useful unless you\'re actually planning to die, and you need to be a clever pony to plan for your own funeral.</item>
+        <item>Welcome to the Changeling Hive. Donations of Love are accepted here. Also, non-donations.</item>
+        <item>Level up strategically. Once you\'re at a certain level, monsters will stop giving you experience. Eventually they even stop dropping items and gold.</item>
+        <item>It usually pays to be hungry. Sometimes it\'s even a good idea to starve.</item>
+        <item>Upgrading enchanted items may destroy the enchantment. Having high Magic helps reduce this chance.</item>
+        <item>Even if you\'re not a Shaman, there are secrets to brewing potions.</item>
+        <item>The Centaur of Power has escaped from Tartarus!</item>
+        <item>Upgrading items is simple. Enchanting them is not so simple.</item>
+        <item>There are certain items that can only be obtained by a Well of Transmutation.</item>
+        <item>Sometimes the reward can be worth less than the quest item.</item>
+        <item>The Crystal King hungers from the shadows...</item>
+        <item>What you can\'t see can still hurt you. The other way around, not so much.</item>
+        <item>Armor made from Crystalling Kit comes with an ability. The price to use it is steep, but the results can be worth it.</item>
+        <item>There are three Classes for each pony Race, not two.</item>
+        <item>(The text is entirely illegible.)</item>
+        <item>\"In the center of Pandemonium, the God of Chaos awaits.\"</item>
+        <item>What fun is there in making sense?</item>
+        <item>Behold: The Element of Magic</item>
     </string-array>
 
     <!-- STRINGS OF Challenges CLASS -->
@@ -451,6 +457,8 @@
     <string name="Fury_Info">Fury</string>
     <!-- STRINGS OF GasesImmunity CLASS -->
     <string name="GasesImmunity_Info">Immune to gases</string>
+    <!-- STRINGS OF Harvest CLASS -->
+    <string name="Harvest_Info">Harvesting</string>
 
     <!-- STRINGS OF Hunger CLASS -->
     <string-array name="Hunger_Hungry">

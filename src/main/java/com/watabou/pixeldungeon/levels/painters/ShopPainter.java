@@ -31,7 +31,7 @@ import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Torch;
 import com.watabou.pixeldungeon.items.Weightstone;
-import com.watabou.pixeldungeon.items.armor.LeatherArmor;
+import com.watabou.pixeldungeon.items.armor.PleatherArmor;
 import com.watabou.pixeldungeon.items.armor.MailArmor;
 import com.watabou.pixeldungeon.items.armor.PlateArmor;
 import com.watabou.pixeldungeon.items.armor.ScaleArmor;
@@ -112,7 +112,7 @@ public class ShopPainter extends Painter {
 		
 		case 6:
 			items.add( (Random.Int( 2 ) == 0 ? new Quarterstaff() : new Spear()).identify() );
-			items.add( new LeatherArmor().identify() );
+			items.add( new PleatherArmor().identify() );
 			items.add( new PotionBelt() );
 			items.add( new Weightstone() );
 			break;

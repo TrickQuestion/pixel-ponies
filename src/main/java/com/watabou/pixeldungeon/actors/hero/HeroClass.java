@@ -27,11 +27,13 @@ import com.nyrds.pixeldungeon.items.necropolis.BladeOfSouls;
 import com.nyrds.pixeldungeon.ml.BuildConfig;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
+import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.items.TomeOfMastery;
 import com.watabou.pixeldungeon.items.armor.ClassArmor;
 import com.watabou.pixeldungeon.items.armor.ClothArmor;
 import com.watabou.pixeldungeon.items.armor.ElfArmor;
+import com.watabou.pixeldungeon.items.armor.FarmerArmor;
 import com.watabou.pixeldungeon.items.armor.HuntressArmor;
 import com.watabou.pixeldungeon.items.armor.MageArmor;
 import com.watabou.pixeldungeon.items.armor.RogueArmor;
@@ -62,7 +64,9 @@ public enum HeroClass {
 	MAGE(Game.getVar(R.string.HeroClass_Mag),MageArmor.class),
 	ROGUE(Game.getVar(R.string.HeroClass_Rog),RogueArmor.class),
 	HUNTRESS(Game.getVar(R.string.HeroClass_Hun),HuntressArmor.class),
-	ELF(Game.getVar(R.string.HeroClass_Elf),ElfArmor.class);
+	ELF(Game.getVar(R.string.HeroClass_Elf),ElfArmor.class),
+	EARTH(Game.getVar(R.string.HeroClass_Earth), null),
+	UNICORN(Game.getVar(R.string.HeroClass_Unicorn), null);
 
 	private final Class<? extends ClassArmor> armorClass;
 
@@ -78,6 +82,7 @@ public enum HeroClass {
 			.getVars(R.array.HeroClass_HunPerks);
 	private static final String[] ELF_PERKS = Game
 			.getVars(R.array.HeroClass_ElfPerks);
+	private static final String[] EARTH_PERKS = Game.getVars(R.array.HeroClass_EarthPerks);
 
 	HeroClass(String title, Class<? extends ClassArmor> armorClass) {
 		this.title = title;
@@ -89,25 +94,33 @@ public enum HeroClass {
 		initCommon(hero);
 
 		switch (this) {
-		case WARRIOR:
-			initWarrior(hero);
-			break;
+			case WARRIOR:
+				initWarrior(hero);
+				break;
 
-		case MAGE:
-			initMage(hero);
-			break;
+			case MAGE:
+				initMage(hero);
+				break;
 
-		case ROGUE:
-			initRogue(hero);
-			break;
+			case ROGUE:
+				initRogue(hero);
+				break;
 
-		case HUNTRESS:
-			initHuntress(hero);
-			break;
+			case HUNTRESS:
+				initHuntress(hero);
+				break;
 
-		case ELF:
-			initElf(hero);
-			break;
+			case ELF:
+				initElf(hero);
+				break;
+
+			case EARTH:
+				initEarth(hero);
+				break;
+
+			case UNICORN:
+				initUnicorn(hero);
+				break;
 		}
 
 		hero.setGender(getGender());
@@ -226,6 +239,37 @@ public enum HeroClass {
 		QuickSlot.selectItem(CommonArrow.class, 0);
 	}
 
+	private void initEarth(Hero hero) {
+		hero.STR(hero.STR() + 1);
+		hero.setHonesty(hero.honesty() + 1);
+		hero.setLaughter(hero.laughter() + 1);
+		hero.setMagic(hero.magic() - 1);
+		hero.ht(hero.ht() + 5);
+		hero.hp(hero.ht());
+
+		(hero.belongings.weapon = new ShortSword()).identify();
+
+		hero.collect(new Dart(12));
+
+		QuickSlot.selectItem(Dart.class, 0);
+	}
+
+	private void initUnicorn(Hero hero) {
+		hero.STR(hero.STR());
+		hero.setGenerosity(hero.generosity() + 1);
+		hero.setMagic(hero.magic() + 1);
+		hero.setLaughter(hero.laughter() - 1);
+
+		(hero.belongings.weapon = new Knuckles()).identify();
+
+		WandOfMagicMissile wand = new WandOfMagicMissile();
+		hero.collect(wand.identify());
+
+		QuickSlot.selectItem(wand, 0);
+
+		new ScrollOfIdentify().setKnown();
+	}
+
 	public String title() {
 		return title;
 	}
@@ -245,6 +289,8 @@ public enum HeroClass {
 			return HUN_PERKS;
 		case ELF:
 			return ELF_PERKS;
+		case EARTH:
+			return EARTH_PERKS;
 		}
 	}
 
@@ -254,6 +300,7 @@ public enum HeroClass {
 		case MAGE:
 		case ROGUE:
 		case ELF:
+		case EARTH:
 			return Utils.MASCULINE;
 		case HUNTRESS:
 			return Utils.FEMININE;
@@ -278,5 +325,15 @@ public enum HeroClass {
 		} catch (Exception e) {
 			throw new TrackedRuntimeException(e);
 		}
+	}
+
+	public String spritesheet() {
+
+		switch (this) {
+			case EARTH:
+				return Assets.EARTH;
+		}
+
+		return null;
 	}
 }

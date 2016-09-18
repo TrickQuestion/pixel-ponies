@@ -39,7 +39,7 @@
   <string name="HuntressArmor_ACSpecial">灵能之刃</string>
   <string name="HuntressArmor_NoEnemies">视野内没有敌人</string>
   <string name="HuntressArmor_NotHuntress">只有女猎手能使用这件护甲！</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">皮甲</string>
   <string name="LeatherArmor_Desc">由鞣制怪物皮制造的护甲。没有布甲那么轻，但可以提供更好的防护。</string>
   <!--STRINGS OF MageArmor CLASS-->

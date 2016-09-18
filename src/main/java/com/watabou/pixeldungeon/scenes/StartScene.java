@@ -71,6 +71,8 @@ public class StartScene extends PixelScene {
 	private static final String TXT_YES = Game.getVar(R.string.StartScene_Yes);
 	private static final String TXT_NO = Game.getVar(R.string.StartScene_No);
 
+	private static final String TXT_UNDER_CONSTRUCTION = "Class currently unavailable, check back soon";
+
 	private static final String TXT_UNLOCK = Game
 			.getVar(R.string.StartScene_Unlock);
 
@@ -96,9 +98,19 @@ public class StartScene extends PixelScene {
 
 	private boolean huntressUnlocked;
 	private boolean elfUnlocked;
+
+	private boolean unicornReady;
+	private boolean pegasusReady;
+	private boolean zebraReady;
+	private boolean nightwingReady;
 	
 	private Group unlock;
 	private Group unlockElf;
+
+	private Group unlockUnicorn;
+	private Group unlockPegasus;
+	private Group unlockZebra;
+	private Group unlockNightwing;
 
 	private static HeroClass curClass;
 

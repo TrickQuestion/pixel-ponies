@@ -33,6 +33,8 @@
     <string name="HeroClass_Rog">rogue</string>
     <string name="HeroClass_Hun">huntress</string>
     <string name="HeroClass_Elf">elf</string>
+    <string name="HeroClass_Earth">earth pony</string>
+    <string name="HeroClass_Unicorn">unicorn</string>
 
     <string-array name="HeroClass_WarPerks">
         <item>Warriors start with 11 points of Strength.</item>
@@ -70,6 +72,20 @@
         <item>Elves are extremely proficient with bows and are agile.</item>
         <item>Elves are less proficient with melee weapons.</item>>
     </string-array>
+    <string-array name="HeroClass_EarthPerks">
+        <item>Earth ponies are honest, cheerful, and durable, but are less kind and magical.</item>
+        <item>They begin with a unique Scythe that can later be reforged to upgrade another weapon.</item>
+        <item>Earth ponies are good with melee weapons, but can\'t wield bows.</item>
+        <item>Eating a piece of food restors a small amount of health.</item>
+        <item>Earth Ponies begin knowing Potions of Honesty and Speed.</item>
+    </string-array>
+    <string-array name="HeroClass_UnicornPerks">
+        <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
+        <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
+        <item>Because of their horn, Unicorns can't equip a mane ring. They can cast Telekinesis at will, however.</item>
+        <item>Eating a piece of food will restore 1 charge to all wands.</item>
+        <item>Unicorns can fully identify a wand by using it, and begin knowing Scrolls of Identify.</item>
+    </string-array>
 
     <!-- STRINGS OF HeroSubClass CLASS -->
     <string name="HeroSubClass_NameGlad">gladiator</string>
@@ -92,5 +108,8 @@
     <string name="HeroSubClass_DescScout">Elven _Scouts_ are masters of stealth. Trampling high grass grants them a temporary invisibility buff. Also they are even faster than regular Elves.</string>
     <string name="HeroSubClass_NameShaman">shaman</string>
     <string name="HeroSubClass_DescShaman">Elven _Shamans_ can use wands as melee weapons. Successful hits have a chance to activate the wand\'s power on a target without using a charge.</string>
-    
+    <string name="HeroSubClass_NameFarmer">farmer</string>
+    <string name="HeroSubClass_DescFarmer">Farmers can gather dewdrops and seeds from special plants, and can go longer without food.</string>
+
+
 </resources>

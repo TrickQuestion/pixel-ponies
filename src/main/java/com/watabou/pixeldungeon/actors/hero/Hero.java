@@ -145,6 +145,12 @@ public class Hero extends Char {
 	private static final String TXT_SEARCH = Game.getVar(R.string.Hero_Search);
 
 	public static final int STARTING_STR = 10;
+    public static final int STARTING_HONESTY = 3;
+	public static final int STARTING_LOYALTY = 3;
+	public static final int STARTING_LAUGHTER = 3;
+	public static final int STARTING_GENEROSITY = 3;
+	public static final int STARTING_KINDNESS = 3;
+	public static final int STARTING_MAGIC = 3;
 
 	private static final float TIME_TO_REST = 1f;
 	private static final float TIME_TO_SEARCH = 2f;
@@ -152,8 +158,8 @@ public class Hero extends Char {
 	public HeroClass heroClass = HeroClass.ROGUE;
 	public HeroSubClass subClass = HeroSubClass.NONE;
 
-	int attackSkill = 10;
-	int defenseSkill = 5;
+	int attackSkill = 10;	// TODO: change this to loyalty, also change bows to use loyal level
+	int defenseSkill = 5;	// TODO: change this to laughter
 
 	private boolean ready = false;
 	public HeroAction curAction = null;
@@ -171,9 +177,16 @@ public class Hero extends Char {
 	public Belongings belongings;
 
 	private int STR;
+    private int honesty;    // TODO: This will be the new name for STR.
+	private int loyalty;	// Evasion, Bow limits (change from level-based to oath scrolls)
+	private int laughter;	// Haste (joke books and shopkeeper pranks)
+	private int generosity;	// Perception (store donations, buy-outs, quest option to forfeit)
+	private int kindness;	// Stealth (quests, bosses, level skips?, minus if kill fleeing)
+	private int magic;		// Wand power (rare books)
+
 	public boolean weakened = false;
 
-	private float awareness;
+	private float awareness;    // TODO: Change this to generosity.
 
 	private int lvl = Scrambler.scramble(1);
 	private int exp = Scrambler.scramble(0);
@@ -195,6 +208,13 @@ public class Hero extends Char {
 		name_objective = Game.getVar(R.string.Hero_Name_Objective);
 
 		STR(STARTING_STR);
+        setHonesty(STARTING_HONESTY);
+        setLoyalty(STARTING_LOYALTY);
+		setLaughter(STARTING_LAUGHTER);
+		setGenerosity(STARTING_GENEROSITY);
+		setKindness(STARTING_KINDNESS);
+		setMagic(STARTING_MAGIC);
+
 		awareness = 0.1f;
 
 		belongings = new Belongings(this);
@@ -218,22 +238,61 @@ public class Hero extends Char {
 	protected void readCharData() {
 	}
 
-	public int effectiveSTR() {
-		int str = Scrambler.descramble(STR);
-		return weakened ? str - 2 : str;
+    public int effectiveSTR() {
+        int effSTR = Scrambler.descramble(STR);
+        return weakened ? effSTR - 2 : effSTR;
+    }
+
+    public int effectiveHonesty() {
+        int effHonesty = Scrambler.descramble(honesty);
+        return weakened ? effHonesty - 2 : effHonesty;
+    }
+
+	public int effectiveLoyalty() {
+		return Scrambler.descramble(loyalty);
+	}
+	public int effectiveLaughter() {
+		return Scrambler.descramble(laughter);
+	}
+	public int effectiveGenerosity() {
+		return Scrambler.descramble(generosity);
+	}
+	public int effectiveKindness() {
+		return Scrambler.descramble(kindness);
+	}
+	public int effectiveMagic() {
+		return Scrambler.descramble(magic);
 	}
 
 	public void STR(int sTR) {
 		STR = Scrambler.scramble(sTR);
 	}
+    public void setHonesty(int newHonesty) { honesty = Scrambler.scramble(newHonesty); }
+    public void setLoyalty(int newLoyalty) { loyalty = Scrambler.scramble(newLoyalty); }
+	public void setLaughter(int newLaughter) { laughter = Scrambler.scramble(newLaughter); }
+	public void setGenerosity(int newGenerosity) { generosity = Scrambler.scramble(newGenerosity); }
+	public void setKindness(int newKindness) { kindness = Scrambler.scramble(newKindness); }
+	public void setMagic(int newMagic) { magic = Scrambler.scramble(newMagic); }
 
 	public int STR() {
 		return Scrambler.descramble(STR);
 	}
+    public int honesty() { return Scrambler.descramble(honesty); }
+    public int loyalty() { return Scrambler.descramble(loyalty); }
+    public int laughter() { return Scrambler.descramble(laughter); }
+    public int generosity() { return Scrambler.descramble(generosity); }
+    public int kindness() { return Scrambler.descramble(kindness); }
+    public int magic() { return Scrambler.descramble(magic); }
 
 	private static final String ATTACK = "attackSkill";
 	private static final String DEFENSE = "defenseSkill";
 	private static final String STRENGTH = "STR";
+    private static final String HONESTY = "honesty";
+    private static final String LOYALTY = "loyalty";
+    private static final String LAUGHTER = "laughter";
+    private static final String GENEROSITY = "generosity";
+    private static final String KINDNESS = "kindness";
+    private static final String MAGIC = "magic";
 	private static final String LEVEL = "lvl";
 	private static final String EXPERIENCE = "exp";
 	private static final String LEVEL_KIND = "levelKind";
@@ -267,8 +326,13 @@ public class Hero extends Char {
 		bundle.put(ATTACK, attackSkill);
 		bundle.put(DEFENSE, defenseSkill);
 
-		bundle.put(STRENGTH, STR());
-
+        bundle.put(STRENGTH, STR());
+        bundle.put(HONESTY, honesty());
+        bundle.put(LOYALTY, loyalty());
+        bundle.put(LAUGHTER, laughter());
+        bundle.put(GENEROSITY, generosity());
+        bundle.put(KINDNESS, kindness());
+        bundle.put(MAGIC, magic());
 		bundle.put(LEVEL, lvl());
 		bundle.put(EXPERIENCE, getExp());
 		bundle.put(LEVEL_KIND, levelKind);
@@ -293,6 +357,12 @@ public class Hero extends Char {
 		defenseSkill = bundle.getInt(DEFENSE);
 
 		STR(bundle.getInt(STRENGTH));
+        setHonesty(bundle.getInt(HONESTY));
+        setLoyalty(bundle.getInt(LOYALTY));
+        setLaughter(bundle.getInt(LAUGHTER));
+        setGenerosity(bundle.getInt(GENEROSITY));
+        setKindness(bundle.getInt(KINDNESS));
+        setMagic(bundle.getInt(MAGIC));
 		updateAwareness();
 
 		lvl(bundle.getInt(LEVEL));

@@ -39,7 +39,7 @@
   <string name="HuntressArmor_ACSpecial">スペクトルブレード</string>
   <string name="HuntressArmor_NoEnemies">敵が見えません</string>
   <string name="HuntressArmor_NotHuntress">ハンターだけがこの鎧を使うことができます。</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">革製の鎧</string>
   <string name="LeatherArmor_Desc">モンスターの革をなめして作られた鎧。布製の鎧のように軽くはないが、より良い防御性能を備えている。</string>
   <!--STRINGS OF MageArmor CLASS-->

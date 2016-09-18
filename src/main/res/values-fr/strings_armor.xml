@@ -39,7 +39,7 @@ Vous pouvez ressentir une énergie maléfique cachée dans l\' %s</string>
   <string name="HuntressArmor_ACSpecial">LAMES SPECTRALES</string>
   <string name="HuntressArmor_NoEnemies">Aucun ennemi en vue </string>
   <string name="HuntressArmor_NotHuntress">Seules les chasseresses peuvent porter cette armure !</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">armure de cuir</string>
   <string name="LeatherArmor_Desc">Armure faite de peaux de monstre tannées. Un peu plus lourde que l\'armure de vêtements, mais offre une meilleure protection.</string>
   <!--STRINGS OF MageArmor CLASS-->

@@ -34,7 +34,7 @@
   <string name="HuntressArmor_ACSpecial">SPECTRO DE BLADES</string>
   <string name="HuntressArmor_NoEnemies">Sem inimigos à vista</string>
   <string name="HuntressArmor_NotHuntress">Só caçadoras podem usar esta armadura!</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">armadura de couro</string>
   <string name="LeatherArmor_Desc">Armadura feita de couro de monstro. Não é tão leve como armadura de pano, mas ofereçe uma proteção melhor.</string>
   <!--STRINGS OF MageArmor CLASS-->

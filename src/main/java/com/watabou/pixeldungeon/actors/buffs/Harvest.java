@@ -15,21 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.armor;
+package com.watabou.pixeldungeon.actors.buffs;
 
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
+import com.watabou.pixeldungeon.Dungeon;
+import com.watabou.pixeldungeon.ui.BuffIndicator;
 
+public class Harvest extends FlavourBuff {
 
-public class LeatherArmor extends Armor {
-
-	public LeatherArmor() {
-		super( 2 );
-		image = 1;
+	@Override
+	public void detach() {
+		super.detach();
+		Dungeon.observe();
 	}
 	
 	@Override
-	public String desc() {
-		return Game.getVar(R.string.LeatherArmor_Desc);
+	public int icon() {	return BuffIndicator.HARVEST; }
+	
+	@Override
+	public String toString() {
+		return Game.getVar(R.string.Harvest_Info);
 	}
 }

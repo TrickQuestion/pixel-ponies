@@ -39,7 +39,7 @@
   <string name="HuntressArmor_ACSpecial">CUCHILLAS ESPECTRALES</string>
   <string name="HuntressArmor_NoEnemies">No hay enemigos a la vista</string>
   <string name="HuntressArmor_NotHuntress">¡Sólo las cazadoras pueden usar esta armadura!</string>
-  <!--STRINGS OF LeatherArmor CLASS-->
+  <!--STRINGS OF PleatherArmor CLASS-->
   <string name="LeatherArmor_Name">armadura de cuero</string>
   <string name="LeatherArmor_Desc">Armadura hecha de cuero de monstruo curtido. No tan ligera como la armadura de tela, pero ofrece una mejor protección.</string>
   <!--STRINGS OF MageArmor CLASS-->

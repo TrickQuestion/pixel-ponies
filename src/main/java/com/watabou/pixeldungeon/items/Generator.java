@@ -31,7 +31,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.WandMaker.Rotberry;
 import com.watabou.pixeldungeon.items.armor.Armor;
 import com.watabou.pixeldungeon.items.armor.ClothArmor;
-import com.watabou.pixeldungeon.items.armor.LeatherArmor;
+import com.watabou.pixeldungeon.items.armor.PleatherArmor;
 import com.watabou.pixeldungeon.items.armor.MailArmor;
 import com.watabou.pixeldungeon.items.armor.PlateArmor;
 import com.watabou.pixeldungeon.items.armor.ScaleArmor;
@@ -259,7 +259,7 @@ public class Generator {
 		
 		Category.ARMOR.classes = new Class<?>[]{ 
 			ClothArmor.class, 
-			LeatherArmor.class, 
+			PleatherArmor.class,
 			MailArmor.class, 
 			ScaleArmor.class, 
 			PlateArmor.class,
