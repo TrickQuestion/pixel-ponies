@@ -27,32 +27,26 @@ import java.util.Map;
 public class HeroSpriteDef extends MobSpriteDef {
 
 	private static final int RUN_FRAMERATE = 20;
-	private static final String HERO_EMPTY_PNG = "hero/empty.png";
+	private static final String BLANK_IMAGE = "layeredSprites/blank.png";
 	private CompositeTextureImage avatar;
 
 	// body goes as main texture
+    private static final String LAYER_BODY        = "body";
 	private static final String LAYER_ARMOR       = "armor";
 	private static final String LAYER_HEAD        = "head";
-	private static final String LAYER_HAIR        = "hair";
-	private static final String LAYER_FACIAL_HAIR = "facial_hair";
 	private static final String LAYER_HELMET      = "helmet";
+    private static final String LAYER_WEAPON      = "weapon";
 	private static final String LAYER_DEATH       = "death";
-	private static final String LAYER_BODY        = "body";
-	private static final String LAYER_COLLAR      = "collar";
-	private static final String LAYER_SHIELD      = "shield";
-	private static final String LAYER_WEAPON      = "weapon";
 	private static final String LAYER_ACCESSORY   = "accessory";
 
 	private Animation fly;
 
 	private static final String[] layersOrder = {
 		LAYER_BODY,
-		LAYER_COLLAR,
-		LAYER_HEAD,
-		LAYER_HAIR,
 		LAYER_ARMOR,
-		LAYER_FACIAL_HAIR,
+		LAYER_HEAD,
 		LAYER_HELMET,
+        LAYER_WEAPON,
 		LAYER_DEATH,
 		LAYER_ACCESSORY
 	};
@@ -95,61 +89,53 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 	public void createLayersDesc(Hero hero, Accessory accessory) {
 		layersDesc.clear();
-		boolean drawHair = true;
 
-		String accessoryDescriptor = HERO_EMPTY_PNG;
-		String classDescriptor = hero.heroClass.toString()+"_"+hero.subClass.toString();
-		String collarDescriptor = HERO_EMPTY_PNG;
-		String deathDescriptor = classDescriptor.equals("MAGE_WARLOCK") ? "warlock" : "common";
-		String facialHairDescriptor = HERO_EMPTY_PNG;
-		String hairDescriptor = HERO_EMPTY_PNG;
-		String helmetDescriptor = HERO_EMPTY_PNG;
+        String armorImage = BLANK_IMAGE;
+        String helmetImage = BLANK_IMAGE;
+        String accessoryImage = BLANK_IMAGE;
 
-
-		if(classDescriptor.equals("MAGE_WARLOCK")
-				|| classDescriptor.equals("MAGE_BATTLEMAGE")
-				|| classDescriptor.equals("WARRIOR_BERSERKER")){
-			facialHairDescriptor = "hero/head/facial_hair/" + classDescriptor + "_FACIAL_HAIR.png";
-		}
+        if (hero.belongings.armor != null) {
+            armorImage = "layeredSprites/armor/(hero." + hero.gender().toString() + ")";
+            armorImage += armorDescriptor(hero.belongings.armor) + ".png";
+        }
 
 		if (accessory  == null){
-			if(hero.belongings.armor  != null && hero.belongings.armor.isHasHelmet()){
-				helmetDescriptor = helmetDescriptor(hero.belongings.armor, hero);
-				if(hero.belongings.armor.isCoveringHair()){
-					drawHair = false;
-				}
+			if (hero.belongings.armor != null && hero.belongings.armor.isHasHelmet()){
+				helmetImage = "layeredSprites/helmet/(hero." + hero.gender().toString() + ")";
+                helmetImage += armorDescriptor(hero.belongings.armor) + ".png";
 			}
-		}
-		else{
-			accessoryDescriptor = accessory.getLayerFile();
-			if(accessory.isCoveringHair()){
-				drawHair = false;
-			}
+		} else {
+			accessoryImage = accessory.getLayerFile();
 		}
 
-		if (drawHair){ hairDescriptor = "hero/head/hair/" + classDescriptor + "_HAIR.png"; }
-
-		layersDesc.put(LAYER_BODY,bodyDescriptor(hero));
-		layersDesc.put(LAYER_COLLAR, collarDescriptor(hero.belongings.armor, hero));
-		layersDesc.put(LAYER_HEAD, "hero/head/" + classDescriptor + ".png");
-		layersDesc.put(LAYER_HAIR, hairDescriptor);
-		layersDesc.put(LAYER_ARMOR, armorDescriptor(hero.belongings.armor));
-		layersDesc.put(LAYER_FACIAL_HAIR, facialHairDescriptor);
-		layersDesc.put(LAYER_HELMET, helmetDescriptor);
-		layersDesc.put(LAYER_DEATH,"hero/death/"+deathDescriptor+".png");
-		layersDesc.put(LAYER_ACCESSORY, accessoryDescriptor);
+		layersDesc.put(LAYER_BODY, "layeredSprites/body/" + hero.heroClass.toString() + ".png");
+        layersDesc.put(LAYER_ARMOR, armorImage);
+		layersDesc.put(LAYER_HEAD, "layeredSprites/head/" + hero.heroClass.toString() + ".png");
+		layersDesc.put(LAYER_HELMET, helmetImage);
+        layersDesc.put(LAYER_WEAPON, BLANK_IMAGE);
+		layersDesc.put(LAYER_DEATH, "layeredSprites/death/" + hero.heroClass.toString() +".png");
+		layersDesc.put(LAYER_ACCESSORY, accessoryImage);
 	}
 
 	public void createStatueSprite(Armor armor) {
-		layersDesc.put(LAYER_BODY,        "hero/body/statue.png");
-		layersDesc.put(LAYER_COLLAR,      HERO_EMPTY_PNG);
-		layersDesc.put(LAYER_HEAD,        "hero/head/statue.png");
-		layersDesc.put(LAYER_HAIR,        HERO_EMPTY_PNG);
-		layersDesc.put(LAYER_ARMOR,       armorDescriptor(armor));
-		layersDesc.put(LAYER_FACIAL_HAIR, HERO_EMPTY_PNG);
-		layersDesc.put(LAYER_HELMET,      HERO_EMPTY_PNG);
-		layersDesc.put(LAYER_DEATH,       "hero/death/statue.png");
-		layersDesc.put(LAYER_ACCESSORY,   HERO_EMPTY_PNG);
+        layersDesc.clear();
+
+        String armorImage = BLANK_IMAGE;
+        String helmetImage = BLANK_IMAGE;
+        if (armor != null) {
+            armorImage = "layeredSprites/armor/(statue)" + armorDescriptor(armor) + ".png";
+            if (armor.isHasHelmet()) {
+                helmetImage = "layeredSprites/helmet/(statue)" + armorDescriptor(armor) + ".png";
+            }
+        }
+
+		layersDesc.put(LAYER_BODY, "layeredSprites/body/(statue).png");
+        layersDesc.put(LAYER_ARMOR, armorImage);
+		layersDesc.put(LAYER_HEAD, "layeredSprites/head/(statue).png");
+		layersDesc.put(LAYER_HELMET, helmetImage);
+        layersDesc.put(LAYER_WEAPON, BLANK_IMAGE);
+		layersDesc.put(LAYER_DEATH, "layeredSprites/death/statue.png");
+        layersDesc.put(LAYER_ACCESSORY, BLANK_IMAGE);
 	}
 
 	public void heroUpdated(Hero hero) {
@@ -175,42 +161,7 @@ public class HeroSpriteDef extends MobSpriteDef {
 	}
 
 	private String armorDescriptor(Armor armor) {
-		if(armor==null) {
-			return HERO_EMPTY_PNG;
-		}
-		return "hero/armor/"+armor.getClass().getSimpleName()+".png";
-	}
-
-	private String helmetDescriptor(Armor armor, Hero hero) {
-		if(armor!=null) {
-			if(hero.belongings.armor.isHasHelmet()){
-				return "hero/armor/helmet/"+armor.getClass().getSimpleName()+".png";
-			}
-		}
-			return HERO_EMPTY_PNG;
-	}
-
-	private String collarDescriptor(Armor armor, Hero hero) {
-		if(armor!=null) {
-			if(hero.belongings.armor.isHasCollar()){
-				return "hero/armor/collar/"+armor.getClass().getSimpleName()+".png";
-			}
-		}
-		return HERO_EMPTY_PNG;
-	}
-
-	private String bodyDescriptor(Hero hero) {
-		String descriptor = "man";
-
-		if(hero.getGender()== Utils.FEMININE) {
-			descriptor = "woman";
-		}
-
-		if(hero.subClass.equals(HeroSubClass.WARLOCK)) {
-			descriptor = "warlock";
-		}
-
-		return "hero/body/"+descriptor+".png";
+		return armor.trueName();
 	}
 
 	@Override
@@ -281,11 +232,10 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 
 		avatar.addLayer(getLayerTexture(LAYER_BODY));
+        avatar.addLayer(getLayerTexture(LAYER_ARMOR));
 		avatar.addLayer(getLayerTexture(LAYER_HEAD));
-		avatar.addLayer(getLayerTexture(LAYER_HAIR));
-		avatar.addLayer(getLayerTexture(LAYER_ARMOR));
-		avatar.addLayer(getLayerTexture(LAYER_FACIAL_HAIR));
-		avatar.addLayer(getLayerTexture(LAYER_HELMET));
+        avatar.addLayer(getLayerTexture(LAYER_HELMET));
+        avatar.addLayer(getLayerTexture(LAYER_WEAPON));
 		avatar.addLayer(getLayerTexture(LAYER_DEATH));
 		avatar.addLayer(getLayerTexture(LAYER_ACCESSORY));
 

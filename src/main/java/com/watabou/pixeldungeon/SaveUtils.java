@@ -27,18 +27,21 @@ public class SaveUtils {
 	private static final String EL_GAME_FILE = "elf.dat";
 	private static final String EL_DEPTH_FILE = "elf%d.dat";
 
+	private static final String EARTH_GAME_FILE = "earth.dat";
+	private static final String EARTH_DEPTH_FILE = "earth%d.dat";
+
 	static private boolean hasClassTag(HeroClass cl, String fname) {
 		switch (cl) {
 		case ROGUE:
 			return fname.contains("rogue");
-		case WARRIOR:
-			return fname.contains("warrior");
 		case HUNTRESS:
 			return fname.contains("ranger");
 		case MAGE:
 			return fname.contains("mage");
 		case ELF:
 			return fname.contains("elf");
+		case EARTH_PONY:
+			return fname.contains("earth");
 		default:
 			throw new TrackedRuntimeException("unknown hero class!");
 		}
@@ -192,8 +195,6 @@ public class SaveUtils {
 	public static String gameFile(HeroClass cl) {
 
 		switch (cl) {
-		case WARRIOR:
-			return WR_GAME_FILE;
 		case ROGUE:
 			return RG_GAME_FILE;
 		case MAGE:
@@ -202,6 +203,8 @@ public class SaveUtils {
 			return RN_GAME_FILE;
 		case ELF:
 			return EL_GAME_FILE;
+		case EARTH_PONY:
+			return EARTH_GAME_FILE;
 		default:
 			throw new TrackedRuntimeException("unknown hero class!");
 		}
@@ -223,8 +226,6 @@ public class SaveUtils {
 	private static String _depthFile(HeroClass cl) {
 
 		switch (cl) {
-		case WARRIOR:
-			return WR_DEPTH_FILE;
 		case ROGUE:
 			return RG_DEPTH_FILE;
 		case MAGE:
@@ -233,6 +234,8 @@ public class SaveUtils {
 			return RN_DEPTH_FILE;
 		case ELF:
 			return EL_DEPTH_FILE;
+		case EARTH_PONY:
+			return EARTH_DEPTH_FILE;
 		default:
 			throw new TrackedRuntimeException("unknown hero class!");
 		}
