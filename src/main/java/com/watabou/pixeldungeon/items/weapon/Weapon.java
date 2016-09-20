@@ -22,6 +22,7 @@ import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
@@ -55,13 +56,14 @@ public class Weapon extends KindOfWeapon {
 	private static final String TXT_INCOMPATIBLE = Game.getVar(R.string.Weapon_Incompatible);
 	private static final String TXT_TO_STRING    = "%s :%d";
 	
-	public int		STR	= 10;
+	public int		honesty	= 3;
+	public int		loyalty = 3;
 	public float	ACU	= 1;
 	public float	DLY	= 1f;
 
 	public boolean enchatable = true;
 
-	protected int  gender = Utils.genderFromString(getClassParam("Gender","neuter",true));
+	protected Gender gender = Gender.NEUTER;
 
 	
 	public enum Imbue {
@@ -111,11 +113,11 @@ public class Weapon extends KindOfWeapon {
 	@Override
 	public float accuracyFactor(Hero hero ) {
 		
-		int encumbrance = STR - hero.effectiveSTR();
+		int encumbrance = honesty - hero.effectiveHonesty();
 		
 		if (this instanceof MissileWeapon) {
 			switch (hero.heroClass) {
-			case WARRIOR:
+			case EARTH_PONY:
 				encumbrance += 3;
 				break;
 			case HUNTRESS:
@@ -139,7 +141,7 @@ public class Weapon extends KindOfWeapon {
 	@Override
 	public float speedFactor( Hero hero ) {
 
-		int encumbrance = STR - hero.effectiveSTR();
+		int encumbrance = honesty - hero.effectiveHonesty();
 		if (this instanceof MissileWeapon && hero.heroClass == HeroClass.HUNTRESS) {
 			encumbrance -= 2;
 		}
@@ -155,7 +157,7 @@ public class Weapon extends KindOfWeapon {
 		int damage = super.damageRoll( hero );
 		
 		if ((hero.rangedWeapon != null) == (hero.heroClass == HeroClass.HUNTRESS)) {
-			int exStr = hero.effectiveSTR() - STR;
+			int exStr = hero.effectiveHonesty() - honesty;
 			if (exStr > 0) {
 				damage += Random.IntRange( 0, exStr );
 			}
@@ -181,7 +183,7 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public String toString() {
-		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), STR ) : super.toString();
+		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), honesty ) : super.toString();
 	}
 	
 	@Override
@@ -242,9 +244,9 @@ public class Weapon extends KindOfWeapon {
 			
 		public abstract boolean proc( Weapon weapon, Char attacker, Char defender, int damage );
 		
-		public String name( String weaponName, int gender) {
+		public String name( String weaponName, Gender gender) {
 			try{
-				return Utils.format( TXT_NAME[gender], weaponName );
+				return Utils.format( TXT_NAME[gender.ordinal()], weaponName );
 			} catch (IllegalFormatException e){
 				GLog.w("ife in %s", getClass().getSimpleName());
 			} catch (NullPointerException e){

@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">Этот реагент мгновенно нейтрализует все вредоносные газы в помещении. Выпив его, ты временно получишь иммунитет к подобным газам.</string>
   <string name="PotionOfPurity_Freshness">Воздух внезапно посвежел.</string>
   <string name="PotionOfPurity_NoSmell">Ты потерял обоняние!</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Зелье Силы</string>
   <string name="PotionOfStrength_Info">Это сильнодействующее средство нальёт мощью твои мышцы, перманентно повышая твою силу на 1.</string>
   <string name="PotionOfStrength_Apply">Новоприобретённая сила пульсирует в твоём теле.</string>

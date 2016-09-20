@@ -71,10 +71,10 @@ public class Hunger extends Buff implements Hero.Doom {
 
 				if (Random.Float() < 0.3f && (target.hp() > 1 || !target.paralysed)) {
 					
-					GLog.n( TXT_STARVING[hero.getGender()] );
+					GLog.n( TXT_STARVING[hero.gender().ordinal()] );
 					
 					if(hero.getDifficulty() >= 3) {
-						hero.damage(Math.max(hero.effectiveSTR() - 10, 1), this);
+						hero.damage(Math.max(hero.effectiveHonesty() - 3, 1), this);
 					} else {
 						hero.damage( 1, this );
 					}
@@ -113,14 +113,14 @@ public class Hunger extends Buff implements Hero.Doom {
 				boolean statusUpdated = false;
 				if (newLevel >= STARVING) {
 					
-					GLog.n( TXT_STARVING[hero.getGender()] );
+					GLog.n( TXT_STARVING[hero.gender().ordinal()] );
 					statusUpdated = true;
 					
 					hero.interrupt();
 					
 				} else if (newLevel >= HUNGRY && level < HUNGRY) {
 					
-					GLog.w( TXT_HUNGRY[hero.getGender()] );
+					GLog.w( TXT_HUNGRY[hero.gender().ordinal()] );
 					statusUpdated = true;
 					
 				}

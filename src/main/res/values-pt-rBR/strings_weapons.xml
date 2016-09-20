@@ -177,7 +177,7 @@
   <string name="Shuriken_Name">shuriken</string>
   <string name="Shuriken_Info">Peças de metal em forma de estrela com lâminas afiadas podem causar danos significativos quando atingem o alvo. Eles podem ser jogados em altas velocidades.</string>
   <string name="Shuriken_Gender">masculino</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">machadinha</string>
   <string name="Tamahawk_Info">Este machado de arremesso não é tão pesado, mas ainda exige força significativa para ser usado de forma eficaz.</string>
   <string name="Tamahawk_Gender">masculino</string>

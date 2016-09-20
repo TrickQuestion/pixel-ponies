@@ -100,31 +100,11 @@ public class Utils {
 		return defaultValue;
 	}
 
-	public static int genderFromString(String sGender) {
-		int gender = Utils.NEUTER;
-
-		if (sGender.equals("masculine")) {
-			gender = Utils.MASCULINE;
-		}
-		if (sGender.equals("feminine")) {
-			gender = Utils.FEMININE;
-		}
-		return gender;
-	}
-
-	public static final int NEUTER    = 0;
-	public static final int MASCULINE = 1;
-	public static final int FEMININE  = 2;
-
-
 	public static boolean canUseClassicFont(String localeCode) {
-		if (localeCode.startsWith("ko")
+		return !(localeCode.startsWith("ko")
 				|| localeCode.startsWith("zh")
-				|| localeCode.startsWith("ja")) {
-			return false;
-		}
+				|| localeCode.startsWith("ja"));
 
-		return true;
 	}
 
 }

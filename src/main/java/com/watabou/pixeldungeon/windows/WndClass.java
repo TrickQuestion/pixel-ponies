@@ -55,7 +55,7 @@ public class WndClass extends WndTabbed {
 		PerksTab tabPerks = new PerksTab();
 		add(tabPerks);
 		
-		Tab tab = new RankingTab(this, Utils.capitalize( cl.title() ), tabPerks);
+		Tab tab = new RankingTab(this, Utils.capitalize( cl.toString() ), tabPerks);
 		tab.setSize( TAB_WIDTH, tabHeight() );
 		add( tab );
 		
@@ -144,8 +144,8 @@ public class WndClass extends WndTabbed {
 			
 			String text = null;
 			switch (cl) {
-			case WARRIOR:
-				text = HeroSubClass.GLADIATOR.desc() + "\n\n" + HeroSubClass.BERSERKER.desc();
+			case EARTH_PONY:
+				text = HeroSubClass.FARMER.desc();
 				break;
 			case MAGE:
 				text = HeroSubClass.BATTLEMAGE.desc() + "\n\n" + HeroSubClass.WARLOCK.desc();

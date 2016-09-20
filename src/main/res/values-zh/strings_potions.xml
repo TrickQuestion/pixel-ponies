@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">这种药水会迅速中和掉作用区域内的一切有害气体。饮用它将使你暂时免疫这些气体。</string>
   <string name="PotionOfPurity_Freshness">你感受到了空气中不寻常的清新气息。</string>
   <string name="PotionOfPurity_NoSmell">你什么也闻不到了！</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">力量药水</string>
   <string name="PotionOfStrength_Info">这种强力的液体会冲刷你的肌肉，永久性增加1点力量。</string>
   <string name="PotionOfStrength_Apply">新生的力量从你身体中喷涌而出。</string>

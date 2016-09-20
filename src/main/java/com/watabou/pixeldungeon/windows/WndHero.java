@@ -47,7 +47,12 @@ public class WndHero extends WndTabbed {
 	private static final String TXT_BUFFS	= Game.getVar(R.string.WndHero_Buffs);
 	
 	private static final String TXT_EXP		= Game.getVar(R.string.WndHero_Exp);
-	private static final String TXT_STR		= Game.getVar(R.string.WndHero_Str);
+	private static final String TXT_HONESTY		= Game.getVar(R.string.WndHero_Honesty);
+	private static final String TXT_LOYALTY		= Game.getVar(R.string.WndHero_Loyalty);
+	private static final String TXT_LAUGHTER		= Game.getVar(R.string.WndHero_Laughter);
+	private static final String TXT_GENEROSITY		= Game.getVar(R.string.WndHero_Generosity);
+	private static final String TXT_KINDNESS		= Game.getVar(R.string.WndHero_Kindness);
+	private static final String TXT_MAGIC		= Game.getVar(R.string.WndHero_Magic);
 	private static final String TXT_HEALTH	= Game.getVar(R.string.WndHero_Health);
 	private static final String TXT_GOLD	= Game.getVar(R.string.WndHero_Gold);
 	private static final String TXT_DEPTH	= Game.getVar(R.string.WndHero_Depth);
@@ -140,7 +145,13 @@ public class WndHero extends WndTabbed {
 			
 			pos = btnCatalogus.bottom() + GAP;
 			
-			statSlot( TXT_STR, hero.effectiveSTR() );
+			statSlot( TXT_HONESTY, hero.effectiveHonesty() );
+			statSlot( TXT_LOYALTY, hero.effectiveLoyalty());
+			statSlot( TXT_LAUGHTER, hero.effectiveLaughter());
+			statSlot( TXT_GENEROSITY, hero.effectiveGenerosity());
+			statSlot( TXT_KINDNESS, hero.effectiveKindness());
+			statSlot( TXT_MAGIC, hero.effectiveMagic());
+
 			statSlot( TXT_HEALTH, hero.hp() + "/" + hero.ht() );
 			statSlot( TXT_EXP, hero.getExp() + "/" + hero.maxExp() );
 

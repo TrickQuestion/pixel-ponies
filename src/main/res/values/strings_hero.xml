@@ -36,13 +36,6 @@
     <string name="HeroClass_EarthPony">earth pony</string>
     <string name="HeroClass_Unicorn">unicorn</string>
 
-    <string-array name="HeroClass_WarPerks">
-        <item>Warriors start with 11 points of Strength.</item>
-        <item>Warriors start with a unique short sword. This sword can be later \"reforged\" to upgrade another melee weapon.</item>
-        <item>Warriors are less proficient with missile weapons.</item>
-        <item>Any piece of food restores some health when eaten.</item>
-        <item>Potions of Strength are identified from the beginning.</item>
-    </string-array>
     <string-array name="HeroClass_MagPerks">
         <item>Mages start with a unique Wand of Magic Missile. This wand can be later \"disenchanted\" to upgrade another wand.</item>
         <item>Mages recharge their wands faster.</item>
@@ -61,7 +54,7 @@
     <string-array name="HeroClass_HunPerks">
         <item>Huntresses start with 15 points of Health.</item>
         <item>Huntresses start with a unique upgradeable boomerang.</item>
-        <item>Huntresses are proficient with missile weapons and get a damage bonus for excessive strength when using them.</item>
+        <item>Huntresses are proficient with missile weapons and get a damage bonus for excessive Honesty when using them.</item>
         <item>Huntresses gain more health from dewdrops.</item>
         <item>Huntresses sense neighbouring monsters even if they are hidden behind obstacles.</item>
     </string-array>
@@ -112,7 +105,7 @@
     <string name="HeroSubClass_NameFarmer">farmer</string>
     <string name="HeroSubClass_DescFarmer">The _Farmer_ can gather dewdrops and seeds from special plants, and can go longer without food.</string>
     <string name="HeroSubClass_NameBard">bard</string>
-    <string name="HeroSubClass_DescBard">The _Bard_ uses laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
+    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
     <string name="HeroSubClass_NameGuard">royal guard</string>
     <string name="HeroSubClass_DescGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
 

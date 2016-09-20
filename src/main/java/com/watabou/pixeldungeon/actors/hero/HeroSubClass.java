@@ -21,12 +21,11 @@ import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.items.armor.AssasinArmor;
+import com.watabou.pixeldungeon.items.armor.BardArmor;
 import com.watabou.pixeldungeon.items.armor.BattleMageArmor;
-import com.watabou.pixeldungeon.items.armor.BerserkArmor;
 import com.watabou.pixeldungeon.items.armor.ClassArmor;
 import com.watabou.pixeldungeon.items.armor.FarmerArmor;
 import com.watabou.pixeldungeon.items.armor.FreeRunnerArmor;
-import com.watabou.pixeldungeon.items.armor.GladiatorArmor;
 import com.watabou.pixeldungeon.items.armor.ScoutArmor;
 import com.watabou.pixeldungeon.items.armor.ShamanArmor;
 import com.watabou.pixeldungeon.items.armor.SniperArmor;
@@ -36,9 +35,9 @@ import com.watabou.utils.Bundle;
 
 public enum HeroSubClass {
 
-	NONE( null, null,ClassArmor.class ),
-	GLADIATOR( Game.getVar(R.string.HeroSubClass_NameGlad),   Game.getVar(R.string.HeroSubClass_DescGlad), GladiatorArmor.class),
-	BERSERKER( Game.getVar(R.string.HeroSubClass_NameBers),   Game.getVar(R.string.HeroSubClass_DescBers), BerserkArmor.class),
+	NONE(      null, null, null ),
+    FARMER(    Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), FarmerArmor.class),
+    BARD(      Game.getVar(R.string.HeroSubClass_NameBard), Game.getVar(R.string.HeroSubClass_DescBard), BardArmor.class),
 	WARLOCK(   Game.getVar(R.string.HeroSubClass_NameWarL),   Game.getVar(R.string.HeroSubClass_DescWarL), WarlockArmor.class),
 	BATTLEMAGE(Game.getVar(R.string.HeroSubClass_NameBatM),   Game.getVar(R.string.HeroSubClass_DescBatM), BattleMageArmor.class),
 	ASSASSIN(  Game.getVar(R.string.HeroSubClass_NameAssa),   Game.getVar(R.string.HeroSubClass_DescAssa), AssasinArmor.class),
@@ -46,9 +45,8 @@ public enum HeroSubClass {
 	SNIPER(    Game.getVar(R.string.HeroSubClass_NameSnip),   Game.getVar(R.string.HeroSubClass_DescSnip), SniperArmor.class),
 	WARDEN(    Game.getVar(R.string.HeroSubClass_NameWard),   Game.getVar(R.string.HeroSubClass_DescWard), WardenArmor.class),
 	SCOUT(     Game.getVar(R.string.HeroSubClass_NameScout),  Game.getVar(R.string.HeroSubClass_DescScout), ScoutArmor.class),
-	SHAMAN(    Game.getVar(R.string.HeroSubClass_NameShaman), Game.getVar(R.string.HeroSubClass_DescShaman), ShamanArmor.class),
-	FARMER(    Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), FarmerArmor.class);
-	
+	SHAMAN(    Game.getVar(R.string.HeroSubClass_NameShaman), Game.getVar(R.string.HeroSubClass_DescShaman), ShamanArmor.class);
+
 	private String title;
 	private String desc;
 	private Class<? extends ClassArmor> armorClass;
@@ -59,7 +57,7 @@ public enum HeroSubClass {
 		this.armorClass = armorClass;
 	}
 	
-	public String title() {
+	public String toString() {
 		return title;
 	}
 	
@@ -70,16 +68,17 @@ public enum HeroSubClass {
 	private static final String SUBCLASS = "subClass";
 	
 	public void storeInBundle( Bundle bundle ) {
-		bundle.put( SUBCLASS, toString() );
+		bundle.put( SUBCLASS, title );
 	}
 	
 	public static HeroSubClass restoreFromBundle(Bundle bundle) {
-		String value = bundle.getString( SUBCLASS );
-		try {
-			return valueOf( value );
-		} catch (Exception e) {
-			return NONE;
-		}
+        String value = bundle.getString(SUBCLASS);
+        for (HeroSubClass subClass : HeroSubClass.values()) {
+            if (subClass.title.equals(value)) {
+                return subClass;
+            }
+        }
+        return null;
 	}
 
 	public ClassArmor classArmor() {

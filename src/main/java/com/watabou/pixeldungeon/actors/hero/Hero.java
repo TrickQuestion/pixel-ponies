@@ -40,6 +40,7 @@ import com.watabou.pixeldungeon.Rankings;
 import com.watabou.pixeldungeon.ResultDescriptions;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.blobs.Blob;
 import com.watabou.pixeldungeon.actors.blobs.Web;
 import com.watabou.pixeldungeon.actors.buffs.Barkskin;
@@ -48,7 +49,6 @@ import com.watabou.pixeldungeon.actors.buffs.Blindness;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Burning;
 import com.watabou.pixeldungeon.actors.buffs.Charm;
-import com.watabou.pixeldungeon.actors.buffs.Combo;
 import com.watabou.pixeldungeon.actors.buffs.Cripple;
 import com.watabou.pixeldungeon.actors.buffs.Fury;
 import com.watabou.pixeldungeon.actors.buffs.GasesImmunity;
@@ -84,7 +84,7 @@ import com.watabou.pixeldungeon.items.keys.GoldenKey;
 import com.watabou.pixeldungeon.items.keys.IronKey;
 import com.watabou.pixeldungeon.items.keys.Key;
 import com.watabou.pixeldungeon.items.keys.SkeletonKey;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
+import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.quest.CorpseDust;
 import com.watabou.pixeldungeon.items.rings.RingOfAccuracy;
 import com.watabou.pixeldungeon.items.rings.RingOfDetection;
@@ -99,7 +99,6 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfRecharging;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.watabou.pixeldungeon.items.wands.Wand;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
-import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.watabou.pixeldungeon.items.weapon.melee.SpecialWeapon;
 import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
@@ -144,7 +143,6 @@ public class Hero extends Char {
 	private static final String TXT_WAIT = Game.getVar(R.string.Hero_Wait);
 	private static final String TXT_SEARCH = Game.getVar(R.string.Hero_Search);
 
-	public static final int STARTING_STR = 10;
     public static final int STARTING_HONESTY = 3;
 	public static final int STARTING_LOYALTY = 3;
 	public static final int STARTING_LAUGHTER = 3;
@@ -176,8 +174,7 @@ public class Hero extends Char {
 	public MissileWeapon rangedWeapon = null;
 	public Belongings belongings;
 
-	private int STR;
-    private int honesty;    // TODO: This will be the new name for STR.
+    private int honesty;
 	private int loyalty;	// Evasion, Bow limits (change from level-based to oath scrolls)
 	private int laughter;	// Haste (joke books and shopkeeper pranks)
 	private int generosity;	// Perception (store donations, buy-outs, quest option to forfeit)
@@ -185,6 +182,7 @@ public class Hero extends Char {
 	private int magic;		// Wand power (rare books)
 
 	public boolean weakened = false;
+    public boolean sugarRush = false;
 
 	private float awareness;    // TODO: Change this to generosity.
 
@@ -207,7 +205,6 @@ public class Hero extends Char {
 		name = Game.getVar(R.string.Hero_Name);
 		name_objective = Game.getVar(R.string.Hero_Name_Objective);
 
-		STR(STARTING_STR);
         setHonesty(STARTING_HONESTY);
         setLoyalty(STARTING_LOYALTY);
 		setLaughter(STARTING_LAUGHTER);
@@ -238,11 +235,6 @@ public class Hero extends Char {
 	protected void readCharData() {
 	}
 
-    public int effectiveSTR() {
-        int effSTR = Scrambler.descramble(STR);
-        return weakened ? effSTR - 2 : effSTR;
-    }
-
     public int effectiveHonesty() {
         int effHonesty = Scrambler.descramble(honesty);
         return weakened ? effHonesty - 2 : effHonesty;
@@ -251,9 +243,12 @@ public class Hero extends Char {
 	public int effectiveLoyalty() {
 		return Scrambler.descramble(loyalty);
 	}
-	public int effectiveLaughter() {
-		return Scrambler.descramble(laughter);
+
+    public int effectiveLaughter() {
+        int effLaughter = Scrambler.descramble(laughter);
+        return sugarRush ? effLaughter + 3 : effLaughter;
 	}
+
 	public int effectiveGenerosity() {
 		return Scrambler.descramble(generosity);
 	}
@@ -264,9 +259,6 @@ public class Hero extends Char {
 		return Scrambler.descramble(magic);
 	}
 
-	public void STR(int sTR) {
-		STR = Scrambler.scramble(sTR);
-	}
     public void setHonesty(int newHonesty) { honesty = Scrambler.scramble(newHonesty); }
     public void setLoyalty(int newLoyalty) { loyalty = Scrambler.scramble(newLoyalty); }
 	public void setLaughter(int newLaughter) { laughter = Scrambler.scramble(newLaughter); }
@@ -274,9 +266,6 @@ public class Hero extends Char {
 	public void setKindness(int newKindness) { kindness = Scrambler.scramble(newKindness); }
 	public void setMagic(int newMagic) { magic = Scrambler.scramble(newMagic); }
 
-	public int STR() {
-		return Scrambler.descramble(STR);
-	}
     public int honesty() { return Scrambler.descramble(honesty); }
     public int loyalty() { return Scrambler.descramble(loyalty); }
     public int laughter() { return Scrambler.descramble(laughter); }
@@ -286,7 +275,6 @@ public class Hero extends Char {
 
 	private static final String ATTACK = "attackSkill";
 	private static final String DEFENSE = "defenseSkill";
-	private static final String STRENGTH = "STR";
     private static final String HONESTY = "honesty";
     private static final String LOYALTY = "loyalty";
     private static final String LAUGHTER = "laughter";
@@ -326,7 +314,6 @@ public class Hero extends Char {
 		bundle.put(ATTACK, attackSkill);
 		bundle.put(DEFENSE, defenseSkill);
 
-        bundle.put(STRENGTH, STR());
         bundle.put(HONESTY, honesty());
         bundle.put(LOYALTY, loyalty());
         bundle.put(LAUGHTER, laughter());
@@ -356,7 +343,6 @@ public class Hero extends Char {
 		attackSkill = bundle.getInt(ATTACK);
 		defenseSkill = bundle.getInt(DEFENSE);
 
-		STR(bundle.getInt(STRENGTH));
         setHonesty(bundle.getInt(HONESTY));
         setLoyalty(bundle.getInt(LOYALTY));
         setLaughter(bundle.getInt(LAUGHTER));
@@ -381,7 +367,7 @@ public class Hero extends Char {
 
 		belongings.restoreFromBundle(bundle);
 
-		gender = heroClass.getGender();
+		gender = heroClass.gender();
 	}
 
 	public static void preview(GamesInProgress.Info info, Bundle bundle) {
@@ -389,7 +375,7 @@ public class Hero extends Char {
 	}
 
 	public String className() {
-		return subClass == null || subClass == HeroSubClass.NONE ? heroClass.title() : subClass.title();
+		return subClass == null || subClass == HeroSubClass.NONE ? heroClass.toString() : subClass.toString();
 	}
 
 	private void live() {
@@ -458,7 +444,7 @@ public class Hero extends Char {
 			evasion *= 1.2;
 		}
 
-		int aEnc = belongings.armor != null ? belongings.armor.STR - effectiveSTR() : 0;
+		int aEnc = belongings.armor != null ? belongings.armor.honesty - effectiveHonesty() : 0;
 
 		if (aEnc > 0) {
 			return (int) (defenseSkill * evasion / Math.pow(1.5, aEnc));
@@ -479,7 +465,7 @@ public class Hero extends Char {
 
 	@Override
 	public int dr() {
-		int dr = belongings.armor != null ? Math.max(belongings.armor.DR, 0) : 0;
+		int dr = belongings.armor != null ? Math.max(belongings.armor.resistance, 0) : 0;
 		Barkskin barkskin = buff(Barkskin.class);
 		if (barkskin != null) {
 			dr += barkskin.level();
@@ -498,7 +484,7 @@ public class Hero extends Char {
 		if (wep != null) {
 			dmg = wep.damageRoll(this);
 		} else {
-			dmg = effectiveSTR() > 10 ? Random.IntRange(1, effectiveSTR() - 9) : 1;
+			dmg = effectiveHonesty() > 10 ? Random.IntRange(1, effectiveHonesty() - 9) : 1;
 		}
 		return inFury() ? (int) (dmg * 1.5f) : dmg;
 	}
@@ -506,7 +492,7 @@ public class Hero extends Char {
 	@Override
 	public float speed() {
 
-		int aEnc = belongings.armor != null ? belongings.armor.STR - effectiveSTR() : 0;
+		int aEnc = belongings.armor != null ? belongings.armor.honesty - effectiveHonesty() : 0;
 		if (aEnc > 0) {
 
 			return (float) (super.speed() * Math.pow(1.3, -aEnc));
@@ -793,7 +779,7 @@ public class Hero extends Char {
 		}
 
 		if ((item instanceof ScrollOfUpgrade && ((ScrollOfUpgrade) item).isKnown())
-				|| (item instanceof PotionOfStrength && ((PotionOfStrength) item).isKnown())) {
+				|| (item instanceof PotionOfHonesty && ((PotionOfHonesty) item).isKnown())) {
 			GLog.p(TXT_YOU_NOW_HAVE, item.name());
 		} else {
 			GLog.i(TXT_YOU_NOW_HAVE, item.name());
@@ -1072,11 +1058,11 @@ public class Hero extends Char {
 			wep.proc(this, enemy, damage);
 
 			switch (subClass) {
-				case GLADIATOR:
-					if (wep instanceof MeleeWeapon) {
-						damage += Buff.affect(this, Combo.class).hit(enemy, damage);
-					}
-					break;
+//				case GLADIATOR:
+//					if (wep instanceof MeleeWeapon) {
+//						damage += Buff.affect(this, Combo.class).hit(enemy, damage);
+//					}
+//					break;
 				case BATTLEMAGE:
 					if (wep instanceof Wand) {
 						Wand wand = (Wand) wep;
@@ -1175,12 +1161,12 @@ public class Hero extends Char {
 	}
 
 	public void checkIfFurious() {
-		if (subClass == HeroSubClass.BERSERKER && 0 < hp() && hp() <= ht() * Fury.LEVEL) {
-			if (buff(Fury.class) == null) {
-				Buff.affect(this, Fury.class);
-				ready();
-			}
-		}
+//		if (subClass == HeroSubClass.BERSERKER && 0 < hp() && hp() <= ht() * Fury.LEVEL) {
+//			if (buff(Fury.class) == null) {
+//				Buff.affect(this, Fury.class);
+//				ready();
+//			}
+//		}
 	}
 
 	private void checkVisibleMobs() {
@@ -1772,7 +1758,7 @@ public class Hero extends Char {
 		return difficulty;
 	}
 
-	public void setGender(int gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 

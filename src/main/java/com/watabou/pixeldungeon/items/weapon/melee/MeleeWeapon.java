@@ -35,7 +35,7 @@ public class MeleeWeapon extends Weapon {
 		ACU = acu;
 		DLY = dly;
 		
-		STR = typicalSTR();
+		honesty = typicalHonesty();
 		
 		MIN = min();
 		MAX = max();
@@ -55,7 +55,7 @@ public class MeleeWeapon extends Weapon {
 	}
 	
 	public Item upgrade( boolean enchant ) {
-		STR--;		
+		honesty--;
 		MIN++;
 		MAX += tier;
 		
@@ -68,14 +68,14 @@ public class MeleeWeapon extends Weapon {
 	
 	@Override
 	public Item degrade() {		
-		STR++;
+		honesty++;
 		MIN--;
 		MAX -= tier;
 		return super.degrade();
 	}
 	
-	public int typicalSTR() {
-		return 8 + tier * 2;
+	public int typicalHonesty() {
+		return 1 + tier * 2;
 	}
 	
 	@Override
@@ -95,8 +95,8 @@ public class MeleeWeapon extends Weapon {
 		if (levelKnown) {
 			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2a), (MIN + (MAX - MIN) / 2)));
 		} else {
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2b), (min() + (max() - min()) / 2), typicalSTR()));
-			if (typicalSTR() > Dungeon.hero.effectiveSTR()) {
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2b), (min() + (max() - min()) / 2), typicalHonesty()));
+			if (typicalHonesty() > Dungeon.hero.effectiveHonesty()) {
 				info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2c));
 			}
 		}
@@ -139,10 +139,10 @@ public class MeleeWeapon extends Weapon {
 
 		if (levelKnown && Dungeon.hero.belongings.backpack.items.contains( this )) {
 			info.append(p);
-			if (STR > Dungeon.hero.effectiveSTR()) {
+			if (honesty > Dungeon.hero.effectiveHonesty()) {
 				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6a), name));
 			}
-			if (STR < Dungeon.hero.effectiveSTR()) {
+			if (honesty < Dungeon.hero.effectiveHonesty()) {
 				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6b), name));
 			}
 		}

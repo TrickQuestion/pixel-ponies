@@ -56,7 +56,7 @@ public class Pickaxe extends Weapon {
 
 		defaultAction = AC_MINE;
 		
-		STR = 14;
+		honesty = 7;
 		MIN = 3;
 		MAX = 12;
 	}

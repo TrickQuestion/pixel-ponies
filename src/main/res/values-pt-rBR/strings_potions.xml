@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">Este reagente vai rapidamente neutralizar todos os gases nocivos na área de efeito. Beber ele vai te dar uma imunidade temporária para esses gases.</string>
   <string name="PotionOfPurity_Freshness">Você sente um frescor incomum no ar.</string>
   <string name="PotionOfPurity_NoSmell">Você não sente odores!</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Poção da Força</string>
   <string name="PotionOfStrength_Info">Este líquido poderoso flui naturalmente através de seus músculos, aumentando permanentemente a sua força por um ponto.</string>
   <string name="PotionOfStrength_Apply">Uma nova força surge através de seu corpo.</string>

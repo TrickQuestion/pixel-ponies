@@ -56,10 +56,10 @@
     <string name="Badges_BossSlain3All">3rd boss slain by Gladiator, Berserker, Warlock, Battlemage, Freerunner, Assassin, Sniper &amp; Warden</string>
     <string name="Badges_RingHaggler">Ring of Haggler obtained</string>
     <string name="Badges_RingThorns">Ring of Thorns obtained</string>
-    <string name="Badges_StrengthAttained1">13 points of Strength attained</string>
-    <string name="Badges_StrengthAttained2">15 points of Strength attained</string>
-    <string name="Badges_StrengthAttained3">17 points of Strength attained</string>
-    <string name="Badges_StrengthAttained4">19 points of Strength attained</string>
+    <string name="Badges_HonestyAttained1">6 points of Honesty attained</string>
+    <string name="Badges_HonestyAttained2">8 points of Honesty attained</string>
+    <string name="Badges_HonestyAttained3">10 points of Honesty attained</string>
+    <string name="Badges_HonestyAttained4">12 points of Honesty attained</string>
     <string name="Badges_FoodEaten1">10 pieces of food eaten</string>
     <string name="Badges_FoodEaten2">20 pieces of food eaten</string>
     <string name="Badges_FoodEaten3">30 pieces of food eaten</string>

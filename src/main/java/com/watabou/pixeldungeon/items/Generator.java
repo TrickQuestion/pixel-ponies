@@ -44,6 +44,7 @@ import com.watabou.pixeldungeon.items.potions.Potion;
 import com.watabou.pixeldungeon.items.potions.PotionOfExperience;
 import com.watabou.pixeldungeon.items.potions.PotionOfFrost;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
+import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.potions.PotionOfInvisibility;
 import com.watabou.pixeldungeon.items.potions.PotionOfLevitation;
 import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
@@ -51,7 +52,6 @@ import com.watabou.pixeldungeon.items.potions.PotionOfMight;
 import com.watabou.pixeldungeon.items.potions.PotionOfMindVision;
 import com.watabou.pixeldungeon.items.potions.PotionOfParalyticGas;
 import com.watabou.pixeldungeon.items.potions.PotionOfPurity;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.rings.RingOfAccuracy;
@@ -124,7 +124,7 @@ import com.watabou.pixeldungeon.items.weapon.missiles.Javelin;
 import com.watabou.pixeldungeon.items.weapon.missiles.ParalysisArrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.PoisonArrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Shuriken;
-import com.watabou.pixeldungeon.items.weapon.missiles.Tamahawk;
+import com.watabou.pixeldungeon.items.weapon.missiles.Tomahawk;
 import com.watabou.pixeldungeon.plants.Dreamweed;
 import com.watabou.pixeldungeon.plants.Earthroot;
 import com.watabou.pixeldungeon.plants.Fadeleaf;
@@ -207,7 +207,7 @@ public class Generator {
 			PotionOfParalyticGas.class,
 			PotionOfLiquidFlame.class,
 			PotionOfLevitation.class,
-			PotionOfStrength.class,
+			PotionOfHonesty.class,
 			PotionOfMindVision.class,
 			PotionOfPurity.class,
 			PotionOfInvisibility.class,
@@ -249,7 +249,7 @@ public class Generator {
 			CurareDart.class,
 			Shuriken.class,
 			Boomerang.class,
-			Tamahawk.class,
+			Tomahawk.class,
 			Kusarigama.class,
 			SacrificialSword.class,
 			Claymore.class,
@@ -356,7 +356,7 @@ public class Generator {
 	
 	public static Armor randomArmor() throws Exception {
 		
-		int curStr = Hero.STARTING_STR + Dungeon.potionOfStrength;
+		int curStr = Hero.STARTING_HONESTY + Dungeon.potionOfHonesty;
 		
 		Category cat = Category.ARMOR;
 		
@@ -366,12 +366,12 @@ public class Generator {
 		a1.random();
 		a2.random();
 		
-		return Math.abs( curStr - a1.STR ) < Math.abs( curStr - a2.STR ) ? a1 : a2;
+		return Math.abs( curStr - a1.honesty) < Math.abs( curStr - a2.honesty) ? a1 : a2;
 	}
 	
 	public static Weapon randomWeapon() throws Exception {
 		
-		int curStr = Hero.STARTING_STR + Dungeon.potionOfStrength;
+		int curStr = Hero.STARTING_HONESTY + Dungeon.potionOfHonesty;
 		
 		Category cat = Category.WEAPON;
 		
@@ -381,6 +381,6 @@ public class Generator {
 		w1.random();
 		w2.random();
 		
-		return Math.abs( curStr - w1.STR ) < Math.abs( curStr - w2.STR ) ? w1 : w2;
+		return Math.abs( curStr - w1.honesty ) < Math.abs( curStr - w2.honesty ) ? w1 : w2;
 	}
 }

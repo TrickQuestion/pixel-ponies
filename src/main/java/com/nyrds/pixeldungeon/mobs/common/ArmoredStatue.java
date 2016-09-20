@@ -39,7 +39,7 @@ public class ArmoredStatue extends Mob {
 		armor.inscribe( Armor.Glyph.random() );
 
 		hp(ht(15 + Dungeon.depth * 5));
-		defenseSkill = 4 + Dungeon.depth + armor.DR;
+		defenseSkill = 4 + Dungeon.depth + armor.resistance;
 		
 		RESISTANCES.add( ToxicGas.class );
 		RESISTANCES.add( Poison.class );
@@ -72,7 +72,7 @@ public class ArmoredStatue extends Mob {
 
 	@Override
 	public int dr() {
-		return Dungeon.depth + armor.DR;
+		return Dungeon.depth + armor.resistance;
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class ArmoredStatue extends Mob {
 
 	@Override
 	public int attackSkill( Char target ) {
-		return (int)((9 + Dungeon.depth) * 2);
+		return (9 + Dungeon.depth) * 2;
 	}
 
 	@Override

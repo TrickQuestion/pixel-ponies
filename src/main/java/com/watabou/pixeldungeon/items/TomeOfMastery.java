@@ -73,31 +73,8 @@ public class TomeOfMastery extends Item {
 
 			setCurUser(hero);
 			
-			HeroSubClass way1 = null;
-			HeroSubClass way2 = null;
-			switch (hero.heroClass) {
-			case WARRIOR:
-				way1 = HeroSubClass.GLADIATOR;
-				way2 = HeroSubClass.BERSERKER;
-				break;
-			case MAGE:
-				way1 = HeroSubClass.BATTLEMAGE;
-				way2 = HeroSubClass.WARLOCK;
-				break;
-			case ROGUE:
-				way1 = HeroSubClass.FREERUNNER;
-				way2 = HeroSubClass.ASSASSIN;
-				break;
-			case HUNTRESS:
-				way1 = HeroSubClass.SNIPER;
-				way2 = HeroSubClass.WARDEN;
-				break;
-			case ELF:
-				way1 = HeroSubClass.SCOUT;
-				way2 = HeroSubClass.SHAMAN;
-				break;
-			}
-			GameScene.show( new WndChooseWay( this, way1, way2 ) );
+			GameScene.show( new WndChooseWay(
+					this, hero.heroClass.firstWay(), hero.heroClass.secondWay() ) );
 			
 		} else {
 			
@@ -133,7 +110,7 @@ public class TomeOfMastery extends Item {
 		
 		SpellSprite.show( getCurUser(), SpellSprite.MASTERY );
 		getCurUser().getSprite().emitter().burst( Speck.factory( Speck.MASTERY ), 12 );
-		GLog.w(Game.getVar(R.string.TomeOfMastery_Choose), Utils.capitalize( way.title() ) );
+		GLog.w(Game.getVar(R.string.TomeOfMastery_Choose), Utils.capitalize( way.toString() ) );
 		
 		getCurUser().checkIfFurious();
 		getCurUser().updateLook();

@@ -42,7 +42,7 @@ public class IncendiaryDart extends MissileWeapon {
 		
 		image = ItemSpriteSheet.INCENDIARY_DART;
 		
-		STR = 12;
+		honesty = 5;
 		
 		MIN = 1;
 		MAX = 2;

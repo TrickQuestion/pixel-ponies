@@ -24,19 +24,19 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 
-public class PotionOfMight extends PotionOfStrength {
+public class PotionOfMight extends PotionOfHonesty {
 	
 	@Override
 	protected void apply( Hero hero ) {
 		setKnown();
 		
-		hero.STR(hero.STR() + 1);
+		hero.setHonesty(hero.honesty() + 1);
 		hero.ht(hero.ht() + 5);
 		hero.hp(hero.hp() + 5);
 		hero.getSprite().showStatus(CharSprite.POSITIVE, Game.getVar(R.string.PotionOfMight_StaApply));
 		GLog.p(Game.getVar(R.string.PotionOfMight_Apply));
 		
-		Badges.validateStrengthAttained();
+		Badges.validateHonestyAttained();
 	}
 	
 	@Override

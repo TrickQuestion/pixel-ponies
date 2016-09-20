@@ -1,5 +1,5 @@
 {
-  "texture" = "hero/empty.png",
+  "texture" = "layeredSprites/blank.png",
   "width"   = 14,
   "height"  = 17,
 

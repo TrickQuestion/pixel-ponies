@@ -18,6 +18,7 @@
 package com.watabou.pixeldungeon.actors.mobs.npcs;
 
 import com.watabou.pixeldungeon.Dungeon;
+import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.Fraction;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
@@ -29,6 +30,8 @@ import com.watabou.utils.Random;
 public abstract class NPC extends Mob {
 	
 	protected NPC() {
+		gender = Gender.MASCULINE;
+
 		hp(ht(1));
 		EXP = 0;
 	
@@ -36,8 +39,6 @@ public abstract class NPC extends Mob {
 		state = PASSIVE;
 		
 		fraction = Fraction.NEUTRAL;
-		
-		gender = Utils.MASCULINE;
 	}
 	
 	protected void throwItem() {

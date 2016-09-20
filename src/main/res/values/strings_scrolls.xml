@@ -96,7 +96,7 @@
 
     <!-- STRINGS OF ScrollOfUpgrade CLASS -->
     <string name="ScrollOfUpgrade_Name">Scroll of Upgrade</string>
-    <string name="ScrollOfUpgrade_Info">This scroll will upgrade a single item, improving its quality. A wand will increase in power and in number of charges; a weapon will inflict more damage or find its mark more frequently; a suit of armor will deflect additional blows; the effect of a ring on its wearer will intensify. Weapons and armor will also require less strength to use, and any curses on the item will be lifted.</string>
+    <string name="ScrollOfUpgrade_Info">This scroll will upgrade a single item, improving its quality. A wand will increase in power and in number of charges; a weapon will inflict more damage or find its mark more frequently; a suit of armor will deflect additional blows; the effect of a ring on its wearer will intensify. Additionally, oquipment attribute minimums will decrease, and any curses on the item will be lifted.</string>
     <string name="ScrollOfUpgrade_InvTitle">Select an item to upgrade</string>
     <string name="ScrollOfUpgrade_LooksBetter">your %s certainly looks better now</string>
 

@@ -61,8 +61,8 @@ public class Armor extends EquipableItem {
 
 	public int tier;
 	
-	public int STR;
-	public int DR;
+	public int honesty;
+	public int resistance;
 
 	private int hitsToKnow = 10;
 	
@@ -73,8 +73,8 @@ public class Armor extends EquipableItem {
 
 		this.tier = tier;
 		
-		STR = typicalSTR();
-		DR = typicalDR();
+		honesty = typicalHonesty();
+		resistance = typicalResistance();
 		hasHelmet = false;
 		hasCollar = false;
 		coverHair = false;
@@ -169,16 +169,16 @@ public class Armor extends EquipableItem {
 			}
 		}
 		
-		DR += tier;
-		STR--;
+		resistance += tier;
+		honesty--;
 		
 		return super.upgrade();
 	}
 
 	@Override
 	public Item degrade() {
-		DR -= tier;
-		STR++;
+		resistance -= tier;
+		honesty++;
 		
 		return super.degrade();
 	}
@@ -202,7 +202,7 @@ public class Armor extends EquipableItem {
 	
 	@Override
 	public String toString() {
-		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), STR ) : super.toString();
+		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), honesty) : super.toString();
 	}
 	
 	@Override
@@ -220,9 +220,9 @@ public class Armor extends EquipableItem {
 		
 		if (levelKnown) {
 			info.append(p);
-			info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.Armor_Info1), name, Math.max( DR, 0 ))));
+			info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.Armor_Info1), name, Math.max(resistance, 0 ))));
 			
-			if (STR > Dungeon.hero.effectiveSTR()) {
+			if (honesty > Dungeon.hero.effectiveHonesty()) {
 				if (isEquipped( Dungeon.hero )) {
 					info.append(Game.getVar(R.string.Armor_Info2));
 				} else {
@@ -230,8 +230,8 @@ public class Armor extends EquipableItem {
 				}
 			}
 		} else {
-			info.append(Utils.format(Game.getVar(R.string.Armor_Info4), name, typicalDR(), typicalSTR()));
-			if (typicalSTR() > Dungeon.hero.effectiveSTR()) {
+			info.append(Utils.format(Game.getVar(R.string.Armor_Info4), name, typicalResistance(), typicalHonesty()));
+			if (typicalHonesty() > Dungeon.hero.effectiveHonesty()) {
 				info.append(Game.getVar(R.string.Armor_Info5));
 			}
 		}
@@ -277,11 +277,11 @@ public class Armor extends EquipableItem {
 		return this;
 	}
 	
-	public int typicalSTR() {
-		return 7 + tier * 2;
+	public int typicalHonesty() {
+		return tier * 2;
 	}
 	
-	public int typicalDR() {
+	public int typicalResistance() {
 		return tier * 2;
 	}
 	
@@ -310,9 +310,9 @@ public class Armor extends EquipableItem {
 	public Armor inscribe( Glyph glyph ) {
 		
 		if (glyph != null && this.glyph == null) {
-			DR += tier;
+			resistance += tier;
 		} else if (glyph == null && this.glyph != null) {
-			DR -= tier;
+			resistance -= tier;
 		}
 		
 		this.glyph = glyph;

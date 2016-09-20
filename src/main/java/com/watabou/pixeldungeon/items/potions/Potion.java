@@ -72,7 +72,7 @@ public class Potion extends Item {
 		PotionOfExperience.class, 
 		PotionOfToxicGas.class, 
 		PotionOfLiquidFlame.class,
-		PotionOfStrength.class,
+		PotionOfHonesty.class,
 		PotionOfParalyticGas.class,
 		PotionOfLevitation.class,
 		PotionOfMindVision.class, 
@@ -186,7 +186,7 @@ public class Potion extends Item {
 			this instanceof PotionOfHealing || 
 			this instanceof PotionOfLevitation ||
 			this instanceof PotionOfMindVision ||
-			this instanceof PotionOfStrength ||
+			this instanceof PotionOfHonesty ||
 			this instanceof PotionOfInvisibility || 
 			this instanceof PotionOfMight)) {
 		

@@ -79,10 +79,7 @@ public class ModdingMode {
 	}
 
 	public static boolean isModdingAllowed(String resName){
-		if(resName.contains("accessories") || resName.contains("banners")){
-			return false;
-		}
-		return true;
+		return !(resName.contains("accessories") || resName.contains("banners"));
 	}
 
 	public static void setContext(Context context) {

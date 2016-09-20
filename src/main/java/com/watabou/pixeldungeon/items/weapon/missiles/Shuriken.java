@@ -34,7 +34,7 @@ public class Shuriken extends MissileWeapon {
 		
 		image = ItemSpriteSheet.SHURIKEN;
 		
-		STR = 13;
+		honesty = 6;
 		
 		MIN = 2;
 		MAX = 6;

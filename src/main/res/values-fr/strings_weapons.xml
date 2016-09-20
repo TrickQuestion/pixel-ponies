@@ -179,7 +179,7 @@ Vous maintenez la %s prête à l\'emploi.</string>
   <string name="Shuriken_Name">shuriken</string>
   <string name="Shuriken_Info">Des morceaux de métal en forme d\'étoile avec des lames aiguisées font des dommages considérables quand ils atteignent leur cible. Ils peuvent être jetés à un rythme soutenu.</string>
   <string name="Shuriken_Gender">masculin</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">tomahawk</string>
   <string name="Tamahawk_Info">Cette hache de jet n\'est pas si lourde, mais la manier efficacement requiert une force importante.</string>
   <string name="Tamahawk_Gender">masculin</string>

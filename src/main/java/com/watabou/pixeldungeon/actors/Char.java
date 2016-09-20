@@ -91,7 +91,7 @@ public abstract class Char extends Actor {
 	protected String description = Game.getVar(R.string.Mob_Desc);
 	private   String defenceVerb = null;
 
-	protected int gender = Utils.NEUTER;
+	protected Gender gender = Gender.NEUTER;
 
 	private int HT;
 	private int HP;
@@ -173,7 +173,7 @@ public abstract class Char extends Actor {
 
 		description = getClassParam("Desc", description, true);
 
-		gender = Utils.genderFromString(getClassParam("Gender", "masculine", true));
+		gender = Gender.getEnum(getClassParam("Gender", Gender.NEUTER.toString(), true));
 
 		defenceVerb = getClassParam("Defense", null, false);
 	}
@@ -185,7 +185,7 @@ public abstract class Char extends Actor {
 		if (hit(this, enemy, false)) {
 
 			if (visibleFight) {
-				GLog.i(TXT_HIT[gender], name, enemy.getName_objective());
+				GLog.i(TXT_HIT[gender.ordinal()], name, enemy.getName_objective());
 			}
 
 			// FIXME
@@ -212,7 +212,7 @@ public abstract class Char extends Actor {
 					if (Dungeon.hero.killerGlyph != null) {
 
 						Dungeon.fail(Utils.format(ResultDescriptions.GLYPH, Dungeon.hero.killerGlyph.name(), Dungeon.depth));
-						GLog.n(TXT_KILL[Dungeon.hero.gender], Dungeon.hero.killerGlyph.name());
+						GLog.n(TXT_KILL[Dungeon.hero.gender().ordinal()], Dungeon.hero.killerGlyph.name());
 
 					} else {
 						if (this instanceof Boss) {
@@ -222,11 +222,11 @@ public abstract class Char extends Actor {
 									Utils.indefinite(name), Dungeon.depth));
 						}
 
-						GLog.n(TXT_KILL[gender], name);
+						GLog.n(TXT_KILL[gender.ordinal()], name);
 					}
 
 				} else {
-					GLog.i(TXT_DEFEAT[gender], name, enemy.getName_objective());
+					GLog.i(TXT_DEFEAT[gender.ordinal()], name, enemy.getName_objective());
 				}
 			}
 
@@ -269,7 +269,7 @@ public abstract class Char extends Actor {
 		if (defenceVerb != null) {
 			return defenceVerb;
 		}
-		return Game.getVars(R.array.Char_StaDodged)[gender];
+		return Game.getVars(R.array.Char_StaDodged)[gender.ordinal()];
 	}
 
 	public int dr() {
@@ -613,7 +613,7 @@ public abstract class Char extends Actor {
 		return name_objective;
 	}
 
-	public int getGender() {
+	public Gender gender() {
 		return gender;
 	}
 

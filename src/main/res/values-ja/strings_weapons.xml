@@ -179,7 +179,7 @@
   <string name="Shuriken_Name">手裏剣</string>
   <string name="Shuriken_Info">鋭い刃の付いた星形の金属片は目標にかなりのダメージを与えます。彼らはとても速い速度で投げることが出来ます。</string>
   <string name="Shuriken_Gender">力強い</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">トマホーク</string>
   <string name="Tamahawk_Info">この投げ斧は重くはありませんが、効果的に使用するにはかなりの力が必要です。</string>
   <string name="Tamahawk_Gender">力強い</string>

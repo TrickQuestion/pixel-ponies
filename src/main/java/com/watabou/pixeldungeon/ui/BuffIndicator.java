@@ -70,6 +70,7 @@ public class BuffIndicator extends Component {
 	public static final int RATTNESS    = 34;
 	public static final int DARKVEIL    = 35;
 	public static final int HARVEST		= 36;
+	public static final int SUGAR_RUSH  = 37;
 
 	
 	public static final int SIZE	= 7;

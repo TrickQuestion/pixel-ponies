@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">이 시약은 유효 범위내의 모든 해로운 가스들을 빠르게 정화한다. 마셨을 땐 그런 가스들에 대해 면역이 잠시동안 생긴다.</string>
   <string name="PotionOfPurity_Freshness">비범한 상쾌함이 공기에서 느껴진다.</string>
   <string name="PotionOfPurity_NoSmell">잠시동안 아무런 냄새도 맡을 수 없게 되었다!</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">힘 포션</string>
   <string name="PotionOfStrength_Info">이 강력한 액체는 근육으로 퍼져 영구적으로 힘을 1 증가시킨다.</string>
   <string name="PotionOfStrength_Apply">새로운 힘이 당신 몸속으로 밀려든다.</string>

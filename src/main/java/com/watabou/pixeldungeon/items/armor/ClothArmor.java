@@ -38,4 +38,6 @@ public class ClothArmor extends Armor {
 	public Item burn(int cell){
 		return null;
 	}
+
+
 }

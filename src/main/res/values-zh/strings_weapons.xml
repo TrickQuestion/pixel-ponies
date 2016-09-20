@@ -180,7 +180,7 @@
   <string name="Shuriken_Name">手里剑</string>
   <string name="Shuriken_Info">刀面锋利，投之迅速。</string>
   <string name="Shuriken_Gender">masculine</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">飞斧</string>
   <string name="Tamahawk_Info">看上去这飞斧并不重，但它依然需要足够的力量来有效使用。</string>
   <string name="Tamahawk_Gender">masculine</string>

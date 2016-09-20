@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">Dieses Gegengift wird schnell alle gefährlichen Gase im Wirkungsbereich neutralisieren. Wenn man es trinkt wird man einige Zeit gegen solche Gase immun.</string>
   <string name="PotionOfPurity_Freshness">Du bemerkst eine ungewöhnliche Frische in der Luft.</string>
   <string name="PotionOfPurity_NoSmell">Du kannst keine Gerüche mehr wahrnehmen!</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Stärketrank</string>
   <string name="PotionOfStrength_Info">Dieser kräftigende Trank wird durch deine Muskeln strömen und deine Stärke um einen Punkt erhöhen.</string>
   <string name="PotionOfStrength_Apply">Neu entdeckte Stärke flutet durch deinen Körper.</string>

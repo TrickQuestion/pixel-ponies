@@ -21,7 +21,6 @@ import android.support.annotation.NonNull;
 
 import com.nyrds.android.util.FileSystem;
 import com.nyrds.android.util.Scrambler;
-import com.nyrds.pixeldungeon.levels.NecroLevel;
 import com.nyrds.pixeldungeon.ml.EventCollector;
 import com.nyrds.pixeldungeon.ml.R;
 import com.nyrds.pixeldungeon.mobs.npc.AzuterronNPC;
@@ -72,7 +71,7 @@ import java.util.HashSet;
 
 public class Dungeon {
 
-	public static int     potionOfStrength;
+	public static int     potionOfHonesty;
 	public static int     scrollsOfUpgrade;
 	public static int     arcaneStyli;
 	public static boolean dewVial; // true if the dew vial can be spawned
@@ -124,7 +123,7 @@ public class Dungeon {
 		depth = 0;
 		gold(0);
 
-		potionOfStrength = 0;
+		potionOfHonesty = 0;
 		scrollsOfUpgrade = 0;
 		arcaneStyli = 0;
 		dewVial = true;
@@ -250,7 +249,7 @@ public class Dungeon {
 
 	public static boolean posNeeded() {
 		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
-		return chance(quota, potionOfStrength);
+		return chance(quota, potionOfHonesty);
 	}
 
 	public static boolean soeNeeded() {
@@ -281,7 +280,7 @@ public class Dungeon {
 	private static final String GOLD       = "gold";
 	private static final String DEPTH      = "depth";
 	private static final String LEVEL      = "level";
-	private static final String POS        = "potionsOfStrength";
+	private static final String P_HONESTY  = "potionsOfHonesty";
 	private static final String SOU        = "scrollsOfEnhancement";
 	private static final String AS         = "arcaneStyli";
 	private static final String DV         = "dewVial";
@@ -303,7 +302,7 @@ public class Dungeon {
 		bundle.put(GOLD, gold());
 		bundle.put(DEPTH, depth);
 
-		bundle.put(POS, potionOfStrength);
+		bundle.put(P_HONESTY, potionOfHonesty);
 		bundle.put(SOU, scrollsOfUpgrade);
 		bundle.put(AS, arcaneStyli);
 		bundle.put(DV, dewVial);
@@ -406,7 +405,7 @@ public class Dungeon {
 		Wand.restore(bundle);
 		Ring.restore(bundle);
 
-		potionOfStrength = bundle.getInt(POS);
+		potionOfHonesty = bundle.getInt(P_HONESTY);
 		scrollsOfUpgrade = bundle.getInt(SOU);
 		arcaneStyli = bundle.getInt(AS);
 		dewVial = bundle.getBoolean(DV);

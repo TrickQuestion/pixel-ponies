@@ -86,8 +86,8 @@ public class HighGrass {
 			leaves = 2;
 		}
 
-		if (ch instanceof Hero && ((Hero) ch).buffs().contains(Harvest.class)) {
-			((Hero) ch).buff( Hunger.class ).satisfy((Hunger.STARVING - Hunger.HUNGRY) / 4.0F);
+		if (ch instanceof Hero && ch.buffs().contains(Harvest.class)) {
+			ch.buff( Hunger.class ).satisfy((Hunger.STARVING - Hunger.HUNGRY) / 4.0F);
 		}
 		
 		Emitter emitter = CellEmitter.get(pos);

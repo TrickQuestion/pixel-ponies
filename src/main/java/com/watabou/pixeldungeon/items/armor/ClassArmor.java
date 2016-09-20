@@ -50,29 +50,29 @@ abstract public class ClassArmor extends Armor {
 			classArmor = owner.subClass.classArmor();
 		}
 
-		classArmor.STR = armor.STR;
-		classArmor.DR  = armor.DR;
+		classArmor.honesty = armor.honesty;
+		classArmor.resistance = armor.resistance;
 		
 		classArmor.inscribe( armor.glyph );
 		
 		return classArmor;
 	}
 	
-	private static final String ARMOR_STR	= "STR";
-	private static final String ARMOR_DR	= "DR";
+	private static final String HONESTY = "honesty";
+	private static final String RESISTANCE = "resistance";
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		super.storeInBundle( bundle );
-		bundle.put( ARMOR_STR, STR );
-		bundle.put( ARMOR_DR, DR );
+		bundle.put(HONESTY, honesty);
+		bundle.put(RESISTANCE, resistance);
 	}
 	
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
-		STR = bundle.getInt( ARMOR_STR );
-		DR = bundle.getInt( ARMOR_DR );
+		honesty = bundle.getInt(HONESTY);
+		resistance = bundle.getInt(RESISTANCE);
 	}
 	
 	@Override

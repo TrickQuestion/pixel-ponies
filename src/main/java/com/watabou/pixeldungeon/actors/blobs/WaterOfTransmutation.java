@@ -30,7 +30,7 @@ import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Generator.Category;
 import com.watabou.pixeldungeon.items.potions.Potion;
 import com.watabou.pixeldungeon.items.potions.PotionOfMight;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
+import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.scrolls.Scroll;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
@@ -220,13 +220,13 @@ public class WaterOfTransmutation extends WellWater {
 	}
 	
 	private Potion changePotion( Potion p ) {
-		if (p instanceof PotionOfStrength) {
+		if (p instanceof PotionOfHonesty) {
 			
 			return new PotionOfMight();
 			
 		} else if (p instanceof PotionOfMight) {
 			
-			return new PotionOfStrength();
+			return new PotionOfHonesty();
 			
 		} else {
 			

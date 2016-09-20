@@ -22,6 +22,7 @@ import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Charm;
 import com.watabou.pixeldungeon.actors.buffs.Light;
@@ -42,6 +43,8 @@ public class Succubus extends Mob {
 	private int delay = 0;
 
 	public Succubus() {
+		gender = Gender.FEMININE;
+
 		spriteClass = SuccubusSprite.class;
 
 		hp(ht(80));

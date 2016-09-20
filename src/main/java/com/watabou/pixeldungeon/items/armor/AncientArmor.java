@@ -37,12 +37,13 @@ public class AncientArmor extends Armor {
 
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.UNICORN) {
-			return super.doEquip( hero );
-		} else {
+		// TODO: Fix this shit
+		//if (hero.heroClass == HeroClass.UNICORN) {
+		//	return super.doEquip( hero );
+		//} else {
 			GLog.w( TXT_UNICORN );
 			return false;
-		}
+		//}
 	}
 
 	@Override

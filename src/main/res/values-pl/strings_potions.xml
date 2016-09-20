@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">Ten preparat szybko zneutralizuje wszystkie szkodliwe gazy w zasięgu działania. Wypicie tego gwarantuje tymczasową odporność na tego typu gazy.</string>
   <string name="PotionOfPurity_Freshness">Czujesz niezwykłą świeżość w powietrzu</string>
   <string name="PotionOfPurity_NoSmell">Przestałeś czuć jakiekolwiek zapachy!</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Mikstura Siły</string>
   <string name="PotionOfStrength_Info">Ten potężny płyn zwiększy objętość twych mięśni, permanentnie zwiększając twoją Siłę o jeden punkt.</string>
   <string name="PotionOfStrength_Apply">Nowa siła przepływa przez twe ciało.</string>

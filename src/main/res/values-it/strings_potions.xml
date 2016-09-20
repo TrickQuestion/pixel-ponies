@@ -41,7 +41,7 @@
   <string name="PotionOfParalyticGas_Name">Pozione di Gas Paralitico</string>
   <!--STRINGS OF PotionOfPurity CLASS-->
   <string name="PotionOfPurity_Name">Pozione di Purificazione</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Pozione di Forza</string>
   <string name="PotionOfStrength_StaApply">+1 forza</string>
   <!--STRINGS OF PotionOfToxicGas CLASS-->

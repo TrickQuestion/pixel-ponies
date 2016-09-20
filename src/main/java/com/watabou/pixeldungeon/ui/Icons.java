@@ -30,7 +30,7 @@ public enum Icons {
 	WARNING,
 	TARGET,
 	NYRDIE,
-	WARRIOR,
+	EARTH,
 	MAGE,
 	ROGUE,
 	ELF,
@@ -90,7 +90,7 @@ public enum Icons {
 		case NYRDIE:
 			icon.frame( icon.texture.uvRect( 30, 16, 45, 26 ) );
 			break;
-		case WARRIOR:
+		case EARTH:
 			icon.frame( icon.texture.uvRect( 0, 29, 16, 45 ) );
 			break;
 		case MAGE:
@@ -186,8 +186,8 @@ public enum Icons {
 	
 	public static Image get( HeroClass cl ) {
 		switch (cl) {
-		case WARRIOR:
-			return get( WARRIOR );
+		case EARTH_PONY:
+			return get( EARTH );
 		case MAGE:
 			return get( MAGE );
 		case ROGUE:

@@ -151,9 +151,6 @@ public class Tengu extends Boss {
 	public void notice() {
 		super.notice();
 		String tenguYell = Game.getVar(R.string.Tengu_Info2);
-		if (Dungeon.hero.heroClass.getGender() == Utils.FEMININE) {
-			tenguYell = Game.getVar(R.string.Tengu_Info3);
-		}
-		yell(Utils.format(tenguYell, Dungeon.hero.heroClass.title()));
+		yell(Utils.format(tenguYell, Dungeon.hero.heroClass.toString()));
 	}	
 }

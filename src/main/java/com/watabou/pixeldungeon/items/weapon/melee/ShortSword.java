@@ -51,7 +51,7 @@ public class ShortSword extends MeleeWeapon {
 	public ShortSword() {
 		super( 1, 1f, 1f );
 		
-		STR = 11;
+		honesty = 4;
 		MAX = 12;
 	}
 	

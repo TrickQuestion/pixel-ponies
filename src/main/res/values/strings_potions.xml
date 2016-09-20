@@ -58,9 +58,9 @@
 
     <!-- STRINGS OF PotionOfMight CLASS -->
     <string name="PotionOfMight_Name">Potion of Might</string>
-    <string name="PotionOfMight_Info">This powerful liquid will course through your muscles, permanently increasing your strength by one point and health by five points.</string>
-    <string name="PotionOfMight_Apply">Newfound strength surges through your body.</string>
-    <string name="PotionOfMight_StaApply">+1 str, +5 ht</string>
+    <string name="PotionOfMight_Info">This powerful liquid will course through your muscles, permanently increasing your Honesty by one point and your Health by five points.</string>
+    <string name="PotionOfMight_Apply">You feel refreshingly down to earth, not to mention hale.</string>
+    <string name="PotionOfMight_StaApply">+1 Honesty, +5 Health</string>
 
     <!-- STRINGS OF PotionOfMindVision CLASS -->
     <string name="PotionOfMindVision_Name">Potion of Mind Vision</string>
@@ -78,11 +78,11 @@
     <string name="PotionOfPurity_Freshness">You feel uncommon freshness in the air.</string>
     <string name="PotionOfPurity_NoSmell">You\'ve stopped sensing any smells!</string>
 
-    <!-- STRINGS OF PotionOfStrength CLASS -->
-    <string name="PotionOfStrength_Name">Potion of Strength</string>
-    <string name="PotionOfStrength_Info">This powerful liquid will course through your muscles, permanently increasing your strength by one point.</string>
-    <string name="PotionOfStrength_Apply">Newfound strength surges through your body.</string>
-    <string name="PotionOfStrength_StaApply">+1 str</string>
+    <!-- STRINGS OF PotionOfHonesty CLASS -->
+    <string name="PotionOfHonesty_Name">Potion of Honesty</string>
+    <string name="PotionOfHonesty_Info">This powerful concoction is no Flim-Flam tonic! It will permanently increase your Honesty by one point.</string>
+    <string name="PotionOfHonesty_Apply">You feel refreshingly down-to-earth.</string>
+    <string name="PotionOfHonesty_StaApply">+1 Honesty</string>
 
     <!-- STRINGS OF PotionOfToxicGas CLASS -->
     <string name="PotionOfToxicGas_Name">Potion of Toxic Gas</string>

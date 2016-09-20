@@ -20,27 +20,19 @@ package com.watabou.pixeldungeon.actors.hero;
 
 import android.support.annotation.NonNull;
 
-import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Claymore;
 import com.nyrds.pixeldungeon.items.necropolis.BlackSkull;
 import com.nyrds.pixeldungeon.items.necropolis.BladeOfSouls;
 import com.nyrds.pixeldungeon.ml.BuildConfig;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.items.TomeOfMastery;
 import com.watabou.pixeldungeon.items.armor.ClassArmor;
 import com.watabou.pixeldungeon.items.armor.ClothArmor;
-import com.watabou.pixeldungeon.items.armor.ElfArmor;
-import com.watabou.pixeldungeon.items.armor.FarmerArmor;
-import com.watabou.pixeldungeon.items.armor.HuntressArmor;
-import com.watabou.pixeldungeon.items.armor.MageArmor;
-import com.watabou.pixeldungeon.items.armor.RogueArmor;
-import com.watabou.pixeldungeon.items.armor.WarriorArmor;
 import com.watabou.pixeldungeon.items.food.Ration;
 import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
+import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
@@ -55,47 +47,75 @@ import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
 import com.watabou.pixeldungeon.items.weapon.missiles.CommonArrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Dart;
 import com.watabou.pixeldungeon.ui.QuickSlot;
-import com.watabou.pixeldungeon.utils.Utils;
+import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.utils.Bundle;
 
 public enum HeroClass {
 
-	WARRIOR(Game.getVar(R.string.HeroClass_War),WarriorArmor.class),
-	MAGE(Game.getVar(R.string.HeroClass_Mag),MageArmor.class),
-	ROGUE(Game.getVar(R.string.HeroClass_Rog),RogueArmor.class),
-	HUNTRESS(Game.getVar(R.string.HeroClass_Hun),HuntressArmor.class),
-	ELF(Game.getVar(R.string.HeroClass_Elf),ElfArmor.class),
-	EARTH(Game.getVar(R.string.HeroClass_Earth), null),
-	UNICORN(Game.getVar(R.string.HeroClass_Unicorn), null);
+	EARTH_PONY(
+			Game.getVar(R.string.HeroClass_EarthPony),
+			Game.getVars(R.array.HeroClass_EarthPonyPerks),
+			Gender.MASCULINE,
+			false,
+			new HeroSubClass[]
+					{ HeroSubClass.FARMER, HeroSubClass.BARD, HeroSubClass.NONE }
+	),
+	MAGE(
+			Game.getVar(R.string.HeroClass_Mag),
+			Game.getVars(R.array.HeroClass_MagPerks),
+			Gender.MASCULINE,
+			false,
+			new HeroSubClass[]
+					{ HeroSubClass.BATTLEMAGE, HeroSubClass.WARLOCK, HeroSubClass.NONE }
+	),
+	ROGUE(
+			Game.getVar(R.string.HeroClass_Rog),
+			Game.getVars(R.array.HeroClass_RogPerks),
+			Gender.MASCULINE,
+			false,
+			new HeroSubClass[]
+					{ HeroSubClass.FREERUNNER, HeroSubClass.ASSASSIN, HeroSubClass.NONE }
+	),
+	HUNTRESS(
+			Game.getVar(R.string.HeroClass_Hun),
+			Game.getVars(R.array.HeroClass_HunPerks),
+			Gender.FEMININE,
+			false,
+			new HeroSubClass[]
+					{ HeroSubClass.SNIPER, HeroSubClass.WARDEN, HeroSubClass.NONE }
+	),
+	ELF(
+			Game.getVar(R.string.HeroClass_Elf),
+			Game.getVars(R.array.HeroClass_ElfPerks),
+			Gender.MASCULINE,
+			false,
+			new HeroSubClass[]
+					{ HeroSubClass.SCOUT, HeroSubClass.SHAMAN, HeroSubClass.NONE }
+	);
 
-	private final Class<? extends ClassArmor> armorClass;
+	private final String title;
+	private final String[] perks;
+	private final Gender gender;
+	private final boolean hasWings;
+	private HeroSubClass[] subClasses;
 
-	private String title;
-
-	private static final String[] WAR_PERKS = Game
-			.getVars(R.array.HeroClass_WarPerks);
-	private static final String[] MAG_PERKS = Game
-			.getVars(R.array.HeroClass_MagPerks);
-	private static final String[] ROG_PERKS = Game
-			.getVars(R.array.HeroClass_RogPerks);
-	private static final String[] HUN_PERKS = Game
-			.getVars(R.array.HeroClass_HunPerks);
-	private static final String[] ELF_PERKS = Game
-			.getVars(R.array.HeroClass_ElfPerks);
-	private static final String[] EARTH_PERKS = Game.getVars(R.array.HeroClass_EarthPerks);
-
-	HeroClass(String title, Class<? extends ClassArmor> armorClass) {
+	HeroClass(String title, String[] perks, Gender gender, boolean hasWings, HeroSubClass[] subClasses) {
 		this.title = title;
-		this.armorClass = armorClass;
+		this.perks = perks;
+		this.gender = gender;
+		this.hasWings = hasWings;
+		this.subClasses = subClasses;
 	}
 
 	public void initHero(Hero hero) {
 		hero.heroClass = this;
+		hero.setGender(this.gender);
 		initCommon(hero);
 
 		switch (this) {
-			case WARRIOR:
-				initWarrior(hero);
+
+			case EARTH_PONY:
+				initEarth(hero);
 				break;
 
 			case MAGE:
@@ -114,16 +134,8 @@ public enum HeroClass {
 				initElf(hero);
 				break;
 
-			case EARTH:
-				initEarth(hero);
-				break;
 
-			case UNICORN:
-				initUnicorn(hero);
-				break;
 		}
-
-		hero.setGender(getGender());
 
 		if (Badges.isUnlocked(masteryBadge()) && hero.getDifficulty() < 3) {
 			new TomeOfMastery().collect(hero);
@@ -164,8 +176,8 @@ public enum HeroClass {
 
 	public Badges.Badge masteryBadge() {
 		switch (this) {
-		case WARRIOR:
-			return Badges.Badge.MASTERY_WARRIOR;
+		case EARTH_PONY:
+			return Badges.Badge.MASTERY_EARTH;
 		case MAGE:
 			return Badges.Badge.MASTERY_MAGE;
 		case ROGUE:
@@ -178,15 +190,20 @@ public enum HeroClass {
 		return null;
 	}
 
-	private static void initWarrior(Hero hero) {
-		hero.STR(hero.STR() + 1);
+	private void initEarth(Hero hero) {
+		hero.setHonesty(hero.honesty() + 1);
+		hero.setLaughter(hero.laughter() + 1);
+		hero.setMagic(hero.magic() - 1);
+		hero.ht(hero.ht() + 5);
+		hero.hp(hero.ht());
 
 		(hero.belongings.weapon = new ShortSword()).identify();
-		hero.collect(new Dart(8).identify());
+
+		hero.collect(new Dart(8));
 
 		QuickSlot.selectItem(Dart.class, 0);
 
-		new PotionOfStrength().setKnown();
+		new PotionOfHonesty().setKnown();
 	}
 
 	private static void initMage(Hero hero) {
@@ -225,7 +242,7 @@ public enum HeroClass {
 	}
 
 	private void initElf(Hero hero) {
-		hero.STR(hero.STR() - 1);
+		hero.setHonesty(hero.honesty() - 1);
 
 		hero.ht(hero.ht() - 5);
 		hero.hp(hero.ht());
@@ -239,23 +256,9 @@ public enum HeroClass {
 		QuickSlot.selectItem(CommonArrow.class, 0);
 	}
 
-	private void initEarth(Hero hero) {
-		hero.STR(hero.STR() + 1);
-		hero.setHonesty(hero.honesty() + 1);
-		hero.setLaughter(hero.laughter() + 1);
-		hero.setMagic(hero.magic() - 1);
-		hero.ht(hero.ht() + 5);
-		hero.hp(hero.ht());
 
-		(hero.belongings.weapon = new ShortSword()).identify();
-
-		hero.collect(new Dart(12));
-
-		QuickSlot.selectItem(Dart.class, 0);
-	}
 
 	private void initUnicorn(Hero hero) {
-		hero.STR(hero.STR());
 		hero.setGenerosity(hero.generosity() + 1);
 		hero.setMagic(hero.magic() + 1);
 		hero.setLaughter(hero.laughter() - 1);
@@ -270,70 +273,45 @@ public enum HeroClass {
 		new ScrollOfIdentify().setKnown();
 	}
 
-	public String title() {
+	@Override
+	public String toString() {
 		return title;
 	}
 
 	@NonNull
 	public String[] perks() {
-
-		switch (this) {
-		case WARRIOR:
-			return WAR_PERKS;
-		case MAGE:
-			return MAG_PERKS;
-		case ROGUE:
-		default:
-			return ROG_PERKS;
-		case HUNTRESS:
-			return HUN_PERKS;
-		case ELF:
-			return ELF_PERKS;
-		case EARTH:
-			return EARTH_PERKS;
-		}
+		return perks;
 	}
 
-	public int getGender() {
-		switch (this) {
-		case WARRIOR:
-		case MAGE:
-		case ROGUE:
-		case ELF:
-		case EARTH:
-			return Utils.MASCULINE;
-		case HUNTRESS:
-			return Utils.FEMININE;
-		}
-		return Utils.NEUTER;
+	public Gender gender() {
+		return gender;
 	}
+
+	public boolean hasWings() { return hasWings; }
+
+	public HeroSubClass firstWay() { return this.subClasses[0]; }
+	public HeroSubClass secondWay() { return this.subClasses[1]; }
+	public HeroSubClass secretWay() { return this.subClasses[2]; }
 
 	private static final String CLASS = "class";
 
 	public void storeInBundle(Bundle bundle) {
-		bundle.put(CLASS, toString());
+		bundle.put(CLASS, title);
 	}
 
 	public static HeroClass restoreFromBundle(Bundle bundle) {
 		String value = bundle.getString(CLASS);
-		return value.length() > 0 ? valueOf(value) : ROGUE;
+		for (HeroClass heroClass : HeroClass.values()) {
+			if (heroClass.title.equals(value)) {
+				return heroClass;
+			}
+		}
+		return null;
 	}
 
 	public ClassArmor classArmor() {
-		try {
-			return armorClass.newInstance();
-		} catch (Exception e) {
-			throw new TrackedRuntimeException(e);
-		}
-	}
-
-	public String spritesheet() {
-
-		switch (this) {
-			case EARTH:
-				return Assets.EARTH;
-		}
-
 		return null;
 	}
+
+
 }

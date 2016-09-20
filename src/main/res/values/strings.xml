@@ -69,36 +69,36 @@
     <string name="Dungeon_DeadEnd">What are you doing here?!</string>
 
     <string-array name="Dungeon_Tips">
-        <item>If you don\'t have enough Honesty for a piece of armor, you\'ll be encumbered. Melee and thrown weapons also have minimum Honesty requirements.</item>
+        <item>If you don\'t have enough Honesty for a piece of armor, you\'ll be encumbered. Melee and thrown weapons also have minimum Honesty requirements. Be careful not to overextend yourself.</item>
         <item>Traps and secret doors are can be detected with Generosity. If you can\'t find a way out, try searching.</item>
-        <item>Bows require a minimum Loyalty, and Rings require a minimum Magic. Upgrading items makes them easier to use, and also more powerful.</item>
-        <item>Loyalty helps you dodge, Laughter increases your movement speed, and Kindness makes you stealthier. Magic improves wand power and recharge rate.</item>
+        <item>Bows require a minimum Loyalty, and Rings require a minimum Magic. If your attributes are too low, you can upgrade an item with a Scroll of Upgrade: it will improve an item\'s quality and make it easier to equip.</item>
+        <item>In addition to bow use, Loyalty helps you to dodge attacks. Laughter increases your movement speed, and Kindness makes you stealthier. Magic improves wand power and recharge rate.</item>
         <item>Beware the Smelly Ooze!</item>
-        <item>Stores appear after you\'ve defeated a Boss. There\'s one adjacent to this room where you can purchase things with Bits.</item>
-        <item>Melee and thrown weapons do more damage with excess Honesty. There\'s no bonus for other items, but they won\'t work well if you don\'t meet the minimum.</item>
-        <item>It helps to identify potions and scrolls early, but you need to be clever about how you do it.</item>
-        <item>If you\'re faster than a monster, you can blindside them by attacking the moment they pop into view.</item>
+        <item>Stores appear after you\'ve defeated a Boss. There\'s one adjacent to this room where you can purchase things with your hard-earned Bits.</item>
+        <item>Melee and thrown weapons do extra damage for Honesty above the required minimum. There\'s no similar bonus for other equipment types, but they won\'t work very well if you don\'t meet the minimum requirements.</item>
+        <item>It helps to identify potions and scrolls early, but you need to be clever about how you go about it..</item>
+        <item>If you\'re faster than a monster, you can blindside it by attacking the moment it pops into view.</item>
         <item>Turn back now, or face the Nightmare Eternal!</item>
-        <item>Items which enhance attributes are rare. It\'s simple to raise Honesty, Loyalty, and Magic, but there are tricks to raising Laughter, Kindness, and Generosity.</item>
-        <item>Use your horse sense when facing danger. For example, you can\'t put out fire in water if you\'re levitating above it, and fire burns longer when it has fuel.</item>
+        <item>Items which enhance your attributes are rare. It\'s simple to raise Honesty, Loyalty, and Magic, but there are clever tricks to raising Laughter, Kindness, and Generosity.</item>
+        <item>Use your horse sense when facing danger. For example, you can\'t put out fire in water if you\'re levitating above it, and fire burns longer when it has fuel to burn.</item>
         <item>Ankhs aren\'t very useful unless you\'re actually planning to die, and you need to be a clever pony to plan for your own funeral.</item>
-        <item>Welcome to the Changeling Hive. Donations of Love are accepted here. Also, non-donations.</item>
-        <item>Level up strategically. Once you\'re at a certain level, monsters will stop giving you experience. Eventually they even stop dropping items and gold.</item>
-        <item>It usually pays to be hungry. Sometimes it\'s even a good idea to starve.</item>
-        <item>Upgrading enchanted items may destroy the enchantment. Having high Magic helps reduce this chance.</item>
+        <item>Welcome to the Changeling Hive. Donations of Love are freely accepted here. Also, non-donations.</item>
+        <item>Once you reach a certain level, weaker monsters will stop giving you experience. Eventually, weak monsters stop dropping items and bits. Level up strategically to maximize your earnings.</item>
+        <item>It usually pays to be hungry, because hunger won\'t hurt you. Sometimes it\'s even a good idea to starve.</item>
+        <item>Upgrading enchanted items may destroy the enchantment. Having high Magic helps reduce the chance of enchantment failure. High Magic also gives you a small chance of improved effects from reading scrolls.</item>
         <item>Even if you\'re not a Shaman, there are secrets to brewing potions.</item>
         <item>The Centaur of Power has escaped from Tartarus!</item>
-        <item>Upgrading items is simple. Enchanting them is not so simple.</item>
-        <item>There are certain items that can only be obtained by a Well of Transmutation.</item>
-        <item>Sometimes the reward can be worth less than the quest item.</item>
+        <item>Although Scrolls of Upgrade are limited in number, upgrading equipment is simple. Enchanting weapons and armor is more complicated.</item>
+        <item>Sometimes the reward can be worth less than the quest item, although that\'s not particularly Generous.</item>
+        <item>There are certain items that can only be obtained through a Well of Transmutation.</item>
         <item>The Crystal King hungers from the shadows...</item>
         <item>What you can\'t see can still hurt you. The other way around, not so much.</item>
-        <item>Armor made from Crystalling Kit comes with an ability. The price to use it is steep, but the results can be worth it.</item>
-        <item>There are three Classes for each pony Race, not two.</item>
+        <item>Class-based armor created with the Crystalling Kit will include a special ability. The price to use the ability is steep, but the results can be worth it.</item>
+        <item>There are actually three classes for each pony race, not two.</item>
         <item>(The text is entirely illegible.)</item>
         <item>\"In the center of Pandemonium, the God of Chaos awaits.\"</item>
         <item>What fun is there in making sense?</item>
-        <item>Behold: The Element of Magic</item>
+        <item>Behold: The Amulet of Harmony</item>
     </string-array>
 
     <!-- STRINGS OF Challenges CLASS -->
@@ -131,7 +131,7 @@
     <!-- STRINGS OF WndCatalogus CLASS -->
     <string name="WndCatalogus_Potions">Potions</string>
     <string name="WndCatalogus_Scrolls">Scrolls</string>
-    <string name="WndCatalogus_Title">Catalogues</string>
+    <string name="WndCatalogus_Title">Common Items</string>
 
     <!-- STRINGS OF WndChallenges CLASS -->
     <string name="WndChallenges_Title">Challenges</string>
@@ -161,7 +161,12 @@
     <string name="WndHero_Stats">Stats</string>
     <string name="WndHero_Buffs">Buffs</string>
     <string name="WndHero_Exp">Experience</string>
-    <string name="WndHero_Str">Strength</string>
+    <string name="WndHero_Honesty">Honesty</string>
+    <string name="WndHero_Loyalty">Loyalty</string>
+    <string name="WndHero_Laughter">Laughter</string>
+    <string name="WndHero_Generosity">Generosity</string>
+    <string name="WndHero_Kindness">Kindness</string>
+    <string name="WndHero_Magic">Magic</string>
     <string name="WndHero_Health">Health</string>
     <string name="WndHero_Gold">Gold Collected</string>
     <string name="WndHero_Depth">Maximum Depth</string>
@@ -170,7 +175,7 @@
     <string name="WndHero_StaJournal">Journal</string>
 
     <!-- STRINGS OF WndImp CLASS -->
-    <string name="WndImp_Message">Oh yes! You are my hero!\nRegarding your reward, I don\'t have cash with me right now, but I have something better for you. This is my family heirloom ring: my granddad took it off a dead paladin\'s finger.</string>
+    <string name="WndImp_Message">Oh yes! You are my hero!\nRegarding your reward, I don\'t have cash with me right now, but I have something better for you. This is my family heirloom ring: my granddad took it off a dead paladin\'s horn.</string>
     <string name="WndImp_Reward">Take the ring</string>
 
     <!-- STRINGS OF WndInfoCell CLASS -->
@@ -199,7 +204,7 @@
     <string name="WndRanking_StaTitle">Level %1$d %2$s</string>
     <string name="WndRanking_StaChallenges">Challenges</string>
     <string name="WndRanking_StaHealth">Health</string>
-    <string name="WndRanking_StaStr">Strength</string>
+    <string name="WndRanking_StaHonesty">Honesty</string>
     <string name="WndRanking_StaDuration">Game Duration</string>
     <string name="WndRanking_StaDepth">Maximum Depth</string>
     <string name="WndRanking_StaEnemies">Mobs Killed</string>
@@ -456,9 +461,11 @@
     <!-- STRINGS OF Fury CLASS -->
     <string name="Fury_Info">Fury</string>
     <!-- STRINGS OF GasesImmunity CLASS -->
-    <string name="GasesImmunity_Info">Immune to gases</string>
+    <string name="GasesImmunity_Info">Immune to Gases</string>
     <!-- STRINGS OF Harvest CLASS -->
     <string name="Harvest_Info">Harvesting</string>
+    <!-- STRINGS OF SugarRush CLASS -->
+    <string name="SugarRush_Info">Sugar Rush</string>
 
     <!-- STRINGS OF Hunger CLASS -->
     <string-array name="Hunger_Hungry">

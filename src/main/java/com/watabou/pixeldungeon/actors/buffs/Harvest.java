@@ -24,6 +24,36 @@ import com.watabou.pixeldungeon.ui.BuffIndicator;
 
 public class Harvest extends FlavourBuff {
 
+    private int level = 0;
+
+    @Override
+    public boolean act() {
+        if (target.isAlive()) {
+
+            spend( TICK );
+            if (--level <= 0) {
+                detach();
+            }
+
+        } else {
+
+            detach();
+
+        }
+
+        return true;
+    }
+
+    public int level() {
+        return level;
+    }
+
+    public void level( int value ) {
+        if (level < value) {
+            level = value;
+        }
+    }
+
 	@Override
 	public void detach() {
 		super.detach();

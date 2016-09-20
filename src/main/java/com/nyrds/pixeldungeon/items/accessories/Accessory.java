@@ -50,11 +50,11 @@ public class Accessory {
 	}
 
 	public String getLayerFile() {
-		return "hero/accessories/"+ getClass().getSimpleName() + ".png";
+		return "layeredSprites/accessory/" + getClass().getSimpleName() + ".png";
 	}
 
     Accessory (){
-		//imageFile = "items/accessories.png";
+		//imageFile = "items/accessory.png";
         coverHair = false;
     }
 

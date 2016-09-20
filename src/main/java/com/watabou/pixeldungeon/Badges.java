@@ -88,7 +88,7 @@ public class Badges {
 		DEATH_FROM_GLYPH(Game.getVar(R.string.Badges_DeathGlyph), 57),
 		DEATH_FROM_FALLING(Game.getVar(R.string.Badges_DeathFalling), 59),
 		YASD(Game.getVar(R.string.Badges_Yasd), 34, true),
-		BOSS_SLAIN_1_WARRIOR,
+		BOSS_SLAIN_1_EARTH,
 		BOSS_SLAIN_1_MAGE,
 		BOSS_SLAIN_1_ROGUE,
 		BOSS_SLAIN_1_HUNTRESS,
@@ -108,15 +108,15 @@ public class Badges {
 		BOSS_SLAIN_3_ALL_SUBCLASSES(Game.getVar(R.string.Badges_BossSlain3All), 33, true),
 		RING_OF_HAGGLER(Game.getVar(R.string.Badges_RingHaggler), 20),
 		RING_OF_THORNS(Game.getVar(R.string.Badges_RingThorns), 21),
-		STRENGTH_ATTAINED_1(Game.getVar(R.string.Badges_StrengthAttained1), 40),
-		STRENGTH_ATTAINED_2(Game.getVar(R.string.Badges_StrengthAttained2), 41),
-		STRENGTH_ATTAINED_3(Game.getVar(R.string.Badges_StrengthAttained3), 42),
-		STRENGTH_ATTAINED_4(Game.getVar(R.string.Badges_StrengthAttained4), 43),
+		HONESTY_ATTAINED_1(Game.getVar(R.string.Badges_HonestyAttained1), 40),
+		HONESTY_ATTAINED_2(Game.getVar(R.string.Badges_HonestyAttained2), 41),
+		HONESTY_ATTAINED_3(Game.getVar(R.string.Badges_HonestyAttained3), 42),
+		HONESTY_ATTAINED_4(Game.getVar(R.string.Badges_HonestyAttained4), 43),
 		FOOD_EATEN_1(Game.getVar(R.string.Badges_FoodEaten1), 44),
 		FOOD_EATEN_2(Game.getVar(R.string.Badges_FoodEaten2), 45),
 		FOOD_EATEN_3(Game.getVar(R.string.Badges_FoodEaten3), 46),
 		FOOD_EATEN_4(Game.getVar(R.string.Badges_FoodEaten4), 47),
-		MASTERY_WARRIOR,
+		MASTERY_EARTH,
 		MASTERY_MAGE,
 		MASTERY_ROGUE,
 		MASTERY_HUNTRESS,
@@ -133,7 +133,7 @@ public class Badges {
 		RARE_SPIDER_MIND,
 		RARE_DREAD_KNIGHT,
 		RARE(Game.getVar(R.string.Badges_RareAll), 37, true),
-		VICTORY_WARRIOR,
+		VICTORY_EARTH,
 		VICTORY_MAGE,
 		VICTORY_ROGUE,
 		VICTORY_HUNTRESS,
@@ -337,23 +337,23 @@ public class Badges {
 		displayBadge(badge);
 	}
 
-	public static void validateStrengthAttained() {
+	public static void validateHonestyAttained() {
 		Badge badge = null;
 
-		if (!local.contains(Badge.STRENGTH_ATTAINED_1) && Dungeon.hero.STR() >= 13) {
-			badge = Badge.STRENGTH_ATTAINED_1;
+		if (!local.contains(Badge.HONESTY_ATTAINED_1) && Dungeon.hero.honesty() >= 6) {
+			badge = Badge.HONESTY_ATTAINED_1;
 			local.add(badge);
 		}
-		if (!local.contains(Badge.STRENGTH_ATTAINED_2) && Dungeon.hero.STR() >= 15) {
-			badge = Badge.STRENGTH_ATTAINED_2;
+		if (!local.contains(Badge.HONESTY_ATTAINED_2) && Dungeon.hero.honesty() >= 8) {
+			badge = Badge.HONESTY_ATTAINED_2;
 			local.add(badge);
 		}
-		if (!local.contains(Badge.STRENGTH_ATTAINED_3) && Dungeon.hero.STR() >= 17) {
-			badge = Badge.STRENGTH_ATTAINED_3;
+		if (!local.contains(Badge.HONESTY_ATTAINED_3) && Dungeon.hero.honesty() >= 10) {
+			badge = Badge.HONESTY_ATTAINED_3;
 			local.add(badge);
 		}
-		if (!local.contains(Badge.STRENGTH_ATTAINED_4) && Dungeon.hero.STR() >= 19) {
-			badge = Badge.STRENGTH_ATTAINED_4;
+		if (!local.contains(Badge.HONESTY_ATTAINED_4) && Dungeon.hero.honesty() >= 12) {
+			badge = Badge.HONESTY_ATTAINED_4;
 			local.add(badge);
 		}
 
@@ -605,9 +605,6 @@ public class Badges {
 
 		if (badge == Badge.BOSS_SLAIN_1) {
 			switch (Dungeon.hero.heroClass) {
-				case WARRIOR:
-					badge = Badge.BOSS_SLAIN_1_WARRIOR;
-					break;
 				case MAGE:
 					badge = Badge.BOSS_SLAIN_1_MAGE;
 					break;
@@ -627,7 +624,7 @@ public class Badges {
 				saveNeeded = true;
 			}
 
-			if (global.contains(Badge.BOSS_SLAIN_1_WARRIOR) &&
+			if (global.contains(Badge.BOSS_SLAIN_1_EARTH) &&
 					global.contains(Badge.BOSS_SLAIN_1_MAGE) &&
 					global.contains(Badge.BOSS_SLAIN_1_ROGUE) &&
 					global.contains(Badge.BOSS_SLAIN_1_HUNTRESS) &&
@@ -642,12 +639,6 @@ public class Badges {
 			}
 		} else if (badge == Badge.BOSS_SLAIN_3) {
 			switch (Dungeon.hero.subClass) {
-				case GLADIATOR:
-					badge = Badge.BOSS_SLAIN_3_GLADIATOR;
-					break;
-				case BERSERKER:
-					badge = Badge.BOSS_SLAIN_3_BERSERKER;
-					break;
 				case WARLOCK:
 					badge = Badge.BOSS_SLAIN_3_WARLOCK;
 					break;
@@ -706,8 +697,8 @@ public class Badges {
 
 		Badge badge = null;
 		switch (Dungeon.hero.heroClass) {
-			case WARRIOR:
-				badge = Badge.MASTERY_WARRIOR;
+			case EARTH_PONY:
+				badge = Badge.MASTERY_EARTH;
 				break;
 			case MAGE:
 				badge = Badge.MASTERY_MAGE;
@@ -798,8 +789,8 @@ public class Badges {
 		displayBadge(badge);
 
 		switch (Dungeon.hero.heroClass) {
-			case WARRIOR:
-				badge = Badge.VICTORY_WARRIOR;
+			case EARTH_PONY:
+				badge = Badge.VICTORY_EARTH;
 				break;
 			case MAGE:
 				badge = Badge.VICTORY_MAGE;
@@ -820,7 +811,7 @@ public class Badges {
 			saveNeeded = true;
 		}
 
-		if (global.contains(Badge.VICTORY_WARRIOR) &&
+		if (global.contains(Badge.VICTORY_EARTH) &&
 				global.contains(Badge.VICTORY_MAGE) &&
 				global.contains(Badge.VICTORY_ROGUE) &&
 				global.contains(Badge.VICTORY_HUNTRESS) &&
@@ -943,7 +934,7 @@ public class Badges {
 		leaveBest(filtered, Badge.GOLD_COLLECTED_1, Badge.GOLD_COLLECTED_2, Badge.GOLD_COLLECTED_3, Badge.GOLD_COLLECTED_4);
 		leaveBest(filtered, Badge.BOSS_SLAIN_1, Badge.BOSS_SLAIN_2, Badge.BOSS_SLAIN_3, Badge.BOSS_SLAIN_4, Badge.SHADOW_LORD_SLAIN, Badge.YOG_SLAIN);
 		leaveBest(filtered, Badge.LEVEL_REACHED_1, Badge.LEVEL_REACHED_2, Badge.LEVEL_REACHED_3, Badge.LEVEL_REACHED_4);
-		leaveBest(filtered, Badge.STRENGTH_ATTAINED_1, Badge.STRENGTH_ATTAINED_2, Badge.STRENGTH_ATTAINED_3, Badge.STRENGTH_ATTAINED_4);
+		leaveBest(filtered, Badge.HONESTY_ATTAINED_1, Badge.HONESTY_ATTAINED_2, Badge.HONESTY_ATTAINED_3, Badge.HONESTY_ATTAINED_4);
 		leaveBest(filtered, Badge.FOOD_EATEN_1, Badge.FOOD_EATEN_2, Badge.FOOD_EATEN_3, Badge.FOOD_EATEN_4);
 		leaveBest(filtered, Badge.ITEM_LEVEL_1, Badge.ITEM_LEVEL_2, Badge.ITEM_LEVEL_3, Badge.ITEM_LEVEL_4);
 		leaveBest(filtered, Badge.POTIONS_COOKED_1, Badge.POTIONS_COOKED_2, Badge.POTIONS_COOKED_3, Badge.POTIONS_COOKED_4);

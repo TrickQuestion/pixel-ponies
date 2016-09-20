@@ -177,7 +177,7 @@
   <string name="Shuriken_Name">сюрикен</string>
   <string name="Shuriken_Info">Острые как бритва металлические звёздочки наносят существенный урон своим целям. Их можно метать с большой скоростью.</string>
   <string name="Shuriken_Gender">masculine</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">томагавк</string>
   <string name="Tamahawk_Info">Хоть этот метательный топор не столь тяжёл, но, тем не менее, для обращения с ним требуется ощутимая сила.</string>
   <string name="Tamahawk_Gender">masculine</string>

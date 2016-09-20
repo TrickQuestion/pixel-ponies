@@ -174,7 +174,7 @@
   <string name="Shuriken_Name">shuriken</string>
   <string name="Shuriken_Info">Estas piezas de metal con forma de estrella y afiladas como cuchillas hacen un daño significativo al golpear a un enemigo. Pueden ser lanzados a mucha velocidad.</string>
   <string name="Shuriken_Gender">masculino</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">hacha arrojadiza</string>
   <string name="Tamahawk_Info">Esta hacha arrojadiza no no es demasiado pesada, pero aun así requiere bastante fuerza para ser usada efectivamente.</string>
   <string name="Tamahawk_Gender">masculino</string>

@@ -179,7 +179,7 @@
   <string name="Shuriken_Name">수리검</string>
   <string name="Shuriken_Info">목표에 명중 할 때 높은 확률로 별모양 금속과 날카로운 칼날이 상당한피해를 입힌다.</string>
   <string name="Shuriken_Gender">남성</string>
-  <!--STRINGS OF Tamahawk CLASS-->
+  <!--STRINGS OF Tomahawk CLASS-->
   <string name="Tamahawk_Name">토마호크</string>
   <string name="Tamahawk_Info">이 던지는 도끼는 무겁진 않지만 사용하는데 꽤 많은 힘이 필요하다.</string>
   <string name="Tamahawk_Gender">남성</string>

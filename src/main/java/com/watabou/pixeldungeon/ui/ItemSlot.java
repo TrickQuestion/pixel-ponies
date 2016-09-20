@@ -44,8 +44,8 @@ public class ItemSlot extends Button {
 	protected Text topRight;
 	protected Text bottomRight;
 	
-	private static final String TXT_STRENGTH	= ":%d";
-	private static final String TXT_TYPICAL_STR	= "%d?";
+	private static final String TXT_HONESTY	= ":%d";
+	private static final String TXT_TYPICAL_HONESTY	= "%d?";
 	
 	private static final String TXT_LEVEL	= "%+d";
 	
@@ -143,10 +143,9 @@ public class ItemSlot extends Button {
 		if (isArmor || isWeapon) {
 			
 			if (item.levelKnown || (isWeapon && !(item instanceof MeleeWeapon))) {
-				
-				int str = isArmor ? ((Armor)item).STR : ((Weapon)item).STR;
-				topRight.text( Utils.format( TXT_STRENGTH, str ) );
-				if (str > Dungeon.hero.effectiveSTR()) {
+				int honesty = isArmor ? ((Armor)item).honesty : ((Weapon)item).honesty;
+				topRight.text( Utils.format( TXT_HONESTY, honesty ) );
+				if (honesty > Dungeon.hero.effectiveHonesty()) {
 					topRight.hardlight( DEGRADED );
 				} else {
 					topRight.resetColor();
@@ -154,9 +153,9 @@ public class ItemSlot extends Button {
 				
 			} else {
 				
-				topRight.text( Utils.format( TXT_TYPICAL_STR, isArmor ? 
-					((Armor)item).typicalSTR() : 
-					((MeleeWeapon)item).typicalSTR() ) );
+				topRight.text( Utils.format( TXT_TYPICAL_HONESTY, isArmor ?
+					((Armor)item).typicalHonesty() :
+					((MeleeWeapon)item).typicalHonesty() ) );
 				topRight.hardlight( WARNING );
 				
 			}

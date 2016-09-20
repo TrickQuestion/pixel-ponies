@@ -65,7 +65,7 @@
   <string name="PotionOfPurity_Info">Ce réactif neutralisera rapidement tous les gaz dangereux dans la zone d\'effet. Le boire vous donnera une immunité temporaire à ce genre de gaz.</string>
   <string name="PotionOfPurity_Freshness">Vous sentez une pureté inhabituelle dans l\'air.</string>
   <string name="PotionOfPurity_NoSmell">Vous ne sentez plus rien !</string>
-  <!--STRINGS OF PotionOfStrength CLASS-->
+  <!--STRINGS OF PotionOfHonesty CLASS-->
   <string name="PotionOfStrength_Name">Potion de force </string>
   <string name="PotionOfStrength_Info">Ce puissant liquide parcourra vos muscles, augmentant en permanence votre force d\'un point.</string>
   <string name="PotionOfStrength_Apply">Votre corps acquiert une force nouvelle.</string>

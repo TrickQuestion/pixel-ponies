@@ -36,7 +36,7 @@ import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.food.Food;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
+import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.quest.CorpseDust;
 import com.watabou.pixeldungeon.items.wands.Wand;
 import com.watabou.pixeldungeon.items.wands.WandOfAmok;
@@ -320,7 +320,7 @@ public class WandMaker extends NPC {
 				image = ItemSpriteSheet.SEED_ROTBERRY;
 				
 				plantClass = Rotberry.class;
-				alchemyClass = PotionOfStrength.class;
+				alchemyClass = PotionOfHonesty.class;
 			}
 			
 			@Override
