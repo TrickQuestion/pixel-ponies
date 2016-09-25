@@ -32,64 +32,71 @@ import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Ring extends Artifact {
+public abstract class Ring extends Artifact {
 
 	private static final String TXT_IDENTIFY = Game.getVar(R.string.Ring_Identify);
-	
-	private static final Class<?>[] rings = { 
-		RingOfMending.class, 
-		RingOfDetection.class, 
-		RingOfShadows.class,
-		RingOfPower.class,
-		RingOfHerbalism.class,
-		RingOfAccuracy.class,
-		RingOfEvasion.class,
-		RingOfSatiety.class,
-		RingOfHaste.class,
-		RingOfHaggler.class,
-		RingOfElements.class,
-		RingOfThorns.class
+	private static final String TXT_TO_STRING = Game.getVar(R.string.Ring_ToString);
+	private static final String TXT_UNKNOWN_TO_STRING = Game.getVar(R.string.Ring_UnknownToString);
+
+	private static final Class<?>[] rings = {
+			RingOfMending.class,
+			RingOfDetection.class,
+			RingOfShadows.class,
+			RingOfPower.class,
+			RingOfHerbalism.class,
+			RingOfAccuracy.class,
+			RingOfEvasion.class,
+			RingOfSatiety.class,
+			RingOfHaste.class,
+			RingOfHaggler.class,
+			RingOfElements.class,
+			RingOfThorns.class
 	};
 	private static final String[] gems = Game.getVars(R.array.Ring_Gems);
 	private static final Integer[] images = {
-		ItemSpriteSheet.RING_DIAMOND, 
-		ItemSpriteSheet.RING_OPAL, 
-		ItemSpriteSheet.RING_GARNET, 
-		ItemSpriteSheet.RING_RUBY, 
-		ItemSpriteSheet.RING_AMETHYST, 
-		ItemSpriteSheet.RING_TOPAZ, 
-		ItemSpriteSheet.RING_ONYX, 
-		ItemSpriteSheet.RING_TOURMALINE, 
-		ItemSpriteSheet.RING_EMERALD, 
-		ItemSpriteSheet.RING_SAPPHIRE, 
-		ItemSpriteSheet.RING_QUARTZ, 
-		ItemSpriteSheet.RING_AGATE};
-	
+			ItemSpriteSheet.RING_DIAMOND,
+			ItemSpriteSheet.RING_OPAL,
+			ItemSpriteSheet.RING_GARNET,
+			ItemSpriteSheet.RING_RUBY,
+			ItemSpriteSheet.RING_AMETHYST,
+			ItemSpriteSheet.RING_TOPAZ,
+			ItemSpriteSheet.RING_ONYX,
+			ItemSpriteSheet.RING_TOURMALINE,
+			ItemSpriteSheet.RING_EMERALD,
+			ItemSpriteSheet.RING_SAPPHIRE,
+			ItemSpriteSheet.RING_QUARTZ,
+			ItemSpriteSheet.RING_AGATE};
+
 	private static ItemStatusHandler<Ring> handler;
-	
+
 	private String gem;
-	
+
 	private int ticksToKnow = 200;
-	
+
+	private int tier;
+
 	@SuppressWarnings("unchecked")
 	public static void initGems() {
 		handler = new ItemStatusHandler<>((Class<? extends Ring>[]) rings, gems, images);
 	}
-	
-	public static void save( Bundle bundle ) {
-		handler.save( bundle );
+
+	public static void save(Bundle bundle) {
+		handler.save(bundle);
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public static void restore( Bundle bundle ) {
+	public static void restore(Bundle bundle) {
 		handler = new ItemStatusHandler<>((Class<? extends Ring>[]) rings, gems, images, bundle);
 	}
-	
-	public Ring() {
-		super();
+
+	public Ring(String tierString) {
+		super(true);
 		syncGem();
+		this.tier = Integer.parseInt(tierString);
+		this.minAttribute = this.typicalMinimum();
 	}
-	
+
+
 	public void syncGem() {
 		image	= handler.image( this );
 		gem		= handler.label( this );
@@ -99,6 +106,7 @@ public class Ring extends Artifact {
 	public Item upgrade() {
 		
 		super.upgrade();
+		this.minAttribute--;
 		
 		if (buff != null) {
 			
@@ -111,7 +119,27 @@ public class Ring extends Artifact {
 		
 		return this;
 	}
-	
+
+	@Override
+	public Item degrade() {
+
+		super.degrade();
+		this.minAttribute++;
+
+		if (buff != null) {
+
+			Char owner = buff.target;
+			buff.detach();
+			if ((buff = buff()) != null) {
+				buff.attachTo( owner );
+			}
+		}
+
+		return this;
+	}
+
+	public int typicalMinimum() { return this.tier == 0 ? 0 : this.tier * 2 + 1; }
+
 	public boolean isKnown() {
 		return handler.isKnown( this );
 	}
@@ -130,19 +158,47 @@ public class Ring extends Artifact {
 	}
 	
 	@Override
-	public String desc() {
-		return Utils.format(Game.getVar(R.string.Ring_Info), gem);
-	}
-	
-	@Override
 	public String info() {
-		if (isEquipped( Dungeon.hero )) {
-			return Utils.format(Game.getVar(R.string.Ring_Info3a), desc(), name(), (cursed ? Game.getVar(R.string.Ring_Info3b) : "."));
-		} else if (cursed && cursedKnown) {
-			return Utils.format(Game.getVar(R.string.Ring_Info4), desc(), name());
+
+		final String p = "\n\n";
+
+		StringBuilder info = new StringBuilder( );
+
+		String typical  = Game.getVar(R.string.Ring_Info_Typical);
+		String upgraded = Game.getVar(R.string.Ring_Info_Upgraded);
+		String degraded = Game.getVar(R.string.Ring_Info_Degraded);
+
+		if (!isKnown()) {
+			info.append(Utils.format(Game.getVar(R.string.Ring_Info_Unknown), gem));
 		} else {
-			return desc();
+			info.append(this.desc());
+			info.append(p);
+
+			String quality = levelKnown && level() != 0 ? (level() > 0 ? upgraded : degraded) : typical;
+			info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.Ring_Info_Known), this.name, quality, this.tier)));
+			info.append(" ");
+			if (levelKnown && this.minAttribute > Dungeon.hero.effectiveMagic()) {
+				info.append(Game.getVar(R.string.Ring_Is_Too_Magical));
+			} else if (isKnown() && typicalMinimum() > Dungeon.hero.effectiveMagic()){
+				info.append(Game.getVar(R.string.Ring_Maybe_Too_Magical));
+			}
 		}
+
+		if (isEquipped( Dungeon.hero )) {
+			info.append(p);
+			if (Dungeon.hero.belongings.weapon == this) {
+				info.append(Utils.format(Game.getVar(R.string.Ring_Info_Horn), name()));
+			} else if (Dungeon.hero.belongings.mane == this) {
+				info.append(Utils.format(Game.getVar(R.string.Ring_Info_Mane), name()));
+			} else if (Dungeon.hero.belongings.tail == this) {
+				info.append(Utils.format(Game.getVar(R.string.Ring_Info_Tail), name()));
+			}
+			info.append(Utils.format((cursed ? Game.getVar(R.string.Ring_Info_Cursed) : ".")));
+		} else if (cursed && cursedKnown) {
+			info.append(Utils.format(Game.getVar(R.string.Ring_Info_Danger), name()));
+		}
+
+		return info.toString();
 	}
 	
 	@Override
@@ -163,7 +219,7 @@ public class Ring extends Artifact {
 	
 	@Override
 	public Item random() {
-		level(Random.Int( 1, 3 ));
+		level(Random.Int( 0, 2 ));
 		if (Random.Float() < 0.3f) {
 			level(-level());
 			cursed = true;
@@ -172,18 +228,18 @@ public class Ring extends Artifact {
 	}
 	
 	public static boolean allKnown() {
-		return handler.known().size() == rings.length - 2;
+		return handler.known().size() == rings.length;
 	}
 	
 	@Override
-	public int price() {
+	public int price() {  // TODO: Fix this
 		int price = 80;
 		if (cursed && cursedKnown) {
 			price /= 2;
 		}
 		if (levelKnown) {
-			if (level() > 0) {
-				price *= (level() + 1);
+			if (level() >= 0) {
+				price *= (level() + 2);
 			} else if (level() < 0) {
 				price /= (1 - level());
 			}
@@ -196,21 +252,24 @@ public class Ring extends Artifact {
 	
 	public class RingBuff extends ArtifactBuff {
 		
-		private final String TXT_KNOWN = Game.getVar(R.string.Ring_BuffKnown); 
+//		private final String TXT_KNOWN = Game.getVar(R.string.Ring_BuffKnown);
 		
 		public int level;
+
 		public RingBuff() {
-			level = Ring.this.level();
+			level = Ring.this.level() + 1;
 		}
+		// TODO: Might break Lv. 0 rings?
 		
 		@Override
 		public boolean attachTo( Char target ) {
-	
-			if (target instanceof Hero && ((Hero)target).heroClass == HeroClass.ROGUE && !isKnown()) {
-				setKnown();
-				GLog.i( TXT_KNOWN, name() );
-				Badges.validateItemLevelAquired( Ring.this );
-			}
+
+//			TODO: Keep this logic here in case we want to add it for another subclass later.
+//			if (target instanceof Hero && ((Hero)target).heroClass == HeroClass.ROGUE && !isKnown()) {
+//				setKnown();
+//				GLog.i( TXT_KNOWN, name() );
+//				Badges.validateItemLevelAquired( Ring.this );
+//			}
 			
 			return super.attachTo(target);
 		}
@@ -229,5 +288,16 @@ public class Ring extends Artifact {
 			
 			return true;
 		}
+
+
+		@Override
+		public String toString() {
+			if (isKnown()) {
+				return Utils.format( TXT_TO_STRING, super.toString(), minAttribute );
+			} else {
+				return Utils.format( TXT_UNKNOWN_TO_STRING, super.toString() );
+			}
+		}
 	}
+
 }

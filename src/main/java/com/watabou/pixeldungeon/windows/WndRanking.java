@@ -250,11 +250,11 @@ public class WndRanking extends WndTabbed {
 			if (stuff.armor != null) {
 				addItem( stuff.armor );
 			}
-			if (stuff.ring1 != null) {
-				addItem( stuff.ring1 );
+			if (stuff.mane != null) {
+				addItem( stuff.mane );
 			}
-			if (stuff.ring2 != null) {
-				addItem( stuff.ring2 );
+			if (stuff.tail != null) {
+				addItem( stuff.tail );
 			}
 			
 			for(int i = 0;i<3;++i) {

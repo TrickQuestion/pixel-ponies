@@ -37,7 +37,7 @@ public class Javelin extends MissileWeapon {
 
 		image = ItemSpriteSheet.JAVELIN;
 		
-		honesty = 8;
+		minAttribute = 8;
 		
 		MIN = 2;
 		MAX = 15;

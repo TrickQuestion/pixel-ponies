@@ -290,8 +290,8 @@ public class Item implements Bundlable {
 	public boolean isEquipped(Hero hero) {
 		return this.equals(hero.belongings.weapon) ||
 				this.equals(hero.belongings.armor) ||
-				this.equals(hero.belongings.ring1) ||
-				this.equals(hero.belongings.ring2);
+				this.equals(hero.belongings.mane) ||
+				this.equals(hero.belongings.tail);
 	}
 
 	public void removeItemFrom(Hero hero) {

@@ -23,8 +23,11 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.armor.Armor;
 import com.watabou.pixeldungeon.items.rings.Artifact;
+import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
+import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
@@ -43,10 +46,15 @@ public class ItemSlot extends Button {
 	protected Text topLeft;
 	protected Text topRight;
 	protected Text bottomRight;
-	
-	private static final String TXT_HONESTY	= ":%d";
-	private static final String TXT_TYPICAL_HONESTY	= "%d?";
-	
+
+	private static final String TXT_HONESTY	= "H:%d";
+	private static final String TXT_TYPICAL_HONESTY	= "H:%d?";
+	private static final String TXT_LOYALTY = "L:%d";
+	private static final String TXT_TYPICAL_LOYALTY	= "L:%d?";
+	private static final String TXT_MAGIC = "M:%d";
+	private static final String TXT_TYPICAL_MAGIC	= "M:%d?";
+	private static final String TXT_UNKNOWN_MAGIC	= "M:?";
+
 	private static final String TXT_LEVEL	= "%+d";
 	
 	// Special items for containers
@@ -118,7 +126,7 @@ public class ItemSlot extends Button {
 	
 	public void item( Item item ) {
 		if (item == null) {
-			
+
 			active = false;
 
 			icon.setVisible(false);
@@ -127,40 +135,96 @@ public class ItemSlot extends Button {
 			bottomRight.setVisible(false);
 			return;
 		}
-		
+
 		active = true;
 		icon.setVisible(true);
 		topLeft.setVisible(true);
 		topRight.setVisible(true);
 		bottomRight.setVisible(true);
-		
-		icon.view(item.imageFile(), item.image(), item.glowing() );
-		
-		topLeft.text( item.status()  );
-		
+
+		icon.view(item.imageFile(), item.image(), item.glowing());
+
+		topLeft.text(item.status());
+
 		boolean isArmor = item instanceof Armor;
 		boolean isWeapon = item instanceof Weapon;
-		if (isArmor || isWeapon) {
-			
-			if (item.levelKnown || (isWeapon && !(item instanceof MeleeWeapon))) {
-				int honesty = isArmor ? ((Armor)item).honesty : ((Weapon)item).honesty;
-				topRight.text( Utils.format( TXT_HONESTY, honesty ) );
-				if (honesty > Dungeon.hero.effectiveHonesty()) {
-					topRight.hardlight( DEGRADED );
+		boolean isBow = item instanceof Bow;
+		boolean isRing = item instanceof Ring;
+
+		if (isBow) {
+
+			if (item.levelKnown) {
+				topRight.text(Utils.format(TXT_LOYALTY, ((Bow) item).minAttribute()));
+				if (((Bow) item).minAttribute() > Dungeon.hero.effectiveLoyalty()) {
+					topRight.hardlight(DEGRADED);
 				} else {
 					topRight.resetColor();
 				}
-				
 			} else {
-				
-				topRight.text( Utils.format( TXT_TYPICAL_HONESTY, isArmor ?
-					((Armor)item).typicalHonesty() :
-					((MeleeWeapon)item).typicalHonesty() ) );
-				topRight.hardlight( WARNING );
-				
+				topRight.text(Utils.format(TXT_TYPICAL_LOYALTY, ((MeleeWeapon) item).typicalMinimum()));
+				topRight.hardlight(WARNING);
 			}
 			topRight.measure();
-			
+
+		} else if (item instanceof MissileWeapon) {
+
+			topRight.text(Utils.format(TXT_LOYALTY, ((MissileWeapon) item).minAttribute()));
+			if (((MissileWeapon) item).minAttribute() > Dungeon.hero.effectiveLoyalty()) {
+				topRight.hardlight(DEGRADED);
+			} else {
+				topRight.resetColor();
+			}
+			topRight.measure();
+
+		} else if (item instanceof MeleeWeapon) {
+
+			if (item.levelKnown) {
+				topRight.text(Utils.format(TXT_HONESTY, ((MeleeWeapon) item).minAttribute()));
+				if (((MeleeWeapon) item).minAttribute() > Dungeon.hero.effectiveHonesty()) {
+					topRight.hardlight(DEGRADED);
+				} else {
+					topRight.resetColor();
+				}
+			} else {
+				topRight.text(Utils.format(TXT_TYPICAL_HONESTY, ((MeleeWeapon) item).typicalMinimum()));
+				topRight.hardlight(WARNING);
+			}
+			topRight.measure();
+
+		} else if (isArmor) {
+
+			if (item.levelKnown) {
+				topRight.text(Utils.format(TXT_HONESTY, ((Armor) item).minHonesty));
+				if (((Armor) item).minHonesty > Dungeon.hero.effectiveHonesty()) {
+					topRight.hardlight(DEGRADED);
+				} else {
+					topRight.resetColor();
+				}
+			} else {
+				topRight.text(Utils.format(TXT_TYPICAL_HONESTY, ((Armor) item).typicalHonesty()));
+				topRight.hardlight(WARNING);
+			}
+			topRight.measure();
+
+		} else if (isRing) {
+
+			if (item.levelKnown) {
+				topRight.text(Utils.format(TXT_MAGIC, ((Ring) item).minAttribute()));
+				if (((Ring) item).minAttribute() > Dungeon.hero.effectiveMagic()) {
+					topRight.hardlight(DEGRADED);
+				} else {
+					topRight.resetColor();
+				}
+
+			} else if (((Ring) item).isKnown()){
+				topRight.text(Utils.format(TXT_TYPICAL_MAGIC, ((Ring) item).typicalMinimum()));
+				topRight.hardlight(WARNING);
+			} else {
+				topRight.text(Utils.format(TXT_UNKNOWN_MAGIC));
+				topRight.hardlight(WARNING);
+			}
+			topRight.measure();
+
 		} else {
 			
 			topRight.text( null );

@@ -50,10 +50,10 @@ public class Bones {
 			item = Dungeon.hero.belongings.armor;
 			break;
 		case 2:
-			item = Dungeon.hero.belongings.ring1;
+			item = Dungeon.hero.belongings.mane;
 			break;
 		case 3:
-			item = Dungeon.hero.belongings.ring2;
+			item = Dungeon.hero.belongings.tail;
 			break;
 		}
 		if (item == null || (item instanceof Artifact && !(item instanceof Ring))) {

@@ -32,6 +32,11 @@ import com.watabou.utils.Random;
 
 public class RingOfElements extends Ring {
 
+	public RingOfElements() {
+		super(Game.getVar(R.string.RingOfElements_Tier));
+	}
+
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Resistance();

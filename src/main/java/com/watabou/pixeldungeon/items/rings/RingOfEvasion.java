@@ -21,7 +21,12 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 
 public class RingOfEvasion extends Ring {
-	
+
+
+	public RingOfEvasion() {
+		super(Game.getVar(R.string.RingOfEvasion_Tier));
+	}
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Evasion();

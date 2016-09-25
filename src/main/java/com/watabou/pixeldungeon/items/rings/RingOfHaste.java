@@ -21,7 +21,11 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 
 public class RingOfHaste extends Ring {
-	
+
+	public RingOfHaste() {
+		super(Game.getVar(R.string.RingOfHaste_Tier));
+	}
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Haste();
@@ -31,7 +35,7 @@ public class RingOfHaste extends Ring {
 	public String desc() {
 		return isKnown() ? Game.getVar(R.string.RingOfHaste_Info) : super.desc();
 	}
-	
+
 	public class Haste extends RingBuff {
 	}
 }

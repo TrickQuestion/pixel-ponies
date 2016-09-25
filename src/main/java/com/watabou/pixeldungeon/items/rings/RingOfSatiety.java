@@ -21,7 +21,12 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 
 public class RingOfSatiety extends Ring {
-	
+
+	public RingOfSatiety() {
+		super(Game.getVar(R.string.RingOfSatiety_Tier));
+	}
+
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Satiety();

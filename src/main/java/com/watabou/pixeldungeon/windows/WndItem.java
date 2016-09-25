@@ -35,10 +35,10 @@ public class WndItem extends Window {
 	private static final float BUTTON_HEIGHT	= 16;
 	
 	private static final float GAP	= 2;
-	
+
 	private static final int WIDTH_P = 120;
 	private static final int WIDTH_L = 160;
-	
+
 	public WndItem( final WndBag owner, final Item item ) {	
 		
 		super();

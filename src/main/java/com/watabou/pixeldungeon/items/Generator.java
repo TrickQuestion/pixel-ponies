@@ -366,7 +366,7 @@ public class Generator {
 		a1.random();
 		a2.random();
 		
-		return Math.abs( curStr - a1.honesty) < Math.abs( curStr - a2.honesty) ? a1 : a2;
+		return Math.abs( curStr - a1.minHonesty) < Math.abs( curStr - a2.minHonesty) ? a1 : a2;
 	}
 	
 	public static Weapon randomWeapon() throws Exception {
@@ -381,6 +381,6 @@ public class Generator {
 		w1.random();
 		w2.random();
 		
-		return Math.abs( curStr - w1.honesty ) < Math.abs( curStr - w2.honesty ) ? w1 : w2;
+		return Math.abs( curStr - w1.minAttribute ) < Math.abs( curStr - w2.minAttribute ) ? w1 : w2;
 	}
 }

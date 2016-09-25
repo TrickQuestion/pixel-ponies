@@ -34,7 +34,9 @@ import com.watabou.pixeldungeon.items.food.Ration;
 import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
+import com.watabou.pixeldungeon.items.rings.RingOfHaste;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
+import com.watabou.pixeldungeon.items.rings.RingOfThorns;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfTeleportation;
@@ -57,6 +59,7 @@ public enum HeroClass {
 			Game.getVars(R.array.HeroClass_EarthPonyPerks),
 			Gender.MASCULINE,
 			false,
+			false,
 			new HeroSubClass[]
 					{ HeroSubClass.FARMER, HeroSubClass.BARD, HeroSubClass.NONE }
 	),
@@ -64,6 +67,7 @@ public enum HeroClass {
 			Game.getVar(R.string.HeroClass_Mag),
 			Game.getVars(R.array.HeroClass_MagPerks),
 			Gender.MASCULINE,
+			true,
 			false,
 			new HeroSubClass[]
 					{ HeroSubClass.BATTLEMAGE, HeroSubClass.WARLOCK, HeroSubClass.NONE }
@@ -73,6 +77,7 @@ public enum HeroClass {
 			Game.getVars(R.array.HeroClass_RogPerks),
 			Gender.MASCULINE,
 			false,
+			false,
 			new HeroSubClass[]
 					{ HeroSubClass.FREERUNNER, HeroSubClass.ASSASSIN, HeroSubClass.NONE }
 	),
@@ -80,6 +85,7 @@ public enum HeroClass {
 			Game.getVar(R.string.HeroClass_Hun),
 			Game.getVars(R.array.HeroClass_HunPerks),
 			Gender.FEMININE,
+			false,
 			false,
 			new HeroSubClass[]
 					{ HeroSubClass.SNIPER, HeroSubClass.WARDEN, HeroSubClass.NONE }
@@ -89,6 +95,7 @@ public enum HeroClass {
 			Game.getVars(R.array.HeroClass_ElfPerks),
 			Gender.MASCULINE,
 			false,
+			false,
 			new HeroSubClass[]
 					{ HeroSubClass.SCOUT, HeroSubClass.SHAMAN, HeroSubClass.NONE }
 	);
@@ -96,13 +103,16 @@ public enum HeroClass {
 	private final String title;
 	private final String[] perks;
 	private final Gender gender;
+	private final boolean hasHorn;
 	private final boolean hasWings;
 	private HeroSubClass[] subClasses;
 
-	HeroClass(String title, String[] perks, Gender gender, boolean hasWings, HeroSubClass[] subClasses) {
+	HeroClass(String title, String[] perks, Gender gender, boolean hasHorn, boolean hasWings,
+			  HeroSubClass[] subClasses) {
 		this.title = title;
 		this.perks = perks;
 		this.gender = gender;
+		this.hasHorn = hasHorn;
 		this.hasWings = hasWings;
 		this.subClasses = subClasses;
 	}
@@ -159,6 +169,10 @@ public enum HeroClass {
 
 		hero.collect(new BlackSkull());
 		hero.collect(new BladeOfSouls().identify());
+
+		hero.collect(new RingOfShadows().degrade());
+		hero.collect(new RingOfThorns());
+		hero.collect(new RingOfHaste().upgrade());
 
 		hero.ht(1000);
 		hero.hp(1000);
@@ -219,11 +233,11 @@ public enum HeroClass {
 
 	private static void initRogue(Hero hero) {
 		(hero.belongings.weapon = new Dagger()).identify();
-		(hero.belongings.ring1 = new RingOfShadows()).upgrade().identify();
+		(hero.belongings.mane = new RingOfShadows()).upgrade().identify();
 
 		hero.collect(new Dart(8).identify());
 
-		hero.belongings.ring1.activate(hero);
+		hero.belongings.mane.activate(hero);
 
 		QuickSlot.selectItem(Dart.class, 0);
 
@@ -286,6 +300,8 @@ public enum HeroClass {
 	public Gender gender() {
 		return gender;
 	}
+
+	public boolean hasHorn() { return hasHorn; }
 
 	public boolean hasWings() { return hasWings; }
 

@@ -21,7 +21,11 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 
 public class RingOfPower extends Ring {
-	
+
+	public RingOfPower() {
+		super(Game.getVar(R.string.RingOfPower_Tier));
+	}
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Power();

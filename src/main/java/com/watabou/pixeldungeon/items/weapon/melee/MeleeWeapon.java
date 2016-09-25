@@ -35,7 +35,7 @@ public class MeleeWeapon extends Weapon {
 		ACU = acu;
 		DLY = dly;
 		
-		honesty = typicalHonesty();
+		minAttribute = typicalMinimum();
 		
 		MIN = min();
 		MAX = max();
@@ -55,7 +55,7 @@ public class MeleeWeapon extends Weapon {
 	}
 	
 	public Item upgrade( boolean enchant ) {
-		honesty--;
+		minAttribute--;
 		MIN++;
 		MAX += tier;
 		
@@ -68,13 +68,13 @@ public class MeleeWeapon extends Weapon {
 	
 	@Override
 	public Item degrade() {		
-		honesty++;
+		minAttribute++;
 		MIN--;
 		MAX -= tier;
 		return super.degrade();
 	}
 	
-	public int typicalHonesty() {
+	public int typicalMinimum() {
 		return 1 + tier * 2;
 	}
 	
@@ -95,9 +95,16 @@ public class MeleeWeapon extends Weapon {
 		if (levelKnown) {
 			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2a), (MIN + (MAX - MIN) / 2)));
 		} else {
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2b), (min() + (max() - min()) / 2), typicalHonesty()));
-			if (typicalHonesty() > Dungeon.hero.effectiveHonesty()) {
-				info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2c));
+			if (this instanceof Bow) {
+				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2d), (min() + (max() - min()) / 2), typicalMinimum()));
+				if (typicalMinimum() > Dungeon.hero.effectiveLoyalty()) {
+					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2e));
+				}
+			} else {
+				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2b), (min() + (max() - min()) / 2), typicalMinimum()));
+				if (typicalMinimum() > Dungeon.hero.effectiveHonesty()) {
+					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2c));
+				}
 			}
 		}
 
@@ -139,17 +146,24 @@ public class MeleeWeapon extends Weapon {
 
 		if (levelKnown && Dungeon.hero.belongings.backpack.items.contains( this )) {
 			info.append(p);
-			if (honesty > Dungeon.hero.effectiveHonesty()) {
-				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6a), name));
+			if (this instanceof Bow) {
+				if (minAttribute > Dungeon.hero.effectiveLoyalty()) {
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6c), name));
+				}
+			} else {
+				if (minAttribute > Dungeon.hero.effectiveHonesty()) {
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6a), name));
+				}
+				if (minAttribute < Dungeon.hero.effectiveHonesty()) {
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6b), name));
+				}
 			}
-			if (honesty < Dungeon.hero.effectiveHonesty()) {
-				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6b), name));
-			}
+
 		}
 		
 		if (isEquipped( Dungeon.hero )) {
 			info.append(p);
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info7a), name, (cursed ? Game.getVar(R.string.MeleeWeapon_Info7b) : "")) );
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info7a), name, (cursed ? Game.getVar(R.string.MeleeWeapon_Info7b) : ".")) );
 		} else {
 			if (cursedKnown && cursed) {
 				info.append(p);

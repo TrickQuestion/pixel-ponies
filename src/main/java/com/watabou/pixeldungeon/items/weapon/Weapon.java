@@ -54,10 +54,9 @@ public class Weapon extends KindOfWeapon {
 
 	private static final String TXT_IDENTIFY     = Game.getVar(R.string.Weapon_Identify);
 	private static final String TXT_INCOMPATIBLE = Game.getVar(R.string.Weapon_Incompatible);
-	private static final String TXT_TO_STRING    = "%s :%d";
+	private static final String TXT_NONBOW_TO_STRING    = "%s H:%d";
+	private static final String TXT_BOW_TO_STRING    = "%s L:%d";
 	
-	public int		honesty	= 3;
-	public int		loyalty = 3;
 	public float	ACU	= 1;
 	public float	DLY	= 1f;
 
@@ -112,24 +111,21 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public float accuracyFactor(Hero hero ) {
-		
-		int encumbrance = honesty - hero.effectiveHonesty();
-		
-		if (this instanceof MissileWeapon) {
-			switch (hero.heroClass) {
-			case EARTH_PONY:
-				encumbrance += 3;
-				break;
-			case HUNTRESS:
-				encumbrance -= 2;
-				break;
-			default:
+
+		int encumbrance = 0;
+		if (this instanceof MeleeWeapon) {
+			if (this instanceof Bow) {
+				encumbrance = minAttribute - hero.effectiveLoyalty();
+			} else {
+				encumbrance = minAttribute - hero.effectiveHonesty();
+				if (hero.heroClass == HeroClass.ELF) {
+					encumbrance += 3;
+				}
 			}
-		}
-		
-		if (this instanceof MeleeWeapon && !(this instanceof Bow)) {
-			if( hero.heroClass == HeroClass.ELF) {
-				encumbrance += 3;
+		} else {
+			encumbrance = minAttribute - hero.effectiveLoyalty();
+			if (hero.heroClass == HeroClass.HUNTRESS) {
+				encumbrance -= 2;
 			}
 		}
 		
@@ -141,11 +137,20 @@ public class Weapon extends KindOfWeapon {
 	@Override
 	public float speedFactor( Hero hero ) {
 
-		int encumbrance = honesty - hero.effectiveHonesty();
-		if (this instanceof MissileWeapon && hero.heroClass == HeroClass.HUNTRESS) {
-			encumbrance -= 2;
+		int encumbrance = 0;
+		if (this instanceof MeleeWeapon) {
+			if (this instanceof Bow) {
+				encumbrance = minAttribute - hero.effectiveLoyalty();
+			} else {
+				encumbrance = minAttribute - hero.effectiveHonesty();
+			}
+		} else {
+			encumbrance = minAttribute - hero.effectiveHonesty();
+			if (hero.heroClass == HeroClass.HUNTRESS) {
+				encumbrance -= 2;
+			}
 		}
-		
+
 		return 
 			(encumbrance > 0 ? (float)(DLY * Math.pow( 1.2, encumbrance )) : DLY) *
 			(imbue == Imbue.SPEED ? 0.6f : 1.0f);
@@ -155,12 +160,22 @@ public class Weapon extends KindOfWeapon {
 	public int damageRoll( Hero hero ) {
 		
 		int damage = super.damageRoll( hero );
-		
-		if ((hero.rangedWeapon != null) == (hero.heroClass == HeroClass.HUNTRESS)) {
-			int exStr = hero.effectiveHonesty() - honesty;
-			if (exStr > 0) {
-				damage += Random.IntRange( 0, exStr );
+		int bonus = 0;
+
+		if (this instanceof MeleeWeapon) {
+			if (this instanceof Bow) {
+				bonus = 0;
+			} else {
+				bonus = hero.effectiveHonesty() - minAttribute;
 			}
+		} else {
+			if (hero.heroClass == HeroClass.HUNTRESS) {
+				bonus = hero.effectiveLoyalty() - minAttribute;
+			}
+		}
+
+		if (bonus > 0) {
+			damage += Random.IntRange( 0, bonus );
 		}
 		
 		return damage;
@@ -183,7 +198,10 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public String toString() {
-		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), honesty ) : super.toString();
+		if (this instanceof Bow) {
+			return levelKnown ? Utils.format(TXT_BOW_TO_STRING, super.toString(), minAttribute) : super.toString();
+		}
+		return levelKnown ? Utils.format(TXT_NONBOW_TO_STRING, super.toString(), minAttribute) : super.toString();
 	}
 	
 	@Override

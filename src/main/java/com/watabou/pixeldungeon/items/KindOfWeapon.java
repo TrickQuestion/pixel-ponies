@@ -65,7 +65,8 @@ public class KindOfWeapon extends EquipableItem {
 				equipCursed( hero );
 				GLog.n( TXT_EQUIP_CURSED, name() );
 			}
-			
+			hero.updateLook();
+
 			hero.spendAndNext( TIME_TO_EQUIP );
 			return true;
 			
@@ -79,8 +80,10 @@ public class KindOfWeapon extends EquipableItem {
 	@Override
 	public boolean doUnequip( Hero hero, boolean collect, boolean single ) {
 		if (super.doUnequip( hero, collect, single )) {
-			
-			hero.belongings.weapon = null;
+
+			if (hero.belongings.weapon == this) {
+				hero.belongings.weapon = null;
+			}
 			return true;
 			
 		} else {

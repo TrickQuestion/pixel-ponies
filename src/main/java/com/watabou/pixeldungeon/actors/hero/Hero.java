@@ -275,7 +275,7 @@ public class Hero extends Char {
 
 	private static final String ATTACK = "attackSkill";
 	private static final String DEFENSE = "defenseSkill";
-    private static final String HONESTY = "honesty";
+    private static final String HONESTY = "minHonesty";
     private static final String LOYALTY = "loyalty";
     private static final String LAUGHTER = "laughter";
     private static final String GENEROSITY = "generosity";
@@ -444,7 +444,7 @@ public class Hero extends Char {
 			evasion *= 1.2;
 		}
 
-		int aEnc = belongings.armor != null ? belongings.armor.honesty - effectiveHonesty() : 0;
+		int aEnc = belongings.armor != null ? belongings.armor.minHonesty - effectiveHonesty() : 0;
 
 		if (aEnc > 0) {
 			return (int) (defenseSkill * evasion / Math.pow(1.5, aEnc));
@@ -492,7 +492,7 @@ public class Hero extends Char {
 	@Override
 	public float speed() {
 
-		int aEnc = belongings.armor != null ? belongings.armor.honesty - effectiveHonesty() : 0;
+		int aEnc = belongings.armor != null ? belongings.armor.minHonesty - effectiveHonesty() : 0;
 		if (aEnc > 0) {
 
 			return (float) (super.speed() * Math.pow(1.3, -aEnc));

@@ -77,11 +77,13 @@
     <!-- STRINGS OF MeleeWeapon CLASS -->
     <string name="MeleeWeapon_Info1a">This %1$s is %2$s tier-%3$d melee weapon.</string>
     <string name="MeleeWeapon_Info1b">a</string>
-    <string name="MeleeWeapon_Info1c">a upgraded</string>
-    <string name="MeleeWeapon_Info1d">an degraded</string>
+    <string name="MeleeWeapon_Info1c">an upgraded</string>
+    <string name="MeleeWeapon_Info1d">a degraded</string>
     <string name="MeleeWeapon_Info2a">Its average damage is %d points per hit.</string>
     <string name="MeleeWeapon_Info2b">Its typical average damage is %1$d points per hit and usually it requires %2$d points of Honesty.</string>
     <string name="MeleeWeapon_Info2c">This weapon is probably too heavy for you.</string>
+    <string name="MeleeWeapon_Info2d">Its typical average damage is %1$d points per hit and usually it requires %2$d points of Loyalty.</string>
+    <string name="MeleeWeapon_Info2e">This weapon is probably too unwieldy for you.</string>
     <string name="MeleeWeapon_Info3a">This is a rather %s weapon.</string>
     <string name="MeleeWeapon_Info3b">fast</string>
     <string name="MeleeWeapon_Info3c">slow</string>
@@ -94,6 +96,7 @@
     <string name="MeleeWeapon_Info5">It is enchanted.</string>
     <string name="MeleeWeapon_Info6a">Because of your inadequate Honesty the accuracy and speed of your attack with this %s is decreased.</string>
     <string name="MeleeWeapon_Info6b">Because of your excess Honesty the damage of your attack with this %s is increased.</string>
+    <string name="MeleeWeapon_Info6c">Because of your inadequate Loyalty the accuracy and speed of your attack with this %s is decreased.</string>
     <string name="MeleeWeapon_Info7a">You hold the %1$s at the ready%2$s.</string>
     <string name="MeleeWeapon_Info7b">, and because it is cursed, you are powerless to let go</string>
     <string name="MeleeWeapon_Info7c">You can feel a malevolent magic lurking within %s.</string>
@@ -164,8 +167,8 @@
     <string name="MissileWeapon_No">No, I changed my mind</string>
     <string name="MissileWeapon_Sure">Do you really want to equip it as a melee weapon?</string>
     <string name="MissileWeapon_Info1">\n\nAverage damage of this weapon equals to %d points per hit.</string>
-    <string name="MissileWeapon_Info2">Because of your inadequate Honesty the accuracy and speed of your attack with this %s is decreased.</string>
-    <string name="MissileWeapon_Info3">Because of your excess Honesty the damage of your attack with this %s is increased.</string>
+    <string name="MissileWeapon_Info2">Because of your inadequate Loyalty the accuracy and speed of your attack with this %s is decreased.</string>
+    <string name="MissileWeapon_Info3">Because of your excess Loyalty the damage of your attack with this %s is increased.</string>
     <string name="MissileWeapon_Info4">\n\nYou hold the %s at the ready.</string>
 
     <!-- STRINGS OF Boomerang CLASS -->
@@ -199,9 +202,9 @@
     <string name="Shuriken_Gender">masculine</string>
     
     <!-- STRINGS OF Tomahawk CLASS -->
-    <string name="Tamohawk_Name">tomahawk</string>
-    <string name="Tamohawk_Info">This throwing axe is not that heavy, but it still requires significant Honesty to be used effectively.</string>
-    <string name="Tamohawk_Gender">masculine</string>
+    <string name="Tomahawk_Name">tomahawk</string>
+    <string name="Tomahawk_Info">This throwing axe is not that heavy, but it still requires significant Honesty to be used effectively.</string>
+    <string name="Tomahawk_Gender">masculine</string>
 
     <!-- STRINGS OF Kusarigama CLASS -->
     <string name="Kusarigama_Name">kusarigama</string>

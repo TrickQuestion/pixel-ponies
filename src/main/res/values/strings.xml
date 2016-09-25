@@ -143,6 +143,12 @@
     <!-- STRINGS OF WndClass CLASS -->
     <string name="WndClass_Mastery">Mastery</string>
 
+    <!-- STRINGS OF WndClass CLASS -->
+    <string name="WndHornManeTail_Horn">Wield on Horn</string>
+    <string name="WndHornManeTail_Mane">Equip on Mane</string>
+    <string name="WndHornManeTail_Tail">Equip on Tail</string>
+    <string name="WndHornManeTail_Cancel">Cancel</string>
+
     <!-- STRINGS OF WndError CLASS -->
     <string name="WndError_Title">ERROR</string>
 
@@ -263,6 +269,9 @@
     <!-- STRINGS OF EquipableItem CLASS -->
     <string name="EquipableItem_ACEquip">EQUIP</string>
     <string name="EquipableItem_ACUnequip">UNEQUIP</string>
+    <string name="EquipableItem_ACEquipHorn">EQUIP (HORN)</string>
+    <string name="EquipableItem_ACEquipMane">EQUIP (MANE)</string>
+    <string name="EquipableItem_ACEquipTail">EQUIP (TAIL)</string>
     <string name="EquipableItem_Unequip">You can\'t remove cursed %s!</string>
 
     <!-- STRINGS OF Heap CLASS -->

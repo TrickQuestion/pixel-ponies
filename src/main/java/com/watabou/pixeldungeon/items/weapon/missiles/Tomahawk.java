@@ -36,7 +36,7 @@ public class Tomahawk extends MissileWeapon {
 		super();
 		image = ItemSpriteSheet.TOMAHAWK;
 		
-		honesty = 10;
+		minAttribute = 10;
 		
 		MIN = 4;
 		MAX = 20;
@@ -52,7 +52,7 @@ public class Tomahawk extends MissileWeapon {
 	
 	@Override
 	public String desc() {
-		return Game.getVar(R.string.Tamohawk_Info);
+		return Game.getVar(R.string.Tomahawk_Info);
 	}
 	
 	@Override

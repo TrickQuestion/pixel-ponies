@@ -39,7 +39,7 @@ public class CurareDart extends MissileWeapon {
 		
 		image = ItemSpriteSheet.CURARE_DART;
 		
-		honesty = 7;
+		minAttribute = 7;
 		
 		MIN = 1;
 		MAX = 3;

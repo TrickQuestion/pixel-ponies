@@ -63,12 +63,12 @@ public class ScrollOfCurse extends Scroll {
 			if(getCurUser().belongings.weapon != null) {
 				getCurUser().belongings.weapon.cursed = true;
 			}
-			if(getCurUser().belongings.ring1 != null) {
-				getCurUser().belongings.ring1.cursed = true;
+			if(getCurUser().belongings.mane != null) {
+				getCurUser().belongings.mane.cursed = true;
 			}
 			
-			if(getCurUser().belongings.ring2 != null) {
-				getCurUser().belongings.ring2.cursed = true;
+			if(getCurUser().belongings.tail != null) {
+				getCurUser().belongings.tail.cursed = true;
 			}
 		}
 		

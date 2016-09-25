@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items;
 
+import com.nyrds.android.util.TrackedRuntimeException;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
@@ -30,12 +31,25 @@ public abstract class EquipableItem extends Item {
 
 	public static final String AC_EQUIP		= Game.getVar(R.string.EquipableItem_ACEquip);
 	public static final String AC_UNEQUIP	= Game.getVar(R.string.EquipableItem_ACUnequip);
+	public static final String AC_EQUIP_HORN = Game.getVar(R.string.EquipableItem_ACEquipHorn);
+	public static final String AC_EQUIP_MANE = Game.getVar(R.string.EquipableItem_ACEquipMane);
+	public static final String AC_EQUIP_TAIL = Game.getVar(R.string.EquipableItem_ACEquipTail);
 
 	private static final String TXT_UNEQUIP_CURSED	= Game.getVar(R.string.EquipableItem_Unequip);
-	
+
+	protected int minAttribute = 3;
+
+	public int minAttribute() {
+		return minAttribute;
+	}
+
 	@Override
 	public void execute( Hero hero, String action ) {
-		if (action.equals( AC_EQUIP )) {
+		if (action.equals( AC_EQUIP_HORN )) {
+			doEquipHorn(hero);
+		} else if (action.equals ( AC_EQUIP_MANE )) {
+			doEquipMane(hero);
+		} else if (action.equals( AC_EQUIP_TAIL ) || action.equals( AC_EQUIP )) {
 			doEquip( hero );
 		} else if (action.equals( AC_UNEQUIP )) {
 			doUnequip( hero, true );
@@ -73,6 +87,14 @@ public abstract class EquipableItem extends Item {
 	}
 	
 	public abstract boolean doEquip( Hero hero );
+
+	public boolean doEquipMane( Hero hero ) {
+		throw new TrackedRuntimeException("Only accessories should be equipped on mane!");
+	}
+
+	public boolean doEquipHorn( Hero hero ) {
+		throw new TrackedRuntimeException("Only accessories should be equipped on horn!");
+	}
 	
 	public boolean doUnequip( Hero hero, boolean collect, boolean single ) {
 		

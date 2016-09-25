@@ -4,7 +4,7 @@
     <!-- STRINGS OF Armor CLASS -->
     <string name="Armor_EquipCursed">your %s constricts around you painfully</string>
     <string name="Armor_Identify">you are now familiar enough with your %1$s to identify it. It is %2$s.</string>
-    <string name="Armor_ToString">%1$s :%2$d</string>
+    <string name="Armor_ToString">%1$s H:%2$d</string>
     <string name="Armor_Incompatible">Interaction of different types of magic has erased the glyph on this barding!</string>
     <string name="Armor_Info1">This %1$s provides damage absorption up to \"%2$d\"  points per attack.</string>
     <string name="Armor_Info2">\n\nBecause of your inadequate Honesty, your Loyalty and Laughter are decreased. </string>

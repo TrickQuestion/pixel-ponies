@@ -24,6 +24,10 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Item;
 
 public class RingOfThorns extends Ring {
+
+	public RingOfThorns() {
+		super(Game.getVar(R.string.RingOfThorns_Tier));
+	}
 	
 	@Override
 	protected RingBuff buff( ) {
@@ -32,7 +36,6 @@ public class RingOfThorns extends Ring {
 	
 	@Override
 	public Item random() {
-		level(+1);
 		return this;
 	}
 	

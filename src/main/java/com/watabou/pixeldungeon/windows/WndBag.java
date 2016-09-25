@@ -189,8 +189,8 @@ public class WndBag extends WndTabbed {
 		Belongings stuff = Dungeon.hero.belongings;
 		placeItem( stuff.weapon != null ? stuff.weapon : new Placeholder( ItemSpriteSheet.WEAPON ) );
 		placeItem( stuff.armor != null ? stuff.armor : new Placeholder( ItemSpriteSheet.ARMOR ) );
-		placeItem( stuff.ring1 != null ? stuff.ring1 : new Placeholder( ItemSpriteSheet.RING ) );
-		placeItem( stuff.ring2 != null ? stuff.ring2 : new Placeholder( ItemSpriteSheet.RING ) );
+		placeItem( stuff.mane != null ? stuff.mane : new Placeholder( ItemSpriteSheet.RING ) );
+		placeItem( stuff.tail != null ? stuff.tail : new Placeholder( ItemSpriteSheet.RING ) );
 		
 		// Unequipped items
 		for (Item item : container.items) {

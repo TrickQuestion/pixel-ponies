@@ -61,7 +61,7 @@ public class Armor extends EquipableItem {
 
 	public int tier;
 	
-	public int honesty;
+	public int minHonesty;
 	public int resistance;
 
 	private int hitsToKnow = 10;
@@ -73,7 +73,7 @@ public class Armor extends EquipableItem {
 
 		this.tier = tier;
 		
-		honesty = typicalHonesty();
+		minHonesty = typicalHonesty();
 		resistance = typicalResistance();
 		hasHelmet = false;
 		hasCollar = false;
@@ -170,7 +170,7 @@ public class Armor extends EquipableItem {
 		}
 		
 		resistance += tier;
-		honesty--;
+		minHonesty--;
 		
 		return super.upgrade();
 	}
@@ -178,7 +178,7 @@ public class Armor extends EquipableItem {
 	@Override
 	public Item degrade() {
 		resistance -= tier;
-		honesty++;
+		minHonesty++;
 		
 		return super.degrade();
 	}
@@ -202,7 +202,7 @@ public class Armor extends EquipableItem {
 	
 	@Override
 	public String toString() {
-		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), honesty) : super.toString();
+		return levelKnown ? Utils.format( TXT_TO_STRING, super.toString(), minHonesty) : super.toString();
 	}
 	
 	@Override
@@ -222,7 +222,7 @@ public class Armor extends EquipableItem {
 			info.append(p);
 			info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.Armor_Info1), name, Math.max(resistance, 0 ))));
 			
-			if (honesty > Dungeon.hero.effectiveHonesty()) {
+			if (minHonesty > Dungeon.hero.effectiveHonesty()) {
 				if (isEquipped( Dungeon.hero )) {
 					info.append(Game.getVar(R.string.Armor_Info2));
 				} else {

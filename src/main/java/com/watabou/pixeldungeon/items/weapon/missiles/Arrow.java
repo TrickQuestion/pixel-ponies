@@ -29,7 +29,7 @@ public abstract class Arrow extends MissileWeapon {
 
 	public Arrow(int number) {
 		super();
-		loyalty = 2;
+		minAttribute = 2;
 		quantity(number);
 
 	}
@@ -72,7 +72,7 @@ public abstract class Arrow extends MissileWeapon {
 			ACU = (float) (baseAcu * firedFrom.acuFactor());
 			DLY = (float) (baseDly * firedFrom.dlyFactor());
 
-			float sDelta = getCurUser().effectiveLoyalty() - firedFrom.loyalty;
+			float sDelta = getCurUser().effectiveLoyalty() - firedFrom.minAttribute();
 
 			if (sDelta < 0) {
 				DLY += sDelta * 0.5;

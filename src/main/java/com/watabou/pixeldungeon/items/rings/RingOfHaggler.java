@@ -24,7 +24,11 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Item;
 
 public class RingOfHaggler extends Ring {
-	
+
+	public RingOfHaggler() {
+		super(Game.getVar(R.string.RingOfHaggler_Tier));
+	}
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Haggling();

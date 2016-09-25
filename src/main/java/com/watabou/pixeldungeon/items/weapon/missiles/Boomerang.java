@@ -33,7 +33,7 @@ public class Boomerang extends MissileWeapon {
 		name = Game.getVar(R.string.Boomerang_Name);
 		image = ItemSpriteSheet.BOOMERANG;
 		
-		honesty = 3;
+		minAttribute = 3;
 		
 		MIN = 1;
 		MAX = 4;

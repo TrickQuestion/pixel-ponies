@@ -21,7 +21,12 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 
 public class RingOfShadows extends Ring {
-	
+
+	public RingOfShadows() {
+		super(Game.getVar(R.string.RingOfShadows_Tier));
+	}
+
+
 	@Override
 	protected RingBuff buff( ) {
 		return new Shadows();
