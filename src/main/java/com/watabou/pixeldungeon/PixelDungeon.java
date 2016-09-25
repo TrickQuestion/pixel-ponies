@@ -229,7 +229,9 @@ public class PixelDungeon extends Game {
 	}
 
 	public static int donated() {
-		return Preferences.INSTANCE.getInt(Preferences.KEY_DONATED, 0);
+		//Turn donations to always on
+		return 1;
+//		return Preferences.INSTANCE.getInt(Preferences.KEY_DONATED, 0);
 	}
 
 	public static void lastClass(int value) {

@@ -61,7 +61,8 @@ public class StatusPane extends Component {
 	private Compass compass;
 	
 	private MenuButton btnMenu;
-	private MenuButton btnHats;
+//  Removed hats button from layout
+//	private MenuButton btnHats;
 
 	private Hero hero;
 
@@ -91,13 +92,14 @@ public class StatusPane extends Component {
 		btnMenu = new MenuButton(new Image(Assets.getStatus(), 114, 3, 12, 11), WndGame.class);
 		add( btnMenu );
 
-		btnHats = new MenuButton(new Image(Assets.getStatus(), 114, 18, 12, 11), WndHats.class);
-
-		if(!Flavours.haveHats()) {
-			btnHats.enable(false);
-		}
-
-		add(btnHats);
+		//Remove the hats button. It's also been removed from the status assets Assets.getStatus()
+//		btnHats = new MenuButton(new Image(Assets.getStatus(), 114, 18, 12, 11), WndHats.class);
+//
+//		if(!Flavours.haveHats()) {
+//			btnHats.enable(false);
+//		}
+//
+//		add(btnHats);
 
 		avatar = hero.getHeroSprite().avatar();
 		add(avatar);
@@ -177,7 +179,7 @@ public class StatusPane extends Component {
 		buffs.setPos( 32, 11 );
 		
 		btnMenu.setPos( width - btnMenu.width(), 1 );
-		btnHats.setPos( width - btnHats.width(), btnMenu.bottom() );
+//		btnHats.setPos( width - btnHats.width(), btnMenu.bottom() );
 	}
 	
 	@Override
