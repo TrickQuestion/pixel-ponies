@@ -8,22 +8,23 @@
     <string name="Scroll_Blinded">You can\'t read a scroll while blinded</string>
 
     <string-array name="Scroll_Runes">
-        <item>KAUNAN</item>
-        <item>SOWILO</item>
-        <item>LAGUZ</item>
-        <item>YNGVI</item>
-        <item>GYFU</item>
-        <item>RAIDO</item>
-        <item>ISAZ</item>
-        <item>MANNAZ</item>
-        <item>NAUDIZ</item>
-        <item>BERKANAN</item>
-        <item>ODAL</item>
-        <item>TIWAZ</item>
-        <item>ANSUZ</item>
-        <item>IWAZ</item>
-        <item>ALGIZ</item>
-        <item>DAGAZ</item>
+        <item>PRIRPA</item>
+        <item>SANKEN</item>
+        <item>KURPA</item>
+        <item>ERSKI</item>
+        <item>SULAT</item>
+        <item>FARGEN</item>
+        <item>PLUMATU</item>
+        <item>ADOSHEN</item>
+        <item>BLUSKEN</item>
+        <item>SERENDA</item>
+        <item>KONDA</item>
+        <item>VAIOR</item>
+        <item>USKREN</item>
+        <item>YAVAYA</item>
+        <item>IBEKU</item>
+        <item>MALENKI</item>
+        <item>METAR</item>
     </string-array>
 
     <!-- STRINGS OF InventoryScroll CLASS -->
@@ -113,5 +114,11 @@
     <!-- STRINGS OF ScrollOfCurse CLASS -->
     <string name="ScrollOfCurse_Name">Scroll of Curse</string>
     <string name="ScrollOfCurse_Info">This scroll created especially to punish thieves stupid enough to try use magic they cant understand. Scroll magic totally useless and even harmful for regular adventurer, but valued pretty well by merchants.</string>
-    
+
+    <!-- STRINGS OF ScrollOfLoyalOath CLASS -->
+    <string name="ScrollOfLoyalOath_Name">Scroll of Loyal Oath</string>
+    <string name="ScrollOfLoyalOath_Info">The incantation on this scroll declares your undying loyalty toward your friends and those in need.</string>
+    <string name="ScrollOfLoyalOath_Apply">You can feel the wind around your pelt tugging you homeward.</string>
+    <string name="ScrollOfLoyalOath_StaApply">+1 Loyalty</string>
+
 </resources>

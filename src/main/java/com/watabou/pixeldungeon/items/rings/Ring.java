@@ -54,18 +54,18 @@ public abstract class Ring extends Artifact {
 	};
 	private static final String[] gems = Game.getVars(R.array.Ring_Gems);
 	private static final Integer[] images = {
-			ItemSpriteSheet.RING_DIAMOND,
+			ItemSpriteSheet.RING_PEARL,
 			ItemSpriteSheet.RING_OPAL,
 			ItemSpriteSheet.RING_GARNET,
 			ItemSpriteSheet.RING_RUBY,
 			ItemSpriteSheet.RING_AMETHYST,
-			ItemSpriteSheet.RING_TOPAZ,
-			ItemSpriteSheet.RING_ONYX,
-			ItemSpriteSheet.RING_TOURMALINE,
-			ItemSpriteSheet.RING_EMERALD,
+			ItemSpriteSheet.RING_JASPER,
+			ItemSpriteSheet.RING_BISMUTH,
+			ItemSpriteSheet.RING_LAPIS_LAZULI,
+			ItemSpriteSheet.RING_PERIDOT,
 			ItemSpriteSheet.RING_SAPPHIRE,
-			ItemSpriteSheet.RING_QUARTZ,
-			ItemSpriteSheet.RING_AGATE};
+			ItemSpriteSheet.RING_ROSE_QUARTZ,
+			ItemSpriteSheet.RING_RAINBOW_QUARTZ};
 
 	private static ItemStatusHandler<Ring> handler;
 

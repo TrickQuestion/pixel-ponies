@@ -17,18 +17,18 @@
 
 
     <string-array name="Ring_Gems">
-        <item>diamond</item>
+        <item>pearl</item>
         <item>opal</item>
         <item>garnet</item>
         <item>ruby</item>
         <item>amethyst</item>
-        <item>topaz</item>
-        <item>onyx</item>
-        <item>tourmaline</item>
-        <item>emerald</item>
+        <item>jasper</item>
+        <item>bismuth</item>
+        <item>lapis lazuli</item>
+        <item>peridot</item>
         <item>sapphire</item>
-        <item>quartz</item>
-        <item>agate</item>
+        <item>rose quartz</item>
+        <item>rainbow quartz</item>
     </string-array>
 
     <string name="Ring_Cursed_Mane">Your %s tightens around your forelock, making it impossible to remove!</string>

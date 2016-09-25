@@ -72,6 +72,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfChallenge;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfCurse;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfDomination;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMirrorImage;
@@ -197,8 +198,10 @@ public class Generator {
 			ScrollOfMirrorImage.class,
 			BlankScroll.class,
 			ScrollOfDomination.class,
-			ScrollOfCurse.class};
-		Category.SCROLL.probs = new float[]{ 30, 10, 15, 0, 10, 15, 12, 8, 8, 0, 4, 6, 10, 8, 6};
+			ScrollOfCurse.class,
+			ScrollOfLoyalOath.class
+		};
+		Category.SCROLL.probs = new float[]{ 30, 10, 15, 0, 10, 15, 12, 8, 8, 0, 4, 6, 10, 8, 6, 0};
 		
 		Category.POTION.classes = new Class<?>[]{ 
 			PotionOfHealing.class, 
@@ -356,7 +359,7 @@ public class Generator {
 	
 	public static Armor randomArmor() throws Exception {
 		
-		int curStr = Hero.STARTING_HONESTY + Dungeon.potionOfHonesty;
+		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
 		Category cat = Category.ARMOR;
 		
@@ -371,7 +374,7 @@ public class Generator {
 	
 	public static Weapon randomWeapon() throws Exception {
 		
-		int curStr = Hero.STARTING_HONESTY + Dungeon.potionOfHonesty;
+		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
 		Category cat = Category.WEAPON;
 		

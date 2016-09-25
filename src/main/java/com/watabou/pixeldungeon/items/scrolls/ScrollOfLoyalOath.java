@@ -17,39 +17,35 @@
  */
 package com.watabou.pixeldungeon.items.scrolls;
 
+import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
+import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
-import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.Item;
+import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.pixeldungeon.windows.WndBag;
 
-public class ScrollOfUpgrade extends InventoryScroll {
+public class ScrollOfLoyalOath extends Scroll {
 
-	private static final String TXT_LOOKS_BETTER = Game.getVar(R.string.ScrollOfUpgrade_LooksBetter);
+	@Override
+	protected void doRead() {
 
-	{
-		inventoryTitle = Game.getVar(R.string.ScrollOfUpgrade_InvTitle);
-		mode = WndBag.Mode.UPGRADEABLE;
+
+		setKnown();
+		Hero hero = getCurUser();
+
+		hero.setLoyalty(hero.loyalty() + 1);
+		hero.getSprite().showStatus( CharSprite.POSITIVE, Game.getVar(R.string.ScrollOfLoyalOath_StaApply));
+		GLog.p(Game.getVar(R.string.ScrollOfLoyalOath_Apply));
+
+		// Badges.validateLoyaltyAttained();  TODO: Maybe add this for each stat?
+
+		getCurUser().spendAndNext( TIME_TO_READ );
 	}
 
 	@Override
-	protected void onItemSelected( Item item ) {
-
-		ScrollOfRemoveCurse.uncurse( Dungeon.hero, item );
-		item.upgrade();
-
-		GLog.p( TXT_LOOKS_BETTER, item.name() );
-
-		Badges.validateItemLevelAquired( item );
-
-		upgrade( getCurUser() );
-	}
-
-	public static void upgrade( Hero hero ) {
-		hero.getSprite().emitter().start( Speck.factory( Speck.UP ), 0.2f, 3 );
+	public int price() {
+		return isKnown() ? 100 * quantity() : super.price();
 	}
 }

@@ -103,6 +103,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfChallenge;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfCurse;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfDomination;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMirrorImage;
@@ -217,6 +218,7 @@ public class ItemFactory {
 		registerItemClass(ScrollOfDomination.class);
 		registerItemClass(ScrollOfRemoveCurse.class);
 		registerItemClass(ScrollOfPsionicBlast.class);
+		registerItemClass(ScrollOfLoyalOath.class);
 		registerItemClass(PotionOfLevitation.class);
 		registerItemClass(PotionOfHonesty.class);
 		registerItemClass(PotionOfMindVision.class);

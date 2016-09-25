@@ -71,8 +71,9 @@ import java.util.HashSet;
 
 public class Dungeon {
 
-	public static int     potionOfHonesty;
+	public static int 	  potionsOfHonesty;
 	public static int     scrollsOfUpgrade;
+	public static int	  scrollsOfLoyalOath;
 	public static int     arcaneStyli;
 	public static boolean dewVial; // true if the dew vial can be spawned
 	public static int     transmutation; // depth number for a well of transmutation
@@ -123,8 +124,9 @@ public class Dungeon {
 		depth = 0;
 		gold(0);
 
-		potionOfHonesty = 0;
+		potionsOfHonesty = 0;
 		scrollsOfUpgrade = 0;
+		scrollsOfLoyalOath = 0;
 		arcaneStyli = 0;
 		dewVial = true;
 		transmutation = Random.IntRange(6, 14);
@@ -247,9 +249,14 @@ public class Dungeon {
 		Dungeon.level = level;
 	}
 
-	public static boolean posNeeded() {
+	public static boolean pohNeeded() {
 		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
-		return chance(quota, potionOfHonesty);
+		return chance(quota, potionsOfHonesty);
+	}
+
+	public static boolean soloNeeded() {
+		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
+		return chance (quota, scrollsOfLoyalOath);
 	}
 
 	public static boolean soeNeeded() {
@@ -282,6 +289,7 @@ public class Dungeon {
 	private static final String LEVEL      = "level";
 	private static final String P_HONESTY  = "potionsOfHonesty";
 	private static final String SOU        = "scrollsOfEnhancement";
+	private static final String SOLO	   = "scrollsOfLoyalOath";
 	private static final String AS         = "arcaneStyli";
 	private static final String DV         = "dewVial";
 	private static final String WT         = "transmutation";
@@ -302,8 +310,9 @@ public class Dungeon {
 		bundle.put(GOLD, gold());
 		bundle.put(DEPTH, depth);
 
-		bundle.put(P_HONESTY, potionOfHonesty);
+		bundle.put(P_HONESTY, potionsOfHonesty);
 		bundle.put(SOU, scrollsOfUpgrade);
+		bundle.put(SOLO, scrollsOfLoyalOath);
 		bundle.put(AS, arcaneStyli);
 		bundle.put(DV, dewVial);
 		bundle.put(WT, transmutation);
@@ -405,8 +414,9 @@ public class Dungeon {
 		Wand.restore(bundle);
 		Ring.restore(bundle);
 
-		potionOfHonesty = bundle.getInt(P_HONESTY);
+		potionsOfHonesty = bundle.getInt(P_HONESTY);
 		scrollsOfUpgrade = bundle.getInt(SOU);
+		scrollsOfLoyalOath = bundle.getInt(SOLO);
 		arcaneStyli = bundle.getInt(AS);
 		dewVial = bundle.getBoolean(DV);
 		transmutation = bundle.getInt(WT);

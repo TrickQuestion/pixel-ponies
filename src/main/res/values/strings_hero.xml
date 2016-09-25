@@ -70,14 +70,14 @@
         <item>They begin with a unique Scythe that can later be reforged to upgrade another weapon.</item>
         <item>Earth ponies are good with melee weapons, but can\'t wield bows.</item>
         <item>Eating a piece of food restores a small amount of health.</item>
-        <item>Earth Ponies begin knowing Potions of Honesty and Speed.</item>
+        <item>Earth Ponies automatically know Potions of Honesty.</item>
     </string-array>
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
         <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
         <item>Because of their horn, Unicorns can\'t equip a mane ring. They can cast Telekinesis at will, however.</item>
         <item>Eating a piece of food will restore 1 charge to all wands.</item>
-        <item>Unicorns can fully identify a wand by using it, and begin knowing Scrolls of Identify.</item>
+        <item>Unicorns can fully identify a wand just by using it, and automatically know Scrolls of Identify.</item>
     </string-array>
 
 
@@ -108,6 +108,10 @@
     <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
     <string name="HeroSubClass_NameGuard">royal guard</string>
     <string name="HeroSubClass_DescGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
+    <string name="HeroSubClass_NameMagician">magician</string>
+    <string name="HeroSubClass_DescMagician">The _Magician_ can wear a second ring on their horn as a weapon. In addition to the usual ring bonus, they gain the ability to attack with magical blasts. Different rings produce different effects.</string>
+    <string name="HeroSubClass_NameArtist">artist</string>
+    <string name="HeroSubClass_DescArtist">The _Artist_ automatically detects cursed items, knows the ability of a ring after wielding it, and can safely equip items with one fewer point of the necessary attribute.</string>
 
 
 </resources>

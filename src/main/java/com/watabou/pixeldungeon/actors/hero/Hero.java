@@ -94,6 +94,7 @@ import com.watabou.pixeldungeon.items.rings.RingOfHaste;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
 import com.watabou.pixeldungeon.items.rings.RingOfStoneWalking;
 import com.watabou.pixeldungeon.items.rings.RingOfThorns;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfRecharging;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
@@ -156,8 +157,8 @@ public class Hero extends Char {
 	public HeroClass heroClass = HeroClass.ROGUE;
 	public HeroSubClass subClass = HeroSubClass.NONE;
 
-	int attackSkill = 10;	// TODO: change this to loyalty, also change bows to use loyal level
-	int defenseSkill = 5;	// TODO: change this to laughter
+	int attackSkill = 10;
+	int defenseSkill = 5;
 
 	private boolean ready = false;
 	public HeroAction curAction = null;
@@ -174,10 +175,10 @@ public class Hero extends Char {
 	public MissileWeapon rangedWeapon = null;
 	public Belongings belongings;
 
-    private int honesty;
-	private int loyalty;	// Evasion, Bow limits (change from level-based to oath scrolls)
-	private int laughter;	// Haste (joke books and shopkeeper pranks)
-	private int generosity;	// Perception (store donations, buy-outs, quest option to forfeit)
+    private int honesty;	// done
+	private int loyalty;	// Add evasion chance; change from level-based to oath scrolls
+	private int laughter;	// Luck and saves (need to add support) (joke books and shopkeeper pranks)
+	private int generosity;	// Awareness, but not detect radius (store donations, buy-outs, quest option to forfeit)
 	private int kindness;	// Stealth (quests, bosses, level skips?, minus if kill fleeing)
 	private int magic;		// Wand power (rare books)
 
@@ -779,7 +780,8 @@ public class Hero extends Char {
 		}
 
 		if ((item instanceof ScrollOfUpgrade && ((ScrollOfUpgrade) item).isKnown())
-				|| (item instanceof PotionOfHonesty && ((PotionOfHonesty) item).isKnown())) {
+				|| (item instanceof PotionOfHonesty && ((PotionOfHonesty) item).isKnown())
+				|| (item instanceof ScrollOfLoyalOath && ((ScrollOfLoyalOath) item).isKnown())) {
 			GLog.p(TXT_YOU_NOW_HAVE, item.name());
 		} else {
 			GLog.i(TXT_YOU_NOW_HAVE, item.name());

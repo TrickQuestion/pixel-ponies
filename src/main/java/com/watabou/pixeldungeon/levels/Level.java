@@ -58,6 +58,7 @@ import com.watabou.pixeldungeon.items.food.Food;
 import com.watabou.pixeldungeon.items.food.PseudoPasty;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
 import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.watabou.pixeldungeon.levels.features.Chasm;
 import com.watabou.pixeldungeon.levels.features.Door;
@@ -275,9 +276,13 @@ public abstract class Level implements Bundlable {
 
 		if (!isBossLevel()) {
 			addItemToSpawn(Generator.random(Generator.Category.FOOD));
-			if (Dungeon.posNeeded()) {
+			if (Dungeon.pohNeeded()) {
 				addItemToSpawn(new PotionOfHonesty());
-				Dungeon.potionOfHonesty++;
+				Dungeon.potionsOfHonesty++;
+			}
+			if (Dungeon.soloNeeded()) {
+				addItemToSpawn(new ScrollOfLoyalOath());
+				Dungeon.scrollsOfLoyalOath++;
 			}
 			if (Dungeon.soeNeeded()) {
 				addItemToSpawn(new ScrollOfUpgrade());

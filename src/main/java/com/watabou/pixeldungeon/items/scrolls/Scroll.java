@@ -56,7 +56,8 @@ public abstract class Scroll extends Item {
 		ScrollOfPsionicBlast.class,
 		ScrollOfMirrorImage.class,
 		ScrollOfDomination.class,
-		ScrollOfCurse.class
+		ScrollOfCurse.class,
+		ScrollOfLoyalOath.class
 	};
 
 	private static final Class<?>[] inscribableScrolls = {
@@ -72,28 +73,31 @@ public abstract class Scroll extends Item {
 		ScrollOfPsionicBlast.class,
 		ScrollOfMirrorImage.class,
 		ScrollOfDomination.class,
-		ScrollOfCurse.class
+		ScrollOfCurse.class,
+		ScrollOfLoyalOath.class
 	};
 	
 	private static String[] runes = null;
 	
 	private static final Integer[] images = {
-		ItemSpriteSheet.SCROLL_KAUNAN, 
-		ItemSpriteSheet.SCROLL_SOWILO, 
-		ItemSpriteSheet.SCROLL_LAGUZ, 
-		ItemSpriteSheet.SCROLL_YNGVI, 
-		ItemSpriteSheet.SCROLL_GYFU, 
-		ItemSpriteSheet.SCROLL_RAIDO, 
-		ItemSpriteSheet.SCROLL_ISAZ, 
-		ItemSpriteSheet.SCROLL_MANNAZ, 
-		ItemSpriteSheet.SCROLL_NAUDIZ, 
-		ItemSpriteSheet.SCROLL_BERKANAN, 
-		ItemSpriteSheet.SCROLL_ODAL, 
-		ItemSpriteSheet.SCROLL_TIWAZ,
-		ItemSpriteSheet.SCROLL_ANSUZ,
-		ItemSpriteSheet.SCROLL_IWAZ,
-		ItemSpriteSheet.SCROLL_ALGIZ,
-		ItemSpriteSheet.SCROLL_DAGAZ};
+		ItemSpriteSheet.SCROLL_PRIRPA,
+		ItemSpriteSheet.SCROLL_SANKEN,
+		ItemSpriteSheet.SCROLL_KURPA,
+		ItemSpriteSheet.SCROLL_ERSKI,
+		ItemSpriteSheet.SCROLL_SULAT,
+		ItemSpriteSheet.SCROLL_FARGEN,
+		ItemSpriteSheet.SCROLL_PLUMATU,
+		ItemSpriteSheet.SCROLL_ADOSHEN,
+		ItemSpriteSheet.SCROLL_BLUSKEN,
+		ItemSpriteSheet.SCROLL_SERENDA,
+		ItemSpriteSheet.SCROLL_KONDA,
+		ItemSpriteSheet.SCROLL_VAIOR,
+		ItemSpriteSheet.SCROLL_USKREN,
+		ItemSpriteSheet.SCROLL_YAVAYA,
+		ItemSpriteSheet.SCROLL_IBEKU,
+		ItemSpriteSheet.SCROLL_MALENKI,
+		ItemSpriteSheet.SCROLL_METAR
+	};
 	
 	private static ItemStatusHandler<Scroll> handler;
 	

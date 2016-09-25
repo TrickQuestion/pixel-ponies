@@ -80,18 +80,18 @@ public class ItemSpriteSheet {
 	public static final int WAND_BIRCH			= 71;
 	
 	// Rings
-	public static final int RING_DIAMOND	= 32;
-	public static final int RING_OPAL		= 33;
-	public static final int RING_GARNET		= 34;
-	public static final int RING_RUBY		= 35;
-	public static final int RING_AMETHYST	= 36;
-	public static final int RING_TOPAZ		= 37;
-	public static final int RING_ONYX		= 38;
-	public static final int RING_TOURMALINE	= 39;
-	public static final int RING_EMERALD	= 72;
-	public static final int RING_SAPPHIRE	= 73;
-	public static final int RING_QUARTZ		= 74;
-	public static final int RING_AGATE		= 75;
+	public static final int RING_PEARL			  = 32;
+	public static final int RING_OPAL			  = 33;
+	public static final int RING_GARNET			  = 34;
+	public static final int RING_RUBY		 	  = 35;
+	public static final int RING_AMETHYST	      = 36;
+	public static final int RING_JASPER		      = 37;
+	public static final int RING_BISMUTH	      = 38;
+	public static final int RING_LAPIS_LAZULI	  = 39;
+	public static final int RING_PERIDOT		  = 72;
+	public static final int RING_SAPPHIRE		  = 73;
+	public static final int RING_ROSE_QUARTZ	  = 74;
+	public static final int RING_RAINBOW_QUARTZ	  = 75;
 	public static final int RING_OF_STONE_WALKING = 133;
 	public static final int SPIDER_CHARM          = 146;
 	
@@ -111,22 +111,23 @@ public class ItemSpriteSheet {
 	
 	// Scrolls
 	public static final int SCROLL_BLANK	= 125;
-	public static final int SCROLL_KAUNAN	= 40;
-	public static final int SCROLL_SOWILO	= 41;
-	public static final int SCROLL_LAGUZ	= 42;
-	public static final int SCROLL_YNGVI	= 43;
-	public static final int SCROLL_GYFU		= 44;
-	public static final int SCROLL_RAIDO	= 45;
-	public static final int SCROLL_ISAZ		= 46;
-	public static final int SCROLL_MANNAZ	= 47;
-	public static final int SCROLL_NAUDIZ	= 76;
-	public static final int SCROLL_BERKANAN	= 77;
-	public static final int SCROLL_ODAL		= 78;
-	public static final int SCROLL_TIWAZ	= 79;
-	public static final int SCROLL_ANSUZ	= 128;
-	public static final int SCROLL_IWAZ 	= 129;
-	public static final int SCROLL_ALGIZ	= 130;
-	public static final int SCROLL_DAGAZ	= 131;
+	public static final int SCROLL_PRIRPA	= 40;
+	public static final int SCROLL_SANKEN	= 41;
+	public static final int SCROLL_KURPA	= 42;
+	public static final int SCROLL_ERSKI	= 43;
+	public static final int SCROLL_SULAT	= 44;
+	public static final int SCROLL_FARGEN	= 45;
+	public static final int SCROLL_PLUMATU	= 46;
+	public static final int SCROLL_ADOSHEN	= 47;
+	public static final int SCROLL_BLUSKEN	= 76;
+	public static final int SCROLL_SERENDA	= 77;
+	public static final int SCROLL_KONDA	= 78;
+	public static final int SCROLL_VAIOR	= 79;
+	public static final int SCROLL_USKREN	= 128;
+	public static final int SCROLL_YAVAYA	= 129;
+	public static final int SCROLL_IBEKU	= 130;
+	public static final int SCROLL_MALENKI	= 131;
+	public static final int SCROLL_METAR	= 150;
 	
 	// Seeds
 	public static final int SEED_FIREBLOOM	= 88;
