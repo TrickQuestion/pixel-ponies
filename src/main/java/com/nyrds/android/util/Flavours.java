@@ -16,11 +16,9 @@ public class Flavours {
 //		return BuildConfig.FLAVOR.equals(GOOGLE_PLAY) && Iap.googleIapUsable();
 	}
 
-	//Turning off donations completely
 	public static boolean haveDonations() {
-		return false;
-//		return (BuildConfig.FLAVOR.equals(GOOGLE_PLAY) || BuildConfig.FLAVOR.equals(CHROME_WEB_STORE))
-//				&& Iap.googleIapUsable();
+		return (BuildConfig.FLAVOR.equals(GOOGLE_PLAY) || BuildConfig.FLAVOR.equals(CHROME_WEB_STORE))
+				&& Iap.googleIapUsable();
 	}
 
 	//Turning off ads completely
