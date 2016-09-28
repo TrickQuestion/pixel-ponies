@@ -145,19 +145,19 @@ public class WndClass extends WndTabbed {
 			String text = null;
 			switch (cl) {
 			case EARTH_PONY:
-				text = HeroSubClass.FARMER.desc();
+				text = HeroSubClass.FARMER.desc() + "\n\n" + HeroSubClass.BARD.desc();
 				break;
-			case MAGE:
-				text = HeroSubClass.BATTLEMAGE.desc() + "\n\n" + HeroSubClass.WARLOCK.desc();
+			case UNICORN:
+				text = HeroSubClass.MAGICIAN.desc() + "\n\n" + HeroSubClass.ARTIST.desc();
 				break;
-			case ROGUE:
-				text = HeroSubClass.FREERUNNER.desc() + "\n\n" + HeroSubClass.ASSASSIN.desc();
+			case PEGASUS:
+				text = HeroSubClass.SCOUT.desc() + "\n\n" + HeroSubClass.BEASTMASTER.desc();
 				break;
-			case HUNTRESS:
-				text = HeroSubClass.SNIPER.desc() + "\n\n" + HeroSubClass.WARDEN.desc();
+			case ZEBRA:
+				text = HeroSubClass.SHAMAN.desc() + "\n\n" + HeroSubClass.SEER.desc();
 				break;
-			case ELF:
-				text = HeroSubClass.SCOUT.desc() + "\n\n" + HeroSubClass.SHAMAN.desc();
+			case NIGHTWING:
+				text = HeroSubClass.NOCTURNE.desc() + "\n\n" + HeroSubClass.ASSASSIN.desc();
 				break;
 			}
 			

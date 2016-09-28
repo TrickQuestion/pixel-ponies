@@ -189,7 +189,7 @@ public abstract class Char extends Actor {
 			}
 
 			// FIXME
-			int dr = this instanceof Hero && ((Hero) this).rangedWeapon != null && ((Hero) this).subClass == HeroSubClass.SNIPER ? 0 :
+			int dr = this instanceof Hero && ((Hero) this).rangedWeapon != null && ((Hero) this).subClass == HeroSubClass.ASSASSIN ? 0 :
 					Random.IntRange(0, enemy.dr());
 
 			int dmg = damageRoll();

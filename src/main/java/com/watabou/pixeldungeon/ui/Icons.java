@@ -188,13 +188,13 @@ public enum Icons {
 		switch (cl) {
 		case EARTH_PONY:
 			return get( EARTH );
-		case MAGE:
+		case UNICORN:
 			return get( MAGE );
-		case ROGUE:
+		case PEGASUS:
 			return get( ROGUE );
-		case HUNTRESS:
+		case ZEBRA:
 			return get( HUNTRESS );
-		case ELF:
+		case NIGHTWING:
 			return get( ELF );
 		default:
 			return null;

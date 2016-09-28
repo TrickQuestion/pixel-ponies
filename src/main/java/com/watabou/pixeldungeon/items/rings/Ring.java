@@ -265,7 +265,7 @@ public abstract class Ring extends Artifact {
 		public boolean attachTo( Char target ) {
 
 //			TODO: Keep this logic here in case we want to add it for another subclass later.
-//			if (target instanceof Hero && ((Hero)target).heroClass == HeroClass.ROGUE && !isKnown()) {
+//			if (target instanceof Hero && ((Hero)target).heroClass == HeroClass.PEGASUS && !isKnown()) {
 //				setKnown();
 //				GLog.i( TXT_KNOWN, name() );
 //				Badges.validateItemLevelAquired( Ring.this );

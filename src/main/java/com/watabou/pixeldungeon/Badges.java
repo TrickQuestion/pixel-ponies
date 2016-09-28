@@ -88,23 +88,31 @@ public class Badges {
 		DEATH_FROM_GLYPH(Game.getVar(R.string.Badges_DeathGlyph), 57),
 		DEATH_FROM_FALLING(Game.getVar(R.string.Badges_DeathFalling), 59),
 		YASD(Game.getVar(R.string.Badges_Yasd), 34, true),
-		BOSS_SLAIN_1_EARTH,
-		BOSS_SLAIN_1_MAGE,
-		BOSS_SLAIN_1_ROGUE,
-		BOSS_SLAIN_1_HUNTRESS,
+		BOSS_SLAIN_1_EARTH_PONY,
+		BOSS_SLAIN_1_UNICORN,
+		BOSS_SLAIN_1_PEGASUS,
+		BOSS_SLAIN_1_ZEBRA,
+		BOSS_SLAIN_1_NIGHTWING,
 		BOSS_SLAIN_1(Game.getVar(R.string.Badges_BossSlain1), 12),
 		BOSS_SLAIN_2(Game.getVar(R.string.Badges_BossSlain2), 13),
 		BOSS_SLAIN_3(Game.getVar(R.string.Badges_BossSlain3), 14),
 		BOSS_SLAIN_4(Game.getVar(R.string.Badges_BossSlain4), 15),
 		BOSS_SLAIN_1_ALL_CLASSES(Game.getVar(R.string.Badges_BossSlain1All), 32, true),
-		BOSS_SLAIN_3_GLADIATOR,
-		BOSS_SLAIN_3_BERSERKER,
-		BOSS_SLAIN_3_WARLOCK,
-		BOSS_SLAIN_3_BATTLEMAGE,
-		BOSS_SLAIN_3_FREERUNNER,
+		BOSS_SLAIN_3_FARMER,
+		BOSS_SLAIN_3_BARD,
+		BOSS_SLAIN_3_ROYAL_GUARD,
+		BOSS_SLAIN_3_MAGICIAN,
+		BOSS_SLAIN_3_ARTIST,
+		BOSS_SLAIN_3_PRINCESS,
+		BOSS_SLAIN_3_SCOUT,
+		BOSS_SLAIN_3_BEASTMASTER,
+		BOSS_SLAIN_3_THUNDERBOLT,
+		BOSS_SLAIN_3_SHAMAN,
+		BOSS_SLAIN_3_SEER,
+		BOSS_SLAIN_3_ENCHANTER,
+		BOSS_SLAIN_3_NOCTURNE,
 		BOSS_SLAIN_3_ASSASSIN,
-		BOSS_SLAIN_3_SNIPER,
-		BOSS_SLAIN_3_WARDEN,
+		BOSS_SLAIN_3_VAMPONY,
 		BOSS_SLAIN_3_ALL_SUBCLASSES(Game.getVar(R.string.Badges_BossSlain3All), 33, true),
 		RING_OF_HAGGLER(Game.getVar(R.string.Badges_RingHaggler), 20),
 		RING_OF_THORNS(Game.getVar(R.string.Badges_RingThorns), 21),
@@ -117,9 +125,10 @@ public class Badges {
 		FOOD_EATEN_3(Game.getVar(R.string.Badges_FoodEaten3), 46),
 		FOOD_EATEN_4(Game.getVar(R.string.Badges_FoodEaten4), 47),
 		MASTERY_EARTH,
-		MASTERY_MAGE,
-		MASTERY_ROGUE,
-		MASTERY_HUNTRESS,
+		MASTERY_UNICORN,
+		MASTERY_PEGASUS,
+		MASTERY_ZEBRA,
+		MASTERY_NIGHTWING,
 		ITEM_LEVEL_1(Game.getVar(R.string.Badges_ItemLvl1), 48),
 		ITEM_LEVEL_2(Game.getVar(R.string.Badges_ItemLvl2), 49),
 		ITEM_LEVEL_3(Game.getVar(R.string.Badges_ItemLvl3), 50),
@@ -133,10 +142,11 @@ public class Badges {
 		RARE_SPIDER_MIND,
 		RARE_DREAD_KNIGHT,
 		RARE(Game.getVar(R.string.Badges_RareAll), 37, true),
-		VICTORY_EARTH,
-		VICTORY_MAGE,
-		VICTORY_ROGUE,
-		VICTORY_HUNTRESS,
+		VICTORY_EARTH_PONY,
+		VICTORY_UNICORN,
+		VICTORY_PEGASUS,
+		VICTORY_ZEBRA,
+		VICTORY_NIGHTWING,
 		VICTORY(Game.getVar(R.string.Badges_Victory), 22),
 		VICTORY_ALL_CLASSES(Game.getVar(R.string.Badges_VictoryAll), 36, true),
 		MASTERY_COMBO(Game.getVar(R.string.Badges_MasteryCombo), 56),
@@ -159,8 +169,7 @@ public class Badges {
 		LICH_SLAIN(Game.getVar(R.string.Badges_Lich_Slain), 69),
 		SPIDER_QUEEN_SLAIN(Game.getVar(R.string.Badges_SpiderQueen_Slain), 66),
 		SHADOW_LORD_SLAIN(Game.getVar(R.string.Badges_ShadowLord_Slain), 67),
-		YOG_SLAIN(Game.getVar(R.string.Badges_Yog_Slain), 65),
-		MASTERY_ELF, VICTORY_ELF, BOSS_SLAIN_1_ELF, BOSS_SLAIN_3_SHAMAN, BOSS_SLAIN_3_SCOUT;
+		YOG_SLAIN(Game.getVar(R.string.Badges_Yog_Slain), 65);
 
 		public boolean meta;
 
@@ -605,17 +614,19 @@ public class Badges {
 
 		if (badge == Badge.BOSS_SLAIN_1) {
 			switch (Dungeon.hero.heroClass) {
-				case MAGE:
-					badge = Badge.BOSS_SLAIN_1_MAGE;
+				case EARTH_PONY:
+					badge = Badge.BOSS_SLAIN_1_EARTH_PONY;
+				case UNICORN:
+					badge = Badge.BOSS_SLAIN_1_UNICORN;
 					break;
-				case ROGUE:
-					badge = Badge.BOSS_SLAIN_1_ROGUE;
+				case PEGASUS:
+					badge = Badge.BOSS_SLAIN_1_PEGASUS;
 					break;
-				case HUNTRESS:
-					badge = Badge.BOSS_SLAIN_1_HUNTRESS;
+				case ZEBRA:
+					badge = Badge.BOSS_SLAIN_1_ZEBRA;
 					break;
-				case ELF:
-					badge = Badge.BOSS_SLAIN_1_ELF;
+				case NIGHTWING:
+					badge = Badge.BOSS_SLAIN_1_NIGHTWING;
 					break;
 			}
 			local.add(badge);
@@ -624,11 +635,11 @@ public class Badges {
 				saveNeeded = true;
 			}
 
-			if (global.contains(Badge.BOSS_SLAIN_1_EARTH) &&
-					global.contains(Badge.BOSS_SLAIN_1_MAGE) &&
-					global.contains(Badge.BOSS_SLAIN_1_ROGUE) &&
-					global.contains(Badge.BOSS_SLAIN_1_HUNTRESS) &&
-					global.contains(Badge.BOSS_SLAIN_1_ELF)) {
+			if (global.contains(Badge.BOSS_SLAIN_1_EARTH_PONY) &&
+					global.contains(Badge.BOSS_SLAIN_1_UNICORN) &&
+					global.contains(Badge.BOSS_SLAIN_1_PEGASUS) &&
+					global.contains(Badge.BOSS_SLAIN_1_ZEBRA) &&
+					global.contains(Badge.BOSS_SLAIN_1_NIGHTWING)) {
 
 				badge = Badge.BOSS_SLAIN_1_ALL_CLASSES;
 				if (!global.contains(badge)) {
@@ -639,29 +650,50 @@ public class Badges {
 			}
 		} else if (badge == Badge.BOSS_SLAIN_3) {
 			switch (Dungeon.hero.subClass) {
-				case WARLOCK:
-					badge = Badge.BOSS_SLAIN_3_WARLOCK;
+				case FARMER:
+					badge = Badge.BOSS_SLAIN_3_FARMER;
 					break;
-				case BATTLEMAGE:
-					badge = Badge.BOSS_SLAIN_3_BATTLEMAGE;
+				case BARD:
+					badge = Badge.BOSS_SLAIN_3_BARD;
 					break;
-				case FREERUNNER:
-					badge = Badge.BOSS_SLAIN_3_FREERUNNER;
+				case ROYAL_GUARD:
+					badge = Badge.BOSS_SLAIN_3_ROYAL_GUARD;
 					break;
-				case ASSASSIN:
-					badge = Badge.BOSS_SLAIN_3_ASSASSIN;
+				case MAGICIAN:
+					badge = Badge.BOSS_SLAIN_3_MAGICIAN;
 					break;
-				case SNIPER:
-					badge = Badge.BOSS_SLAIN_3_SNIPER;
+				case ARTIST:
+					badge = Badge.BOSS_SLAIN_3_ARTIST;
 					break;
-				case WARDEN:
-					badge = Badge.BOSS_SLAIN_3_WARDEN;
+				case PRINCESS:
+					badge = Badge.BOSS_SLAIN_3_PRINCESS;
+					break;
+				case SCOUT:
+					badge = Badge.BOSS_SLAIN_3_SCOUT;
+					break;
+				case BEASTMASTER:
+					badge = Badge.BOSS_SLAIN_3_BEASTMASTER;
+					break;
+				case THUNDERBOLT:
+					badge = Badge.BOSS_SLAIN_3_THUNDERBOLT;
 					break;
 				case SHAMAN:
 					badge = Badge.BOSS_SLAIN_3_SHAMAN;
 					break;
-				case SCOUT:
-					badge = Badge.BOSS_SLAIN_3_SCOUT;
+				case SEER:
+					badge = Badge.BOSS_SLAIN_3_SEER;
+					break;
+				case ENCHANTER:
+					badge = Badge.BOSS_SLAIN_3_ENCHANTER;
+					break;
+				case NOCTURNE:
+					badge = Badge.BOSS_SLAIN_3_NOCTURNE;
+					break;
+				case ASSASSIN:
+					badge = Badge.BOSS_SLAIN_3_ASSASSIN;
+					break;
+				case VAMPONY:
+					badge = Badge.BOSS_SLAIN_3_VAMPONY;
 					break;
 				default:
 					return;
@@ -672,16 +704,21 @@ public class Badges {
 				saveNeeded = true;
 			}
 
-			if (global.contains(Badge.BOSS_SLAIN_3_GLADIATOR) &&
-					global.contains(Badge.BOSS_SLAIN_3_BERSERKER) &&
-					global.contains(Badge.BOSS_SLAIN_3_WARLOCK) &&
-					global.contains(Badge.BOSS_SLAIN_3_BATTLEMAGE) &&
-					global.contains(Badge.BOSS_SLAIN_3_FREERUNNER) &&
-					global.contains(Badge.BOSS_SLAIN_3_ASSASSIN) &&
-					global.contains(Badge.BOSS_SLAIN_3_SNIPER) &&
-					global.contains(Badge.BOSS_SLAIN_3_WARDEN) &&
+			if (global.contains(Badge.BOSS_SLAIN_3_FARMER) &&
+					global.contains(Badge.BOSS_SLAIN_3_BARD) &&
+					global.contains(Badge.BOSS_SLAIN_3_ROYAL_GUARD) &&
+					global.contains(Badge.BOSS_SLAIN_3_MAGICIAN) &&
+					global.contains(Badge.BOSS_SLAIN_3_ARTIST) &&
+					global.contains(Badge.BOSS_SLAIN_3_PRINCESS) &&
+					global.contains(Badge.BOSS_SLAIN_3_SCOUT) &&
+					global.contains(Badge.BOSS_SLAIN_3_BEASTMASTER) &&
+					global.contains(Badge.BOSS_SLAIN_3_THUNDERBOLT) &&
 					global.contains(Badge.BOSS_SLAIN_3_SHAMAN) &&
-					global.contains(Badge.BOSS_SLAIN_3_SCOUT)) {
+					global.contains(Badge.BOSS_SLAIN_3_SEER) &&
+					global.contains(Badge.BOSS_SLAIN_3_ENCHANTER) &&
+					global.contains(Badge.BOSS_SLAIN_3_NOCTURNE) &&
+					global.contains(Badge.BOSS_SLAIN_3_ASSASSIN) &&
+					global.contains(Badge.BOSS_SLAIN_3_VAMPONY)) {
 
 				badge = Badge.BOSS_SLAIN_3_ALL_SUBCLASSES;
 				if (!global.contains(badge)) {
@@ -700,17 +737,17 @@ public class Badges {
 			case EARTH_PONY:
 				badge = Badge.MASTERY_EARTH;
 				break;
-			case MAGE:
-				badge = Badge.MASTERY_MAGE;
+			case UNICORN:
+				badge = Badge.MASTERY_UNICORN;
 				break;
-			case ROGUE:
-				badge = Badge.MASTERY_ROGUE;
+			case PEGASUS:
+				badge = Badge.MASTERY_PEGASUS;
 				break;
-			case HUNTRESS:
-				badge = Badge.MASTERY_HUNTRESS;
+			case ZEBRA:
+				badge = Badge.MASTERY_ZEBRA;
 				break;
-			case ELF:
-				badge = Badge.MASTERY_ELF;
+			case NIGHTWING:
+				badge = Badge.MASTERY_NIGHTWING;
 				break;
 		}
 
@@ -790,19 +827,19 @@ public class Badges {
 
 		switch (Dungeon.hero.heroClass) {
 			case EARTH_PONY:
-				badge = Badge.VICTORY_EARTH;
+				badge = Badge.VICTORY_EARTH_PONY;
 				break;
-			case MAGE:
-				badge = Badge.VICTORY_MAGE;
+			case UNICORN:
+				badge = Badge.VICTORY_UNICORN;
 				break;
-			case ROGUE:
-				badge = Badge.VICTORY_ROGUE;
+			case PEGASUS:
+				badge = Badge.VICTORY_PEGASUS;
 				break;
-			case HUNTRESS:
-				badge = Badge.VICTORY_HUNTRESS;
+			case ZEBRA:
+				badge = Badge.VICTORY_ZEBRA;
 				break;
-			case ELF:
-				badge = Badge.VICTORY_ELF;
+			case NIGHTWING:
+				badge = Badge.VICTORY_NIGHTWING;
 				break;
 		}
 		local.add(badge);
@@ -811,11 +848,11 @@ public class Badges {
 			saveNeeded = true;
 		}
 
-		if (global.contains(Badge.VICTORY_EARTH) &&
-				global.contains(Badge.VICTORY_MAGE) &&
-				global.contains(Badge.VICTORY_ROGUE) &&
-				global.contains(Badge.VICTORY_HUNTRESS) &&
-				global.contains(Badge.VICTORY_ELF)) {
+		if (global.contains(Badge.VICTORY_EARTH_PONY) &&
+				global.contains(Badge.VICTORY_UNICORN) &&
+				global.contains(Badge.VICTORY_PEGASUS) &&
+				global.contains(Badge.VICTORY_ZEBRA) &&
+				global.contains(Badge.VICTORY_NIGHTWING)) {
 
 			badge = Badge.VICTORY_ALL_CLASSES;
 			displayBadge(badge);

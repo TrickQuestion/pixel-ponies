@@ -37,7 +37,6 @@ import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.levels.Terrain;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
 public class HighGrass {
@@ -74,17 +73,19 @@ public class HighGrass {
 		}
 		
 		int leaves = 4;
-		
+
+
+		// TODO: Cannibalize for Zebra, maybe.
 		// Barkskin
-		if (ch instanceof Hero && ((Hero)ch).subClass == HeroSubClass.WARDEN) {
-			Buff.affect( ch, Barkskin.class ).level( ch.ht() / 3 );
-			leaves = 8;
-		}
-		
-		if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.SCOUT) {
-			Buff.prolong( ch, Invisibility.class, 5);
-			leaves = 2;
-		}
+//		if (ch instanceof Hero && ((Hero)ch).subClass == HeroSubClass.WARDEN) {
+//			Buff.affect( ch, Barkskin.class ).level( ch.ht() / 3 );
+//			leaves = 8;
+//		}
+//
+//		if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.DERP) {
+//			Buff.prolong( ch, Invisibility.class, 5);
+//			leaves = 2;
+//		}
 
 		if (ch instanceof Hero && ch.buffs().contains(Harvest.class)) {
 			ch.buff( Hunger.class ).satisfy((Hunger.STARVING - Hunger.HUNGRY) / 4.0F);

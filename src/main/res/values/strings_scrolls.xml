@@ -20,7 +20,7 @@
         <item>SERENDA</item>
         <item>KONDA</item>
         <item>VAIOR</item>
-        <item>USKREN</item>
+        <item>TANAGRETU</item>
         <item>YAVAYA</item>
         <item>IBEKU</item>
         <item>MALENKI</item>
@@ -78,7 +78,7 @@
 
     <!-- STRINGS OF ScrollOfRemoveCurse CLASS -->
     <string name="ScrollOfRemoveCurse_Name">Scroll of Remove Curse</string>
-    <string name="ScrollOfRemoveCurse_Info">The incantation on this scroll will instantly strip from the reader\'s weapon, armor, rings and carried items any evil enchantments that might prevent the wearer from removing them.</string>
+    <string name="ScrollOfRemoveCurse_Info">The incantation on this scroll will instantly strip all evil curses from the reader\'s items, allowing them to be freely unequipped.</string>
     <string name="ScrollOfRemoveCurse_Proced">Your pack glows with a cleansing light, and a malevolent energy disperses.</string>
     <string name="ScrollOfRemoveCurse_NoProced">Your pack glows with a cleansing light, but nothing happens.</string>
 
@@ -97,7 +97,7 @@
 
     <!-- STRINGS OF ScrollOfUpgrade CLASS -->
     <string name="ScrollOfUpgrade_Name">Scroll of Upgrade</string>
-    <string name="ScrollOfUpgrade_Info">This scroll will upgrade a single item, improving its quality. A wand will increase in power and in number of charges; a weapon will inflict more damage or find its mark more frequently; a suit of armor will deflect additional blows; the effect of a ring on its wearer will intensify. Additionally, oquipment attribute minimums will decrease, and any curses on the item will be lifted.</string>
+    <string name="ScrollOfUpgrade_Info">This scroll will upgrade a single melee weapon, bow, suit of barding, ring, or wand, significantly improving its quality. Additionally, the equipment will become easier to use, and any curses on it will be lifted.</string>
     <string name="ScrollOfUpgrade_InvTitle">Select an item to upgrade</string>
     <string name="ScrollOfUpgrade_LooksBetter">your %s certainly looks better now</string>
 
@@ -117,7 +117,7 @@
 
     <!-- STRINGS OF ScrollOfLoyalOath CLASS -->
     <string name="ScrollOfLoyalOath_Name">Scroll of Loyal Oath</string>
-    <string name="ScrollOfLoyalOath_Info">The incantation on this scroll declares your undying loyalty toward your friends and those in need.</string>
+    <string name="ScrollOfLoyalOath_Info">The incantation on this scroll pledges your undying loyalty toward your friends and family.</string>
     <string name="ScrollOfLoyalOath_Apply">You can feel the wind around your pelt tugging you homeward.</string>
     <string name="ScrollOfLoyalOath_StaApply">+1 Loyalty</string>
 

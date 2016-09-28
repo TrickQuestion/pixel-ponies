@@ -60,7 +60,7 @@ public abstract class Arrow extends MissileWeapon {
 		if (getCurUser().bowEquiped()) {
 
 			if (Dungeon.level.adjacent(getCurUser().getPos(), cell)
-					&& getCurUser().heroClass != HeroClass.ELF) {
+					&& getCurUser().heroClass != HeroClass.NIGHTWING) {
 				miss(cell);
 				return;
 			}
@@ -83,7 +83,7 @@ public abstract class Arrow extends MissileWeapon {
 				MAX += MIN;
 			}
 
-			if (getCurUser().heroClass == HeroClass.ELF) {
+			if (getCurUser().heroClass == HeroClass.NIGHTWING) {
 				ACU *= 1.1;
 				DLY *= 0.9;
 			}

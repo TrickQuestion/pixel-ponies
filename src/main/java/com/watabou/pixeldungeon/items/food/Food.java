@@ -69,13 +69,13 @@ abstract public class Food extends Item {
 					hero.getSprite().emitter().burst( Speck.factory( Speck.HEALING ), 1 );
 				}
 				break;
-			case MAGE:
+			case UNICORN:
 				hero.belongings.charge( false );
 				ScrollOfRecharging.charge( hero );
 				break;
-			case ROGUE:
-			case HUNTRESS:
-			case ELF:
+			case PEGASUS:
+			case ZEBRA:
+			case NIGHTWING:
 				break;
 			}
 			

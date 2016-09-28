@@ -28,90 +28,82 @@
     <string name="Hero_StaVertigo">Everything is spinning around you!</string>
 
     <!-- STRINGS OF HeroClass CLASS -->
-    <string name="HeroClass_War">warrior</string>
-    <string name="HeroClass_Mag">mage</string>
-    <string name="HeroClass_Rog">rogue</string>
-    <string name="HeroClass_Hun">huntress</string>
-    <string name="HeroClass_Elf">elf</string>
     <string name="HeroClass_EarthPony">earth pony</string>
     <string name="HeroClass_Unicorn">unicorn</string>
+    <string name="HeroClass_Pegasus">pegasus</string>
+    <string name="HeroClass_Zebra">zebra</string>
+    <string name="HeroClass_Nightwing">nightwing</string>
 
-    <string-array name="HeroClass_MagPerks">
-        <item>Mages start with a unique Wand of Magic Missile. This wand can be later \"disenchanted\" to upgrade another wand.</item>
-        <item>Mages recharge their wands faster.</item>
-        <item>When eaten, any piece of food restores 1 charge for all wands in the inventory.</item>
-        <item>Mages can use wands as a melee weapon.</item>
-        <item>Scrolls of Identify are identified from the beginning.</item>
-    </string-array>
-    <string-array name="HeroClass_RogPerks">
-        <item>Rogues start with a Ring of Shadows+1.</item>
-        <item>Rogues identify the type of a ring on equipping it.</item>
-        <item>Rogues are proficient with light armor, dodging better while wearing it.</item>
-        <item>Rogues are proficient in detecting hidden doors and traps.</item>
-        <item>Rogues can go without food longer.</item>
-        <item>Scrolls of Magic Mapping are identified from the beginning.</item>
-    </string-array>
-    <string-array name="HeroClass_HunPerks">
-        <item>Huntresses start with 15 points of Health.</item>
-        <item>Huntresses start with a unique upgradeable boomerang.</item>
-        <item>Huntresses are proficient with missile weapons and get a damage bonus for excessive Honesty when using them.</item>
-        <item>Huntresses gain more health from dewdrops.</item>
-        <item>Huntresses sense neighbouring monsters even if they are hidden behind obstacles.</item>
-    </string-array>
-    <string-array name="HeroClass_ElfPerks">
-        <item>Elves start with 15 HP and 9 STR.</item>
-        <item>Elves are immune to rooting.</item>
-        <item>Elves start with an upgraded wooden bow and a bunch of arrows.</item>
-        <item>Elves are extremely proficient with bows and are agile.</item>
-        <item>Elves are less proficient with melee weapons.</item>>
-    </string-array>
     <string-array name="HeroClass_EarthPonyPerks">
         <item>Earth ponies are honest, cheerful, and durable, but are less kind and magical.</item>
         <item>They begin with a unique Scythe that can later be reforged to upgrade another weapon.</item>
-        <item>Earth ponies are good with melee weapons, but can\'t wield bows.</item>
+        <item>Earth ponies are very good with melee weapons.</item>
+        <item>They can use bows, but they\'re much slower shooters than ponies who have wings or horns.</item>
         <item>Eating a piece of food restores a small amount of health.</item>
         <item>Earth Ponies automatically know Potions of Honesty.</item>
     </string-array>
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
         <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
-        <item>Because of their horn, Unicorns can\'t equip a mane ring. They can cast Telekinesis at will, however.</item>
+        <item>Unicorns can cast Telekinesis at will.</item>
+        <item>They can\'t equip a mane ring, however: their horn gets in the way of their forelock.</item>
         <item>Eating a piece of food will restore 1 charge to all wands.</item>
         <item>Unicorns can fully identify a wand just by using it, and automatically know Scrolls of Identify.</item>
     </string-array>
-
-
-<!--    <string name="HeroSubClass_NameBers">berserker</string>
-    <string name="HeroSubClass_DescBers">When severely wounded, the _Berserker_ enters a state of wild fury significantly increasing his damage output.</string>
--->
+    <string-array name="HeroClass_PegasusPerks">
+        <item>Pegasi are loyal and kind, but less generous and physically fragile.</item>
+        <item>They can fly over pits, spikes, and traps. Unlike levitation, flight still triggers special plants and hidden traps.</item>
+        <item>Encumbered pegasi cannot fly effectively, but they can still safely glide into pits.</item>
+        <item>They get a damage bonus for excess Loyalty when using thrown weapons.</item>
+        <item>Pegasi automatically know Scrolls of Loyal Oath and Magic Mapping.</item>
+    </string-array>
+    <string-array name="HeroClass_ZebraPerks">
+        <item>Zebras are generous, magical, and durable, but less loyal.</item>
+        <item>They begin with a unique throwable boomerang that can be reused and upgraded.</item>
+        <item>Zebras excel with throwing weapons. They use honesty instead of loyalty to throw.</item>
+        <item>They can use bows, but they\'re much slower shooters than ponies who have wings or horns.</item>
+        <item>Zebras gain more health from dewdrops, and are immune to Rooting.</item>
+    </string-array>
+    <string-array name="HeroClass_NightwingPerks">
+        <item>Nightwings are loyal and cheerful, but less honest and physically fragile.</item>
+        <item>They can fly over pits, spikes, and traps. Unlike levitation, flight still triggers special plants and hidden traps.</item>
+        <item>Encumbered nightwings cannot fly effectively, but they can still safely glide into pits.</item>
+        <item>They can sense neighboring creatures even when they are hidden behind obstacles.</item>
+        <item>Nightwings are good with bows, and can even use them at point-blank range.</item>
+    </string-array>
 
     <!-- STRINGS OF HeroSubClass CLASS -->
-    <string name="HeroSubClass_NameWarL">warlock</string>
-    <string name="HeroSubClass_DescWarL">After killing an enemy the _Warlock_ consumes its soul. It heals his wounds and satisfies his hunger.</string>
-    <string name="HeroSubClass_NameBatM">battlemage</string>
-    <string name="HeroSubClass_DescBatM">When fighting with a wand in his hands, the _Battlemage_ inflicts additional damage depending on the current number of charges. Every successful hit restores 1 charge to this wand.</string>
-    <string name="HeroSubClass_NameAssa">assassin</string>
-    <string name="HeroSubClass_DescAssa">When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.</string>
-    <string name="HeroSubClass_NameFreR">freerunner</string>
-    <string name="HeroSubClass_DescFreR">The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.</string>
-    <string name="HeroSubClass_NameSnip">sniper</string>
-    <string name="HeroSubClass_DescSnip">_Snipers_ are able to detect weak points in an enemy\'s armor, effectively ignoring it when using a missile weapon.</string>
-    <string name="HeroSubClass_NameWard">warden</string>
-    <string name="HeroSubClass_DescWard">Having a strong connection with forces of nature gives _Wardens_ an ability to gather dewdrops and seeds from plants. Also trampling a high grass grants them a temporary armor buff.</string>
-    <string name="HeroSubClass_NameScout">scout</string>
-    <string name="HeroSubClass_DescScout">Elven _Scouts_ are masters of stealth. Trampling high grass grants them a temporary invisibility buff. Also they are even faster than regular Elves.</string>
-    <string name="HeroSubClass_NameShaman">shaman</string>
-    <string name="HeroSubClass_DescShaman">Elven _Shamans_ can use wands as melee weapons. Successful hits have a chance to activate the wand\'s power on a target without using a charge.</string>
+
     <string name="HeroSubClass_NameFarmer">farmer</string>
     <string name="HeroSubClass_DescFarmer">The _Farmer_ can gather dewdrops and seeds from special plants, and can go longer without food.</string>
     <string name="HeroSubClass_NameBard">bard</string>
-    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
-    <string name="HeroSubClass_NameGuard">royal guard</string>
-    <string name="HeroSubClass_DescGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
+    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire. (Fix this--doesn\'t laughter already do that?)</string>
+    <string name="HeroSubClass_NameRoyalGuard">royal guard</string>
+    <string name="HeroSubClass_DescRoyalGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
     <string name="HeroSubClass_NameMagician">magician</string>
-    <string name="HeroSubClass_DescMagician">The _Magician_ can wear a second ring on their horn as a weapon. In addition to the usual ring bonus, they gain the ability to attack with magical blasts. Different rings produce different effects.</string>
+    <string name="HeroSubClass_DescMagician">The _Magician_ can use her horn to cast Mana Bolts and Teleportation, in addition to Telekinesis (which is painful). Tapping monsters will automatically cast Mana Bolts unless a Bow is equipped.</string>
     <string name="HeroSubClass_NameArtist">artist</string>
-    <string name="HeroSubClass_DescArtist">The _Artist_ automatically detects cursed items, knows the ability of a ring after wielding it, and can safely equip items with one fewer point of the necessary attribute.</string>
+    <string name="HeroSubClass_DescArtist">The _Artist_ automatically detects cursed items, knows the ability of a ring upon wielding it, and can safely equip items with one fewer point of the necessary attribute.</string>
+    <string name="HeroSubClass_NamePrincess">princess</string>
+    <string name="HeroSubClass_DescPrincess">By wearing a ring on her horn, the _Princess_ can use it as a weapon while gaining the ring\'s usual buff. Different rings produce different magical attacks.</string>
+    <string name="HeroSubClass_NameScout">scout</string>
+    <string name="HeroSubClass_DescScout">The _Scout_ gains a bonus to damage when blindsiding a monster.</string>
+    <string name="HeroSubClass_NameBeastmaster">beastmaster</string>
+    <string name="HeroSubClass_DescBeastmaster">When the _Beastmaster_ attempts to hit an undamaged monster with a melee attack, there is a Kindness-based chance the monster will become a pet. This only works with animal monsters.</string>
+    <string name="HeroSubClass_NameThunderbolt">thunderbolt</string>
+    <string name="HeroSubClass_DescThunderbost">After flying unencumbered for a short distance, the _Thunderbolt_ gains a bonus to all attributes. The bonus lasts until one turn after the flight ends. (Tweak this.)</string>
+    <string name="HeroSubClass_NameShaman">shaman</string>
+    <string name="HeroSubClass_DescShaman">The _Shaman_ can brew potions more reliably, and he suffers no negative effects from eating seeds.</string>
+    <string name="HeroSubClass_NameSeer">seer</string>
+    <string name="HeroSubClass_DescSeer">The _Seer_ can sense cursed items (resolve this with Artist at some point). All basic potion and scroll types are known to him. He can detect changelings on sight, which allows him to strike first. (And bonus? Tweak.)</string>
+    <string name="HeroSubClass_NameEnchanter">enchanter</string>
+    <string name="HeroSubClass_DescEnchanter">Thrown weapon strikes from the _Enchanter_ have a Magic-based chance of inflicting a random negative status. Additionally, weapon and barding enchantments are chosen rather than randomly assigned. (The \'evil dances\' and \'pony stew\' rumors are somewhat exaggerated, however.)</string>
+    <string name="HeroSubClass_NameNocturne">nocturne</string>
+    <string name="HeroSubClass_DescNocturne">The _Nocturne_ berserks when her health is low. This temporarily lowers her Kindness, but she deals significantly more damage.</string>
+    <string name="HeroSubClass_NameAssassin">assassin</string>
+    <string name="HeroSubClass_DescAssassin">The _Assassin_ has a Loyalty-based chance to completely bypass monster armor whenever she fires a Bow.</string>
+    <string name="HeroSubClass_NameVampony">vampony</string>
+    <string name="HeroSubClass_DescVampony">The _Vampony_ gains health and reduces hunger each time she defeats a monster. She also gains a boost to damage whenever she is hungry, but not starving. (Tweak to make cooler?)</string>
 
 
 </resources>

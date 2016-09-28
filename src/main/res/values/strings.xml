@@ -2,7 +2,7 @@
 <resources>
 
     <!-- GENERAL STRINGS VARIABLES -->
-    <string name="app_name">Remixed Pixel Dungeon</string>
+    <string name="app_name">Pixel Ponies!</string>
 
     <!-- STRINGS OF IntroScene CLASS -->
     <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Amulet of Yendor, which is told to be hidden in the depths of the Dungeon.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that fortune smiles on you. It\'s time to start your own adventure!</string>
@@ -10,13 +10,13 @@
     <!-- STRINGS OF AmuletScene CLASS -->
     <string name="AmuletScene_Exit">Let\'s call it a day</string>
     <string name="AmuletScene_Stay">I\'m not done yet</string>
-    <string name="AmuletScene_Txt">You finally hold it in your hands, the Amulet of Yendor. Using its power you can take over the world or bring peace and prosperity to people or whatever. Anyway, your life will change forever and this game will end here. Or you can stay a mere mortal a little longer.</string>
+    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Alicorn Amulet! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
 
     <!-- STRINGS OF GameScene CLASS -->
-    <string name="GameScene_Welcome">Welcome to the level %d of Pixel Dungeon!</string>
-    <string name="GameScene_WelcomeBack">Welcome back to the level %d of Pixel Dungeon!</string>
-    <string name="GameScene_NightMode">Be cautious, since the dungeon is even more dangerous at night!</string>
-    <string name="GameScene_Chasm">Your steps echo across the dungeon.</string>
+    <string name="GameScene_Welcome">Welcome to adventure level %d of Pixel Ponies!</string>
+    <string name="GameScene_WelcomeBack">Welcome back to adventure level %d of Pixel Ponies!</string>
+    <string name="GameScene_NightMode">Be cautious, since the dungeons are even more dangerous at night!</string>
+    <string name="GameScene_Chasm">Your hoofsteps echo loudly.</string>
     <string name="GameScene_Water">You hear the water splashing around you.</string>
     <string name="GameScene_Grass">The smell of vegetation is thick in the air.</string>
     <string name="GameScene_Secrets">The atmosphere hints that this floor hides many secrets.</string>
@@ -69,42 +69,42 @@
     <string name="Dungeon_DeadEnd">What are you doing here?!</string>
 
     <string-array name="Dungeon_Tips">
-        <item>If you don\'t have enough Honesty for a piece of armor, you\'ll be encumbered. Melee and thrown weapons also have minimum Honesty requirements. Be careful not to overextend yourself.</item>
-        <item>Traps and secret doors are can be detected with Generosity. If you can\'t find a way out, try searching.</item>
-        <item>Bows require a minimum Loyalty, and Rings require a minimum Magic. If your attributes are too low, you can upgrade an item with a Scroll of Upgrade: it will improve an item\'s quality and make it easier to equip.</item>
-        <item>In addition to bow use, Loyalty helps you to dodge attacks. Laughter increases your movement speed, and Kindness makes you stealthier. Magic improves wand power and recharge rate.</item>
+        <item>If you don\'t have enough Honesty for a suit of barding, you\'ll be encumbered. Melee weapons also require Honesty for effective use. Scrolls of Upgrade can be used to improve a piece of equipment (or a wand), which also makes it easier to use.</item>
+        <item>Traps and secret doors are detected with Generosity. If you can\'t find a way out, try searching. Generosity also helps you figure out unfamiliar equipment, and heal from damage over time.</item>
+        <item>Loyalty improves your speed, and it allows you to use missile weapons effectively. Magic boosts the effect of magical items and it recharges your wands. You need to meet Magic requirements on wands and rings to use them safely.</item>
+        <item>Kindness lets you sneak around monsters and helps you to dodge attacks. Laughter improves the mood of shopkeepers, increases the odds good things will happen to you, and helps bad things to go away more quickly.</item>
         <item>Beware the Smelly Ooze!</item>
-        <item>Stores appear after you\'ve defeated a Boss. There\'s one adjacent to this room where you can purchase things with your hard-earned Bits.</item>
-        <item>Melee and thrown weapons do extra damage for Honesty above the required minimum. There\'s no similar bonus for other equipment types, but they won\'t work very well if you don\'t meet the minimum requirements.</item>
-        <item>It helps to identify potions and scrolls early, but you need to be clever about how you go about it..</item>
+        <item>Stores appear after you\'ve defeated a Boss. There\'s one adjacent to this room where you can purchase gear with your hard-earned Bits.</item>
+        <item>Melee weapons do extra damage for Honesty above the required minimum. There\'s no bonus for other kinds of equipment, but they won\'t work well if you don\'t meet their minimum requirements.</item>
+        <item>It helps to identify potions and scrolls early, but you need to be clever about how you go about it.</item>
         <item>If you\'re faster than a monster, you can blindside it by attacking the moment it pops into view.</item>
         <item>Turn back now, or face the Nightmare Eternal!</item>
-        <item>Items which enhance your attributes are rare. It\'s simple to raise Honesty, Loyalty, and Magic, but there are clever tricks to raising Laughter, Kindness, and Generosity.</item>
-        <item>Use your horse sense when facing danger. For example, you can\'t put out fire in water if you\'re levitating above it, and fire burns longer when it has fuel to burn.</item>
-        <item>Ankhs aren\'t very useful unless you\'re actually planning to die, and you need to be a clever pony to plan for your own funeral.</item>
+        <item>Items which increase your attributes are limited in number. It\'s simple to raise Honesty, Loyalty, and Magic, but there are clever tricks to raising Laughter, Kindness, and Generosity.</item>
+        <item>Use your horse sense when facing danger. For example, you can\'t put out fire in water if you\'re stuck levitating above it, and fire burns longer when it has fuel to burn.</item>
+        <item>Ankhs aren\'t very useful unless you\'re actually planning to die, and you need to be a clever pony to plan for your own funeral. Your bits are usually better spent on other things.</item>
         <item>Welcome to the Changeling Hive. Donations of Love are freely accepted here. Also, non-donations.</item>
-        <item>Once you reach a certain level, weaker monsters will stop giving you experience. Eventually, weak monsters stop dropping items and bits. Level up strategically to maximize your earnings.</item>
-        <item>It usually pays to be hungry, because hunger won\'t hurt you. Sometimes it\'s even a good idea to starve.</item>
-        <item>Upgrading enchanted items may destroy the enchantment. Having high Magic helps reduce the chance of enchantment failure. High Magic also gives you a small chance of improved effects from reading scrolls.</item>
+        <item>Once you reach a certain level, weaker monsters will stop giving you experience. Eventually, weak monsters will stop dropping items and bits. Level up strategically to maximize your earnings.</item>
+        <item>It usually pays to be hungry, because hunger won\'t hurt you. Sometimes it\'s even a good idea to starve!</item>
+        <item>Upgrading enchanted items may destroy the enchantment. Magic reduces the chance of enchantment failure.</item>
         <item>Even if you\'re not a Shaman, there are secrets to brewing potions.</item>
         <item>The Centaur of Power has escaped from Tartarus!</item>
-        <item>Although Scrolls of Upgrade are limited in number, upgrading equipment is simple. Enchanting weapons and armor is more complicated.</item>
-        <item>Sometimes the reward can be worth less than the quest item, although that\'s not particularly Generous.</item>
+        <item>Although Scrolls of Upgrade are rare, upgrading equipment is pretty simple. Enchanting weapons and barding is more complicated.</item>
+        <item>In some cases the reward can be worth less than the quest item, although that\'s not particularly Generous.</item>
         <item>There are certain items that can only be obtained through a Well of Transmutation.</item>
         <item>The Crystal King hungers from the shadows...</item>
-        <item>What you can\'t see can still hurt you. The other way around, not so much.</item>
-        <item>Class-based armor created with the Crystalling Kit will include a special ability. The price to use the ability is steep, but the results can be worth it.</item>
-        <item>There are actually three classes for each pony race, not two.</item>
+        <item>What you can\'t see can still hurt you. The other way around, well... not so much.</item>
+        <item>Barding created with the Crystalling kit will include a special ability. The price to use the ability is steep, but the results can be worth it.</item>
+        <item>There are actually three classes for each pony race, not two!</item>
         <item>(The text is entirely illegible.)</item>
         <item>\"In the center of Pandemonium, the God of Chaos awaits.\"</item>
         <item>What fun is there in making sense?</item>
-        <item>Behold: The Amulet of Harmony</item>
+        <item>Behold: The Alicorn Amulet</item>
     </string-array>
 
     <!-- STRINGS OF Challenges CLASS -->
     <string-array name="Challenges_Names">
         <item>On diet</item>
-        <item>Faith is my armor</item>
+        <item>Faith is my barding</item>
         <item>Pharmacophobia</item>
         <item>Barren land</item>
         <item>Swarm intelligence</item>
@@ -181,7 +181,7 @@
     <string name="WndHero_StaJournal">Journal</string>
 
     <!-- STRINGS OF WndImp CLASS -->
-    <string name="WndImp_Message">Oh yes! You are my hero!\nRegarding your reward, I don\'t have cash with me right now, but I have something better for you. This is my family heirloom ring: my granddad took it off a dead paladin\'s horn.</string>
+    <string name="WndImp_Message">Oh yes! You are my hero!\nRegarding your reward, I don\'t have cash with me right now, but I have something better for you. I found this on a dead paladin\'s horn.</string>
     <string name="WndImp_Reward">Take the ring</string>
 
     <!-- STRINGS OF WndInfoCell CLASS -->
@@ -220,7 +220,7 @@
     <string name="WndRanking_StaAnkhs">Ankhs Used</string>
 
     <!-- STRINGS OF WndResurrect CLASS -->
-    <string name="WndResurrect_Message">You died, but you were given another chance to defeat this dungeon. Will you take it?</string>
+    <string name="WndResurrect_Message">You died, but you were given another chance to find the Alicorn Amulet. Will you take it?</string>
     <string name="WndResurrect_Yes">Yes, I will fight!</string>
     <string name="WndResurrect_No">No, I give up</string>
 
@@ -228,7 +228,7 @@
     <string name="WndSadGhost_Rose">Yes! Yes!!! This is it! Please give it to me! And you can take one of these items, maybe they will be useful to you in your journey...</string>
     <string name="WndSadGhost_Rat">Yes! The ugly creature is slain and I can finally rest... Please take one of these items, maybe they will be useful to you in your journey...</string>
     <string name="WndSadGhost_Wepon">Ghost\'s weapon</string>
-    <string name="WndSadGhost_Armor">Ghost\'s armor</string>
+    <string name="WndSadGhost_Armor">Ghost\'s barding</string>
     <string name="WndSadGhost_Farewell">Farewell, adventurer!</string>
 
     <!-- STRINGS OF WndStory CLASS -->
@@ -287,11 +287,11 @@
     <string name="Ankh_Info">This ancient symbol of immortality grants an ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
 
     <!-- STRINGS OF ArmorKit CLASS -->
-    <string name="ArmorKit_Name">armor kit</string>
+    <string name="ArmorKit_Name">Crystalling kit</string>
     <string name="ArmorKit_ACAplly">APPLY</string>
-    <string name="ArmorKit_Info">Using this kit of small tools and materials anybody can transform any armor into an \"epic armor\", which will keep all properties of the original armor, but will also provide its wearer a special ability depending on his class. No skills in tailoring, leather-working or blacksmithing are required.</string>
-    <string name="ArmorKit_SelectArmor">Select an armor to upgrade</string>
-    <string name="ArmorKit_Upgraded">You applied the armor kit to upgrade your %s</string>
+    <string name="ArmorKit_Info">Using this kit of small tools and materials, a pony can transform any barding into an \"epic barding\". It will keep the properties of the original barding, but will also provide its wearer with a special ability depending on their class. No skills in tailoring, leather-working or blacksmithing are required.</string>
+    <string name="ArmorKit_SelectArmor">Select an barding to upgrade</string>
+    <string name="ArmorKit_Upgraded">You applied the Crystalling kit to upgrade your %s</string>
 
     <!-- STRINGS OF Dewdrop CLASS -->
     <string name="Dewdrop_Name">dewdrop</string>

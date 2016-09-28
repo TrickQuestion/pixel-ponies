@@ -35,17 +35,22 @@ import com.watabou.utils.Bundle;
 
 public enum HeroSubClass {
 
-	NONE(      null, null, null ),
-    FARMER(    Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), FarmerArmor.class),
-    BARD(      Game.getVar(R.string.HeroSubClass_NameBard), Game.getVar(R.string.HeroSubClass_DescBard), BardArmor.class),
-	WARLOCK(   Game.getVar(R.string.HeroSubClass_NameWarL),   Game.getVar(R.string.HeroSubClass_DescWarL), WarlockArmor.class),
-	BATTLEMAGE(Game.getVar(R.string.HeroSubClass_NameBatM),   Game.getVar(R.string.HeroSubClass_DescBatM), BattleMageArmor.class),
-	ASSASSIN(  Game.getVar(R.string.HeroSubClass_NameAssa),   Game.getVar(R.string.HeroSubClass_DescAssa), AssasinArmor.class),
-	FREERUNNER(Game.getVar(R.string.HeroSubClass_NameFreR),   Game.getVar(R.string.HeroSubClass_DescFreR), FreeRunnerArmor.class),
-	SNIPER(    Game.getVar(R.string.HeroSubClass_NameSnip),   Game.getVar(R.string.HeroSubClass_DescSnip), SniperArmor.class),
-	WARDEN(    Game.getVar(R.string.HeroSubClass_NameWard),   Game.getVar(R.string.HeroSubClass_DescWard), WardenArmor.class),
-	SCOUT(     Game.getVar(R.string.HeroSubClass_NameScout),  Game.getVar(R.string.HeroSubClass_DescScout), ScoutArmor.class),
-	SHAMAN(    Game.getVar(R.string.HeroSubClass_NameShaman), Game.getVar(R.string.HeroSubClass_DescShaman), ShamanArmor.class);
+	NONE(      	null, null, null ),
+    FARMER(    	Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), FarmerArmor.class),
+	BARD(      	Game.getVar(R.string.HeroSubClass_NameBard), Game.getVar(R.string.HeroSubClass_DescBard), BardArmor.class),
+	ROYAL_GUARD(Game.getVar(R.string.HeroSubClass_NameRoyalGuard), Game.getVar(R.string.HeroSubClass_DescRoyalGuard), FarmerArmor.class),
+	MAGICIAN(   Game.getVar(R.string.HeroSubClass_NameMagician),   Game.getVar(R.string.HeroSubClass_DescMagician), FarmerArmor.class),
+	ARTIST(   	Game.getVar(R.string.HeroSubClass_NameArtist),   Game.getVar(R.string.HeroSubClass_DescArtist), FarmerArmor.class),
+	PRINCESS(	Game.getVar(R.string.HeroSubClass_NamePrincess),   Game.getVar(R.string.HeroSubClass_DescPrincess), FarmerArmor.class),
+	SCOUT(  	Game.getVar(R.string.HeroSubClass_NameScout),   Game.getVar(R.string.HeroSubClass_DescScout), FarmerArmor.class),
+	BEASTMASTER(Game.getVar(R.string.HeroSubClass_NameBeastmaster),   Game.getVar(R.string.HeroSubClass_DescBeastmaster), FarmerArmor.class),
+	THUNDERBOLT(Game.getVar(R.string.HeroSubClass_NameThunderbolt),   Game.getVar(R.string.HeroSubClass_DescThunderbost), FarmerArmor.class),
+	SHAMAN(    	Game.getVar(R.string.HeroSubClass_NameShaman),   Game.getVar(R.string.HeroSubClass_DescShaman), FarmerArmor.class),
+	SEER(     	Game.getVar(R.string.HeroSubClass_NameSeer),  Game.getVar(R.string.HeroSubClass_DescSeer), FarmerArmor.class),
+	ENCHANTER(	Game.getVar(R.string.HeroSubClass_NameEnchanter), Game.getVar(R.string.HeroSubClass_DescEnchanter), FarmerArmor.class),
+	NOCTURNE(	Game.getVar(R.string.HeroSubClass_NameNocturne), Game.getVar(R.string.HeroSubClass_DescNocturne), FarmerArmor.class),
+	ASSASSIN(	Game.getVar(R.string.HeroSubClass_NameAssassin), Game.getVar(R.string.HeroSubClass_DescAssassin), FarmerArmor.class),
+	VAMPONY(	Game.getVar(R.string.HeroSubClass_NameVampony), Game.getVar(R.string.HeroSubClass_DescVampony), FarmerArmor.class);
 
 	private String title;
 	private String desc;

@@ -259,7 +259,7 @@ public class Dungeon {
 		return chance (quota, scrollsOfLoyalOath);
 	}
 
-	public static boolean soeNeeded() {
+	public static boolean souNeeded() {
 		int[] quota = {5, 3, 10, 6, 15, 9, 20, 12, 25, 13};
 		return chance(quota, scrollsOfUpgrade);
 	}
@@ -288,7 +288,7 @@ public class Dungeon {
 	private static final String DEPTH      = "depth";
 	private static final String LEVEL      = "level";
 	private static final String P_HONESTY  = "potionsOfHonesty";
-	private static final String SOU        = "scrollsOfEnhancement";
+	private static final String SOU        = "scrollsOfUpgrade";
 	private static final String SOLO	   = "scrollsOfLoyalOath";
 	private static final String AS         = "arcaneStyli";
 	private static final String DV         = "dewVial";

@@ -30,7 +30,7 @@ public class ShamanSprite extends MobSprite {
 	public ShamanSprite() {
 		super();
 		
-		texture( Assets.SHAMAN );
+		texture( Assets.SHAMAN_MONSTER);
 		
 		TextureFilm frames = new TextureFilm( texture, 12, 15 );
 		

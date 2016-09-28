@@ -39,13 +39,16 @@ public class SacrificialSword extends SpecialWeapon {
 		}
 		
 		double classBonus = 1;
-		if(hero.subClass == HeroSubClass.WARDEN ) {
-			classBonus = 1.5;
-		}
-		
-		if(hero.subClass == HeroSubClass.SHAMAN) {
-			classBonus = 2.0;
-		}
+
+		// TODO: I don't even know what this sword is supposed to do!
+
+//		if(hero.subClass == HeroSubClass.WARDEN ) {
+//			classBonus = 1.5;
+//		}
+//
+//		if(hero.subClass == HeroSubClass.SHAMAN) {
+//			classBonus = 2.0;
+//		}
 
 		return (0.25 + (hero.lvl() * 4 + Math.pow(level(),2)) * 0.01) * classBonus / armorPenalty;
 	}

@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 
 public class AncientArmor extends Armor {
 
-	private static final String TXT_UNICORN	= Game.getVar(R.string.AncientArmor_NotUnicorn);
+	private static final String TXT_HORN	= Game.getVar(R.string.AncientArmor_NotUnicorn);
 
 	public AncientArmor() {
 		super( 6 );
@@ -37,13 +37,12 @@ public class AncientArmor extends Armor {
 
 	@Override
 	public boolean doEquip( Hero hero ) {
-		// TODO: Fix this shit
-		//if (hero.heroClass == HeroClass.UNICORN) {
-		//	return super.doEquip( hero );
-		//} else {
-			GLog.w( TXT_UNICORN );
+		if (hero.heroClass.hasHorn()) {
+			return super.doEquip( hero );
+		} else {
+			GLog.w( TXT_HORN );
 			return false;
-		//}
+		}
 	}
 
 	@Override

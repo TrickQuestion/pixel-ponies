@@ -92,7 +92,7 @@ public abstract class Scroll extends Item {
 		ItemSpriteSheet.SCROLL_SERENDA,
 		ItemSpriteSheet.SCROLL_KONDA,
 		ItemSpriteSheet.SCROLL_VAIOR,
-		ItemSpriteSheet.SCROLL_USKREN,
+		ItemSpriteSheet.SCROLL_TANAGRETU,
 		ItemSpriteSheet.SCROLL_YAVAYA,
 		ItemSpriteSheet.SCROLL_IBEKU,
 		ItemSpriteSheet.SCROLL_MALENKI,

@@ -32,13 +32,13 @@ public class SaveUtils {
 
 	static private boolean hasClassTag(HeroClass cl, String fname) {
 		switch (cl) {
-		case ROGUE:
+		case PEGASUS:
 			return fname.contains("rogue");
-		case HUNTRESS:
+		case ZEBRA:
 			return fname.contains("ranger");
-		case MAGE:
+		case UNICORN:
 			return fname.contains("mage");
-		case ELF:
+		case NIGHTWING:
 			return fname.contains("elf");
 		case EARTH_PONY:
 			return fname.contains("earth");
@@ -195,13 +195,13 @@ public class SaveUtils {
 	public static String gameFile(HeroClass cl) {
 
 		switch (cl) {
-		case ROGUE:
+		case PEGASUS:
 			return RG_GAME_FILE;
-		case MAGE:
+		case UNICORN:
 			return MG_GAME_FILE;
-		case HUNTRESS:
+		case ZEBRA:
 			return RN_GAME_FILE;
-		case ELF:
+		case NIGHTWING:
 			return EL_GAME_FILE;
 		case EARTH_PONY:
 			return EARTH_GAME_FILE;
@@ -226,13 +226,13 @@ public class SaveUtils {
 	private static String _depthFile(HeroClass cl) {
 
 		switch (cl) {
-		case ROGUE:
+		case PEGASUS:
 			return RG_DEPTH_FILE;
-		case MAGE:
+		case UNICORN:
 			return MG_DEPTH_FILE;
-		case HUNTRESS:
+		case ZEBRA:
 			return RN_DEPTH_FILE;
-		case ELF:
+		case NIGHTWING:
 			return EL_DEPTH_FILE;
 		case EARTH_PONY:
 			return EARTH_DEPTH_FILE;

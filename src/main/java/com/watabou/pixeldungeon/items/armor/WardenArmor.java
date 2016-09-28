@@ -75,12 +75,13 @@ public class WardenArmor extends ClassArmor {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.HUNTRESS && hero.subClass == HeroSubClass.WARDEN) {
-			return super.doEquip( hero );
-		} else {
-			GLog.w( TXT_NOT_HUNTRESS );
-			return false;
-		}
+//		if (hero.heroClass == HeroClass.ZEBRA && hero.subClass == HeroSubClass.WARDEN) {
+//			return super.doEquip( hero );
+//		} else {
+//			GLog.w( TXT_NOT_HUNTRESS );
+//			return false;
+//		}
+		return false;
 	}
 	
 	@Override

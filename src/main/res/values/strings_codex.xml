@@ -18,23 +18,23 @@
         <item>Stench Glyph - The Hero will release a cloud of toxic gas when hit.</item>
         <item>Viscosity Glyph - The hero will obtain the damage deferred debuff, which will cause the Hero to receive 1 damage per turn, instead of receiving the whole amount in one shot.</item>
         <item>Displacement Glyph - Whenever the Hero is hit, there is a chance that the Hero will be teleported to a random visible tile. This glyph does not work on boss levels.</item>
-        <item>Entanglement Glyph - The hero may receive herbal armor, but also be rooted at the same time.</item>
+        <item>Entanglement Glyph - The hero may receive herbal barding, but also be rooted at the same time.</item>
         
         <item>Grim weapon - On successful hit, may instantly kill the target (or deal up to 2x damage to a boss).</item>
         <item>Blazing weapon - On successful hit, deals extra damage to target and may burn it.</item>
         <item>Eldritch weapon - On successful hit, enemy may flee in Terror.</item>
         <item>Unstable weapon - On successful hit, may apply the effect of any random enchantment.</item>
         <item>Vampiric weapon - On successful hit, may heal the Hero for part of the damage dealt to the enemy.</item>
-        <item>Lucky weapon - almost completely ignores enemy armor, and does much more damage.</item>
+        <item>Lucky weapon - almost completely ignores enemy barding, and does much more damage.</item>
         <item>Stunning weapon - On successful hit, may paralyze target.</item>
         <item>Piercing weapon -  On successful hit, may damage all enemies in a straight line behind the target.</item>
         <item>Venomous weapon - On successful hit, may poison target.</item>
         <item>Chilling weapon - On successful hit, may slow target and will prevent it from burning.</item>
         <item>Wild weapon - On successful hit, may damage all enemies adjacent to the target.</item>
         
-        <item>This book is written in demon language</item>
-        <item>This book is written in dwarf language</item>
-        <item>This book is written in elven language</item>
+        <item>This book is written in ancient griffon</item>
+        <item>This book is written in Breezie language</item>
+        <item>This book is written in ancient minotaur</item>
 
         <item>She stopped, frozen, at the heavy oaken door, and eyed the light emerging from the door\'s borders. From some neglected corner of her mind, recognition.\n
 "Sunlight.." she muttered to herself. How long had it been? In the eternal gloom of the Dungeon, she had long ago given up on tracking the days. The light illuminated disused memories. She remembered her training, long days of arduous practice with \'rang and blade, of log keeping, and map making. She remembered the mantras and disciplines intended to allow her to retain some semblance of sanity as she plumbed the unknown depths. What she didn\'t remember, couldn\'t remember, were people.\n

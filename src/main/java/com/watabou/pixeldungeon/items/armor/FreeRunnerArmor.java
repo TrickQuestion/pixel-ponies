@@ -44,12 +44,13 @@ public class FreeRunnerArmor extends ClassArmor {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.ROGUE && hero.subClass == HeroSubClass.FREERUNNER) {
-			return super.doEquip( hero );
-		} else {
-			GLog.w( TXT_NOT_ROGUE );
-			return false;
-		}
+//		if (hero.heroClass == HeroClass.PEGASUS && hero.subClass == HeroSubClass.FREERUNNER) {
+//			return super.doEquip( hero );
+//		} else {
+//			GLog.w( TXT_NOT_ROGUE );
+//			return false;
+//		}
+		return false;
 	}
 	
 	@Override

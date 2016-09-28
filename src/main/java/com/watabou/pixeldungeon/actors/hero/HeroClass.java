@@ -61,43 +61,43 @@ public enum HeroClass {
 			false,
 			false,
 			new HeroSubClass[]
-					{ HeroSubClass.FARMER, HeroSubClass.BARD, HeroSubClass.NONE }
+					{ HeroSubClass.FARMER, HeroSubClass.BARD, HeroSubClass.ROYAL_GUARD }
 	),
-	MAGE(
-			Game.getVar(R.string.HeroClass_Mag),
-			Game.getVars(R.array.HeroClass_MagPerks),
-			Gender.MASCULINE,
+	UNICORN(
+			Game.getVar(R.string.HeroClass_Unicorn),
+			Game.getVars(R.array.HeroClass_UnicornPerks),
+			Gender.FEMININE,
 			true,
 			false,
 			new HeroSubClass[]
-					{ HeroSubClass.BATTLEMAGE, HeroSubClass.WARLOCK, HeroSubClass.NONE }
+					{ HeroSubClass.MAGICIAN, HeroSubClass.ARTIST, HeroSubClass.PRINCESS }
 	),
-	ROGUE(
-			Game.getVar(R.string.HeroClass_Rog),
-			Game.getVars(R.array.HeroClass_RogPerks),
-			Gender.MASCULINE,
-			false,
-			false,
-			new HeroSubClass[]
-					{ HeroSubClass.FREERUNNER, HeroSubClass.ASSASSIN, HeroSubClass.NONE }
-	),
-	HUNTRESS(
-			Game.getVar(R.string.HeroClass_Hun),
-			Game.getVars(R.array.HeroClass_HunPerks),
+	PEGASUS(
+			Game.getVar(R.string.HeroClass_Pegasus),
+			Game.getVars(R.array.HeroClass_PegasusPerks),
 			Gender.FEMININE,
 			false,
-			false,
+			true,
 			new HeroSubClass[]
-					{ HeroSubClass.SNIPER, HeroSubClass.WARDEN, HeroSubClass.NONE }
+					{ HeroSubClass.SCOUT, HeroSubClass.BEASTMASTER, HeroSubClass.THUNDERBOLT }
 	),
-	ELF(
-			Game.getVar(R.string.HeroClass_Elf),
-			Game.getVars(R.array.HeroClass_ElfPerks),
+	ZEBRA(
+			Game.getVar(R.string.HeroClass_Zebra),
+			Game.getVars(R.array.HeroClass_ZebraPerks),
 			Gender.MASCULINE,
 			false,
 			false,
 			new HeroSubClass[]
-					{ HeroSubClass.SCOUT, HeroSubClass.SHAMAN, HeroSubClass.NONE }
+					{ HeroSubClass.SHAMAN, HeroSubClass.SEER, HeroSubClass.ENCHANTER }
+	),
+	NIGHTWING(
+			Game.getVar(R.string.HeroClass_Nightwing),
+			Game.getVars(R.array.HeroClass_NightwingPerks),
+			Gender.FEMININE,
+			false,
+			true,
+			new HeroSubClass[]
+					{ HeroSubClass.NOCTURNE, HeroSubClass.ASSASSIN, HeroSubClass.VAMPONY }
 	);
 
 	private final String title;
@@ -125,23 +125,23 @@ public enum HeroClass {
 		switch (this) {
 
 			case EARTH_PONY:
-				initEarth(hero);
+				initEarthPony(hero);
 				break;
 
-			case MAGE:
-				initMage(hero);
+			case UNICORN:
+				initUnicorn(hero);
 				break;
 
-			case ROGUE:
-				initRogue(hero);
+			case PEGASUS:
+				initPegasus(hero);
 				break;
 
-			case HUNTRESS:
-				initHuntress(hero);
+			case ZEBRA:
+				initZebra(hero);
 				break;
 
-			case ELF:
-				initElf(hero);
+			case NIGHTWING:
+				initNightwing(hero);
 				break;
 
 
@@ -192,19 +192,19 @@ public enum HeroClass {
 		switch (this) {
 		case EARTH_PONY:
 			return Badges.Badge.MASTERY_EARTH;
-		case MAGE:
-			return Badges.Badge.MASTERY_MAGE;
-		case ROGUE:
-			return Badges.Badge.MASTERY_ROGUE;
-		case HUNTRESS:
-			return Badges.Badge.MASTERY_HUNTRESS;
-		case ELF:
-			return Badges.Badge.MASTERY_ELF;
+		case UNICORN:
+			return Badges.Badge.MASTERY_UNICORN;
+		case PEGASUS:
+			return Badges.Badge.MASTERY_PEGASUS;
+		case ZEBRA:
+			return Badges.Badge.MASTERY_ZEBRA;
+		case NIGHTWING:
+			return Badges.Badge.MASTERY_NIGHTWING;
 		}
 		return null;
 	}
 
-	private void initEarth(Hero hero) {
+	private void initEarthPony(Hero hero) {
 		hero.setHonesty(hero.honesty() + 1);
 		hero.setLaughter(hero.laughter() + 1);
 		hero.setMagic(hero.magic() - 1);
@@ -220,7 +220,11 @@ public enum HeroClass {
 		new PotionOfHonesty().setKnown();
 	}
 
-	private static void initMage(Hero hero) {
+	private void initUnicorn(Hero hero) {
+		hero.setGenerosity(hero.generosity() + 1);
+		hero.setMagic(hero.magic() + 1);
+		hero.setLaughter(hero.laughter() - 1);
+
 		(hero.belongings.weapon = new Knuckles()).identify();
 
 		WandOfMagicMissile wand = new WandOfMagicMissile();
@@ -231,7 +235,10 @@ public enum HeroClass {
 		new ScrollOfIdentify().setKnown();
 	}
 
-	private static void initRogue(Hero hero) {
+	private static void initPegasus(Hero hero) {
+
+		// TODO: None of this is right.
+
 		(hero.belongings.weapon = new Dagger()).identify();
 		(hero.belongings.mane = new RingOfShadows()).upgrade().identify();
 
@@ -244,7 +251,10 @@ public enum HeroClass {
 		new ScrollOfMagicMapping().setKnown();
 	}
 
-	private static void initHuntress(Hero hero) {
+	private static void initZebra(Hero hero) {
+
+		// TODO: None of this is right.
+
 		hero.ht(hero.ht() - 5);
 		hero.hp(hero.ht());
 
@@ -255,7 +265,10 @@ public enum HeroClass {
 		QuickSlot.selectItem(boomerang, 0);
 	}
 
-	private void initElf(Hero hero) {
+	private void initNightwing(Hero hero) {
+
+		// TODO: None of this is right.
+
 		hero.setHonesty(hero.honesty() - 1);
 
 		hero.ht(hero.ht() - 5);
@@ -271,21 +284,6 @@ public enum HeroClass {
 	}
 
 
-
-	private void initUnicorn(Hero hero) {
-		hero.setGenerosity(hero.generosity() + 1);
-		hero.setMagic(hero.magic() + 1);
-		hero.setLaughter(hero.laughter() - 1);
-
-		(hero.belongings.weapon = new Knuckles()).identify();
-
-		WandOfMagicMissile wand = new WandOfMagicMissile();
-		hero.collect(wand.identify());
-
-		QuickSlot.selectItem(wand, 0);
-
-		new ScrollOfIdentify().setKnown();
-	}
 
 	@Override
 	public String toString() {

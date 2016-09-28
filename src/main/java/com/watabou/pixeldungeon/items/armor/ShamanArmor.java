@@ -55,7 +55,7 @@ public class ShamanArmor extends ClassArmor {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.ELF && hero.subClass == HeroSubClass.SHAMAN) {
+		if (hero.heroClass == HeroClass.NIGHTWING && hero.subClass == HeroSubClass.SHAMAN) {
 			return super.doEquip( hero );
 		} else {
 			GLog.w( TXT_NOT_ELF );

@@ -154,7 +154,7 @@ public class Hero extends Char {
 	private static final float TIME_TO_REST = 1f;
 	private static final float TIME_TO_SEARCH = 2f;
 
-	public HeroClass heroClass = HeroClass.ROGUE;
+	public HeroClass heroClass = HeroClass.PEGASUS;
 	public HeroSubClass subClass = HeroSubClass.NONE;
 
 	int attackSkill = 10;
@@ -451,11 +451,12 @@ public class Hero extends Char {
 			return (int) (defenseSkill * evasion / Math.pow(1.5, aEnc));
 		} else {
 
-			if (heroClass == HeroClass.ROGUE) {
+			if (heroClass == HeroClass.PEGASUS) {
 
-				if (curAction != null && subClass == HeroSubClass.FREERUNNER && !isStarving()) {
-					evasion *= 2;
-				}
+				// TODO: Possible reuse of this logic later
+//				if (curAction != null && subClass == HeroSubClass.FREERUNNER && !isStarving()) {
+//					evasion *= 2;
+//				}
 
 				return (int) ((defenseSkill - aEnc) * evasion);
 			} else {
@@ -501,7 +502,11 @@ public class Hero extends Char {
 		} else {
 
 			float speed = super.speed();
-			return getHeroSprite().sprint(subClass == HeroSubClass.FREERUNNER && !isStarving()) ? 1.6f * speed : speed;
+
+			// TODO: As above.
+			//return getHeroSprite().sprint(subClass == HeroSubClass.FREERUNNER && !isStarving()) ? 1.6f * speed : speed;
+
+			return speed;
 
 		}
 	}
@@ -521,12 +526,13 @@ public class Hero extends Char {
 	public void spend(float time) {
 		int hasteLevel = 0;
 
-		if (heroClass == HeroClass.ELF) {
-			hasteLevel++;
-			if (subClass == HeroSubClass.SCOUT) {
-				hasteLevel++;
-			}
-		}
+		// TODO: As above.
+//		if (heroClass == HeroClass.NIGHTWING) {
+//			hasteLevel++;
+//			if (subClass == HeroSubClass.DERP) {
+//				hasteLevel++;
+//			}
+//		}
 
 		for (Buff buff : buffs(RingOfHaste.Haste.class)) {
 			hasteLevel += ((RingOfHaste.Haste) buff).level;
@@ -1003,7 +1009,7 @@ public class Hero extends Char {
 			}
 
 			if (bowEquiped()
-					&& (!Dungeon.level.adjacent(getPos(), enemy.getPos()) || this.heroClass == HeroClass.ELF)) {
+					&& (!Dungeon.level.adjacent(getPos(), enemy.getPos()) || this.heroClass == HeroClass.NIGHTWING)) {
 				return actBowAttack();
 			} else {
 				return actMeleeAttack();
@@ -1065,32 +1071,10 @@ public class Hero extends Char {
 //						damage += Buff.affect(this, Combo.class).hit(enemy, damage);
 //					}
 //					break;
-				case BATTLEMAGE:
-					if (wep instanceof Wand) {
-						Wand wand = (Wand) wep;
-						if (wand.curCharges() < wand.maxCharges() && damage > 0) {
 
-							wand.curCharges(wand.curCharges() + 1);
-							QuickSlot.refresh();
-
-							ScrollOfRecharging.charge(this);
-						}
-						damage += wand.curCharges();
-					}
-					break;
-				case SNIPER:
+				case ASSASSIN:
 					if (rangedWeapon != null) {
 						Buff.prolong(enemy, SnipersMark.class, attackDelay() * 1.1f);
-					}
-					break;
-				case SHAMAN:
-					if (wep instanceof Wand) {
-						Wand wand = (Wand) wep;
-						if (wand.affectTarget()) {
-							if (Random.Int(4) == 0) {
-								wand.zap(enemy.getPos());
-							}
-						}
 					}
 					break;
 				default:
@@ -1367,7 +1351,7 @@ public class Hero extends Char {
 			Badges.validateLevelReached();
 		}
 
-		if (subClass == HeroSubClass.WARLOCK) {
+		if (subClass == HeroSubClass.VAMPONY) {
 
 			int value = Math.min(ht() - hp(), 1 + (Dungeon.depth - 1) / 5);
 			if (value > 0) {
@@ -1388,7 +1372,7 @@ public class Hero extends Char {
 	}
 
 	void updateAwareness() {
-		awareness = (float) (1 - Math.pow((heroClass == HeroClass.ROGUE ? 0.85 : 0.90), (1 + Math.min(lvl(), 9)) * 0.5));
+		awareness = (float) (1 - Math.pow((heroClass == HeroClass.PEGASUS ? 0.85 : 0.90), (1 + Math.min(lvl(), 9)) * 0.5));
 	}
 
 	public boolean isStarving() {

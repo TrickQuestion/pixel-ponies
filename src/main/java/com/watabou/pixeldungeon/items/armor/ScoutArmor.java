@@ -53,12 +53,13 @@ public class ScoutArmor extends ClassArmor {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.ELF && hero.subClass == HeroSubClass.SCOUT) {
-			return super.doEquip( hero );
-		} else {
-			GLog.w( TXT_NOT_ELF );
-			return false;
-		}
+//		if (hero.heroClass == HeroClass.NIGHTWING && hero.subClass == HeroSubClass.DERP) {
+//			return super.doEquip( hero );
+//		} else {
+//			GLog.w( TXT_NOT_ELF );
+//			return false;
+//		}
+		return false;
 	}
 	
 	@Override

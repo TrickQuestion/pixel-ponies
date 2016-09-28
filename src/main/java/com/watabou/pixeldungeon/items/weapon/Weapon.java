@@ -40,7 +40,6 @@ import com.watabou.pixeldungeon.items.weapon.enchantments.Slow;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Swing;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
@@ -118,13 +117,13 @@ public class Weapon extends KindOfWeapon {
 				encumbrance = minAttribute - hero.effectiveLoyalty();
 			} else {
 				encumbrance = minAttribute - hero.effectiveHonesty();
-				if (hero.heroClass == HeroClass.ELF) {
+				if (hero.heroClass == HeroClass.NIGHTWING) {
 					encumbrance += 3;
 				}
 			}
 		} else {
 			encumbrance = minAttribute - hero.effectiveLoyalty();
-			if (hero.heroClass == HeroClass.HUNTRESS) {
+			if (hero.heroClass == HeroClass.ZEBRA) {
 				encumbrance -= 2;
 			}
 		}
@@ -146,7 +145,7 @@ public class Weapon extends KindOfWeapon {
 			}
 		} else {
 			encumbrance = minAttribute - hero.effectiveHonesty();
-			if (hero.heroClass == HeroClass.HUNTRESS) {
+			if (hero.heroClass == HeroClass.ZEBRA) {
 				encumbrance -= 2;
 			}
 		}
@@ -169,7 +168,7 @@ public class Weapon extends KindOfWeapon {
 				bonus = hero.effectiveHonesty() - minAttribute;
 			}
 		} else {
-			if (hero.heroClass == HeroClass.HUNTRESS) {
+			if (hero.heroClass == HeroClass.ZEBRA) {
 				bonus = hero.effectiveLoyalty() - minAttribute;
 			}
 		}

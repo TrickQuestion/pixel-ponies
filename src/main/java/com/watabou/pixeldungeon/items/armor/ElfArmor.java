@@ -51,7 +51,7 @@ public class ElfArmor extends ClassArmor {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.ELF) {
+		if (hero.heroClass == HeroClass.NIGHTWING) {
 			return super.doEquip( hero );
 		} else {
 			GLog.w( TXT_NOT_ELF );

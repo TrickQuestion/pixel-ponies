@@ -123,7 +123,7 @@ public class ItemSpriteSheet {
 	public static final int SCROLL_SERENDA	= 77;
 	public static final int SCROLL_KONDA	= 78;
 	public static final int SCROLL_VAIOR	= 79;
-	public static final int SCROLL_USKREN	= 128;
+	public static final int SCROLL_TANAGRETU= 128;
 	public static final int SCROLL_YAVAYA	= 129;
 	public static final int SCROLL_IBEKU	= 130;
 	public static final int SCROLL_MALENKI	= 131;

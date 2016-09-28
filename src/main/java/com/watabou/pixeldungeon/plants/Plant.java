@@ -55,9 +55,10 @@ public class Plant implements Bundlable {
 
 	public void activate(Char ch) {
 
-		if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN) {
-			Buff.affect(ch, Barkskin.class).level(ch.ht() / 3);
-		}
+		// TODO: Cannibalize for zebras, maybe.
+//		if (ch instanceof Hero && ((Hero) ch).subClass == HeroSubClass.WARDEN) {
+//			Buff.affect(ch, Barkskin.class).level(ch.ht() / 3);
+//		}
 		
 		effect(pos, ch);
 		
@@ -72,7 +73,7 @@ public class Plant implements Bundlable {
 			CellEmitter.get(pos).burst(LeafParticle.GENERAL, 6);
 		}
 
-		if (Dungeon.hero.subClass == HeroSubClass.WARDEN) {
+		if (Dungeon.hero.subClass == HeroSubClass.SHAMAN) {
 			if (Random.Int(5) == 0) {
 				Dungeon.level.drop(Generator.random(Generator.Category.SEED),
 						pos).sprite.drop();

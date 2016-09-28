@@ -73,12 +73,11 @@ public class StartScene extends PixelScene {
 
 	private static final String TXT_UNDER_CONSTRUCTION = "Class currently unavailable, check back soon";
 
-	private static final String TXT_UNLOCK = Game
-			.getVar(R.string.StartScene_Unlock);
+	private static final String TXT_UNLOCK_UNICORN = Game.getVar(R.string.StartScene_UnlockUnicorn);
+	private static final String TXT_UNLOCK_PEGASUS = Game.getVar(R.string.StartScene_UnlockPegasus);
+	private static final String TXT_UNLOCK_ZEBRA = Game.getVar(R.string.StartScene_UnlockZebra);
+	private static final String TXT_UNLOCK_NIGHTWING = Game.getVar(R.string.StartScene_UnlockNightwing);
 
-	private static final String TXT_UNLOCK_ELF = Game
-			.getVar(R.string.StartScene_UnlockElf);
-	
 	private static final String TXT_WIN_THE_GAME = Game
 			.getVar(R.string.StartScene_WinGame);
 
@@ -96,17 +95,11 @@ public class StartScene extends PixelScene {
 	private GameButton btnLoad;
 	private GameButton btnNewGame;
 
-	private boolean huntressUnlocked;
-	private boolean elfUnlocked;
-
-	private boolean unicornReady;
-	private boolean pegasusReady;
-	private boolean zebraReady;
-	private boolean nightwingReady;
+	private boolean unicornReady = false;
+	private boolean pegasusReady = false;
+	private boolean zebraReady = false;
+	private boolean nightwingReady = false;
 	
-	private Group unlock;
-	private Group unlockElf;
-
 	private Group unlockUnicorn;
 	private Group unlockPegasus;
 	private Group unlockZebra;
@@ -183,8 +176,8 @@ public class StartScene extends PixelScene {
 
 		float centralHeight = buttonY - title.y - title.height();
 
-		HeroClass[] classes = { HeroClass.EARTH_PONY, HeroClass.MAGE,
-				HeroClass.ROGUE, HeroClass.HUNTRESS, HeroClass.ELF };
+		HeroClass[] classes = { HeroClass.EARTH_PONY, HeroClass.UNICORN,
+				HeroClass.PEGASUS, HeroClass.ZEBRA, HeroClass.NIGHTWING};
 		for (HeroClass cl : classes) {
 			ClassShield shield = new ClassShield(cl);
 			shields.put(cl, shield);
@@ -224,43 +217,68 @@ public class StartScene extends PixelScene {
 			add(challenge);
 		}
 
-		unlock = new Group();
-		add(unlock);
-		
-		unlockElf = new Group();
-		add(unlockElf);
+		unlockUnicorn = new Group();
+		add(unlockUnicorn);
 
-		if (!(huntressUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_3) || (PixelDungeon.donated() >= 1) )) {
-			Text text = PixelScene
-					.createMultiline(TXT_UNLOCK, GuiProperties.titleFontSize());
-			text.maxWidth((int) width);
-			text.measure();
+		unlockPegasus = new Group();
+		add(unlockPegasus);
 
-			float pos = (bottom - BUTTON_HEIGHT)
-					+ (BUTTON_HEIGHT - text.height()) / 2;
-			
-			text.hardlight(0xFFFF00);
-			text.x = PixelScene.align(w / 2 - text.width() / 2);
-			text.y = PixelScene.align(pos);
-			unlock.add(text);
+		unlockZebra = new Group();
+		add(unlockZebra);
 
-		}
+		unlockNightwing = new Group();
+		add(unlockNightwing);
 
-		if (!(elfUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_4) || (PixelDungeon.donated() >= 2) )) {
-			Text text = PixelScene
-					.createMultiline(TXT_UNLOCK_ELF, GuiProperties.titleFontSize());
-			text.maxWidth((int) width);
-			text.measure();
+		Text text = PixelScene.createMultiline(TXT_UNDER_CONSTRUCTION, GuiProperties.titleFontSize());
+		text.maxWidth((int) width);
+		text.measure();
+		float pos = (bottom - BUTTON_HEIGHT) + (BUTTON_HEIGHT - text.height()) / 2;
+		text.hardlight(0xFFFF00);
+		text.x = PixelScene.align(w / 2 - text.width() / 2);
+		text.y = PixelScene.align(pos);
+		unlockUnicorn.add(text);
+		unlockPegasus.add(text);
+		unlockZebra.add(text);
+		unlockNightwing.add(text);
 
-			float pos = (bottom - BUTTON_HEIGHT)
-					+ (BUTTON_HEIGHT - text.height()) / 2;
-			
-			text.hardlight(0xFFFF00);
-			text.x = PixelScene.align(w / 2 - text.width() / 2);
-			text.y = PixelScene.align(pos);
-			unlockElf.add(text);
 
-		}
+//		unlock = new Group();
+//		add(unlock);
+//
+//		unlockElf = new Group();
+//		add(unlockElf);
+//
+//		if (!(huntressUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_3) || (PixelDungeon.donated() >= 1) )) {
+//			Text text = PixelScene
+//					.createMultiline(TXT_UNLOCK, GuiProperties.titleFontSize());
+//			text.maxWidth((int) width);
+//			text.measure();
+//
+//			float pos = (bottom - BUTTON_HEIGHT)
+//					+ (BUTTON_HEIGHT - text.height()) / 2;
+//
+//			text.hardlight(0xFFFF00);
+//			text.x = PixelScene.align(w / 2 - text.width() / 2);
+//			text.y = PixelScene.align(pos);
+//			unlock.add(text);
+//
+//		}
+//
+//		if (!(elfUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_4) || (PixelDungeon.donated() >= 2) )) {
+//			Text text = PixelScene
+//					.createMultiline(TXT_UNLOCK_ELF, GuiProperties.titleFontSize());
+//			text.maxWidth((int) width);
+//			text.measure();
+//
+//			float pos = (bottom - BUTTON_HEIGHT)
+//					+ (BUTTON_HEIGHT - text.height()) / 2;
+//
+//			text.hardlight(0xFFFF00);
+//			text.x = PixelScene.align(w / 2 - text.width() / 2);
+//			text.y = PixelScene.align(pos);
+//			unlockElf.add(text);
+//
+//		}
 		
 		ExitButton btnExit = new ExitButton();
 		btnExit.setPos(Camera.main.width - btnExit.width(), 0);
@@ -292,24 +310,51 @@ public class StartScene extends PixelScene {
 		}
 		shields.get(curClass = cl).highlight(true);
 
-		if (cl == HeroClass.HUNTRESS && !huntressUnlocked) {
-			unlock.setVisible(true);
-			unlockElf.setVisible(false);
+
+		if (cl == HeroClass.UNICORN && !unicornReady) {
+			unlockUnicorn.setVisible(true);
+			unlockPegasus.setVisible(false);
+			unlockZebra.setVisible(false);
+			unlockNightwing.setVisible(false);
 			btnLoad.setVisible(false);
 			btnNewGame.setVisible(false);
 			return;
 		}
-		
-		if (cl == HeroClass.ELF && !elfUnlocked) {
-			unlock.setVisible(false);
-			unlockElf.setVisible(true);
+
+		if (cl == HeroClass.PEGASUS && !pegasusReady) {
+			unlockUnicorn.setVisible(false);
+			unlockPegasus.setVisible(true);
+			unlockZebra.setVisible(false);
+			unlockNightwing.setVisible(false);
 			btnLoad.setVisible(false);
 			btnNewGame.setVisible(false);
 			return;
 		}
-		
-		unlock.setVisible(false);
-		unlockElf.setVisible(false);
+
+		if (cl == HeroClass.ZEBRA && !zebraReady) {
+			unlockUnicorn.setVisible(false);
+			unlockPegasus.setVisible(false);
+			unlockZebra.setVisible(true);
+			unlockNightwing.setVisible(false);
+			btnLoad.setVisible(false);
+			btnNewGame.setVisible(false);
+			return;
+		}
+
+		if (cl == HeroClass.NIGHTWING && !nightwingReady) {
+			unlockUnicorn.setVisible(false);
+			unlockPegasus.setVisible(false);
+			unlockZebra.setVisible(false);
+			unlockNightwing.setVisible(true);
+			btnLoad.setVisible(false);
+			btnNewGame.setVisible(false);
+			return;
+		}
+
+		unlockUnicorn.setVisible(false);
+		unlockPegasus.setVisible(false);
+		unlockZebra.setVisible(false);
+		unlockNightwing.setVisible(false);
 
 		GamesInProgress.Info info = GamesInProgress.check(curClass);
 		if (info != null) {

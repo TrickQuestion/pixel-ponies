@@ -2,7 +2,6 @@ package com.watabou.pixeldungeon.items.rings;
 
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
@@ -138,7 +137,7 @@ public class Artifact extends KindOfWeapon {
 			actions.remove(AC_EQUIP);
 
 			if (hero.heroClass.hasHorn()) {
-				if (hero.subClass == HeroSubClass.BATTLEMAGE && this.isRing) {
+				if (hero.subClass == HeroSubClass.PRINCESS && this.isRing) {
 					actions.add(AC_EQUIP_HORN);
 				}
 			} else {

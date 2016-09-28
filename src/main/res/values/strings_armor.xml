@@ -19,14 +19,14 @@
 
     <!-- STRINGS OF AncientArmor CLASS -->
     <string name="AncientArmor_Name">ancient barding</string>
-    <string name="AncientArmor_Desc">This ancient orichalcum suit of barding provides unmatched protection for those rare ponies honest enough to shoulder its massive burden. There\'s no saddle, but it has a linked helm that prevents Unicorns from wearing it.</string>
-    <string name="AncientArmor_NotUnicorn">Unicorns can\'t wear this barding! The helmet is permanently fixed to the neck plate, and there is no room for a horn.</string>
+    <string name="AncientArmor_Desc">This ancient orichalcum suit of barding provides unmatched protection for those rare ponies honest enough to shoulder its massive burden. There\'s no saddle, but it has a linked helm that prevents ponies with horns from wearing it.</string>
+    <string name="AncientArmor_NotHorn">Ponies with horns can\'t wear this barding! The helmet is permanently fixed to the neck plate, and there is no room for a horn.</string>
 
     <!-- STRINGS OF BardArmor CLASS -->
     <string name="BardArmor_Name">harlequin costume</string>
     <string name="BardArmor_Desc">The Bard wearing this harlequin costume can enter a frenzied _Sugar Rush_, producing a temporary boost to Laughter.</string>
     <string name="BardArmor_ACSpecial">SUGAR RUSH</string>
-    <string name="BardArmor_NotBard">Only Bards can use this armor!</string>
+    <string name="BardArmor_NotBard">Only Bards can use this barding!</string>
 
     <!-- STRINGS OF ClassArmor CLASS -->
     <string name="ClassArmor_Desc">The thing looks awesome!</string>
@@ -41,20 +41,20 @@
     <string name="ElfArmor_Name">Elven mantle</string>
     <string name="ElfArmor_Desc">With the help of this mantle, the Elf can summon the forces of nature itself. High grass will grow in the blink of an eye even through solid stone, immobilizing all enemies in sight.</string>
     <string name="ElfArmor_ACSpecial">NATURE CALL</string>
-    <string name="ElfArmor_NotElf">Only Elves can use this armor!</string>
+    <string name="ElfArmor_NotElf">Only Elves can use this barding!</string>
 
     <!-- STRINGS OF FarmerArmor CLASS -->
     <string name="FarmerArmor_Name">yoke and plant team vest</string>
-    <string name="FarmerArmor_Desc">A yoked Farmer can _Harvest_ grass. After activating the armor, stepping on tall grass will satisfy your hunger. (Just don\'t tell anypony about the Secret of Grass, or you\'ll ruin the food market.) Eating grass doesn\'t count as eating a piece of food, so it won\'t restore health.</string>
+    <string name="FarmerArmor_Desc">A yoked Farmer can _Harvest_ grass. After activating the ability, stepping on tall grass will satisfy hunger. (Don\'t tell anypony about the Secret of Grass, or you\'ll ruin the food market.) Eating grass doesn\'t count as eating a piece of food, so it won\'t restore any health.</string>
     <string name="FarmerArmor_ACSpecial">HARVEST</string>
-    <string name="FarmerArmor_NotFarmer">Only Farmers can use this armor!</string>
+    <string name="FarmerArmor_NotFarmer">Only Farmers can use this barding!</string>
 
     <!-- STRINGS OF HuntressArmor CLASS -->
     <string name="HuntressArmor_Name">huntress cloak</string>
     <string name="HuntressArmor_Desc">A Huntress in such cloak can create a fan of _Spectral Blades_. Each of these blades will target a single enemy in the Huntress\'s field of view, inflicting damage depending on her currently equipped melee weapon.</string>
     <string name="HuntressArmor_ACSpecial">SPECTRAL BLADES</string>
     <string name="HuntressArmor_NoEnemies">No enemies in sight</string>
-    <string name="HuntressArmor_NotHuntress">Only Huntresses can use this armor!</string>
+    <string name="HuntressArmor_NotHuntress">Only Huntresses can use this barding!</string>
 
     <!-- STRINGS OF PleatherArmor CLASS -->
     <string name="PleatherArmor_Name">pleather barding</string>
@@ -64,7 +64,7 @@
     <string name="MageArmor_Name">mage robe</string>
     <string name="MageArmor_Desc">Wearing this gorgeous robe, a Mage can cast a spell of molten earth: all the enemies in his field of view will be set on fire and will be unable to move at the same time.</string>
     <string name="MageArmor_ACSpecial">MOLTEN EARTH</string>
-    <string name="MageArmor_NotMage">Only Mages can use this armor!</string>
+    <string name="MageArmor_NotMage">Only Mages can use this barding!</string>
 
     <!-- STRINGS OF MailArmor CLASS -->
     <string name="MailArmor_Name">chainmail barding</string>
@@ -78,7 +78,7 @@
     <string name="RogueArmor_Name">rogue garb</string>
     <string name="RogueArmor_Desc">Wearing this dark garb, a Rogue can perform a trick called _Smoke Bomb_ (though no real explosives are used): he blinds enemies who can see him and jumps aside.</string>
     <string name="RogueArmor_ACSpecial">SMOKE BOMB</string>
-    <string name="RogueArmor_NotRogue">Only Rogues can use this armor!</string>
+    <string name="RogueArmor_NotRogue">Only Rogues can use this barding!</string>
     <string name="RogueArmor_Fov">You can only jump to an empty location in your field of view</string>
     <string name="RogueArmor_Prompt">Choose a location to jump to</string>
 
