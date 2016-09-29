@@ -136,7 +136,7 @@ public class WndRanking extends WndTabbed {
 		private final String TXT_CHALLENGES = Game.getVar(R.string.WndRanking_StaChallenges);
 		
 		private final String TXT_HEALTH	  = Game.getVar(R.string.WndRanking_StaHealth);
-		private final String TXT_STR      = Game.getVar(R.string.WndRanking_StaStr);
+		private final String TXT_STR      = Game.getVar(R.string.WndRanking_StaHonesty);
 		
 		private final String TXT_DURATION = Game.getVar(R.string.WndRanking_StaDuration);
 		
