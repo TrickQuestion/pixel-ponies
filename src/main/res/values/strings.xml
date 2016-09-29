@@ -5,7 +5,7 @@
     <string name="app_name">Pixel Ponies!</string>
 
     <!-- STRINGS OF IntroScene CLASS -->
-    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Amulet of Yendor, which is told to be hidden in the depths of the Dungeon.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that fortune smiles on you. It\'s time to start your own adventure!</string>
+    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Alicorn Amulet, which you believe is being held by the entity known as Nightmare.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that friendship smiles upon you. It\'s time to start your own adventure!</string>
 
     <!-- STRINGS OF AmuletScene CLASS -->
     <string name="AmuletScene_Exit">Let\'s call it a day</string>
@@ -278,9 +278,9 @@
     <string name="Heap_Mimic">This is a mimic!</string>
 
     <!-- STRINGS OF Amulet CLASS -->
-    <string name="Amulet_Name">Amulet of Yendor</string>
+    <string name="Amulet_Name">Alicorn Amulet</string>
     <string name="Amulet_ACEnd">END THE GAME</string>
-    <string name="Amulet_Info">The Amulet of Yendor is the most powerful known artifact of unknown origin. It is said that the amulet is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it.</string>
+    <string name="Amulet_Info">The Alicorn Amulet is one of the most powerful artifacts in pony history. It is said that the Amulet is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it, even for ponies with no innate magical ability. However, unbridled power rarely comes without consequences...</string>
 
     <!-- STRINGS OF Ankh CLASS -->
     <string name="Ankh_Name">Ankh</string>

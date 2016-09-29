@@ -26,10 +26,6 @@
     <string name="RubyCrossbow_Info">This deadly weapon is truly a masterpiece of dwarven engineering.</string>
     <string name="RubyCrossbow_Gender">masculine</string>
 
-    <!-- STRINGS OF GothicArmor CLASS -->
-    <string name="GothicArmor_Name">Gothic armor</string>
-    <string name="GothicArmor_Info">A gothic armor is a pinnacle of the art of armor forging.</string>
-
     <!-- STRINGS OF ChaosArmor CLASS -->
     <string name="ChaosArmor_Name">Chaos armor</string>
     <string name="ChaosArmor_Info">A blood red plates of this armor is sewed together with dark red chains. It irradiates chaotic energy as you touch it.</string>

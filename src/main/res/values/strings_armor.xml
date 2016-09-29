@@ -12,8 +12,8 @@
     <string name="Armor_Info4">\n\nTypical %1$s provides damage absorption up to %2$d points per attack and requires %3$d points of Honesty.</string>
     <string name="Armor_Info5">This barding probably requires more Honesty than you have.</string>
     <string name="Armor_Info6">It is inscribed.</string>
-    <string name="Armor_Info7a">\n\nYou are wearing the %1$s%2$s.</string>
-    <string name="Armor_Info7b">, and because it is cursed, you are powerless to remove it</string>
+    <string name="Armor_Info7a">\n\nYou are wearing the %1$s%2$s</string>
+    <string name="Armor_Info7b">, and because it is cursed, you are powerless to remove it.</string>
     <string name="Armor_Info8">\n\nYou can feel a malevolent magic lurking within the %s.</string>
     <string name="Armor_Glyph">glyph</string>
 

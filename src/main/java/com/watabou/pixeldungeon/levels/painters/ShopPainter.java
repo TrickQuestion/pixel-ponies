@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.painters;
 
-import com.nyrds.pixeldungeon.items.guts.armor.GothicArmor;
+import com.watabou.pixeldungeon.items.armor.AncientArmor;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Claymore;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Halberd;
 import com.nyrds.pixeldungeon.mobs.npc.AzuterronNPC;
@@ -157,7 +157,7 @@ public class ShopPainter extends Painter {
 					items.add( new Halberd().identify() );
 					break;
 				case 2:
-					items.add( new GothicArmor().identify() );
+					items.add( new AncientArmor().identify() );
 					break;
 			}
 			items.add( new PotionOfHealing() );

@@ -232,7 +232,7 @@ public class Armor extends EquipableItem {
 		} else {
 			info.append(Utils.format(Game.getVar(R.string.Armor_Info4), name, typicalResistance(), typicalHonesty()));
 			if (typicalHonesty() > Dungeon.hero.effectiveHonesty()) {
-				info.append(Game.getVar(R.string.Armor_Info5));
+				info.append(" ").append(Game.getVar(R.string.Armor_Info5));
 			}
 		}
 		info.append(" ");
@@ -242,7 +242,7 @@ public class Armor extends EquipableItem {
 		
 		if (isEquipped( Dungeon.hero )) {
 			info.append(Utils.format(Game.getVar(R.string.Armor_Info7a), name,
-				(cursed ? Game.getVar(R.string.Armor_Info7b) : "") )); 
+				(cursed ? Game.getVar(R.string.Armor_Info7b) : ".") ));
 		} else {
 			if (cursedKnown && cursed) {
 				info.append(Utils.format(Game.getVar(R.string.Armor_Info8), name));

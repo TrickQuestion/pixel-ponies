@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 
 public class AncientArmor extends Armor {
 
-	private static final String TXT_HORN	= Game.getVar(R.string.AncientArmor_NotUnicorn);
+	private static final String TXT_HORN	= Game.getVar(R.string.AncientArmor_NotHorn);
 
 	public AncientArmor() {
 		super( 6 );
