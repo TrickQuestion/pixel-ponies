@@ -249,6 +249,20 @@ public abstract class Ring extends Artifact {
 		}
 		return price;
 	}
+
+
+	@Override
+	public String toString() {
+		if (levelKnown) {
+			if (isKnown()) {
+				return Utils.format(TXT_TO_STRING, super.toString(), minAttribute);
+			} else {
+				return Utils.format(TXT_UNKNOWN_TO_STRING, super.toString());
+			}
+		} else {
+			return super.toString();
+		}
+	}
 	
 	public class RingBuff extends ArtifactBuff {
 		
@@ -290,14 +304,6 @@ public abstract class Ring extends Artifact {
 		}
 
 
-		@Override
-		public String toString() {
-			if (isKnown()) {
-				return Utils.format( TXT_TO_STRING, super.toString(), minAttribute );
-			} else {
-				return Utils.format( TXT_UNKNOWN_TO_STRING, super.toString() );
-			}
-		}
 	}
 
 }

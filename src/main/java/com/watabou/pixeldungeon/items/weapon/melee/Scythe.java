@@ -33,13 +33,13 @@ import com.watabou.pixeldungeon.windows.WndBag;
 
 import java.util.ArrayList;
 
-public class ShortSword extends MeleeWeapon {
+public class Scythe extends MeleeWeapon {
 
-	public static final String AC_REFORGE = Game.getVar(R.string.ShortSword_ACReforge);
+	public static final String AC_REFORGE = Game.getVar(R.string.Scythe_ACReforge);
 	
-	private static final String TXT_SELECT_WEAPON = Game.getVar(R.string.ShortSword_Select);
-	private static final String TXT_REFORGED      = Game.getVar(R.string.ShortSword_Reforged);
-	private static final String TXT_NOT_BOOMERANG = Game.getVar(R.string.ShortSword_NotBoomerang);
+	private static final String TXT_SELECT_WEAPON = Game.getVar(R.string.Scythe_Select);
+	private static final String TXT_REFORGED      = Game.getVar(R.string.Scythe_Reforged);
+	private static final String TXT_NOT_BOOMERANG = Game.getVar(R.string.Scythe_NotBoomerang);
 	
 	private static final float TIME_TO_REFORGE	= 2f;
 	
@@ -48,7 +48,7 @@ public class ShortSword extends MeleeWeapon {
 		image = ItemSpriteSheet.SHORT_SWORD;
 	}
 	
-	public ShortSword() {
+	public Scythe() {
 		super( 1, 1f, 1f );
 		
 		minAttribute = 4;
@@ -89,7 +89,7 @@ public class ShortSword extends MeleeWeapon {
 	
 	@Override
 	public String desc() {
-		return Game.getVar(R.string.ShortSword_Info);
+		return Game.getVar(R.string.Scythe_Info);
 	}
 	
 	private final WndBag.Listener itemSelector = new WndBag.Listener() {
@@ -115,7 +115,7 @@ public class ShortSword extends MeleeWeapon {
 				}
 				
 				if (equipped) {
-					getCurUser().belongings.weapon = ShortSword.this;
+					getCurUser().belongings.weapon = Scythe.this;
 				} else {
 					collect( getCurUser().belongings.backpack );
 				}

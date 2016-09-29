@@ -109,7 +109,7 @@ import com.watabou.pixeldungeon.items.weapon.melee.Longsword;
 import com.watabou.pixeldungeon.items.weapon.melee.Mace;
 import com.watabou.pixeldungeon.items.weapon.melee.Quarterstaff;
 import com.watabou.pixeldungeon.items.weapon.melee.RubyBow;
-import com.watabou.pixeldungeon.items.weapon.melee.ShortSword;
+import com.watabou.pixeldungeon.items.weapon.melee.Scythe;
 import com.watabou.pixeldungeon.items.weapon.melee.Spear;
 import com.watabou.pixeldungeon.items.weapon.melee.Sword;
 import com.watabou.pixeldungeon.items.weapon.melee.WarHammer;
@@ -245,7 +245,7 @@ public class Generator {
 			BattleAxe.class,
 			WarHammer.class, 
 			Glaive.class,
-			ShortSword.class,
+			Scythe.class,
 			Dart.class,
 			Javelin.class,
 			IncendiaryDart.class,

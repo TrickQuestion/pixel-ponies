@@ -23,7 +23,7 @@
    "entrance":[1,1],
    "exit":[3,3],
    "items" = [
-      {"kind"="ShortSword", "x"=4,"y"=4},
+      {"kind"="Scythe", "x"=4,"y"=4},
       {"kind"="Dart","x"=5,"y"=5,"quantity"=10}
    ],
    "mobs" = [

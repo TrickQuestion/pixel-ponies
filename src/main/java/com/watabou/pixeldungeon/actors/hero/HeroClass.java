@@ -21,8 +21,6 @@ package com.watabou.pixeldungeon.actors.hero;
 import android.support.annotation.NonNull;
 
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Claymore;
-import com.nyrds.pixeldungeon.items.necropolis.BlackSkull;
-import com.nyrds.pixeldungeon.items.necropolis.BladeOfSouls;
 import com.nyrds.pixeldungeon.ml.BuildConfig;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
@@ -31,19 +29,16 @@ import com.watabou.pixeldungeon.items.TomeOfMastery;
 import com.watabou.pixeldungeon.items.armor.ClassArmor;
 import com.watabou.pixeldungeon.items.armor.ClothArmor;
 import com.watabou.pixeldungeon.items.food.Ration;
-import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
-import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.items.rings.RingOfHaste;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
 import com.watabou.pixeldungeon.items.rings.RingOfThorns;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.watabou.pixeldungeon.items.wands.WandOfMagicMissile;
 import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
 import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
-import com.watabou.pixeldungeon.items.weapon.melee.ShortSword;
+import com.watabou.pixeldungeon.items.weapon.melee.Scythe;
 import com.watabou.pixeldungeon.items.weapon.melee.WoodenBow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
 import com.watabou.pixeldungeon.items.weapon.missiles.CommonArrow;
@@ -157,9 +152,6 @@ public enum HeroClass {
 	private static void initDebug(Hero hero) {
 		for(int i = 0;i<100;i++) {
 			hero.collect(new ScrollOfMagicMapping());
-			hero.collect(new PotionOfToxicGas());
-			hero.collect(new PotionOfLiquidFlame());
-			hero.collect(new ScrollOfTeleportation());
 		}
 
 		Badges.validateBossSlain(Badges.Badge.BOSS_SLAIN_3);
@@ -167,12 +159,9 @@ public enum HeroClass {
 		hero.collect(new TomeOfMastery());
 		hero.collect(new Claymore().identify().upgrade(100));
 
-		hero.collect(new BlackSkull());
-		hero.collect(new BladeOfSouls().identify());
-
 		hero.collect(new RingOfShadows().degrade());
 		hero.collect(new RingOfThorns());
-		hero.collect(new RingOfHaste().upgrade());
+		hero.collect(new RingOfHaste().upgrade().identify());
 
 		hero.ht(1000);
 		hero.hp(1000);
@@ -211,7 +200,7 @@ public enum HeroClass {
 		hero.ht(hero.ht() + 5);
 		hero.hp(hero.ht());
 
-		(hero.belongings.weapon = new ShortSword()).identify();
+		(hero.belongings.weapon = new Scythe()).identify();
 
 		hero.collect(new Dart(8));
 

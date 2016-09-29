@@ -136,14 +136,14 @@
     <string name="Quarterstaff_Info">A staff of hardwood, its ends are shod with iron.</string>
     <string name="Quarterstaff_Gender">masculine</string>  
     
-    <!-- STRINGS OF ShortSword CLASS -->
-    <string name="ShortSword_Name">short sword</string>
-    <string name="ShortSword_Info">It is indeed quite short, just a few inches longer, than a dagger.</string>
-    <string name="ShortSword_ACReforge">REFORGE</string>
-    <string name="ShortSword_Select">Select a weapon to upgrade</string>
-    <string name="ShortSword_Reforged">you reforged the short sword to upgrade your %s</string>
-    <string name="ShortSword_NotBoomerang">you can\'t upgrade a boomerang this way</string>
-    <string name="ShortSword_Gender">masculine</string>
+    <!-- STRINGS OF Scythe CLASS -->
+    <string name="Scythe_Name">scythe</string>
+    <string name="Scythe_Info">It\'s a makeshift weapon normally used for farming. If it\'s been upgraded at least once, it can be reforged to upgrade another weapon.</string>
+    <string name="Scythe_ACReforge">REFORGE</string>
+    <string name="Scythe_Select">Select a weapon to upgrade</string>
+    <string name="Scythe_Reforged">You reforged the scythe to upgrade your %s.</string>
+    <string name="Scythe_NotBoomerang">You can\'t upgrade a boomerang this way.</string>
+    <string name="Scythe_Gender">masculine</string>
     
     <!-- STRINGS OF Spear CLASS -->
     <string name="Spear_Name">spear</string>

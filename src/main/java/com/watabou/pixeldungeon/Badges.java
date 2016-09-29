@@ -430,7 +430,7 @@ public class Badges {
 
 		// This method should be called:
 		// 1) When an item is obtained (Item.collect)
-		// 2) When an item is upgraded (ScrollOfUpgrade, ScrollOfWeaponUpgrade, ShortSword, WandOfMagicMissile)
+		// 2) When an item is upgraded (ScrollOfUpgrade, ScrollOfWeaponUpgrade, Scythe, WandOfMagicMissile)
 		// 3) When an item is identified
 		if (!item.levelKnown) {
 			return;
