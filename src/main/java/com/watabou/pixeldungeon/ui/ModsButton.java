@@ -13,7 +13,6 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.windows.WndModSelect;
 import com.watabou.pixeldungeon.windows.WndTitledMessage;
 
 public class ModsButton extends Button implements InterstitialPoint {
@@ -74,11 +73,7 @@ public class ModsButton extends Button implements InterstitialPoint {
 		Game.executeInGlThread(new Runnable() {
 			@Override
 			public void run() {
-				if (result) {
-					parent.add(new WndModSelect());
-				} else {
-					parent.add(new WndTitledMessage(Icons.get(Icons.SKULL), "No permissions granted", "No permissions granted"));
-				}
+				parent.add(new WndTitledMessage(Icons.get(Icons.SKULL), "No permissions granted", "No permissions granted"));
 			}
 		});
 

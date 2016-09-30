@@ -35,8 +35,8 @@
 
     <!-- STRINGS OF BlankScroll CLASS -->
     <string name="BlankScroll_Name">Blank Scroll</string>
-    <string name="BlankScroll_Info">Just a blank scroll. Maybe something can write on it?</string>
-    <string name="BlankScroll_ReallyBlank">This scroll is blank</string>
+    <string name="BlankScroll_Info">This is a blank scroll, enchanted but uninscribed with magical runes.</string>
+    <string name="BlankScroll_ReallyBlank">The scroll is blank, so there\'s nothing to read.</string>
 
     <!-- STRINGS OF ScrollOfChallenge CLASS -->
     <string name="ScrollOfChallenge_Name">Scroll of Challenge</string>
@@ -103,17 +103,17 @@
 
     <!-- STRINGS OF ScrollOfWeaponUpgrade CLASS -->
     <string name="ScrollOfWeaponUpgrade_Name">Scroll of Weapon Upgrade</string>
-    <string name="ScrollOfWeaponUpgrade_Info">This scroll will upgrade a melee weapon, improving its quality. In contrast to a regular Scroll of Upgrade, this specialized version will never destroy an enchantment on a weapon. On the contrary, it is able to imbue an unenchanted weapon with a random enchantment.</string>
+    <string name="ScrollOfWeaponUpgrade_Info">This scroll will upgrade a melee weapon, improving its quality and imbuing it with a random enchantment. If the weapon is already enchanted, you choose whether to keep the old enchantment or try for a new one.</string>
     <string name="ScrollOfWeaponUpgrade_InvTitle">Select an weapon to upgrade</string>
     <string name="ScrollOfWeaponUpgrade_LooksBetter">your %s certainly looks better now</string>
 
     <!-- STRINGS OF ScrollOfDomination CLASS -->
     <string name="ScrollOfDomination_Name">Scroll of Domination</string>
-    <string name="ScrollOfDomination_Info">This scroll will bend will of one creature in your sight. The creature will fight for you to the death.</string>
+    <string name="ScrollOfDomination_Info">This scroll will bend the will of one creature in your sight. The creature will fight for you to the death.</string>
     
     <!-- STRINGS OF ScrollOfCurse CLASS -->
     <string name="ScrollOfCurse_Name">Scroll of Curse</string>
-    <string name="ScrollOfCurse_Info">This scroll created especially to punish thieves stupid enough to try use magic they cant understand. Scroll magic totally useless and even harmful for regular adventurer, but valued pretty well by merchants.</string>
+    <string name="ScrollOfCurse_Info">This scroll was created to punish thieves naive enough to attempt magic they don\'t understand. Heroes have little use for this scroll, but it has value to merchants.</string>
 
     <!-- STRINGS OF ScrollOfLoyalOath CLASS -->
     <string name="ScrollOfLoyalOath_Name">Scroll of Loyal Oath</string>

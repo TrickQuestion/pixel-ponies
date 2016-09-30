@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- STRINGS OF KindOfWeapon CLASS -->
+    <string name="KindOfWeapon_EquipCursed">you wince as your grip involuntarily tightens around your %s</string>
+
     <!-- PACKAGE /items/weapon -->
     <!-- STRINGS OF Weapon CLASS -->
     <string name="Weapon_Identify">You are now familiar enough with your %1$s to identify it. It is %2$s.</string>
@@ -97,9 +101,16 @@
     <string name="MeleeWeapon_Info6a">Because of your inadequate Honesty the accuracy and speed of your attack with this %s is decreased.</string>
     <string name="MeleeWeapon_Info6b">Because of your excess Honesty the damage of your attack with this %s is increased.</string>
     <string name="MeleeWeapon_Info6c">Because of your inadequate Loyalty the accuracy and speed of your attack with this %s is decreased.</string>
-    <string name="MeleeWeapon_Info7a">You hold the %1$s at the ready%2$s.</string>
-    <string name="MeleeWeapon_Info7b">, and because it is cursed, you are powerless to let go</string>
+    <string name="MeleeWeapon_Info7a">You hold the %1$s at the ready%2$s</string>
+    <string name="MeleeWeapon_Info7b">, and because it is cursed, you are powerless to let go.</string>
     <string name="MeleeWeapon_Info7c">You can feel a malevolent magic lurking within %s.</string>
+
+    <!-- STRINGS OF Pickaxe CLASS -->
+    <string name="Pickaxe_Name">pickaxe</string>
+    <string name="Pickaxe_Info">This is a large and sturdy tool for breaking rocks. It can be probably used as a weapon.</string>
+    <string name="Pickaxe_ACMine">MINE</string>
+    <string name="Pickaxe_Gender">feminine</string>
+    <string name="Pickaxe_NoVein">There is no dark gold vein near you to mine</string>
 
     <!-- STRINGS OF BattleAxe CLASS -->
     <string name="BattleAxe_Name">battle axe</string>
@@ -108,22 +119,22 @@
     
     <!-- STRINGS OF Dagger CLASS -->
     <string name="Dagger_Name">dagger</string>
-    <string name="Dagger_Info">A simple iron dagger with a well worn wooden handle.</string>
+    <string name="Dagger_Info">A simple iron dagger with a well-worn wooden handle.</string>
     <string name="Dagger_Gender">masculine</string>
     
     <!-- STRINGS OF Glaive CLASS -->
     <string name="Glaive_Name">glaive</string>
-    <string name="Glaive_Info">A polearm consisting of a sword blade on the end of a pole.</string>
+    <string name="Glaive_Info">A polearm consisting of a sword blade on the end of a pole. It has a longer reach than most melee weapons.</string>
     <string name="Glaive_Gender">feminine</string>
     
     <!-- STRINGS OF Knuckles CLASS -->
-    <string name="Knuckles_Name">knuckleduster</string>
-    <string name="Knuckles_Info">A piece of iron shaped to fit around the knuckles.</string>
+    <string name="Knuckles_Name">steel horseshoe</string>
+    <string name="Knuckles_Info">A horseshoe made of steel.</string>
     <string name="Knuckles_Gender">masculine</string>
     
     <!-- STRINGS OF Longsword CLASS -->
     <string name="Longsword_Name">longsword</string>
-    <string name="Longsword_Info">This towering blade inflicts heavy damage by investing its heft into every cut.</string>
+    <string name="Longsword_Info">This long blade inflicts heavy damage by investing its heft into every cut.</string>
     <string name="Longsword_Gender">masculine</string> 
     
     <!-- STRINGS OF Mace CLASS -->
@@ -138,7 +149,7 @@
     
     <!-- STRINGS OF Scythe CLASS -->
     <string name="Scythe_Name">scythe</string>
-    <string name="Scythe_Info">It\'s a makeshift weapon normally used for farming. If it\'s been upgraded at least once, it can be reforged to upgrade another weapon.</string>
+    <string name="Scythe_Info">A makeshift weapon normally used for farming, one that you\'re not likely to find where you\'re headed. If it\'s been upgraded at least once, it can be reforged to upgrade a different weapon.</string>
     <string name="Scythe_ACReforge">REFORGE</string>
     <string name="Scythe_Select">Select a weapon to upgrade</string>
     <string name="Scythe_Reforged">You reforged the scythe to upgrade your %s.</string>
@@ -147,7 +158,7 @@
     
     <!-- STRINGS OF Spear CLASS -->
     <string name="Spear_Name">spear</string>
-    <string name="Spear_Info">A slender wooden rod tipped with sharpened iron.</string>
+    <string name="Spear_Info">A slender wooden rod tipped with sharpened iron. It has a longer reach than most melee weapons. This isn\'t the throwing kind, unfortunately (it isn\'t properly balanced).</string>
     <string name="Spear_Gender">neuter</string> 
     
     <!-- STRINGS OF Sword CLASS -->
@@ -157,7 +168,7 @@
     
     <!-- STRINGS OF WarHammer CLASS -->
     <string name="WarHammer_Name">war hammer</string>
-    <string name="WarHammer_Info">Few creatures can withstand the crushing blow of this towering mass of lead and steel, but only the strongest of adventurers can use it effectively.</string>
+    <string name="WarHammer_Info">Few creatures can withstand the crushing blow of this towering mass of lead and steel, but only the honest and true can use it effectively.</string>
     <string name="WarHammer_Gender">masculine</string>
     
     <!-- PACKAGE /weapon/missiles -->
@@ -214,22 +225,38 @@
     
     <!-- STRINGS OF ChaosSword CLASS -->
     <string name="ChaosSword_Name">chaos sword</string>
-    <string name="ChaosSword_Info">The blade of this sword is made of pure chaos and it mildly vibrates sometimes. Great power is stored inside the weapon, that can cut in half almost anything. Although, great skills are needed, to cope the mighty force of the weapon.</string>
+    <string name="ChaosSword_Info">The blade of this sword is made of pure chaos and it mildly vibrates sometimes. Great power is stored inside the weapon, that can cut in half almost anything. However, great skills are needed to cope the mighty force of the weapon.</string>
     <string name="ChaosSword_Gender">masculine</string>
     
     <!-- STRINGS OF ChaosBow CLASS -->
     <string name="ChaosBow_Name">chaos bow</string>
-    <string name="ChaosBow_Info">A dreadful Bow filled with the power of Chaos. Each arrow it shoots will carry piece of chaos energy within it. But if you miss...</string>
+    <string name="ChaosBow_Info">A dreadful bow filled with the power of Chaos. Each arrow it shoots will carry piece of chaos energy within it. But if you miss...</string>
     <string name="ChaosBow_Gender">masculine</string>
     
     <!-- STRINGS OF ChaosStaff CLASS -->
     <string name="ChaosStaff_Name">chaos staff</string>
-    <string name="ChaosStaff_Info">Staff imbued with Power Of Chaos! What else mage can dream or fear of?</string>
+    <string name="ChaosStaff_Info">A staff imbued with the power of Chaos, every ambitious mage\'s dream.</string>
     <string name="ChaosStaff_Gender">masculine</string>
     
     <!-- STRINGS OF SacrificialSword CLASS -->
     <string name="SacrificialSword_Name">sacrificial sword</string>
-    <string name="SacrificialSword_Info">At first glance this aged bronze sword, covered with patina stains, looks absolutely useless. But some sort of old, archaic powers sleeps inside. Those powers can turn almost any creature to will-less slave. Just need find a right way to wake them...</string>
+    <string name="SacrificialSword_Info">At first glance this aged bronze sword, covered with patina stains, looks totally useless. However, you can sense that old, archaic powers sleep within. Those powers can turn almost any creature into a mindless slave, if only they could be unlocked.</string>
     <string name="SacrificialSword_Gender">masculine</string>
-    
+
+    <!-- STRINGS OF BroadSword CLASS -->
+    <string name="Claymore_Name">Claymore</string>
+    <string name="Claymore_Info">This massive sword should be able to cut through anything, but only the most honest and true of ponies can hope to wield its massive power.</string>
+    <string name="Claymore_Gender">masculine</string>
+
+    <!-- STRINGS OF Halberd CLASS -->
+    <string name="Halberd_Name">Halberd</string>
+    <string name="Halberd_Info">A powerful polearm consisting of an axe on the end of a pole. It has a longer reach than most melee weapons. However, it takes incredible honesty to wield it effectively.</string>
+    <string name="Halberd_Gender">feminine</string>
+
+    <!-- STRINGS OF GoldenSword CLASS -->
+    <string name="GoldenSword_Name">golden sword</string>
+    <string name="GoldenSword_Info">Usually weapon made of such soft metal as gold won\'t be useful for anything but decoration. Despite that, this blade seems to be able to cut through things pretty well. It must be magical.</string>
+    <string name="GoldenSword_Gender">masculine</string>
+
+
 </resources>

@@ -13,7 +13,7 @@
     <!-- STRINGS OF Earthroot CLASS -->
     <string name="Earthroot_Name">Earthroot</string>
     <string name="Earthroot_Desc">When a creature touches an Earthroot, its roots create a kind of natural armor around it.</string>
-    <string name="Earthroot_Buff">Herbal armor</string>
+    <string name="Earthroot_Buff">Herbal Armor</string>
 
     <!-- STRINGS OF Fadeleaf CLASS -->
     <string name="Fadeleaf_Name">Fadeleaf</string>
@@ -34,6 +34,6 @@
     <!-- STRINGS OF Sungrass CLASS -->
     <string name="Sungrass_Name">Sungrass</string>
     <string name="Sungrass_Desc">Sungrass is renowned for its sap\'s healing properties.</string>
-    <string name="Sungrass_Buff">Herbal healing</string>
+    <string name="Sungrass_Buff">Herbal Healing</string>
     
 </resources>

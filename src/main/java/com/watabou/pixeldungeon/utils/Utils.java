@@ -50,10 +50,6 @@ public class Utils {
 	private static String VOWELS = "aoeiu";
 
 	public static String indefinite(String noun) {
-		//In a pt_BR language(and another), there is no specific rule.
-		if (Game.getVar(R.string.Utils_IsIndefinte).equals("0")) {
-			return noun;
-		}
 
 		if (noun.length() == 0) {
 			return "a";

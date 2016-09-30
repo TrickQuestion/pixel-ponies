@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- STRINGS OF Amulet CLASS -->
+    <string name="Amulet_Name">Alicorn Amulet</string>
+    <string name="Amulet_ACEnd">END THE GAME</string>
+    <string name="Amulet_Info">The Alicorn Amulet is one of the most powerful artifacts in pony history. It is said that the Amulet is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it, even for ponies with no innate magical ability. However, unbridled power rarely comes without consequences...</string>
+
+    <!-- STRINGS OF Ankh CLASS -->
+    <string name="Ankh_Name">Ankh</string>
+    <string name="Ankh_Info">This ancient symbol of immortality grants an ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
+
+    <!-- STRINGS OF ArmorKit CLASS -->
+    <string name="ArmorKit_Name">Crystalling kit</string>
+    <string name="ArmorKit_ACAplly">APPLY</string>
+    <string name="ArmorKit_Info">Using this kit of small tools and materials, a pony can transform any barding into an \"epic barding\". It will keep the properties of the original barding, but will also provide its wearer with a special ability depending on their class. No skills in tailoring or blacksmithing are required.</string>
+    <string name="ArmorKit_SelectArmor">Select an barding to upgrade</string>
+    <string name="ArmorKit_Upgraded">You applied the Crystalling kit to upgrade your %s</string>
+
+    <!-- STRINGS OF Dewdrop CLASS -->
+    <string name="Dewdrop_Name">dewdrop</string>
+    <string name="Dewdrop_Info">A crystal clear dewdrop.</string>
+
+    <!-- STRINGS OF DewVial CLASS -->
+    <string name="DewVial_Name">dew vial</string>
+    <string name="DewVial_ACDRINK">DRINK</string>
+    <string name="DewVial_Info">You can store excess dew in this tiny vessel for drinking it later. If the vial is full, in a moment of deadly peril the dew will be consumed automatically.</string>
+    <string name="DewVial_AutoDrink">The dew vial was emptied to heal your wounds.</string>
+    <string name="DewVial_Collected">You collected a dewdrop into your dew vial.</string>
+    <string name="DewVial_Full">Your dew vial is full!</string>
+    <string name="DewVial_Empty">Your dew vial is empty!</string>
+
+    <!-- STRINGS OF Gold CLASS -->
+    <string name="Gold_Name">gold</string>
+    <string name="Gold_Collect">Collect gold coins to spend them later in a shop.</string>
+    <string name="Gold_Info">A pile of %d gold coins.</string>
+    <string name="Gold_Info1">One gold coin.</string>
+
+    <!-- STRINGS OF LloidsBeacon CLASS -->
+    <string name="LloidsBeacon_Name">lloyd\'s beacon</string>
+    <string name="LloidsBeacon_ACSet">SET</string>
+    <string name="LloidsBeacon_ACReturn">RETURN</string>
+    <string name="LloidsBeacon_Info">Lloyd\'s beacon is an intricate magic device, that allows you to return to a place you have already been.</string>
+    <string name="LloidsBeacon_Preventing">Some kind of strong magic aura present here prevents you from using the lloyd\'s beacon!</string>
+    <string name="LloidsBeacon_Creatures">The psychic aura of neighbouring creatures doesn\'t allow you to use the lloyd\'s beacon at this moment.</string>
+    <string name="LloidsBeacon_Return">The lloyd\'s beacon is successfully set at your current location, now you can return here anytime.</string>
+    <string name="LloidsBeacon_Set">\n\nThis beacon was set somewhere on the level %d of Pixel Dungeon.</string>
+
+    <!-- STRINGS OF Stylus CLASS -->
+    <string name="Stylus_Name">arcane stylus</string>
+    <string name="Stylus_ACInscribe">INSCRIBE</string>
+    <string name="Stylus_Info">This arcane stylus is made of some dark, very hard stone. Using it you can inscribe a glyph or a rune, but you have no power over choosing what it will be, the stylus will decide it for you.</string>
+    <string name="Stylus_SelectArmor">Select an item to inscribe on</string>
+    <string name="Stylus_Inscribed">you inscribed the %1$s on your %2$s</string>
+
+    <!-- STRINGS OF TomeOfMastery CLASS -->
+    <string name="TomeOfMastery_Name">Tome of Mastery</string>
+    <string name="TomeOfMastery_ACRead">READ</string>
+    <string name="TomeOfMastery_Info">This worn pleather book is not that thick, but you feel somehow, that you can gather a lot from it. Remember though that reading this tome may require some time.</string>
+    <string name="TomeOfMastery_Blinded">You can\'t read while blinded</string>
+    <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
+    <string name="TomeOfMastery_WayAlreadyChosen">You cannot change your way!</string>
+
+    <!-- STRINGS OF SoulShard CLASS -->
+    <string name="SoulShard_Name">soul shard</string>
+    <string name="SoulShard_Info">It\'s a shard you\'ve taken from remnants of Jar of Souls. It\'s glowing with mystical energy, maybe there is someone, who could be interested in such thing.</string>
+    <string name="SoulShard_Gender">masculine</string>
+
+    <!-- STRINGS OF Torch CLASS -->
+    <string name="Torch_Name">torch</string>
+    <string name="Torch_ACLight">LIGHT</string>
+    <string name="Torch_Info">It\'s an indispensable item in The Demon Halls, which are notorious for their poor ambient lighting.</string>
+
+    <!-- STRINGS OF Weightstone CLASS -->
+    <string name="Weightstone_Name">weightstone</string>
+    <string name="Weightstone_ACApply">APPLY</string>
+    <string name="Weightstone_Info">Using a weightstone, you can balance your melee weapon to increase its speed or accuracy.</string>
+    <string name="Weightstone_Select">Select a weapon to balance</string>
+    <string name="Weightstone_Fast">you balanced your %s to make it faster</string>
+    <string name="Weightstone_Accurate">you balanced your %s to make it more accurate</string>
+    <string name="Weightstone_WndChoice">How would you like to balance your %s?</string>
+    <string name="Weightstone_WndSpeed">For speed</string>
+    <string name="Weightstone_WndAccuracy">For accuracy</string>
+    <string name="Weightstone_WndCancel">Never mind</string>
+
+    <!-- PACKAGE /actors/hero -->
+    <!-- STRINGS OF Belongings CLASS -->
+    <string name="Belongings_Name">backpack</string>
+
+    <!-- PACKAGE /items/bags -->
+    <!-- STRINGS OF Bag CLASS -->
+    <string name="Bag_ACOpen">OPEN</string>
+
+    <!-- STRINGS OF Keyring CLASS -->
+    <string name="Keyring_Name">key ring</string>
+    <string name="Keyring_Info">This is a copper key ring, that lets you keep all your keys separately from the rest of your belongings.</string>
+
+    <!-- STRINGS OF ScrollHolder CLASS -->
+    <string name="ScrollHolder_Name">scroll holder</string>
+    <string name="ScrollHolder_Info">You can place any number of scrolls into this tubular container. It saves room in your backpack and protects scrolls from fire.</string>
+
+    <!-- STRINGS OF SeedPouch CLASS -->
+    <string name="SeedPouch_Name">seed pouch</string>
+    <string name="SeedPouch_Info">This small velvet pouch allows you to store any number of seeds in it. Very convenient.</string>
+
+    <!-- STRINGS OF WandHolster CLASS -->
+    <string name="WandHolster_Name">wand holster</string>
+    <string name="WandHolster_Info">This slim holder is made of a strange shimmering fabric. It allows to compactly carry up to %d wands.</string>
+
+    <!-- STRINGS OF PotionBelt CLASS -->
+    <string name="PotionBelt_Info">This strong hemp belt is capable of storing all your potions while protecting them from shattering due to frost.</string>
+    <string name="PotionBelt_Name">potion belt</string>
+
+    <!-- PACKAGE /items/keys -->
+    <!-- STRINGS OF GoldenKey CLASS -->
+    <string name="GoldenKey_Name">golden key</string>
+    <string name="GoldenKey_Info">The notches on this golden key are tiny and intricate. Maybe it can open some chest lock?</string>
+
+    <!-- STRINGS OF IronKey CLASS -->
+    <string name="IronKey_Name">iron key</string>
+    <string name="IronKey_Info">The notches on this ancient iron key are well worn. What door might it open?</string>
+    <string name="IronKey_FromDepth">iron key from depth %d</string>
+
+    <!-- STRINGS OF SkeletonKey CLASS -->
+    <string name="SkeletonKey_Name">skeleton key</string>
+    <string name="SkeletonKey_Info">This key looks serious: its head is shaped like a skull. Probably it can open some serious door.</string>
+
+    <!-- PACKAGE /items/quest -->
+
+    <!-- STRINGS OF DarkGold CLASS -->
+    <string name="DarkGold_Name">dark gold ore</string>
+    <string name="DarkGold_Info">This metal is called dark not because of its color (it doesn\'t differ from normal gold), but because it melts under the daylight, making it useless on the surface.</string>
+
+    <!-- STRINGS OF DwarfToken CLASS -->
+    <string name="DwarfToken_Name">dwarf token</string>
+    <string name="DwarfToken_Info">Many dwarves and some of their larger creations carry these small pieces of metal of unknown purpose. Maybe they are jewelry or maybe some kind of ID. Dwarves are strange folk.</string>
+
+
+</resources>

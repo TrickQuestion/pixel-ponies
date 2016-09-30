@@ -7,8 +7,8 @@
     <string name="Armor_ToString">%1$s H:%2$d</string>
     <string name="Armor_Incompatible">Interaction of different types of magic has erased the glyph on this barding!</string>
     <string name="Armor_Info1">This %1$s provides damage absorption up to \"%2$d\"  points per attack.</string>
-    <string name="Armor_Info2">\n\nBecause of your inadequate Honesty, your Loyalty and Laughter are decreased. </string>
-    <string name="Armor_Info3">\n\nBecause of your inadequate Honesty, wearing this barding will decrease your Loyalty and Laughter.</string>
+    <string name="Armor_Info2">\n\nBecause of your inadequate Honesty, your movement speed and defense skill are decreased.</string>
+    <string name="Armor_Info3">\n\nBecause of your inadequate Honesty, wearing this barding will decrease your movement speed and defense skill.</string>
     <string name="Armor_Info4">\n\nTypical %1$s provides damage absorption up to %2$d points per attack and requires %3$d points of Honesty.</string>
     <string name="Armor_Info5">This barding probably requires more Honesty than you have.</string>
     <string name="Armor_Info6">It is inscribed.</string>
@@ -86,6 +86,15 @@
     <string name="ScaleArmor_Name">scale barding</string>
     <string name="ScaleArmor_Desc">The metal scales sewn onto a thick pleather vest create a flexible yet highly protective barding. It includes a red pleather saddle.</string>
 
+    <!-- STRINGS OF SpiderArmor CLASS -->
+    <string name="SpiderArmor_Name">spider armor</string>
+    <string name="SpiderArmor_Info">This armor is made of old spider carcases and some strange cloth. Surprisingly enough, it seems that it still contains functional spinnerets. If you apply enough pressure on one of the plates it shoots cobweb. Spiky surface of boot soles allows you to walk on that web freely.</string>
+    <string name="SpiderArmor_Gender">feminine</string>
+
+    <!-- STRINGS OF ChaosArmor CLASS -->
+    <string name="ChaosArmor_Name">Chaos armor</string>
+    <string name="ChaosArmor_Info">A blood red plates of this armor is sewed together with dark red chains. It irradiates chaotic energy as you touch it.</string>
+
     <!-- PACKAGE /armor/Gyphs -->
     <!-- STRINGS OF Affection CLASS -->
     <string name="Affection_Txt">%s of Affection</string>
@@ -112,5 +121,6 @@
     <!-- STRINGS OF DeferedDamage CLASS -->
     <string name="DeferedDamage_Defered_Txt">Deferred damage (%d)</string>
     <string name="DeferedDamage_Killed_Txt">%s killed you...</string>
-    
+
+
 </resources>

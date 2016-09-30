@@ -55,7 +55,7 @@
     <string name="Sheep_Name">sheep</string>
     <string name="Sheep_Name_Objective">sheep</string>
     <string name="Sheep_Gender">feminine</string>
-    <string name="Sheep_Desc">This is a magic sheep. What\'s so magical about it? You can\'t kill it. It will stand there until it magically fades away, all the while chewing cud with a blank stare.</string>
+    <string name="Sheep_Desc">This is a magic sheep. What\'s so magical about it? You can\'t kill it. It will stand there until it magically fades away, all the while chewing its cud with a blank stare.</string>
 
     <string-array name="WandOfFlock_SheepBaa">
         <item>Baa!</item>

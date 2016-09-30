@@ -48,7 +48,7 @@ public class Potion extends Item {
 	public static final String AC_DRINK	  = Game.getVar(R.string.Potion_ACDrink);
 	public static final String AC_MOISTEN = Game.getVar(R.string.Potion_ACMoisten);
 	
-	private static final String TXT_HARMFUL			= Game.getVar(R.string.Potion_Harmfull);
+	private static final String TXT_HARMFUL			= Game.getVar(R.string.Potion_Harmful);
 	private static final String TXT_BENEFICIAL		= Game.getVar(R.string.Potion_Beneficial);
 	private static final String TXT_YES				= Game.getVar(R.string.Potion_Yes);
 	private static final String TXT_NO		   		= Game.getVar(R.string.Potion_No);

@@ -54,8 +54,8 @@ import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Stylus;
 import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.food.ChangelingPie;
 import com.watabou.pixeldungeon.items.food.Food;
-import com.watabou.pixeldungeon.items.food.PseudoPasty;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
 import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
@@ -298,7 +298,7 @@ public abstract class Level implements Bundlable {
 			}
 
 			if (Random.Int(15) == 0) {
-				addItemToSpawn(new PseudoPasty());
+				addItemToSpawn(new ChangelingPie());
 			}
 
 			if (Random.Int(2) == 0) {

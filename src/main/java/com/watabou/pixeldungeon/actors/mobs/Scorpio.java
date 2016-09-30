@@ -23,7 +23,7 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Cripple;
 import com.watabou.pixeldungeon.actors.buffs.Light;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
 import com.watabou.pixeldungeon.mechanics.Ballistica;
@@ -92,7 +92,7 @@ public class Scorpio extends Mob {
 		if (Random.Int( 8 ) == 0) {
 			Dungeon.level.drop( new PotionOfHealing(), getPos() ).sprite.drop();
 		} else if (Random.Int( 6 ) == 0) {
-			Dungeon.level.drop( new MysteryMeat(), getPos() ).sprite.drop();
+			Dungeon.level.drop( new MysteriousHay(), getPos() ).sprite.drop();
 		}
 	}	
 }

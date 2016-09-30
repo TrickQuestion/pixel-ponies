@@ -13,6 +13,6 @@
     <string name="ResultDescriptions_Bleeding">Bled to death on level %d</string>
     <string name="ResultDescriptions_Ooze">Killed by a caustic ooze on level %d</string>
     <string name="ResultDescriptions_Fall">Fell to death on level %d</string>
-    <string name="ResultDescriptions_Win">Obtained the Amulet of Yendor</string> 
+    <string name="ResultDescriptions_Win">Obtained the Alicorn Amulet</string>
     <string name="ResultDescriptions_Immured">Immured in stone on level %d</string>     
 </resources>

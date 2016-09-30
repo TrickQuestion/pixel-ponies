@@ -103,6 +103,8 @@
     <!-- PACKAGE /levels/features -->
     <!-- STRINGS OF AlchemyPot CLASS -->
     <string name="AlchemyPot_SelectSeed">Select a seed to throw</string>
+    <string name="Darkness_Info">Looks like pieces of eternal darkness floating in the air</string>
+
     <!-- STRINGS OF Chasm CLASS -->
     <string name="Chasm_Chasm">Chasm</string>
     <string name="Chasm_Yes">Yes, I know what I\'m doing</string>
@@ -117,5 +119,17 @@
     <!-- STRINGS OF LightningTrap CLASS -->
     <string name="LightningTrap_Name">lightning trap</string>
     <string name="LightningTrap_Desc">You were killed by a discharge of a lightning trap...</string>
+
+    <!-- STRINGS OF GutsLevel & GutsBossLevel CLASS -->
+    <string name="Guts_TileGrass">Dried shrub</string>
+    <string name="Guts_TileHighGrass">Dried shrub</string>
+    <string name="Guts_TileWater">Weird slimy liquid</string>>
+    <string name="Guts_TileDescEntrance">Gaping hole in the ceiling leads up to the upper levels</string>
+    <string name="Guts_TileDescExit">Gaping hole in the floor leads down to the lower levels</string>
+    <string name="Guts_TileDescDeco">Looks like this place was... wounded</string>
+    <string name="Guts_TileDescBookshelf">That bookshelf completely covered in thick fleshy web, there is no way to reach any of the books</string>
+
+    <!-- STRINGS OF WndStory CLASS -->
+    <string name="WndStory_Guts">Defeated, shattered in pieces, but not completely destroyed, the Old God was sealed away in the deepest levels of the dungeon. But recently the seal was broken, leaving passage, to the demon\'s nest, wide open. The nightmarish monsters, created by the Old God in his slumber was so numerous, that provided no way to escape they were forced to fuse together to form these grotesque halls. And as you walk upon their living flesh you can feel the beat of an Old God\'s heart echoing through them.</string>
 
 </resources>

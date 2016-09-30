@@ -7,7 +7,7 @@ import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.food.Pasty;
+import com.watabou.pixeldungeon.items.food.ApplePie;
 import com.watabou.pixeldungeon.levels.RegularLevel;
 import com.watabou.pixeldungeon.sprites.HedgehogSprite;
 import com.watabou.utils.Bundle;
@@ -96,7 +96,7 @@ public class Hedgehog extends NPC {
 			case 3:
 				say(Game.getVar(R.string.Hedgehog_Info4));
 				
-				Pasty pie = new Pasty();
+				ApplePie pie = new ApplePie();
 				
 				Dungeon.level.drop( pie, getPos() ).sprite.drop();
 			break;

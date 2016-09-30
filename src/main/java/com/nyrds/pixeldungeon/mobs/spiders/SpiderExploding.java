@@ -3,7 +3,7 @@ package com.nyrds.pixeldungeon.mobs.spiders;
 import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.mobs.common.MultiKindMob;
 import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.pixeldungeon.plants.Dreamweed;
 import com.watabou.pixeldungeon.plants.Earthroot;
 import com.watabou.pixeldungeon.plants.Fadeleaf;
@@ -36,7 +36,7 @@ public class SpiderExploding extends MultiKindMob {
 		
 		kind = Random.IntRange(0, 6);
 		
-		loot = new MysteryMeat();
+		loot = new MysteriousHay();
 		lootChance = 0.067f;
 	}
 	

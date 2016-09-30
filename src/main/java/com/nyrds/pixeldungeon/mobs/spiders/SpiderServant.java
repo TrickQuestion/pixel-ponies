@@ -3,9 +3,8 @@ package com.nyrds.pixeldungeon.mobs.spiders;
 import com.nyrds.pixeldungeon.mobs.common.MultiKindMob;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Paralysis;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.utils.Random;
 
 public class SpiderServant extends MultiKindMob {
@@ -20,7 +19,7 @@ public class SpiderServant extends MultiKindMob {
 		
 		kind = 0;
 		
-		loot = new MysteryMeat();
+		loot = new MysteriousHay();
 		lootChance = 0.067f;
 	}
 	

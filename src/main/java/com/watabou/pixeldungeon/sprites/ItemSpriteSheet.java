@@ -51,19 +51,7 @@ public class ItemSpriteSheet {
 	public static final int INCENDIARY_DART	= 108;
 	public static final int CURARE_DART		= 109;
 	public static final int JAVELIN			= 110;
-	
-	// Armors
-	public static final int ARMOR_CLOTH		= 24;
-	public static final int ARMOR_LEATHER	= 25;
-	public static final int ARMOR_MAIL		= 26;
-	public static final int ARMOR_SCALE		= 27;
-	public static final int ARMOR_PLATE		= 28;
-	public static final int ARMOR_ROGUE		= 96;
-	public static final int ARMOR_WARRIOR	= 97;
-	public static final int ARMOR_MAGE		= 98;
-	public static final int ARMOR_HUNTRESS	= 99;
-	public static final int ARMOR_ELF		= 145;
-	
+
 	// Wands
 	public static final int WAND_MAGIC_MISSILE	= 3;
 	public static final int WAND_HOLLY			= 48;
@@ -155,16 +143,16 @@ public class ItemSpriteSheet {
 	public static final int CRYSTAL_CHEST	= 105;
 	
 	// Food
-	public static final int RATION		= 4;
-	public static final int PASTY		= 112;
-	public static final int MEAT		= 113;
-	public static final int STEAK		= 114;
-	public static final int OVERPRICED	= 115;
-	public static final int CARPACCIO	= 116;
+	public static final int RATION				= 4;
+	public static final int APPLE_PIE			= 112;
+	public static final int MYSTERIOUS_HAY		= 113;
+	public static final int HAY_FRIES			= 114;
+	public static final int OVERPRICED			= 115;
+	public static final int FREEZE_DRIED_HAY	= 116;
 	
 	// Rotten food
-	public static final int ROTTEN_PASTY    = 117;
-	public static final int ROTTEN_MEAT	    = 118;
+	public static final int ROTTEN_PIE   	 = 117;
+	public static final int ROTTEN_HAY	    = 118;
 	public static final int ROTTEN_RATION   = 119;
 	
 	// Bags

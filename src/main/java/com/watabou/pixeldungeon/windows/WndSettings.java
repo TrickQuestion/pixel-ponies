@@ -138,47 +138,7 @@ public class WndSettings extends Window {
 					BTN_HEIGHT);
 			add(btnOrientation);
 			
-			CheckBox btnRealtime = new CheckBox("Realtime!") {
-				@Override
-				protected void onClick() {
-					super.onClick();
-					PixelDungeon.realtime(checked());
-				}
-			};
-			btnRealtime.setRect(0, btnOrientation.bottom() + GAP, WIDTH,
-					BTN_HEIGHT);
-			btnRealtime.checked(PixelDungeon.realtime());
-			if(!PixelDungeon.isAlpha()) {
-				btnRealtime.enable(false);
-			}
-			add(btnRealtime);
-			
-			RedButton localeButton = new RedButton(TXT_SElECT_LANGUAGE) {
-				@Override
-				protected void onClick() {
-					PixelDungeon.scene().add(
-							new WndSelectLanguage(TXT_SElECT_LANGUAGE,  "English",
-									"Русский", "Français", "Polski", "Español","한국말","Português brasileiro","Italiano","Deutsch(73%)","简体中文","日本語") {
-								
-								@Override
-								protected void onSelect(int index) {
-									String lang[] = { "en", "ru", "fr", "pl", "es","ko","pt_BR","it","de","zh","ja"};
-									if(!Utils.canUseClassicFont(lang[index])) {
-										PixelDungeon.classicFont(false);
-									}
-
-									PixelDungeon.uiLanguage(lang[index]);
-									
-								}
-							});
-				}
-			};
-			
-			localeButton.setRect(0, btnRealtime.bottom() + GAP, WIDTH,
-					BTN_HEIGHT);
-			add(localeButton);
-
-			float y = createFontSelector(localeButton.bottom() + GAP);
+			float y = createFontSelector(btnOrientation.bottom() + GAP);
 			
 			resize(WIDTH, (int) y);
 		} else {

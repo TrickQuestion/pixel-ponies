@@ -36,8 +36,6 @@ public class Assets {
 	public static final String BADGES = "badges.png";
 	public static final String AMULET = "amulet.png";
 
-	private static final String BANNERS_PREFIX = Game.getVar(R.string.Assets_Prefix);
-
 	public static final String ICONS = "icons.png";
 	public static final String HP_BAR = "hp_bar.png";
 	public static final String XP_BAR = "exp_bar.png";
@@ -203,13 +201,13 @@ public class Assets {
 	public static String getBanners() {
 		switch (bannersType) {
 		default:
-			return BANNERS_PREFIX+"banners.png";
+			return "banners.png";
 		case 1:
-			return BANNERS_PREFIX+"banners_supporter_1.png";
+			return "banners_supporter_1.png";
 		case 2:
-			return BANNERS_PREFIX+"banners_supporter_2.png";
+			return "banners_supporter_2.png";
 		case 3:
-			return BANNERS_PREFIX+"banners_supporter_3.png";
+			return "banners_supporter_3.png";
 		}
 	}
 

@@ -36,7 +36,6 @@ import com.watabou.pixeldungeon.items.keys.IronKey;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.windows.WndGame;
-import com.watabou.pixeldungeon.windows.WndHats;
 import com.watabou.pixeldungeon.windows.WndHero;
 
 public class StatusPane extends Component {

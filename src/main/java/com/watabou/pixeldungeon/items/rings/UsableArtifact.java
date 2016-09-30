@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class UsableArtifact extends Artifact {
 
-	public static final String AC_USE = Game.getVar(R.string.SpiderCharm_Use);
+	public static final String AC_USE = Game.getVar(R.string.Artifact_Use);
 
 	@Override
 	public ArrayList<String> actions( Hero hero ) {

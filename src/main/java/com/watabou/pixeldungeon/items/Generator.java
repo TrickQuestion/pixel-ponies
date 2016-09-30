@@ -36,9 +36,9 @@ import com.watabou.pixeldungeon.items.armor.MailArmor;
 import com.watabou.pixeldungeon.items.armor.PlateArmor;
 import com.watabou.pixeldungeon.items.armor.ScaleArmor;
 import com.watabou.pixeldungeon.items.bags.Bag;
+import com.watabou.pixeldungeon.items.food.ApplePie;
 import com.watabou.pixeldungeon.items.food.Food;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
-import com.watabou.pixeldungeon.items.food.Pasty;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.pixeldungeon.items.food.Ration;
 import com.watabou.pixeldungeon.items.potions.Potion;
 import com.watabou.pixeldungeon.items.potions.PotionOfExperience;
@@ -271,8 +271,8 @@ public class Generator {
 		
 		Category.FOOD.classes = new Class<?>[]{ 
 			Ration.class, 
-			Pasty.class,
-			MysteryMeat.class };
+			ApplePie.class,
+			MysteriousHay.class };
 		Category.FOOD.probs = new float[]{ 4, 1, 0 };
 			
 		Category.RING.classes = new Class<?>[]{ 

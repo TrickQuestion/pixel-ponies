@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- GENERAL STRINGS VARIABLES -->
-    <string name="app_name">Pixel Ponies!</string>
-
-    <!-- STRINGS OF IntroScene CLASS -->
-    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Alicorn Amulet, which you believe is being held by the entity known as Nightmare.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that friendship smiles upon you. It\'s time to start your own adventure!</string>
-
-    <!-- STRINGS OF AmuletScene CLASS -->
-    <string name="AmuletScene_Exit">Let\'s call it a day</string>
-    <string name="AmuletScene_Stay">I\'m not done yet</string>
-    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Alicorn Amulet! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
-
-    <!-- STRINGS OF GameScene CLASS -->
-    <string name="GameScene_Welcome">Welcome to adventure level %d of Pixel Ponies!</string>
-    <string name="GameScene_WelcomeBack">Welcome back to adventure level %d of Pixel Ponies!</string>
-    <string name="GameScene_NightMode">Be cautious, since the dungeons are even more dangerous at night!</string>
-    <string name="GameScene_Chasm">Your hoofsteps echo loudly.</string>
-    <string name="GameScene_Water">You hear the water splashing around you.</string>
-    <string name="GameScene_Grass">The smell of vegetation is thick in the air.</string>
-    <string name="GameScene_Secrets">The atmosphere hints that this floor hides many secrets.</string>
+    <!-- TODO: sort these into specific files -->
 
     <!-- STRINGS OF Char CLASS -->
     <string name="Char_Name">mob</string>
@@ -99,16 +81,6 @@
         <item>\"In the center of Pandemonium, the God of Chaos awaits.\"</item>
         <item>What fun is there in making sense?</item>
         <item>Behold: The Alicorn Amulet</item>
-    </string-array>
-
-    <!-- STRINGS OF Challenges CLASS -->
-    <string-array name="Challenges_Names">
-        <item>On diet</item>
-        <item>Faith is my barding</item>
-        <item>Pharmacophobia</item>
-        <item>Barren land</item>
-        <item>Swarm intelligence</item>
-        <item>Into darkness</item>
     </string-array>
 
     <!-- STRINGS OF Journal CLASS -->
@@ -277,149 +249,6 @@
     <!-- STRINGS OF Heap CLASS -->
     <string name="Heap_Mimic">This is a mimic!</string>
 
-    <!-- STRINGS OF Amulet CLASS -->
-    <string name="Amulet_Name">Alicorn Amulet</string>
-    <string name="Amulet_ACEnd">END THE GAME</string>
-    <string name="Amulet_Info">The Alicorn Amulet is one of the most powerful artifacts in pony history. It is said that the Amulet is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it, even for ponies with no innate magical ability. However, unbridled power rarely comes without consequences...</string>
-
-    <!-- STRINGS OF Ankh CLASS -->
-    <string name="Ankh_Name">Ankh</string>
-    <string name="Ankh_Info">This ancient symbol of immortality grants an ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
-
-    <!-- STRINGS OF ArmorKit CLASS -->
-    <string name="ArmorKit_Name">Crystalling kit</string>
-    <string name="ArmorKit_ACAplly">APPLY</string>
-    <string name="ArmorKit_Info">Using this kit of small tools and materials, a pony can transform any barding into an \"epic barding\". It will keep the properties of the original barding, but will also provide its wearer with a special ability depending on their class. No skills in tailoring, leather-working or blacksmithing are required.</string>
-    <string name="ArmorKit_SelectArmor">Select an barding to upgrade</string>
-    <string name="ArmorKit_Upgraded">You applied the Crystalling kit to upgrade your %s</string>
-
-    <!-- STRINGS OF Dewdrop CLASS -->
-    <string name="Dewdrop_Name">dewdrop</string>
-    <string name="Dewdrop_Info">A crystal clear dewdrop.</string>
-
-    <!-- STRINGS OF DewVial CLASS -->
-    <string name="DewVial_Name">dew vial</string>
-    <string name="DewVial_ACDRINK">DRINK</string>
-    <string name="DewVial_Info">You can store excess dew in this tiny vessel for drinking it later. If the vial is full, in a moment of deadly peril the dew will be consumed automatically.</string>
-    <string name="DewVial_AutoDrink">The dew vial was emptied to heal your wounds.</string>
-    <string name="DewVial_Collected">You collected a dewdrop into your dew vial.</string>
-    <string name="DewVial_Full">Your dew vial is full!</string>
-    <string name="DewVial_Empty">Your dew vial is empty!</string>
-
-    <!-- STRINGS OF Gold CLASS -->
-    <string name="Gold_Name">gold</string>
-    <string name="Gold_Collect">Collect gold coins to spend them later in a shop.</string>
-    <string name="Gold_Info">A pile of %d gold coins.</string>
-    <string name="Gold_Info1">One gold coin.</string>
-
-    <!-- STRINGS OF KindOfWeapon CLASS -->
-    <string name="KindOfWeapon_EquipCursed">you wince as your grip involuntarily tightens around your %s</string>
-
-    <!-- STRINGS OF LloidsBeacon CLASS -->
-    <string name="LloidsBeacon_Name">lloyd\'s beacon</string>
-    <string name="LloidsBeacon_ACSet">SET</string>
-    <string name="LloidsBeacon_ACReturn">RETURN</string>
-    <string name="LloidsBeacon_Info">Lloyd\'s beacon is an intricate magic device, that allows you to return to a place you have already been.</string>
-    <string name="LloidsBeacon_Preventing">Some kind of strong magic aura present here prevents you from using the lloyd\'s beacon!</string>
-    <string name="LloidsBeacon_Creatures">The psychic aura of neighbouring creatures doesn\'t allow you to use the lloyd\'s beacon at this moment.</string>
-    <string name="LloidsBeacon_Return">The lloyd\'s beacon is successfully set at your current location, now you can return here anytime.</string>
-    <string name="LloidsBeacon_Set">\n\nThis beacon was set somewhere on the level %d of Pixel Dungeon.</string>
-
-    <!-- STRINGS OF Stylus CLASS -->
-    <string name="Stylus_Name">arcane stylus</string>
-    <string name="Stylus_ACInscribe">INSCRIBE</string>
-    <string name="Stylus_Info">This arcane stylus is made of some dark, very hard stone. Using it you can inscribe a glyph or a rune, but you have no power over choosing what it will be, the stylus will decide it for you.</string>
-    <string name="Stylus_SelectArmor">Select an item to inscribe on</string>
-    <string name="Stylus_Inscribed">you inscribed the %1$s on your %2$s</string>
-
-    <!-- STRINGS OF TomeOfMastery CLASS -->
-    <string name="TomeOfMastery_Name">Tome of Mastery</string>
-    <string name="TomeOfMastery_ACRead">READ</string>
-    <string name="TomeOfMastery_Info">This worn leather book is not that thick, but you feel somehow, that you can gather a lot from it. Remember though that reading this tome may require some time.</string>
-    <string name="TomeOfMastery_Blinded">You can\'t read while blinded</string>
-    <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
-
-    <!-- STRINGS OF Torch CLASS -->
-    <string name="Torch_Name">torch</string>
-    <string name="Torch_ACLight">LIGHT</string>
-    <string name="Torch_Info">It\'s an indispensable item in The Demon Halls, which are notorious for their poor ambient lighting.</string>
-
-    <!-- STRINGS OF Weightstone CLASS -->
-    <string name="Weightstone_Name">weightstone</string>
-    <string name="Weightstone_ACApply">APPLY</string>
-    <string name="Weightstone_Info">Using a weightstone, you can balance your melee weapon to increase its speed or accuracy.</string>
-    <string name="Weightstone_Select">Select a weapon to balance</string>
-    <string name="Weightstone_Fast">you balanced your %s to make it faster</string>
-    <string name="Weightstone_Accurate">you balanced your %s to make it more accurate</string>
-    <string name="Weightstone_WndChoice">How would you like to balance your %s?</string>
-    <string name="Weightstone_WndSpeed">For speed</string>
-    <string name="Weightstone_WndAccuracy">For accuracy</string>
-    <string name="Weightstone_WndCancel">Never mind</string>
-
-    <!-- PACKAGE /items/bags -->
-    <!-- STRINGS OF Bag CLASS -->
-    <string name="Bag_ACOpen">OPEN</string>
-    <!-- STRINGS OF Keyring CLASS -->
-    <string name="Keyring_Name">key ring</string>
-    <string name="Keyring_Info">This is a copper key ring, that lets you keep all your keys separately from the rest of your belongings.</string>
-    <!-- STRINGS OF ScrollHolder CLASS -->
-    <string name="ScrollHolder_Name">scroll holder</string>
-    <string name="ScrollHolder_Info">You can place any number of scrolls into this tubular container. It saves room in your backpack and protects scrolls from fire.</string>
-    <!-- STRINGS OF SeedPouch CLASS -->
-    <string name="SeedPouch_Name">seed pouch</string>
-    <string name="SeedPouch_Info">This small velvet pouch allows you to store any number of seeds in it. Very convenient.</string>
-    <!-- STRINGS OF WandHolster CLASS -->
-    <string name="WandHolster_Name">wand holster</string>
-    <string name="WandHolster_Info">This slim holder is made of leather of some exotic animal. It allows to compactly carry up to %d wands.</string>
-    <!-- STRINGS OF PotionBelt CLASS -->
-    <string name="PotionBelt_Info">This strong leather belt is capable of storing all your potions while protecting them from shattering due to frost.</string>
-    <string name="PotionBelt_Name">potion belt</string>
-
-    <!-- PACKAGE /items/keys -->
-    <!-- STRINGS OF GoldenKey CLASS -->
-    <string name="GoldenKey_Name">golden key</string>
-    <string name="GoldenKey_Info">The notches on this golden key are tiny and intricate. Maybe it can open some chest lock?</string>
-
-    <!-- STRINGS OF IronKey CLASS -->
-    <string name="IronKey_Name">iron key</string>
-    <string name="IronKey_Info">The notches on this ancient iron key are well worn; its leather lanyard is battered by age. What door might it open?</string>
-    <string name="IronKey_FromDepth">iron key from depth %d</string>
-
-    <!-- STRINGS OF SkeletonKey CLASS -->
-    <string name="SkeletonKey_Name">skeleton key</string>
-    <string name="SkeletonKey_Info">This key looks serious: its head is shaped like a skull. Probably it can open some serious door.</string>
-
-    <!-- PACKAGE /items/quest -->
-    <!-- STRINGS OF CorpseDust CLASS -->
-    <string name="CorpseDust_Name">corpse dust</string>
-    <string name="CorpseDust_Info">The ball of corpse dust doesn\'t differ outwardly from a regular dust ball. However, you know somehow that it\'s better to get rid of it as soon as possible.</string>
-    <string name="CorpseDust_Info2"> Maybe because just holding it makes you feel anxious and angry.</string>
-	
-    <!-- STRINGS OF DarkGold CLASS -->
-    <string name="DarkGold_Name">dark gold ore</string>
-    <string name="DarkGold_Info">This metal is called dark not because of its color (it doesn\'t differ from normal gold), but because it melts under the daylight, making it useless on the surface.</string>
-
-    <!-- STRINGS OF DriedRose CLASS -->
-    <string name="DriedRose_Name">dried rose</string>
-    <string name="DriedRose_Info">This rose dried up long time ago, but it has somehow kept all its petals.</string>
-	<string name="DriedRose_Info2"> And it hasn\'t lost it\'s charm. It looks so pretty, that you want to keep it forever.</string>
-
-    <!-- STRINGS OF DwarfToken CLASS -->
-    <string name="DwarfToken_Name">dwarf token</string>
-    <string name="DwarfToken_Info">Many dwarves and some of their larger creations carry these small pieces of metal of unknown purpose. Maybe they are jewelry or maybe some kind of ID. Dwarves are strange folk.</string>
-
-    <!-- STRINGS OF Pickaxe CLASS -->
-    <string name="Pickaxe_Name">pickaxe</string>
-    <string name="Pickaxe_Info">This is a large and sturdy tool for breaking rocks. It can be probably used as a weapon.</string>
-    <string name="Pickaxe_ACMine">MINE</string>
-    <string name="Pickaxe_Gender">feminine</string>
-    <string name="Pickaxe_NoVein">There is no dark gold vein near you to mine</string>
-
-    <!-- STRINGS OF RatSkull CLASS -->
-    <string name="RatSkull_Name">giant rat skull</string>
-    <string name="RatSkull_Info">It could be a nice hunting trophy, but it smells too bad to place it on a wall.</string>
-	<string name="RatSkull_Info2"> On the other hand, it demonstrates that owner is capable of killing rats, even big and smelly ones.</string>
-
     <!-- PACKAGE /actors/blobs -->
     <!-- STRINGS OF MissileWeapon CLASS -->
     <string name="ConfusionGas_Info">A cloud of confusion gas is swirling here.</string>
@@ -443,93 +272,9 @@
     <!-- STRINGS OF Web CLASS -->
     <string name="Web_Info">Everything is covered with a thick web here.</string>
 
-    <!-- PACKAGE /actors/buffs -->
-    <!-- STRINGS OF Amok CLASS -->
-    <string name="Amok_Info">Amok</string>
-    <!-- STRINGS OF Barkskin CLASS -->
-    <string name="Barkskin_Info">Barkskin</string>
-    <!-- STRINGS OF Bleeding CLASS -->
-    <string name="Bleeding_Info">Bleeding</string>
-    <string name="Bleeding_Death">You bled to death...</string>
-    <!-- STRINGS OF Blindness CLASS -->
-    <string name="Blindness_Info">Blinded</string>
-    <!-- STRINGS OF Burning CLASS -->
-    <string name="Burning_Info">Burning</string>
-    <string name="Burning_Burns">%s burns up!</string>
-    <string name="Burning_Death">You burned to death...</string>
-    <!-- STRINGS OF Charm CLASS -->
-    <string name="Charm_Info">Charmed</string>
-    <!-- STRINGS OF Combo CLASS -->
-    <string name="Combo_Info">Combo</string>
-    <string name="Combo_Combo">%d hit combo!</string>
-    <!-- STRINGS OF Cripple CLASS -->
-    <string name="Cripple_Info">Crippled</string>
-    <!-- STRINGS OF Frost CLASS -->
-    <string name="Frost_Info">Frozen</string>
-    <string name="Frost_Shatter">The cold causes %s to shatter!</string>
-    <!-- STRINGS OF Fury CLASS -->
-    <string name="Fury_Info">Fury</string>
-    <!-- STRINGS OF GasesImmunity CLASS -->
-    <string name="GasesImmunity_Info">Immune to Gases</string>
-    <!-- STRINGS OF Harvest CLASS -->
-    <string name="Harvest_Info">Harvesting</string>
-    <!-- STRINGS OF SugarRush CLASS -->
-    <string name="SugarRush_Info">Sugar Rush</string>
-
-    <!-- STRINGS OF Hunger CLASS -->
-    <string-array name="Hunger_Hungry">
-        <item>You are hungry.</item>
-        <item>You are hungry.</item>
-        <item>You are hungry.</item>
-    </string-array>
-    <string-array name="Hunger_Starving">
-        <item>You are starving!</item>
-        <item>You are starving!</item>
-        <item>You are starving!</item>
-    </string-array>
-
-    <string name="Hunger_Death">You starved to death...</string>
-    <string name="Hunger_Info1">Hungry</string>
-    <string name="Hunger_Info2">Starving</string>
-    <!-- STRINGS OF Invisibility CLASS -->
-    <string name="Invisibility_Info">Invisible</string>
-    <!-- STRINGS OF Levitation CLASS -->
-    <string name="Levitation_Info">Levitating</string>
-    <!-- STRINGS OF Light CLASS -->
-    <string name="Light_Info">Illuminated</string>
-    <!-- STRINGS OF MindVision CLASS -->
-    <string name="MindVision_Info">Mind vision</string>
-    <!-- STRINGS OF Ooze CLASS -->
-    <string name="Ooze_Info">Caustic ooze</string>
-    <string name="Ooze_Death">%s killed you...</string>
-    <!-- STRINGS OF Paralysis CLASS -->
-    <string name="Paralysis_Info">Paralysed</string>
-    <!-- STRINGS OF Poison CLASS -->
-    <string name="Poison_Info">Poisoned</string>
-    <string name="Poison_Death">You died from poison...</string>
-    <!-- STRINGS OF Roots CLASS -->
-    <string name="Roots_Info">Rooted</string>
-    <!-- STRINGS OF Shadows CLASS -->
-    <string name="Shadows_Info">Shadowmelded</string>
-    <!-- STRINGS OF Slow CLASS -->
-    <string name="Slow_Info">Slowed</string>
-    <!-- STRINGS OF SnipersMark CLASS -->
-    <string name="SnipersMark_Info">Sniper\'s mark</string>
-    <!-- STRINGS OF Vertigo CLASS -->
-    <string name="Vertigo_Info">Vertigo</string>
-    <!-- STRINGS OF Weakness CLASS -->
-    <string name="Weakness_Info">Weakened</string>
-
-    <!-- PACKAGE /actors/hero -->
-    <!-- STRINGS OF Belongings CLASS -->
-    <string name="Belongings_Name">backpack</string>
 
     <!-- PACKAGE /sprites -->
     <!-- STRINGS OF ItemSprite CLASS -->
     <string name="ItemSprite_Info1">drop aside: %1$.1f %2$.1f</string>
 
-    <!-- PACKAGE /ui -->
-    <!-- STRINGS OF Toolbar CLASS -->
-    <string name="Toolbar_Info1">You don\'t know what is there.</string>
-    <string name="Toolbar_Info2">Select a cell to examine</string>
 </resources>

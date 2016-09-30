@@ -6,7 +6,7 @@ import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Levitation;
 import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.items.food.RottenPasty;
+import com.watabou.pixeldungeon.items.food.RottenPie;
 import com.watabou.pixeldungeon.sprites.MimicPieSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -55,7 +55,7 @@ public class MimicPie extends Mob {
 	@Override
 	public void die(Object cause) {
 		super.die(cause);
-		Dungeon.level.drop(new RottenPasty(), getPos());
+		Dungeon.level.drop(new RottenPie(), getPos());
 	}
 
 	@Override

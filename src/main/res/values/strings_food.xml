@@ -7,55 +7,55 @@
 
     <!-- STRINGS OF Ration CLASS -->
     <string name="Ration_Name">ration of food</string>
-    <string name="Ration_Info">Nothing fancy here: dried meat, some biscuits - things like that.</string>
+    <string name="Ration_Info">Nothing fancy here: dried fruit, sweet biscuits, and hay.</string>
 
-    <!-- STRINGS OF ChargrilledMeat CLASS -->
-    <string name="ChargrilledMeat_Name">chargrilled meat</string>
-    <string name="ChargrilledMeat_Info">It looks like a decent steak.</string>
+    <!-- STRINGS OF HayFries CLASS -->
+    <string name="HayFries_Name">hay fries</string>
+    <string name="HayFries_Info">Mmm, fresh salty hay fries.</string>
 
-    <!-- STRINGS OF FrozenCarpaccio CLASS -->
-    <string name="FrozenCarpaccio_Name">frozen carpaccio</string>
-    <string name="FrozenCarpaccio_Info">It\'s a piece of frozen raw meat. The only way to eat it is by cutting thin slices of it. And this way it\'s surprisingly good.</string>
-    <string name="FrozenCarpaccio_Info1">You see your hands turn invisible!</string>
-    <string name="FrozenCarpaccio_Info2">You feel your skin harden!</string>
-    <string name="FrozenCarpaccio_Info3">Refreshing!</string>
-    <string name="FrozenCarpaccio_Info4">You feel better!</string>
+    <!-- STRINGS OF FreezeDriedHay CLASS -->
+    <string name="FreezeDriedHay_Name">freeze dried hay</string>
+    <string name="FreezeDriedHay_Info">It\'s a chunk of frozen hay, crisp and surprisingly tasty. It\'s safe to eat, but may still retain the unusual properties of its origin.</string>
+    <string name="FreezeDriedHay_Info1">You see your hands turn invisible!</string>
+    <string name="FreezeDriedHay_Info2">You feel your skin harden!</string>
+    <string name="FreezeDriedHay_Info3">Refreshing!</string>
+    <string name="FreezeDriedHay_Info4">You feel better!</string>
 
-    <!-- STRINGS OF MysteryMeat CLASS -->
-    <string name="MysteryMeat_Name">mystery meat</string>
-    <string name="MysteryMeat_Info">Eat at your own risk!</string>
-    <string name="MysteryMeat_Info1">Oh it\'s hot!</string>
-    <string name="MysteryMeat_Info2">You can\'t feel your legs!</string>
-    <string name="MysteryMeat_Info3">You are not feeling well.</string>
-    <string name="MysteryMeat_Info4">You are stuffed.</string>
-    <string name="MysteryMeat_Message">That food tasted... strange.</string>
+    <!-- STRINGS OF MysteriousHay CLASS -->
+    <string name="MysteriousHay_Name">mysterious hay</string>
+    <string name="MysteriousHay_Info">Eat at your own risk!</string>
+    <string name="MysteriousHay_Info1">Oh it\'s hot!</string>
+    <string name="MysteriousHay_Info2">You can\'t feel your legs!</string>
+    <string name="MysteriousHay_Info3">You are not feeling well.</string>
+    <string name="MysteriousHay_Info4">You are stuffed.</string>
+    <string name="MysteriousHay_Message">That food tasted... strange.</string>
 
     <!-- STRINGS OF RottenFood CLASS -->
     <string name="RottenFood_Message">Disgusting!</string>
 
-    <!-- STRINGS OF RottenMeat CLASS -->
-    <string name="RottenMeat_Name">Rotten meat</string>
-    <string name="RottenMeat_Info">A piece of rotten meat</string>
+    <!-- STRINGS OF RottenHay CLASS -->
+    <string name="RottenHay_Name">rotten hay</string>
+    <string name="RottenHay_Info">It\'s a stretch to call this \'food\'.</string>
 
-    <!-- STRINGS OF RottenPasty CLASS -->
-    <string name="RottenPasty_Name">Rotten pasty</string>
-    <string name="RottenPasty_Info">This pasty looks quite nasty.</string>
+    <!-- STRINGS OF RottenPie CLASS -->
+    <string name="RottenPie_Name">rotten apple pie</string>
+    <string name="RottenPie_Info">Definitely not the kind Granny used to make.</string>
 
     <!-- STRINGS OF RottenRation CLASS -->
-    <string name="RottenRation_Name">Rotten ration</string>
-    <string name="RottenRation_Info">Once upon a time it could be eaten</string>
+    <string name="RottenRation_Name">rotten ration</string>
+    <string name="RottenRation_Info">This might have been edible once.</string>
 
     <!-- STRINGS OF OverpricedRation CLASS -->
     <string name="OverpricedRation_Name">overpriced food ration</string>
-    <string name="OverpricedRation_Info">It looks exactly like a standard ration of food but smaller.</string>
-    <string name="OverpricedRation_Message">That food tasted Ok.</string>
+    <string name="OverpricedRation_Info">It looks exactly like a standard ration of food, but smaller.</string>
+    <string name="OverpricedRation_Message">That food tasted okay.</string>
 
-    <!-- STRINGS OF Pasty CLASS -->
-    <string name="Pasty_Name">pasty</string>
-    <string name="Pasty_Info">This is an authentic Cornish pasty with the traditional filling of beef and potato.</string>
+    <!-- STRINGS OF ApplePie CLASS -->
+    <string name="ApplePie_Name">apple pie</string>
+    <string name="ApplePie_Info">This looks like a mouthwatering apple pie.</string>
 
-    <!-- STRINGS OF PseudoPasty CLASS -->
-    <string name="PseudoPasty_Name">pasty</string>
-    <string name="PseudoPasty_Info">This is an authentic Cornish pasty with the traditional filling of beef and potato.</string>
+    <!-- STRINGS OF ChangelingPie CLASS -->
+    <string name="ChangelingPie_Name">apple pie</string>
+    <string name="ChangelingPie_Info">This looks like a mouthwatering apple pie.</string>
     
 </resources>

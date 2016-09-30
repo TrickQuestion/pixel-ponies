@@ -21,20 +21,20 @@ import com.watabou.pixeldungeon.actors.buffs.Hunger;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-public class ChargrilledMeat extends Food {
+public class ApplePie extends Food {
 
-	{
-		image = ItemSpriteSheet.STEAK;
-		energy = Hunger.STARVING - Hunger.HUNGRY;
+	public ApplePie() {
+		image  = ItemSpriteSheet.APPLE_PIE;
+		energy = Hunger.STARVING;
 	}
 	
 	@Override
 	public int price() {
-		return 5 * quantity();
+		return 20 * quantity();
 	}
 	
 	@Override
 	public Item poison(int cell){
-		return morphTo(RottenMeat.class);
+		return morphTo(RottenPie.class);
 	}
 }

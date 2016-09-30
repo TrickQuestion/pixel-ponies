@@ -13,7 +13,7 @@ import com.watabou.pixeldungeon.actors.buffs.Vertigo;
 import com.watabou.pixeldungeon.actors.buffs.Weakness;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.pixeldungeon.mechanics.Ballistica;
 import com.watabou.utils.Random;
 
@@ -37,7 +37,7 @@ public class SpiderMind extends Mob {
 		EXP = 6;
 		maxLvl = 9;
 		
-		loot = new MysteryMeat();
+		loot = new MysteriousHay();
 		lootChance = 0.067f;
 	}
 	

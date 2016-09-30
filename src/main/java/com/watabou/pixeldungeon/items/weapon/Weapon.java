@@ -40,6 +40,7 @@ import com.watabou.pixeldungeon.items.weapon.enchantments.Slow;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Swing;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
@@ -53,8 +54,12 @@ public class Weapon extends KindOfWeapon {
 
 	private static final String TXT_IDENTIFY     = Game.getVar(R.string.Weapon_Identify);
 	private static final String TXT_INCOMPATIBLE = Game.getVar(R.string.Weapon_Incompatible);
-	private static final String TXT_NONBOW_TO_STRING    = "%s H:%d";
-	private static final String TXT_BOW_TO_STRING    = "%s L:%d";
+
+	// NOTE: Weird issue here. For some reason I can't put these in the resource files.
+	//       It must be parsing them in a way that breaks them, but I'm not sure why.
+	private static final String TXT_MELEE_TO_STRING = "%s H:%d";
+	private static final String TXT_RANGED_TO_STRING = "%s Y:%d";
+
 	
 	public float	ACU	= 1;
 	public float	DLY	= 1f;
@@ -197,10 +202,10 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public String toString() {
-		if (this instanceof Bow) {
-			return levelKnown ? Utils.format(TXT_BOW_TO_STRING, super.toString(), minAttribute) : super.toString();
+		if (this instanceof Bow || this instanceof MissileWeapon) {
+			return levelKnown ? Utils.format(TXT_RANGED_TO_STRING, super.toString(), minAttribute) : super.toString();
 		}
-		return levelKnown ? Utils.format(TXT_NONBOW_TO_STRING, super.toString(), minAttribute) : super.toString();
+		return levelKnown ? Utils.format(TXT_MELEE_TO_STRING, super.toString(), minAttribute) : super.toString();
 	}
 	
 	@Override

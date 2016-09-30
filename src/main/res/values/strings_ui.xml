@@ -1,27 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- STRINGS OF TitleScene CLASS -->
-    <string name="TitleScene_Play">Play</string>
-    <string name="TitleScene_Highscores">Highscores</string>
-    <string name="TitleScene_Badges">Badges</string>
-    <string name="TitleScene_About">About</string>
-    <string name="TitleScene_InternalStorageLow">Not enough space\n in internal storage\n Your progress can be lost!</string>
+    <!-- GENERAL STRINGS VARIABLES -->
+    <string name="app_name">Pixel Ponies!</string>
 
     <!-- STRINGS OF AboutScene CLASS -->
-    <string name="AboutScene_Txt">Pixel Ponies by Trick Question is based on Pixel Dungeon Remixed by NYRDS and Pixel Dungeon Source by Watabou. Inspired by ponies in a legally non-derivative manner.\n\n Code &amp; graphics: Watabou  &amp; NYRDS &amp; ThEnigma314 &amp; Trick Question \n\nMusic: Cube_Code\n\nE-Mail us:\n\n</string>
+    <string name="AboutScene_Txt">Pixel Ponies! by _Trick Question and Jewel.\n\n- Based on Pixel Dungeon Remixed by NYRDS and Pixel Dungeon Source by Watabou.\n\n- Inspired by ponies in a legally non-derivative manner.\n\n Code &amp; graphics: Watabou  &amp; NYRDS &amp; ThEnigma314 &amp; Trick Question \n\nMusic: Cube_Code &amp; Trick Question\n\nE-Mail us:\n\n</string>
     <string name="AboutScene_OurSite">Our web site:</string>
     <string name="AboutScene_Lnk">(coming soon)</string>
     <string name="AboutScene_Mail">wolf.trickster@gmail.com</string>
     <string name="AboutScene_Snd">Send E-Mail</string>
-    <string name="AboutScene_TranslatedBy">Non-English translations removed during alpha testing.</string>
+    <string name="AboutScene_TranslatedBy">Currently only English language, but may begin translation project soon.</string>
 
+    <!-- STRINGS OF AllowStatisticsCollectionScene CLASS -->
+    <string name="AllowStatisticsCollectionScene_Title">Usage statistics collection</string>
+    <string name="AllowStatisticsCollectionScene_Request">Pixel Ponies would like to collect usage statistics.\n\nThis would help us to:\n
+        - detect non-fatal errors\n
+        - improve game balance\n
+        - improve game performance on some devices\n\n
+        You can always change your decision in \'settings\' later.
+    </string>
+    <string name="AllowStatisticsCollectionScene_Allow">Allow</string>
+    <string name="AllowStatisticsCollectionScene_Deny">Deny</string>
 
-        <!-- STRINGS OF RankingsScene CLASS -->
+    <!-- STRINGS OF AmuletScene CLASS -->
+    <string name="AmuletScene_Exit">Let\'s call it a day</string>
+    <string name="AmuletScene_Stay">I\'m not done yet</string>
+    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Alicorn Amulet! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
+
+    <!-- STRINGS OF Assets CLASS -->
+    <string name="Assets_Prefix"></string>
+
+    <!-- STRINGS OF Challenges CLASS -->
+    <string-array name="Challenges_Names">
+        <item>On diet</item>
+        <item>Faith is my barding</item>
+        <item>Pharmacophobia</item>
+        <item>Barren land</item>
+        <item>Swarm intelligence</item>
+        <item>Into darkness</item>
+    </string-array>
+
+    <!-- STRINGS OF DonateButton CLASS -->
+    <string name="DonateButton_pleaseDonate">please consider donating</string>
+    <string name="DonateButton_thanks">Thanks for Your support!</string>
+
+    <!-- STRINGS OF GameScene CLASS -->
+    <string name="GameScene_Welcome">Welcome to adventure level %d of Pixel Ponies!</string>
+    <string name="GameScene_WelcomeBack">Welcome back to adventure level %d of Pixel Ponies!</string>
+    <string name="GameScene_NightMode">Be cautious, since the dungeons are even more dangerous at night!</string>
+    <string name="GameScene_Chasm">Your hoofsteps echo loudly.</string>
+    <string name="GameScene_Water">You hear the water splashing around you.</string>
+    <string name="GameScene_Grass">The smell of vegetation is thick in the air.</string>
+    <string name="GameScene_Secrets">The atmosphere hints that this floor hides many secrets.</string>
+
+    <!-- STRINGS OF RankingsScene CLASS -->
     <string name="RankingsScene_Title">Top Rankings</string>
     <string name="RankingsScene_Total">Total games played: </string>
     <string name="RankingsScene_NoGames">No games have been played yet.</string>
     <string name="RankingsScene_NoInfo">No additional information</string>
+
+    <!-- STRINGS OF RemixedPixelDungeonApp CLASS -->
+    <string name="RemixedPixelDungeonApp_sendCrash">Our game crashed...\n Sorry.\nPlease sent crash report to help us fix it.</string>
 
     <!-- STRINGS OF StartScene CLASS -->
     <string name="StartScene_Load">Load Game</string>
@@ -42,9 +82,8 @@
     <string name="StartScene_DifficultyNormalWithSaves">Normal with saves</string>
     <string name="StartScene_DifficultyNormal">Normal</string>
     <string name="StartScene_DifficultyExpert">Expert</string>
-    
 
-        <!-- STRINGS OF InterLevelScene CLASS -->
+    <!-- STRINGS OF InterLevelScene CLASS -->
     <string name="InterLevelScene_Descending">Descending...</string>
     <string name="InterLevelScene_Ascending">Ascending...</string>
     <string name="InterLevelScene_Loading">Loading...</string>
@@ -54,9 +93,85 @@
     <string name="InterLevelScene_FileNotFound">File not found. For some reason...</string>
     <string name="InterLevelScene_ErrorGeneric">Something went wrong...</string>
 
+    <!-- STRINGS OF IntroScene CLASS -->
+    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Alicorn Amulet, which you believe is being held by the entity known as Nightmare.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that friendship smiles upon you. It\'s time to start your own adventure!</string>
+
     <!-- STRINGS OF SurfaceScene CLASS -->
     <string name="SurfaceScene_GameOver">Game Over</string>
-    
+
+    <!-- STRINGS OF TitleScene CLASS -->
+    <string name="TitleScene_Play">Play</string>
+    <string name="TitleScene_Highscores">Highscores</string>
+    <string name="TitleScene_Badges">Badges</string>
+    <string name="TitleScene_About">About</string>
+    <string name="TitleScene_InternalStorageLow">Not enough space\n in internal storage\n Your progress can be lost!</string>
+
+    <!-- STRINGS OF Toolbar CLASS -->
+    <string name="Toolbar_Info1">You don\'t know what is there.</string>
+    <string name="Toolbar_Info2">Select a cell to examine</string>
+
+    <!-- STRINGS OF Welcome CLASS -->
+    <string name="Welcome_Ok">Okay!</string>>
+    <string name="Welcome_Title">Welcome!</string>
+    <string name="Welcome_Text">
+        Pixel Ponies is a modification of two open source games: Watabou\'s Pixel Dungeon, and Nyrds\' Remixed Pixel Dungeon. It was created to ponify the existing game and expand it into a more complex adventure with more detailed character stats and extra secrets.\n\n
+        The largest difference is the statistic system. In place of the single statistic Strength are the six friendship elements. Advancement and balance of the six elements is a key part of what makes Pixel Ponies unique.\n\n
+        Other differences include: \n
+        - Character classes are now pony races.\n
+        - Some races have innate magic or flying.\n
+        - Level layout has been changed.\n
+        - Most of the monsters are different.\n
+        - Most of the graphics are new.\n
+        - New methods for enhancing stats.\n
+        - New items, both consumable and unique.\n
+        - Ranged attacks use a different stat.\n
+        - Rings/wands need min stats, or backfire.\n
+        - Items can\'t be enchanted to stat below 0.\n
+        - New secrets, with many more planned.\n\n
+        And plenty of other exciting stuff you\'ll want to discover on your own! /)^3^(\\\n
+    </string>
+
+    <!-- STRINGS OF WndDonate CLASS -->
+    <string name="WndDonate_silver">silver</string>
+    <string name="WndDonate_gold">gold</string>
+
+    <string name="WndDonate_ruby">ruby</string>
+    <string name="WndDonate_donate">donate: </string>
+    <string name="WndDonate_notConnected">no connection :(</string>
+    <string name="WndDonate_commonDonateText">Remixed Pixel Dungeon - free to everyone and always will be.\n\nHowever, You can help us make the game even better.\n\nIn addition to our heartfelt thanks you\'ll get some cosmetic improvements.</string>
+
+    <string name="WndDonate_silverDonate">silver donation</string>
+    <string name="WndDonate_goldDonate">gold donation</string>
+    <string name="WndDonate_rubyDonate">ruby donation</string>
+
+    <string name="WndDonate_silverDonateText">Any donation will help the development of the project</string>
+    <string name="WndDonate_goldDonateText">Thank You for Your help</string>
+    <string name="WndDonate_rubyDonateText">Your generosity will help us continue to improve Remixed Pixel Dungeon!</string>
+
+    <string name="WndDonate_silverDonateText2">Also disable ads in all game modes and unlock huntress from start.</string>
+    <string name="WndDonate_goldDonateText2">Also unlocks elf from start.</string>
+    <string name="WndDonate_rubyDonateText2"></string>
+
+    <!-- STRINGS OF WndPremiumSettings CLASS -->
+    <string name="WndPremiumSettings_std">standard</string>
+    <string name="WndPremiumSettings_silver">silver</string>
+    <string name="WndPremiumSettings_gold">gold</string>
+    <string name="WndPremiumSettings_ruby">ruby</string>
+
+    <string name="WndPremiumSettings_chrome">Select gui material</string>
+    <string name="WndPremiumSettings_status">Select status bar material</string>
+    <string name="WndPremiumSettings_toolbar">Select toolbar material</string>
+    <string name="WndPremiumSettings_banners">Select banner material</string>
+
+    <string name="WndPremiumSettings_notAvailbale">This option is not available yet</string>
+
+    <!-- STRINGS OF WndSaveSlotSelect -->
+    <string name="WndSaveSlotSelect_Delete_Yes">Yes, delete it!</string>
+    <string name="WndSaveSlotSelect_Delete_No">No</string>
+    <string name="WndSaveSlotSelect_Delete_Title">Are you sure, you want to delete this save state?</string>
+    <string name="WndSaveSlotSelect_SelectSlot">Select slot</string>
+    <string name="WndSaveSlotSelect_dontLike">Don\'t like ads? Make any donation, and they disappear. Forever.</string>
+
     <!-- STRINGS OF WndSettings CLASS -->
     <string name="WndSettings_ZoomIn">+</string>
     <string name="WndSettings_ZoomOut">-</string>
@@ -74,12 +189,5 @@
     <string name="WndSettings_ThirdQuickslot">Third Quickslot</string>
     <string name="WndSettings_ExperementalFont">New Font</string>
     <string name="WndSettings_ClassicFont">Classic Font</string>
-    
-    <!-- STRINGS OF WndSaveSlotSelect CLASS -->
-    <string name="WndSaveSlotSelect_SelectSlot">Select slot</string>
-    
-    <!-- STRINGS OF ModsButton CLASS -->
-    <string name="ModsButton_SelectMod">Select mod</string>
-    
-    <string name="RemixedPixelDungeonApp_sendCrash">Our game crashed...\n Sorry.\nPlease sent crash report to help us fix it.</string>
+
 </resources>

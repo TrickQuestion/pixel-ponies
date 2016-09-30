@@ -6,13 +6,22 @@
     <string name="Potion_Name">%s potion</string>
     <string name="Potion_Info">This flask contains a swirling %s liquid. Who knows what it will do when drunk or thrown?</string>
     <string name="Potion_ACDrink">DRINK</string>
-    <string name="Potion_Harmfull">Harmful potion!</string>
+    <string name="Potion_Harmful">Harmful potion!</string>
     <string name="Potion_Beneficial">Beneficial potion</string>
     <string name="Potion_Yes">Yes, I know what I\'m doing</string>
     <string name="Potion_No">No, I changed my mind</string>
     <string name="Potion_SureDrink">Are you sure you want to drink it? In most cases you should throw such potions at your enemies.</string>
     <string name="Potion_SureThrow">Are you sure you want to throw it? In most cases it makes sense to drink it.</string>
-    <string name="Potion_Shatter">The flask shatters and %s liquid splashes harmlessly</string>
+    <string name="Potion_Shatter">The flask shatters and %s liquid splashes harmlessly.</string>
+
+    <string name="Potion_ACMoisten">MOISTEN</string>
+    <string name="Potion_SelectForMoisten">Select item to moisten</string>
+    <string name="Potion_MoistenUseless">Looks like you just wasted this potion.</string>
+
+    <string name="Potion_RuneDissaperaed">Rune disappeared from %s.</string>
+    <string name="Potion_ArrowMoisten">You successfully applied the potion to your arrows.</string>
+    <string name="Potion_ItemFliesAway">%s just flies away from your hands.</string>
+    <string name="Potion_FoodRefreshed">%s now looks edible!</string>
 
     <string-array name="Potion_Colors">
         <item>turquoise</item>
@@ -49,7 +58,7 @@
 
     <!-- STRINGS OF PotionOfLevitation CLASS -->
     <string name="PotionOfLevitation_Name">Potion of Levitation</string>
-    <string name="PotionOfLevitation_Info">Drinking this curious liquid will cause you to hover in the air, able to drift effortlessly over traps. Flames and gases fill the air, however, and cannot be bypassed while airborne.</string>
+    <string name="PotionOfLevitation_Info">Drinking this curious liquid will cause you to hover in the air, able to drift effortlessly over pits, traps, and spikes. Flames and gases fill the air, however, and cannot be bypassed while airborne.</string>
     <string name="PotionOfLevitation_Apply">You float into the air!</string>
 
     <!-- STRINGS OF PotionOfLiquidFlame CLASS -->
@@ -59,7 +68,7 @@
     <!-- STRINGS OF PotionOfMight CLASS -->
     <string name="PotionOfMight_Name">Potion of Might</string>
     <string name="PotionOfMight_Info">This powerful liquid will course through your muscles, permanently increasing your Honesty by one point and your Health by five points.</string>
-    <string name="PotionOfMight_Apply">You feel refreshingly down to earth, not to mention hale.</string>
+    <string name="PotionOfMight_Apply">You feel refreshingly down to earth, not to mention hale!</string>
     <string name="PotionOfMight_StaApply">+1 Honesty, +5 Health</string>
 
     <!-- STRINGS OF PotionOfMindVision CLASS -->
@@ -74,7 +83,7 @@
 
     <!-- STRINGS OF PotionOfPurity CLASS -->
     <string name="PotionOfPurity_Name">Potion of Purification</string>
-    <string name="PotionOfPurity_Info">This reagent will quickly neutralize all harmful gases in the area of effect. Drinking it will give you a temporary immunity to such gases.</string>
+    <string name="PotionOfPurity_Info">This reagent will quickly neutralize all harmful gases and germs in the area of effect. Drinking it will give you a temporary immunity to harmful gases.</string>
     <string name="PotionOfPurity_Freshness">You feel uncommon freshness in the air.</string>
     <string name="PotionOfPurity_NoSmell">You\'ve stopped sensing any smells!</string>
 

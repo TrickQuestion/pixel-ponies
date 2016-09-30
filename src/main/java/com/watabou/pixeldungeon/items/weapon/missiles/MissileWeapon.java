@@ -44,16 +44,18 @@ public class MissileWeapon extends Weapon {
 		levelKnown = true;
 		defaultAction = AC_THROW;
 	}
-	
-	@Override
-	public ArrayList<String> actions( Hero hero ) {
-		ArrayList<String> actions = super.actions( hero );
-		if (hero.heroClass != HeroClass.ZEBRA && hero.heroClass != HeroClass.PEGASUS) {
-			actions.remove( AC_EQUIP );
-			actions.remove( AC_UNEQUIP );
-		}
-		return actions;
-	}
+
+
+	// TODO: Is this saying "rog/hunt aren't retarded enough to equip missile as melee"?
+//	@Override
+//	public ArrayList<String> actions( Hero hero ) {
+//		ArrayList<String> actions = super.actions( hero );
+//		if (hero.heroClass != HeroClass.ZEBRA && hero.heroClass != HeroClass.PEGASUS) {
+//			actions.remove( AC_EQUIP );
+//			actions.remove( AC_UNEQUIP );
+//		}
+//		return actions;
+//	}
 
 	@Override
 	protected void onThrow( int cell ) {

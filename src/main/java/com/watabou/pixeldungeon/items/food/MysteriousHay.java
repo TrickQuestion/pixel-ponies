@@ -32,12 +32,12 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
-public class MysteryMeat extends Food {
+public class MysteriousHay extends Food {
 
 	{
-		image   = ItemSpriteSheet.MEAT;
+		image   = ItemSpriteSheet.MYSTERIOUS_HAY;
 		energy  = Hunger.STARVING - Hunger.HUNGRY;
-		message = Game.getVar(R.string.MysteryMeat_Message);
+		message = Game.getVar(R.string.MysteriousHay_Message);
 	}
 	
 	@Override
@@ -49,19 +49,19 @@ public class MysteryMeat extends Food {
 			
 			switch (Random.Int( 5 )) {
 			case 0:
-				GLog.w(Game.getVar(R.string.MysteryMeat_Info1));
+				GLog.w(Game.getVar(R.string.MysteriousHay_Info1));
 				Buff.affect( hero, Burning.class ).reignite( hero );
 				break;
 			case 1:
-				GLog.w(Game.getVar(R.string.MysteryMeat_Info2));
+				GLog.w(Game.getVar(R.string.MysteriousHay_Info2));
 				Buff.prolong( hero, Roots.class, Paralysis.duration( hero ) );
 				break;
 			case 2:
-				GLog.w(Game.getVar(R.string.MysteryMeat_Info3));
+				GLog.w(Game.getVar(R.string.MysteriousHay_Info3));
 				Buff.affect( hero, Poison.class ).set( Poison.durationFactor( hero ) * hero.ht() / 5 );
 				break;
 			case 3:
-				GLog.w(Game.getVar(R.string.MysteryMeat_Info4));
+				GLog.w(Game.getVar(R.string.MysteriousHay_Info4));
 				Buff.prolong( hero, Slow.class, Slow.duration( hero ) );
 				break;
 			}
@@ -74,16 +74,16 @@ public class MysteryMeat extends Food {
 
 	@Override
 	public Item burn(int cell){
-		return morphTo(ChargrilledMeat.class);
+		return morphTo(HayFries.class);
 	}
 	
 	@Override
 	public Item freeze(int cell){
-		return morphTo(FrozenCarpaccio.class);
+		return morphTo(FreezeDriedHay.class);
 	}
 	
 	@Override
 	public Item poison(int cell){
-		return morphTo(RottenMeat.class);
+		return morphTo(RottenHay.class);
 	}
 }

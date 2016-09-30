@@ -2,7 +2,7 @@
 <resources>
     
     <!-- STRINGS OF Bow CLASS -->
-    <string name="Bow_Info1">This is a ranged weapon. It is useless for everybody but elves at very close range. Having a bow equipped allows you to fire arrows.\n\n</string>
+    <string name="Bow_Info1">This is a ranged weapon that shoots arrows. Most ponies can\'t aim a bow at adjacent monsters (they\'ll attack with their hooves instead).\n\n</string>
     
     <!-- STRINGS OF WoodenBow CLASS -->
     <string name="WoodenBow_Name">wooden bow</string>
@@ -16,28 +16,28 @@
 	
 	<!-- STRINGS OF RubyBow CLASS -->
     <string name="RubyBow_Name">ruby bow</string>
-    <string name="RubyBow_Info">Only the greatest archers can use this ruby bow. Almost every arrow pierces through the enemy, leaving a huge hole in his body, but extreme force is needed to pull the bowstring.</string>
+    <string name="RubyBow_Info">Only the greatest archers can use this ruby bow. Almost every arrow pierces through the enemy, leaving a huge hole in his body, but great loyalty is needed to draw the bowstring.</string>
     <string name="RubyBow_Gender">masculine</string>
+
+    <!-- STRINGS OF WoodenCrossbow CLASS -->
+    <string name="WoodenCrossbow_Name">Wooden crossbow</string>
+    <string name="WoodenCrossbow_Info">A basic wooden crossbow, looks like it designed to shoot bow arrows.</string>
+    <string name="WoodenCrossbow_Gender">masculine</string>
+
+    <!-- STRINGS OF CompositeCrossbow CLASS -->
+    <string name="CompositeCrossbow_Name">Composite crossbow</string>
+    <string name="CompositeCrossbow_Info">This reinforced crossbow proves to be a more efficient tool compared to its wooden counterpart.</string>
+    <string name="CompositeCrossbow_Gender">masculine</string>
+
+    <!-- STRINGS OF RubyCrossbow CLASS -->
+    <string name="RubyCrossbow_Name">Ruby crossbow</string>
+    <string name="RubyCrossbow_Info">This deadly weapon is truly a masterpiece of nightwing engineering, one that only the most loyal of ponies can wield effectively.</string>
+    <string name="RubyCrossbow_Gender">masculine</string>
 	
 	<!-- STRINGS OF Quiver CLASS -->
     <string name="Quiver_Name">quiver</string>
-    <string name="Quiver_Info">Leather quiver suitable to hold any amount of arrows</string>
+    <string name="Quiver_Info">Pleather quiver suitable to hold any amount of arrows.</string>
     <string name="Quiver_Gender">masculine</string>
-	
-	<!-- STRINGS OF FireQuiver CLASS -->
-    <string name="FireQuiver_Name">fire quiver</string>
-    <string name="FireQuiver_Info"></string>
-    <string name="FireQuiver_Gender">masculine</string>
-	
-	<!-- STRINGS OF PoisonQuiver CLASS -->
-    <string name="PoisonQuiver_Name">poison quiver</string>
-    <string name="PoisonQuiver_Info"></string>
-    <string name="Poisonuiver_Gender">masculine</string>
-	
-	<!-- STRINGS OF ParalysisQuiver CLASS -->
-    <string name="ParalysisQuiver_Name">paralyzing quiver</string>
-    <string name="ParalysisQuiver_Info"></string>
-    <string name="ParalysisQuiver_Gender">masculine</string>
 	
 	<!-- STRINGS OF CommonArrow CLASS -->
     <string name="CommonArrow_Name">arrow</string>

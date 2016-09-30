@@ -26,7 +26,7 @@ import com.watabou.pixeldungeon.actors.buffs.Burning;
 import com.watabou.pixeldungeon.actors.buffs.Frost;
 import com.watabou.pixeldungeon.actors.buffs.Paralysis;
 import com.watabou.pixeldungeon.actors.buffs.Roots;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.pixeldungeon.sprites.PiranhaSprite;
 import com.watabou.utils.Random;
 
@@ -76,7 +76,7 @@ public class Piranha extends Mob {
 	
 	@Override
 	public void die( Object cause ) {
-		Dungeon.level.drop( new MysteryMeat(), getPos() ).sprite.drop();
+		Dungeon.level.drop( new MysteriousHay(), getPos() ).sprite.drop();
 		super.die( cause );
 		
 		Statistics.piranhasKilled++;

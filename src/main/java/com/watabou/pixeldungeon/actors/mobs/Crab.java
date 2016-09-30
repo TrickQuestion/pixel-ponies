@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.actors.mobs;
 
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Ghost;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.utils.Random;
 
 public class Crab extends Mob {
@@ -32,7 +32,7 @@ public class Crab extends Mob {
 		EXP = 3;
 		maxLvl = 9;
 		
-		loot = new MysteryMeat();
+		loot = new MysteriousHay();
 		lootChance = 0.314f;
 	}
 	

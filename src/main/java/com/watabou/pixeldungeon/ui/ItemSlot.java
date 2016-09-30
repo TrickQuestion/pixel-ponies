@@ -49,8 +49,8 @@ public class ItemSlot extends Button {
 
 	private static final String TXT_HONESTY	= "H:%d";
 	private static final String TXT_TYPICAL_HONESTY	= "H:%d?";
-	private static final String TXT_LOYALTY = "L:%d";
-	private static final String TXT_TYPICAL_LOYALTY	= "L:%d?";
+	private static final String TXT_LOYALTY = "Y:%d";
+	private static final String TXT_TYPICAL_LOYALTY	= "Y:%d?";
 	private static final String TXT_MAGIC = "M:%d";
 	private static final String TXT_TYPICAL_MAGIC	= "M:%d?";
 	private static final String TXT_UNKNOWN_MAGIC	= "M:?";

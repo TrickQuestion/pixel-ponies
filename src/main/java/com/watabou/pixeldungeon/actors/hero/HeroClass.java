@@ -39,6 +39,7 @@ import com.watabou.pixeldungeon.items.wands.WandOfMagicMissile;
 import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
 import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
 import com.watabou.pixeldungeon.items.weapon.melee.Scythe;
+import com.watabou.pixeldungeon.items.weapon.melee.Spear;
 import com.watabou.pixeldungeon.items.weapon.melee.WoodenBow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
 import com.watabou.pixeldungeon.items.weapon.missiles.CommonArrow;
@@ -162,6 +163,7 @@ public enum HeroClass {
 		hero.collect(new RingOfShadows().degrade());
 		hero.collect(new RingOfThorns());
 		hero.collect(new RingOfHaste().upgrade().identify());
+		hero.collect(new Spear().upgrade().identify());
 
 		hero.ht(1000);
 		hero.hp(1000);

@@ -5,8 +5,7 @@ import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.MysteriousHay;
 import com.watabou.utils.Random;
 
 public class SpiderGuard extends MultiKindMob {
@@ -21,7 +20,7 @@ public class SpiderGuard extends MultiKindMob {
 		
 		kind = 1;
 		
-		loot = new MysteryMeat();
+		loot = new MysteriousHay();
 		lootChance = 0.067f;
 	}
 	

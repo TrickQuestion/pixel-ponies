@@ -19,23 +19,7 @@ public class WelcomeScene extends PixelScene {
 	private static final String TTL_Welcome = Game.getVar(R.string.Welcome_Title);
 
 	private static final String TXT_Welcome = Game.getVar(R.string.Welcome_Text);
-	private static final String TXT_Welcome_19 = Game.getVar(R.string.Welcome_Text_19);
-	private static final String TXT_Welcome_20 = Game.getVar(R.string.Welcome_Text_20);
-	private static final String TXT_Welcome_20_1 = Game.getVar(R.string.Welcome_Text_20_1);
-	private static final String TXT_Welcome_21 = Game.getVar(R.string.Welcome_Text_20_2);
-	private static final String TXT_Welcome_21_1 = Game.getVar(R.string.Welcome_Text_21_1);
-	private static final String TXT_Welcome_21_2 = Game.getVar(R.string.Welcome_Text_21_2);
-	private static final String TXT_Welcome_21_3 = Game.getVar(R.string.Welcome_Text_21_3);
-	private static final String TXT_Welcome_21_4 = Game.getVar(R.string.Welcome_Text_21_4);
-	private static final String TXT_Welcome_21_5 = Game.getVar(R.string.Welcome_Text_21_5);
-	private static final String TXT_Welcome_22 = Game.getVar(R.string.Welcome_Text_22);
-	private static final String TXT_Welcome_23 = Game.getVar(R.string.Welcome_Text_23);
-	private static final String TXT_Welcome_23_1 = Game.getVar(R.string.Welcome_Text_23_1);
-	private static final String TXT_Welcome_23_2 = Game.getVar(R.string.Welcome_Text_23_2);
-	private static final String TXT_Welcome_24 = Game.getVar(R.string.Welcome_Text_24);
-	private static final String TXT_Welcome_24_1 = Game.getVar(R.string.Welcome_Text_24_1);
-	private static final String TXT_Welcome_24_2 = Game.getVar(R.string.Welcome_Text_24_2);
-	private static final String TXT_Welcome_25 = Game.getVar(R.string.Welcome_Text_25);
+
 
 
 	private static final int GAP = 4;
@@ -44,10 +28,7 @@ public class WelcomeScene extends PixelScene {
 	public void create() {
 		super.create();
 
-		String[] upds = { TXT_Welcome, TXT_Welcome_19, TXT_Welcome_20, TXT_Welcome_20_1, TXT_Welcome_21,
-				TXT_Welcome_21_1,TXT_Welcome_21_2, TXT_Welcome_21_3, TXT_Welcome_21_4, TXT_Welcome_21_5,
-				TXT_Welcome_22, TXT_Welcome_23, TXT_Welcome_23_1, TXT_Welcome_23_2, TXT_Welcome_24,
-				TXT_Welcome_24_1, TXT_Welcome_24_2, TXT_Welcome_25 };
+		String[] upds = { TXT_Welcome  };
 
 		Text[] updTexts = new Text[upds.length];
 

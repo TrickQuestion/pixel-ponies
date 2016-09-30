@@ -21,13 +21,12 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-public class Glaive extends MeleeWeapon {
-	{
-		image = ItemSpriteSheet.GLAIVE;
-	}
-	
+public class Glaive extends SpecialWeapon {
+
 	public Glaive() {
 		super( 5, 1f, 1f );
+		range = 2;
+		image = ItemSpriteSheet.GLAIVE;
 	}
 	
 	@Override

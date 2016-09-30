@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- PACKAGE /actors/buffs -->
+    <!-- STRINGS OF Amok CLASS -->
+    <string name="Amok_Info">Amok</string>
+    <!-- STRINGS OF Barkskin CLASS -->
+    <string name="Barkskin_Info">Barkskin</string>
+    <!-- STRINGS OF Bleeding CLASS -->
+    <string name="Bleeding_Info">Bleeding</string>
+    <string name="Bleeding_Death">You bled to death...</string>
+    <!-- STRINGS OF Blindness CLASS -->
+    <string name="Blindness_Info">Blinded</string>
+    <!-- STRINGS OF Burning CLASS -->
+    <string name="Burning_Info">Burning</string>
+    <string name="Burning_Burns">%s burns up!</string>
+    <string name="Burning_Death">You burned to death...</string>
+    <!-- STRINGS OF Charm CLASS -->
+    <string name="Charm_Info">Charmed</string>
+    <!-- STRINGS OF Combo CLASS -->
+    <string name="Combo_Info">Combo</string>
+    <string name="Combo_Combo">%d hit combo!</string>
+    <!-- STRINGS OF Cripple CLASS -->
+    <string name="Cripple_Info">Crippled</string>
+    <!-- STRINGS OF DarkVeil CLASS -->
+    <string name="DarkVeil_Buff">Dark veil</string>
+    <!-- STRINGS OF Frost CLASS -->
+    <string name="Frost_Info">Frozen</string>
+    <string name="Frost_Shatter">The cold causes %s to shatter!</string>
+    <!-- STRINGS OF Fury CLASS -->
+    <string name="Fury_Info">Fury</string>
+    <!-- STRINGS OF GasesImmunity CLASS -->
+    <string name="GasesImmunity_Info">Immune to Gases</string>
+    <!-- STRINGS OF Harvest CLASS -->
+    <string name="Harvest_Info">Harvesting</string>
+    <!-- STRINGS OF SugarRush CLASS -->
+    <string name="SugarRush_Info">Sugar Rush</string>
+
+    <!-- STRINGS OF Hunger CLASS -->
+    <string-array name="Hunger_Hungry">
+        <item>You are hungry.</item>
+        <item>You are hungry.</item>
+        <item>You are hungry.</item>
+    </string-array>
+    <string-array name="Hunger_Starving">
+        <item>You are starving!</item>
+        <item>You are starving!</item>
+        <item>You are starving!</item>
+    </string-array>
+
+    <string name="Hunger_Death">You starved to death...</string>
+    <string name="Hunger_Info1">Hungry</string>
+    <string name="Hunger_Info2">Starving</string>
+    <!-- STRINGS OF Invisibility CLASS -->
+    <string name="Invisibility_Info">Invisible</string>
+    <!-- STRINGS OF Levitation CLASS -->
+    <string name="Levitation_Info">Levitating</string>
+    <!-- STRINGS OF Light CLASS -->
+    <string name="Light_Info">Illuminated</string>
+    <!-- STRINGS OF MindVision CLASS -->
+    <string name="MindVision_Info">Mind vision</string>
+    <!-- STRINGS OF Ooze CLASS -->
+    <string name="Ooze_Info">Caustic ooze</string>
+    <string name="Ooze_Death">%s killed you...</string>
+    <!-- STRINGS OF Paralysis CLASS -->
+    <string name="Paralysis_Info">Paralysed</string>
+    <!-- STRINGS OF Poison CLASS -->
+    <string name="Poison_Info">Poisoned</string>
+    <string name="Poison_Death">You died from poison...</string>
+    <!-- STRINGS OF Roots CLASS -->
+    <string name="Roots_Info">Rooted</string>
+    <!-- STRINGS OF Shadows CLASS -->
+    <string name="Shadows_Info">Shadowmelded</string>
+    <!-- STRINGS OF Slow CLASS -->
+    <string name="Slow_Info">Slowed</string>
+    <!-- STRINGS OF SnipersMark CLASS -->
+    <string name="SnipersMark_Info">Sniper\'s mark</string>
+    <!-- STRINGS OF Vertigo CLASS -->
+    <string name="Vertigo_Info">Vertigo</string>
+    <!-- STRINGS OF Weakness CLASS -->
+    <string name="Weakness_Info">Weakened</string>
+
+    <!-- TODO: mark which classes these buffs come from. -->
+    <string name="CorpseDust_Buff">Bloodlust</string>
+    <string name="DriedRose_Buff">Charming</string>
+    <string name="DriedRose_CursedBuff">Amorous</string>
+    <string name="RatSkull_Buff">Ratter</string>
+    <string name="RatKingCrown_Buff">Ratness</string>
+
+</resources>

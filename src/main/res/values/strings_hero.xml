@@ -35,49 +35,49 @@
     <string name="HeroClass_Nightwing">nightwing</string>
 
     <string-array name="HeroClass_EarthPonyPerks">
-        <item>Earth ponies are honest, cheerful, and durable, but are less kind and magical.</item>
+        <item>Earth ponies are honest, humorous, and durable, but are less kind and magical.</item>
         <item>They begin with a unique Scythe that can later be reforged to upgrade another weapon.</item>
         <item>Earth ponies are very good with melee weapons.</item>
-        <item>They can use bows, but they\'re much slower shooters than ponies who have wings or horns.</item>
+        <item>They can use bows, but having neither wings nor a horn, they have a slow rate of fire.</item>
         <item>Eating a piece of food restores a small amount of health.</item>
         <item>Earth Ponies automatically know Potions of Honesty.</item>
     </string-array>
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
         <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
-        <item>Unicorns can cast Telekinesis at will.</item>
-        <item>They can\'t equip a mane ring, however: their horn gets in the way of their forelock.</item>
+        <item>Unicorns have a horn, which allows them to cast Telekinesis at will.</item>
+        <item>The magic from their horn prevents unicorns from equipping a magic accessory on their mane. They can still wear one on their tail.</item>
         <item>Eating a piece of food will restore 1 charge to all wands.</item>
-        <item>Unicorns can fully identify a wand just by using it, and automatically know Scrolls of Identify.</item>
+        <item>Unicorns can fully identify a wand just by using it.</item>
+        <item>They automatically know Scrolls of Identify and Scrolls of Curse.</item>
     </string-array>
     <string-array name="HeroClass_PegasusPerks">
         <item>Pegasi are loyal and kind, but less generous and physically fragile.</item>
-        <item>They can fly over pits, spikes, and traps. Unlike levitation, flight still triggers special plants and hidden traps.</item>
-        <item>Encumbered pegasi cannot fly effectively, but they can still safely glide into pits.</item>
+        <item>They can fly over pits, traps, and spikes. Unlike levitation, flight still triggers special plants and hidden traps.</item>
+        <item>Encumbered pegasi cannot fly well, but they can still safely glide into pits.</item>
         <item>They get a damage bonus for excess Loyalty when using thrown weapons.</item>
-        <item>Pegasi automatically know Scrolls of Loyal Oath and Magic Mapping.</item>
+        <item>Pegasi automatically know Scrolls of Loyal Oath and Scrolls of Magic Mapping.</item>
     </string-array>
     <string-array name="HeroClass_ZebraPerks">
         <item>Zebras are generous, magical, and durable, but less loyal.</item>
         <item>They begin with a unique throwable boomerang that can be reused and upgraded.</item>
-        <item>Zebras excel with throwing weapons. They use honesty instead of loyalty to throw.</item>
-        <item>They can use bows, but they\'re much slower shooters than ponies who have wings or horns.</item>
+        <item>Zebras excel with throwing weapons. They use honesty instead of loyalty to throw (bows still require loyalty).</item>
+        <item>They can use bows, but having neither wings nor a horn, they have a slow rate of fire.</item>
         <item>Zebras gain more health from dewdrops, and are immune to Rooting.</item>
     </string-array>
     <string-array name="HeroClass_NightwingPerks">
-        <item>Nightwings are loyal and cheerful, but less honest and physically fragile.</item>
-        <item>They can fly over pits, spikes, and traps. Unlike levitation, flight still triggers special plants and hidden traps.</item>
-        <item>Encumbered nightwings cannot fly effectively, but they can still safely glide into pits.</item>
+        <item>Nightwings are loyal and humorous, but less honest and physically fragile.</item>
+        <item>They can fly over pits, traps, and spikes. Unlike levitation, flight still triggers special plants and hidden traps.</item>
+        <item>Encumbered nightwings cannot fly well, but they can still safely glide into pits.</item>
         <item>They can sense neighboring creatures even when they are hidden behind obstacles.</item>
         <item>Nightwings are good with bows, and can even use them at point-blank range.</item>
     </string-array>
 
     <!-- STRINGS OF HeroSubClass CLASS -->
-
     <string name="HeroSubClass_NameFarmer">farmer</string>
     <string name="HeroSubClass_DescFarmer">The _Farmer_ can gather dewdrops and seeds from special plants, and can go longer without food.</string>
     <string name="HeroSubClass_NameBard">bard</string>
-    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire. (Fix this--doesn\'t laughter already do that?)</string>
+    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
     <string name="HeroSubClass_NameRoyalGuard">royal guard</string>
     <string name="HeroSubClass_DescRoyalGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
     <string name="HeroSubClass_NameMagician">magician</string>
@@ -104,6 +104,4 @@
     <string name="HeroSubClass_DescAssassin">The _Assassin_ has a Loyalty-based chance to completely bypass monster armor whenever she fires a Bow.</string>
     <string name="HeroSubClass_NameVampony">vampony</string>
     <string name="HeroSubClass_DescVampony">The _Vampony_ gains health and reduces hunger each time she defeats a monster. She also gains a boost to damage whenever she is hungry, but not starving. (Tweak to make cooler?)</string>
-
-
 </resources>

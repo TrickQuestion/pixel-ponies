@@ -11,10 +11,10 @@ import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-public class PseudoPasty extends Food {
+public class ChangelingPie extends Food {
 
-	public PseudoPasty() {
-		image  = ItemSpriteSheet.PASTY;
+	public ChangelingPie() {
+		image  = ItemSpriteSheet.APPLE_PIE;
 		energy = Hunger.STARVING;
 	}
 	
