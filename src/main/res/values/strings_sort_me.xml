@@ -80,7 +80,7 @@
         <item>(The text is entirely illegible.)</item>
         <item>\"In the center of Pandemonium, the God of Chaos awaits.\"</item>
         <item>What fun is there in making sense?</item>
-        <item>Behold: The Alicorn Amulet</item>
+        <item>Behold: The Pegacorn Pendant</item>
     </string-array>
 
     <!-- STRINGS OF Journal CLASS -->
@@ -192,7 +192,7 @@
     <string name="WndRanking_StaAnkhs">Ankhs Used</string>
 
     <!-- STRINGS OF WndResurrect CLASS -->
-    <string name="WndResurrect_Message">You died, but you were given another chance to find the Alicorn Amulet. Will you take it?</string>
+    <string name="WndResurrect_Message">You died, but you were given another chance to find the Pegacorn Pendant. Will you take it?</string>
     <string name="WndResurrect_Yes">Yes, I will fight!</string>
     <string name="WndResurrect_No">No, I give up</string>
 

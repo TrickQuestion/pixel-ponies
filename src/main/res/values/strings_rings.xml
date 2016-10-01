@@ -117,7 +117,7 @@
     <string name="ChaosCrystal_Name">Strange Crystal</string>
     <string name="ChaosCrystal_Name_1">Chaotic Crystal</string>
     <string name="ChaosCrystal_Name_2">Chaos Crystal</string>
-    <string name="ChaosCrystal_Info">You feel streams of energy, running through your hands while you holding it.</string>
+    <string name="ChaosCrystal_Info">You feel streams of energy, running through your hooves while you holding it.</string>
     <string name="ChaosCrystal_Info_1">Chaotic powers flow through this crystal. Maybe it might be useful.</string>
     <string name="ChaosCrystal_Info_2">Yes! Now you know, that you can fuse it with one of your items, but what\'s next?</string>
     <string name="ChaosCrystal_Use">USE</string>
@@ -148,7 +148,7 @@
     <!-- STRINGS OF RatSkull CLASS -->
     <string name="RatSkull_Name">giant rat skull</string>
     <string name="RatSkull_Info">It could be a nice hunting trophy, but it smells too bad to place it on a wall.</string>
-    <string name="RatSkull_Info2"> On the other hand, it demonstrates that owner is capable of killing rats, even big and smelly ones.</string>
+    <string name="RatSkull_Info2"> On the other hoof, it demonstrates that owner is capable of killing rats, even big and smelly ones.</string>
 
     <!-- STRINGS OF HeartOfDarkness CLASS -->
     <string name="HeartOfDarkness_Name">Heart of darkness</string>
@@ -157,9 +157,9 @@
 
     <!-- STRINGS OF BlackSkull CLASS -->
     <string name="BlackSkull_Name">black skull</string>
-    <string name="BlackSkull_Info">A small obsidian skull. It was a source of Necropolis powers, but after Lich\'s defeat it seems to have lost all it\'s powers. But as you hold it in your hands a strange thought crosses your mind: \"It hungers\".</string>
+    <string name="BlackSkull_Info">A small obsidian skull. It was a source of Necropolis powers, but after Lich\'s defeat it seems to have lost all it\'s powers. But as you hold it in your hooves a strange thought crosses your mind: \"It hungers\".</string>
     <string name="BlackSkull_Gender">masculine</string>
     <string name="BlackSkull_Name_Awakened">awakened black skull</string>
-    <string name="BlackSkull_Info_Awakened">The skull is pulsating with power, you can see it pouring from skull\'s empty eyes. And as you hold it in your hand you can hear dreadful voice saying: \"The death marches\"</string>
+    <string name="BlackSkull_Info_Awakened">The skull is pulsating with power, you can see it pouring from skull\'s empty eyes. And as you hold it in your hoof you can hear dreadful voice saying: \"The death marches\"</string>
 
 </resources>

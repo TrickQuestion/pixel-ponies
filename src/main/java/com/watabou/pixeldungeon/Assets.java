@@ -40,8 +40,6 @@ public class Assets {
 	public static final String HP_BAR = "hp_bar.png";
 	public static final String XP_BAR = "exp_bar.png";
 
-	public static final String EARTH = "earth.png";
-
 	public static final String AVATARS = "avatars.png";
 	public static final String PET = "pet.png";
 

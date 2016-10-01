@@ -16,7 +16,7 @@
     <!-- STRINGS OF FreezeDriedHay CLASS -->
     <string name="FreezeDriedHay_Name">freeze dried hay</string>
     <string name="FreezeDriedHay_Info">It\'s a chunk of frozen hay, crisp and surprisingly tasty. It\'s safe to eat, but may still retain the unusual properties of its origin.</string>
-    <string name="FreezeDriedHay_Info1">You see your hands turn invisible!</string>
+    <string name="FreezeDriedHay_Info1">You see your hooves turn invisible!</string>
     <string name="FreezeDriedHay_Info2">You feel your skin harden!</string>
     <string name="FreezeDriedHay_Info3">Refreshing!</string>
     <string name="FreezeDriedHay_Info4">You feel better!</string>

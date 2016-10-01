@@ -23,6 +23,8 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.PixelDungeon;
 import com.nyrds.pixeldungeon.ml.R;
+import com.watabou.pixeldungeon.Preferences;
+import com.watabou.pixeldungeon.scenes.AllowStatisticsCollectionScene;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.ui.CheckBox;
 import com.watabou.pixeldungeon.ui.RedButton;
@@ -41,11 +43,6 @@ public class WndSettings extends Window {
 	private static final String TXT_TEXT_SCALE_DEFAULT = Game
 			.getVar(R.string.WndSettings_TextScaleDefault);
 
-	private static final String TXT_SCALE_UP = Game
-			.getVar(R.string.WndSettings_ScaleUp);
-	private static final String TXT_IMMERSIVE = Game
-			.getVar(R.string.WndSettings_Immersive);
-
 	private static final String TXT_MUSIC = Game
 			.getVar(R.string.WndSettings_Music);
 
@@ -59,9 +56,8 @@ public class WndSettings extends Window {
 			.getVar(R.string.WndSettings_SwitchPort);
 	private static final String TXT_SWITCH_LAND = Game
 			.getVar(R.string.WndSettings_SwitchLand);
-
-	private static final String TXT_SElECT_LANGUAGE = Game
-			.getVar(R.string.WndSettings_SelectLanguage);
+	private static final String TXT_STATISTICS_ON = Game.getVar(R.string.WndSettings_StatsOn);
+	private static final String TXT_STATISTICS_OFF = Game.getVar(R.string.WndSettings_StatsOff);
 
 	private static final String TXT_SECOND_QUICKSLOT = Game
 			.getVar(R.string.WndSettings_SecondQuickslot);
@@ -141,6 +137,16 @@ public class WndSettings extends Window {
 			float y = createFontSelector(btnOrientation.bottom() + GAP);
 			
 			resize(WIDTH, (int) y);
+
+			RedButton btnStats = new RedButton(usageStatsText()) {
+				@Override
+				protected void onClick() {
+					PixelDungeon.switchScene(AllowStatisticsCollectionScene.class);
+				}
+			};
+			btnStats.setRect(0, btnOrientation.bottom() + GAP, WIDTH, BTN_HEIGHT);
+			add(btnStats);
+
 		} else {
 
 			CheckBox btnBrightness = new CheckBox(TXT_BRIGHTNESS) {
@@ -328,5 +334,9 @@ public class WndSettings extends Window {
 
 	private String orientationText() {
 		return PixelDungeon.landscape() ? TXT_SWITCH_PORT : TXT_SWITCH_LAND;
+	}
+
+	private String usageStatsText() {
+		return Preferences.INSTANCE.getInt(Preferences.KEY_COLLECT_STATS,0) > 0 ? TXT_STATISTICS_ON : TXT_STATISTICS_OFF;
 	}
 }

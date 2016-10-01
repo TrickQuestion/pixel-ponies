@@ -82,8 +82,8 @@
     <!-- <string name="Badges_VictoryMag"></string> -->
     <!-- <string name="Badges_VictoryRog"></string> -->
     <!-- <string name="Badges_VictoryHun"></string> -->
-    <string name="Badges_Victory">Alicorn Amulet obtained</string>
-    <string name="Badges_VictoryAll">Alicorn Amulet obtained by Earth Pony, Unicorn, Pegasus, Zebra, &amp; Nightwing</string>
+    <string name="Badges_Victory">Pegacorn Pendant obtained</string>
+    <string name="Badges_VictoryAll">Pegacorn Pendant obtained by Earth Pony, Unicorn, Pegasus, Zebra, &amp; Nightwing</string>
     <string name="Badges_MasteryCombo">7-hit combo</string>
     <string name="Badges_PotionsCooked1">3 potions cooked</string>
     <string name="Badges_PotionsCooked2">6 potions cooked</string>

@@ -29,7 +29,7 @@ public enum Icons {
 	PREFS,
 	WARNING,
 	TARGET,
-	NYRDIE,
+	AUTHORS_ICON,
 	EARTH,
 	MAGE,
 	ROGUE,
@@ -87,8 +87,8 @@ public enum Icons {
 		case TARGET:
 			icon.frame( icon.texture.uvRect( 0, 13, 16, 29 ) );
 			break;
-		case NYRDIE:
-			icon.frame( icon.texture.uvRect( 30, 16, 45, 26 ) );
+		case AUTHORS_ICON:
+			icon.frame( icon.texture.uvRect( 0, 84, 32, 100 ) );
 			break;
 		case EARTH:
 			icon.frame( icon.texture.uvRect( 0, 29, 16, 45 ) );

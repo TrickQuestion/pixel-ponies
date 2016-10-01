@@ -203,16 +203,16 @@ public class StartScene extends PixelScene {
 			for (int i = 0; i < classes.length; i++) {
 				ClassShield shield = shields.get(classes[i]);
 
-				if (i < 2) {
-					shield.setRect(left + i * shieldW * 2, top - shieldH * 0.5f, 
+				if (i < 3) {
+					shield.setRect(left + i * shieldW, top - shieldH * 0.5f,
 							shieldW, shieldH);
 				} else {
-					shield.setRect(left + (i % 3) * shieldW, top + shieldH, shieldW, shieldH);
+					shield.setRect(left + (i % 3) * shieldW * 2, top + shieldH, shieldW, shieldH);
 				}
 			}
 
 			ChallengeButton challenge = new ChallengeButton();
-			challenge.setPos(w / 2 - challenge.width() / 2, top + shieldH*0.5f
+			challenge.setPos(w / 2 - challenge.width() / 2, top + shieldH * 1.5f
 					- challenge.height() / 2);
 			add(challenge);
 		}
@@ -476,7 +476,7 @@ public class StartScene extends PixelScene {
 		private static final int MASTERY_HIGHLIGHTED = 0xCC33FF;
 
 		private static final int WIDTH = 24;
-		private static final int HEIGHT = 28;
+		private static final int HEIGHT = 30;
 		private static final int SCALE = 2;
 
 		private HeroClass cl;

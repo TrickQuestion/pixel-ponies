@@ -127,9 +127,9 @@
     <string name="Monk_Name">dwarf monk</string>
     <string name="Monk_Gender">masculine</string>
     <string name="Monk_Name_Objective">dwarf monk</string>
-    <string name="Monk_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hand-to-hand combat.</string>
+    <string name="Monk_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hoof-to-hoof combat.</string>
     <string name="Monk_Defense">parried</string>
-    <string name="Monk_Disarm">%1$s has knocked the %2$s from your hands!</string>
+    <string name="Monk_Disarm">%1$s has knocked the %2$s from your hooves!</string>
 
     <!-- STRINGS OF Piranha CLASS -->
     <string name="Piranha_Name">giant piranha</string>
@@ -153,7 +153,7 @@
     <string name="Senior_Name">senior monk</string>
     <string name="Senior_Gender">masculine</string>
     <string name="Senior_Name_Objective">senior monk</string>
-    <string name="Senior_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hand-to-hand combat. This particular monk has mastered the art of disabling hiss opponents.</string>
+    <string name="Senior_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hoof-to-hoof combat. This particular monk has mastered the art of disabling hiss opponents.</string>
 
     <!-- STRINGS OF Shadow CLASS -->
     <string name="Shadow_Name">shadow</string>

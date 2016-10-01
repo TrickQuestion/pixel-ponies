@@ -20,7 +20,7 @@
 
     <string name="Potion_RuneDissaperaed">Rune disappeared from %s.</string>
     <string name="Potion_ArrowMoisten">You successfully applied the potion to your arrows.</string>
-    <string name="Potion_ItemFliesAway">%s just flies away from your hands.</string>
+    <string name="Potion_ItemFliesAway">%s just flies away from your hooves.</string>
     <string name="Potion_FoodRefreshed">%s now looks edible!</string>
 
     <string-array name="Potion_Colors">
@@ -54,7 +54,7 @@
     <!-- STRINGS OF PotionOfInvisibility CLASS -->
     <string name="PotionOfInvisibility_Name">Potion of Invisibility</string>
     <string name="PotionOfInvisibility_Info">Drinking this potion will render you temporarily invisible. While invisible, enemies will be unable to see you. Attacking an enemy, as well as using a wand or a scroll before enemy\'s eyes, will dispel the effect.</string>
-    <string name="PotionOfInvisibility_Apply">You see your hands turn invisible!</string>
+    <string name="PotionOfInvisibility_Apply">You see your hooves turn invisible!</string>
 
     <!-- STRINGS OF PotionOfLevitation CLASS -->
     <string name="PotionOfLevitation_Name">Potion of Levitation</string>
@@ -95,6 +95,6 @@
 
     <!-- STRINGS OF PotionOfToxicGas CLASS -->
     <string name="PotionOfToxicGas_Name">Potion of Toxic Gas</string>
-    <string name="PotionOfToxicGas_Info">Uncorking or shattering this pressurized glass will cause its contents to explode into a deadly cloud of toxic green gas. You might choose to fling this potion at distant enemies instead of uncorking it by hand.</string>
+    <string name="PotionOfToxicGas_Info">Uncorking or shattering this pressurized glass will cause its contents to explode into a deadly cloud of toxic green gas. You might choose to fling this potion at distant enemies instead of uncorking it by hoof.</string>
     
 </resources>

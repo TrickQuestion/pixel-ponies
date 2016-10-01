@@ -120,12 +120,12 @@ public class AboutScene extends PixelScene {
 		
 		createText("\n\n"+TRN, site);
 		
-		Image nyrdie = Icons.NYRDIE.get();
-		nyrdie.x = align( text.x + (text.width() - nyrdie.width) / 2 );
-		nyrdie.y = text.y - nyrdie.height - 8;
-		add( nyrdie );
+		Image wolfCat = Icons.AUTHORS_ICON.get();
+		wolfCat.x = align( text.x + (text.width() - wolfCat.width) / 2 );
+		wolfCat.y = text.y - wolfCat.height - 8;
+		add( wolfCat );
 		
-		new Flare( 7, 64 ).color( 0x332211, true ).show( nyrdie, 0 ).angularSpeed = -20;
+		new Flare( 7, 64 ).color( 0x332211, true ).show( wolfCat, 0 ).angularSpeed = -20;
 		
 		Archs archs = new Archs();
 		archs.setSize( Camera.main.width, Camera.main.height );

@@ -31,24 +31,18 @@ import com.watabou.pixeldungeon.PixelDungeon;
 import com.watabou.pixeldungeon.effects.BannerSprites;
 import com.watabou.pixeldungeon.effects.Fireball;
 import com.watabou.pixeldungeon.ui.Archs;
-import com.watabou.pixeldungeon.ui.ChangelogButton;
 import com.watabou.pixeldungeon.ui.DonateButton;
 import com.watabou.pixeldungeon.ui.ExitButton;
-import com.watabou.pixeldungeon.ui.ModsButton;
 import com.watabou.pixeldungeon.ui.PrefsButton;
 import com.watabou.pixeldungeon.ui.PremiumPrefsButton;
-import com.watabou.pixeldungeon.ui.StaticsticsButton;
 
 public class TitleScene extends PixelScene {
 
-	private static final String TXT_PLAY = Game
-			.getVar(R.string.TitleScene_Play);
-	private static final String TXT_HIGHSCORES = Game
-			.getVar(R.string.TitleScene_Highscores);
-	private static final String TXT_BADGES = Game
-			.getVar(R.string.TitleScene_Badges);
-	private static final String TXT_ABOUT = Game
-			.getVar(R.string.TitleScene_About);
+	private static final String TXT_PLAY = Game.getVar(R.string.TitleScene_Play);
+	private static final String TXT_HIGHSCORES = Game.getVar(R.string.TitleScene_Highscores);
+	private static final String TXT_BADGES = Game.getVar(R.string.TitleScene_Badges);
+	private static final String TXT_NEWS = Game.getVar(R.string.TitleScene_News);
+	private static final String TXT_ABOUT = Game.getVar(R.string.TitleScene_About);
 
 	Text            pleaseSupport;
 	DonateButton    btnDonate;
@@ -73,18 +67,17 @@ public class TitleScene extends PixelScene {
 		title.x = (w - title.width()) / 2;
 		title.y = (title.height() * 0.3f) / 2;
 
-		placeTorch(title.x + 18, title.y + 20);
-		placeTorch(title.x + title.width - 18, title.y + 20);
+		placeTorch(title.x + 12, title.y + 20);
+		placeTorch(title.x + title.width - 12, title.y + 20);
 
-		DashboardItem btnBadges = new DashboardItem(TXT_BADGES, 3) {
+		DashboardItem btnNews = new DashboardItem(TXT_NEWS, 4) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(BadgesScene.class);
+				PixelDungeon.switchNoFade(WelcomeScene.class);
 			}
 		};
-		btnBadges.setPos(w / 2 - btnBadges.width(), (h + height) / 2
-				- DashboardItem.SIZE);
-		add(btnBadges);
+		btnNews.setPos(w / 2 - btnNews.width(), (h + height) / 2 - DashboardItem.SIZE);
+		add(btnNews);
 
 		DashboardItem btnAbout = new DashboardItem(TXT_ABOUT, 1) {
 			@Override
@@ -95,24 +88,32 @@ public class TitleScene extends PixelScene {
 		btnAbout.setPos(w / 2, (h + height) / 2 - DashboardItem.SIZE);
 		add(btnAbout);
 
-		DashboardItem btnPlay = new DashboardItem(TXT_PLAY, 0) {
-			@Override
-			protected void onClick() {
-				PixelDungeon.switchNoFade(StartScene.class);
-			}
-		};
-		btnPlay.setPos(w / 2 - btnPlay.width(), btnAbout.top()
-				- DashboardItem.SIZE);
-		add(btnPlay);
-
 		DashboardItem btnHighscores = new DashboardItem(TXT_HIGHSCORES, 2) {
 			@Override
 			protected void onClick() {
 				PixelDungeon.switchNoFade(RankingsScene.class);
 			}
 		};
-		btnHighscores.setPos(w / 2, btnPlay.top());
+		btnHighscores.setPos(w / 2 - (btnHighscores.width()/2), btnAbout.top() - DashboardItem.SIZE);
 		add(btnHighscores);
+
+		DashboardItem btnPlay = new DashboardItem(TXT_PLAY, 0) {
+			@Override
+			protected void onClick() {
+				PixelDungeon.switchNoFade(StartScene.class);
+			}
+		};
+		btnPlay.setPos(w / 2 - btnPlay.width() - (btnHighscores.width()/2), btnHighscores.top());
+		add(btnPlay);
+
+		DashboardItem btnBadges = new DashboardItem(TXT_BADGES, 3) {
+			@Override
+			protected void onClick() {
+				PixelDungeon.switchNoFade(BadgesScene.class);
+			}
+		};
+		btnBadges.setPos(w / 2 + (btnHighscores.width()/2), (h + height) / 2 - DashboardItem.SIZE);
+		add(btnBadges);
 
 		btnDonate = new DonateButton();
 
@@ -128,16 +129,17 @@ public class TitleScene extends PixelScene {
 		float dashBaseline = btnDonate.top() - DashboardItem.SIZE;
 
 		if (PixelDungeon.landscape()) {
-			btnHighscores.setPos(w / 2 - btnHighscores.width(), dashBaseline);
-			btnBadges.setPos(w / 2, dashBaseline);
+			btnHighscores.setPos(w / 2 - btnHighscores.width() - (btnBadges.width()/2), dashBaseline);
+			btnBadges.setPos(btnHighscores.right(), dashBaseline);
 			btnPlay.setPos(btnHighscores.left() - btnPlay.width(), dashBaseline);
-			btnAbout.setPos(btnBadges.right(), dashBaseline);
+			btnNews.setPos(btnBadges.right(), dashBaseline);
+			btnAbout.setPos(btnNews.right(), dashBaseline);
 		} else {
-			btnBadges.setPos(w / 2 - btnBadges.width(), dashBaseline);
-			btnAbout.setPos(w / 2, dashBaseline);
-			btnPlay.setPos(w / 2 - btnPlay.width(), btnAbout.top()
-					- DashboardItem.SIZE);
-			btnHighscores.setPos(w / 2, btnPlay.top());
+			btnNews.setPos(w / 2 - btnNews.width(), dashBaseline);
+			btnAbout.setPos(btnNews.right(), dashBaseline);
+			btnPlay.setPos(w / 2 - btnPlay.width() -  (btnNews.width()/2), btnAbout.top() - DashboardItem.SIZE);
+			btnHighscores.setPos(btnPlay.right(), btnPlay.top());
+			btnBadges.setPos(btnHighscores.right(), btnPlay.top());
 		}
 
 		Archs archs = new Archs();
@@ -168,11 +170,6 @@ public class TitleScene extends PixelScene {
 		btnPrefs.setPos(0, 0);
 		add(btnPrefs);
 
-		ModsButton btnMods = new ModsButton();
-		btnMods.setPos(0, btnPrefs.bottom() + 2);
-		
-		add(btnMods);
-		
 		if (PixelDungeon.donated() > 0) {
 			PremiumPrefsButton btnPPrefs = new PremiumPrefsButton();
 			btnPPrefs.setPos(btnPrefs.right() + 2, 0);
@@ -182,14 +179,6 @@ public class TitleScene extends PixelScene {
 		ExitButton btnExit = new ExitButton();
 		btnExit.setPos(w - btnExit.width(), 0);
 		add(btnExit);
-		
-		ChangelogButton btnChangelog = new ChangelogButton();
-		btnChangelog.setPos(w - btnChangelog.width(), btnExit.bottom() + 2);
-		add(btnChangelog);
-
-		StaticsticsButton btnStats = new StaticsticsButton();
-		btnStats.setPos(w - btnStats.width(), btnChangelog.bottom() + 2);
-		add(btnStats);
 
 		fadeIn();
 	}

@@ -5,7 +5,7 @@
     <string name="app_name">Pixel Ponies!</string>
 
     <!-- STRINGS OF AboutScene CLASS -->
-    <string name="AboutScene_Txt">Pixel Ponies! by _Trick Question and Jewel.\n\n- Based on Pixel Dungeon Remixed by NYRDS and Pixel Dungeon Source by Watabou.\n\n- Inspired by ponies in a legally non-derivative manner.\n\n Code &amp; graphics: Watabou  &amp; NYRDS &amp; ThEnigma314 &amp; Trick Question \n\nMusic: Cube_Code &amp; Trick Question\n\nE-Mail us:\n\n</string>
+    <string name="AboutScene_Txt">Pixel Ponies! by Trick Question (A. Wolf) and Michael Pinnegar.\n\n- Based on Pixel Dungeon Remixed by NYRDS and Pixel Dungeon Source by Watabou.\n\n- Inspired by ponies in a legally non-derivative manner.\n\n Code &amp; graphics: Watabou  &amp; NYRDS &amp; ThEnigma314 &amp; Trick Question \n\nMusic: Cube_Code &amp; Trick Question\n\nE-Mail us:\n\n</string>
     <string name="AboutScene_OurSite">Our web site:</string>
     <string name="AboutScene_Lnk">(coming soon)</string>
     <string name="AboutScene_Mail">wolf.trickster@gmail.com</string>
@@ -26,7 +26,7 @@
     <!-- STRINGS OF AmuletScene CLASS -->
     <string name="AmuletScene_Exit">Let\'s call it a day</string>
     <string name="AmuletScene_Stay">I\'m not done yet</string>
-    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Alicorn Amulet! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
+    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Pegacorn Pendant! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
 
     <!-- STRINGS OF Assets CLASS -->
     <string name="Assets_Prefix"></string>
@@ -94,7 +94,7 @@
     <string name="InterLevelScene_ErrorGeneric">Something went wrong...</string>
 
     <!-- STRINGS OF IntroScene CLASS -->
-    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Alicorn Amulet, which you believe is being held by the entity known as Nightmare.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that friendship smiles upon you. It\'s time to start your own adventure!</string>
+    <string name="IntroScene_Txt">Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical artifacts, most have never been heard of since. But none have succeeded in retrieving the Pegacorn Pendant, which you believe is being held by the entity known as Nightmare.\n\nYou consider yourself ready for the challenge, but most importantly, you feel that friendship smiles upon you. It\'s time to start your own adventure!</string>
 
     <!-- STRINGS OF SurfaceScene CLASS -->
     <string name="SurfaceScene_GameOver">Game Over</string>
@@ -103,6 +103,7 @@
     <string name="TitleScene_Play">Play</string>
     <string name="TitleScene_Highscores">Highscores</string>
     <string name="TitleScene_Badges">Badges</string>
+    <string name="TitleScene_News">News</string>
     <string name="TitleScene_About">About</string>
     <string name="TitleScene_InternalStorageLow">Not enough space\n in internal storage\n Your progress can be lost!</string>
 
@@ -114,18 +115,18 @@
     <string name="Welcome_Ok">Okay!</string>>
     <string name="Welcome_Title">Welcome!</string>
     <string name="Welcome_Text">
-        Pixel Ponies is a modification of two open source games: Watabou\'s Pixel Dungeon, and Nyrds\' Remixed Pixel Dungeon. It was created to ponify the existing game and expand it into a more complex adventure with more detailed character stats and extra secrets.\n\n
-        The largest difference is the statistic system. In place of the single statistic Strength are the six friendship elements. Advancement and balance of the six elements is a key part of what makes Pixel Ponies unique.\n\n
+        Pixel Ponies is a modification of Watabou\'s Pixel Dungeon plus some of the work from Nyrds\' Remixed Pixel Dungeon. It was created to ponify the existing game and expand it into a more complex adventure experience.\n\n
+        The largest difference is the attribute system. In place of the single statistic (Strength) are the six elements of friendship. Successful play will require balancing several attributes rather than advancing a single one.\n\n
         Other differences include: \n
         - Character classes are now pony races.\n
         - Some races have innate magic or flying.\n
         - Level layout has been changed.\n
         - Most of the monsters are different.\n
         - Most of the graphics are new.\n
-        - New methods for enhancing stats.\n
+        - New ways exist to advance attributes.\n
         - New items, both consumable and unique.\n
         - Ranged attacks use a different stat.\n
-        - Rings/wands need min stats, or backfire.\n
+        - Rings/wands need Magic, or will backfire.\n
         - Items can\'t be enchanted to stat below 0.\n
         - New secrets, with many more planned.\n\n
         And plenty of other exciting stuff you\'ll want to discover on your own! /)^3^(\\\n
@@ -177,14 +178,13 @@
     <string name="WndSettings_ZoomOut">-</string>
     <string name="WndSettings_ZoomDef">Default Zoom</string>
     <string name="WndSettings_TextScaleDefault">Default font</string>
-    <string name="WndSettings_ScaleUp">Scale up UI</string>
-    <string name="WndSettings_Immersive">Immersive mode</string>
     <string name="WndSettings_Music">Music</string>
     <string name="WndSettings_Sound">Sound Effects</string>
     <string name="WndSettings_Brightness">Brightness</string>
     <string name="WndSettings_SwitchPort">Switch to portrait</string>
     <string name="WndSettings_SwitchLand">Switch to landscape</string>
-    <string name="WndSettings_SelectLanguage">Select Language</string>
+    <string name="WndSettings_StatsOn">Collect usage stats (On)</string>
+    <string name="WndSettings_StatsOff">Collect usage stats (Off)</string>
     <string name="WndSettings_SecondQuickslot">Second Quickslot</string>
     <string name="WndSettings_ThirdQuickslot">Third Quickslot</string>
     <string name="WndSettings_ExperementalFont">New Font</string>
