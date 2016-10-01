@@ -60,8 +60,8 @@
     <string name="RankingsScene_NoGames">No games have been played yet.</string>
     <string name="RankingsScene_NoInfo">No additional information</string>
 
-    <!-- STRINGS OF RemixedPixelDungeonApp CLASS -->
-    <string name="RemixedPixelDungeonApp_sendCrash">Our game crashed...\n Sorry.\nPlease sent crash report to help us fix it.</string>
+    <!-- STRINGS OF PixelPoniesApp CLASS -->
+    <string name="PixelPoniesApp_SendCrash">Sorry our game crashed!\nPlease send a crash report to help us fix it.</string>
 
     <!-- STRINGS OF StartScene CLASS -->
     <string name="StartScene_Load">Load Game</string>

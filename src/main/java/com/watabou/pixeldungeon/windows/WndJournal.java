@@ -25,7 +25,7 @@ import com.watabou.noosa.Text;
 import com.watabou.noosa.ui.Component;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Journal;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.ui.Icons;
 import com.watabou.pixeldungeon.ui.ScrollPane;
@@ -51,7 +51,7 @@ public class WndJournal extends Window {
 		
 		int WIDTH, HEIGHT;
 		
-		if(PixelDungeon.landscape()){
+		if(PixelPonies.landscape()){
 			WIDTH = WIDTH_L;
 			HEIGHT = HEIGHT_L;
 		} else {

@@ -17,7 +17,7 @@ import com.nyrds.pixeldungeon.items.accessories.Accessory;
 import com.nyrds.pixeldungeon.ml.EventCollector;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,18 +137,18 @@ public class Iap {
     }
 
     private static void checkPurchases() {
-        PixelDungeon.setDonationLevel(0);
+        PixelPonies.setDonationLevel(0);
 
         if (checkPurchase(SKU_LEVEL_1)) {
-            PixelDungeon.setDonationLevel(1);
+            PixelPonies.setDonationLevel(1);
         }
 
         if (checkPurchase(SKU_LEVEL_2)) {
-            PixelDungeon.setDonationLevel(2);
+            PixelPonies.setDonationLevel(2);
         }
 
         if (checkPurchase(SKU_LEVEL_3)) {
-            PixelDungeon.setDonationLevel(3);
+            PixelPonies.setDonationLevel(3);
         }
     }
 
@@ -241,15 +241,15 @@ public class Iap {
 
                             if (mIapCallback == null) {
                                 if (purchase.getSku().equals(SKU_LEVEL_1)) {
-                                    PixelDungeon.setDonationLevel(1);
+                                    PixelPonies.setDonationLevel(1);
                                 }
 
                                 if (purchase.getSku().equals(SKU_LEVEL_2)) {
-                                    PixelDungeon.setDonationLevel(2);
+                                    PixelPonies.setDonationLevel(2);
                                 }
 
                                 if (purchase.getSku().equals(SKU_LEVEL_3)) {
-                                    PixelDungeon.setDonationLevel(3);
+                                    PixelPonies.setDonationLevel(3);
                                 }
                             } else {
                                 Game.executeInGlThread(new Runnable() {

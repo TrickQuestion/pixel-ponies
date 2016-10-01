@@ -23,7 +23,7 @@ import com.watabou.noosa.Group;
 import com.watabou.noosa.Text;
 import com.watabou.pixeldungeon.Badges;
 import com.nyrds.pixeldungeon.ml.R;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.scenes.PixelScene;
@@ -48,7 +48,7 @@ public class WndClass extends WndTabbed {
 		
 		super();
 
-		WIDTH = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		WIDTH = PixelPonies.landscape() ? WIDTH_L : WIDTH_P;
 
 		this.cl = cl;
 

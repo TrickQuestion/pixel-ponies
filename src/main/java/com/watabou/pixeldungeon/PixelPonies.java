@@ -46,9 +46,9 @@ import java.util.Locale;
 
 import javax.microedition.khronos.opengles.GL10;
 
-public class PixelDungeon extends Game {
+public class PixelPonies extends Game {
 
-	public PixelDungeon() {
+	public PixelPonies() {
 		super(TitleScene.class);
 		
 		// remix 0.5
@@ -80,21 +80,21 @@ public class PixelDungeon extends Game {
 		EventCollector.init(this);
 
 		if(!isAlpha()) {
-			PixelDungeon.realtime(false);
+			PixelPonies.realtime(false);
 		}
 		
-		ModdingMode.selectMod(PixelDungeon.activeMod());
-		PixelDungeon.activeMod(ModdingMode.activeMod());
+		ModdingMode.selectMod(PixelPonies.activeMod());
+		PixelPonies.activeMod(ModdingMode.activeMod());
 
 		Iap.initIap(this);
 		
 		if(!Utils.canUseClassicFont(uiLanguage())) {
-			PixelDungeon.classicFont(false);
+			PixelPonies.classicFont(false);
 		}
 		
-		ModdingMode.setClassicTextRenderingMode(PixelDungeon.classicFont());
+		ModdingMode.setClassicTextRenderingMode(PixelPonies.classicFont());
 
-		EventCollector.logEvent("font", String.valueOf(PixelDungeon.classicFont()));
+		EventCollector.logEvent("font", String.valueOf(PixelPonies.classicFont()));
 
 		useLocale(uiLanguage());
 		ItemSpritesDescription.readItemsDesc();
@@ -112,7 +112,7 @@ public class PixelDungeon extends Game {
 		Music.INSTANCE.enable(music());
 		Sample.INSTANCE.enable(soundFx());
 		
-		if (PixelDungeon.version() != Game.versionCode) {
+		if (PixelPonies.version() != Game.versionCode) {
 			switchScene(WelcomeScene.class);
 		}
 	}
@@ -320,7 +320,7 @@ public class PixelDungeon extends Game {
 
 	public static void activeMod(String mod) {
 		Preferences.INSTANCE.put(Preferences.KEY_ACTIVE_MOD, mod);
-		ModdingMode.selectMod(PixelDungeon.activeMod());
+		ModdingMode.selectMod(PixelPonies.activeMod());
 		Util.storeEventInAcra("RPD_active_mod", mod);
 	}
 	
@@ -379,7 +379,7 @@ public class PixelDungeon extends Game {
 			return;
 		}
 
-		if (PixelDungeon.donated() == 0) {
+		if (PixelPonies.donated() == 0) {
 			if (getDifficulty() == 0) {
 				Ads.displayEasyModeBanner();
 			}

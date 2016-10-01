@@ -21,7 +21,7 @@ import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.Preferences;
 import com.watabou.pixeldungeon.scenes.AllowStatisticsCollectionScene;
@@ -103,23 +103,23 @@ public class WndSettings extends Window {
 			@Override
 			protected void onClick() {
 				super.onClick();
-				PixelDungeon.music(checked());
+				PixelPonies.music(checked());
 			}
 		};
 		btnMusic.setRect(0, curY, WIDTH, BTN_HEIGHT);
-		btnMusic.checked(PixelDungeon.music());
+		btnMusic.checked(PixelPonies.music());
 		add(btnMusic);
 
 		CheckBox btnSound = new CheckBox(TXT_SOUND) {
 			@Override
 			protected void onClick() {
 				super.onClick();
-				PixelDungeon.soundFx(checked());
+				PixelPonies.soundFx(checked());
 				Sample.INSTANCE.play(Assets.SND_CLICK);
 			}
 		};
 		btnSound.setRect(0, btnMusic.bottom() + GAP, WIDTH, BTN_HEIGHT);
-		btnSound.checked(PixelDungeon.soundFx());
+		btnSound.checked(PixelPonies.soundFx());
 		add(btnSound);
 
 		if (!mInGame) {
@@ -127,7 +127,7 @@ public class WndSettings extends Window {
 			RedButton btnOrientation = new RedButton(orientationText()) {
 				@Override
 				protected void onClick() {
-					PixelDungeon.landscape(!PixelDungeon.landscape());
+					PixelPonies.landscape(!PixelPonies.landscape());
 				}
 			};
 			btnOrientation.setRect(0, btnSound.bottom() + GAP, WIDTH,
@@ -141,7 +141,7 @@ public class WndSettings extends Window {
 			RedButton btnStats = new RedButton(usageStatsText()) {
 				@Override
 				protected void onClick() {
-					PixelDungeon.switchScene(AllowStatisticsCollectionScene.class);
+					PixelPonies.switchScene(AllowStatisticsCollectionScene.class);
 				}
 			};
 			btnStats.setRect(0, btnOrientation.bottom() + GAP, WIDTH, BTN_HEIGHT);
@@ -153,48 +153,48 @@ public class WndSettings extends Window {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					PixelDungeon.brightness(checked());
+					PixelPonies.brightness(checked());
 				}
 			};
 			btnBrightness
 					.setRect(0, btnSound.bottom() + GAP, WIDTH, BTN_HEIGHT);
-			btnBrightness.checked(PixelDungeon.brightness());
+			btnBrightness.checked(PixelPonies.brightness());
 			add(btnBrightness);
 
 			final CheckBox secondQuickslot = new CheckBox(TXT_SECOND_QUICKSLOT) {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					PixelDungeon.secondQuickslot(checked());
+					PixelPonies.secondQuickslot(checked());
 				}
 			};
 			secondQuickslot.setRect(0, btnBrightness.bottom() + GAP, WIDTH,
 					BTN_HEIGHT);
-			secondQuickslot.checked(PixelDungeon.secondQuickslot());
+			secondQuickslot.checked(PixelPonies.secondQuickslot());
 
 			add(secondQuickslot);
 
-			if (PixelDungeon.landscape()) {
+			if (PixelPonies.landscape()) {
 				CheckBox thirdQuickslot = new CheckBox(TXT_THIRD_QUICKSLOT) {
 					@Override
 					protected void onClick() {
 						super.onClick();
 						secondQuickslot.enable(!checked());
-						PixelDungeon.thirdQuickslot(checked());
+						PixelPonies.thirdQuickslot(checked());
 					}
 				};
 
-				secondQuickslot.enable(!PixelDungeon.thirdQuickslot());
+				secondQuickslot.enable(!PixelPonies.thirdQuickslot());
 				thirdQuickslot.setRect(0, secondQuickslot.bottom() + GAP,
 						WIDTH, BTN_HEIGHT);
-				thirdQuickslot.checked(PixelDungeon.thirdQuickslot());
+				thirdQuickslot.checked(PixelPonies.thirdQuickslot());
 				add(thirdQuickslot);
 
 				resize(WIDTH, (int) thirdQuickslot.bottom());
 			} else {
-				if(PixelDungeon.thirdQuickslot()){
-					PixelDungeon.secondQuickslot(true);
-					secondQuickslot.checked(PixelDungeon.secondQuickslot());
+				if(PixelPonies.thirdQuickslot()){
+					PixelPonies.secondQuickslot(true);
+					secondQuickslot.checked(PixelPonies.secondQuickslot());
 				}
 				resize(WIDTH, (int) secondQuickslot.bottom());
 			}
@@ -237,7 +237,7 @@ public class WndSettings extends Window {
 		
 		String text;
 		
-		if(PixelDungeon.classicFont()) {
+		if(PixelPonies.classicFont()) {
 			text = TXT_EXPEREMENTAL_FONT;
 			
 			btnStdFontScale.enable(false);
@@ -255,12 +255,12 @@ public class WndSettings extends Window {
 		btnFontMode = new RedButton(text) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.classicFont(!PixelDungeon.classicFont());
+				PixelPonies.classicFont(!PixelPonies.classicFont());
 				createFontSelector(y);
 			}
 		};
 		
-		if(!Utils.canUseClassicFont(PixelDungeon.uiLanguage())) {
+		if(!Utils.canUseClassicFont(PixelPonies.uiLanguage())) {
 			btnFontMode.enable(false);
 		}
 		
@@ -281,7 +281,7 @@ public class WndSettings extends Window {
 		btnScaleMinus = new RedButton(TXT_ZOOM_OUT) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.fontScale(PixelDungeon.fontScale()-1);
+				PixelPonies.fontScale(PixelPonies.fontScale()-1);
 				createTextScaleButtons(y);
 			}
 		};
@@ -290,7 +290,7 @@ public class WndSettings extends Window {
 		btnScalePlus = new RedButton(TXT_ZOOM_IN) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.fontScale(PixelDungeon.fontScale()+1);
+				PixelPonies.fontScale(PixelPonies.fontScale()+1);
 				createTextScaleButtons(y);
 			}
 		};
@@ -299,7 +299,7 @@ public class WndSettings extends Window {
 		btnStdFontScale = new RedButton(TXT_TEXT_SCALE_DEFAULT) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.fontScale(0);
+				PixelPonies.fontScale(0);
 				createTextScaleButtons(y);
 			}
 		};
@@ -314,14 +314,14 @@ public class WndSettings extends Window {
 	public void onBackPressed() {
 		hide();
 		if(!mInGame) {
-			PixelDungeon.resetScene();
+			PixelPonies.resetScene();
 		}
 	}
 	
 	private void zoom(float value) {
 
 		Camera.main.zoom(value);
-		PixelDungeon.zoom((int) (value - PixelScene.defaultZoom));
+		PixelPonies.zoom((int) (value - PixelScene.defaultZoom));
 
 		updateEnabled();
 	}
@@ -333,7 +333,7 @@ public class WndSettings extends Window {
 	}
 
 	private String orientationText() {
-		return PixelDungeon.landscape() ? TXT_SWITCH_PORT : TXT_SWITCH_LAND;
+		return PixelPonies.landscape() ? TXT_SWITCH_PORT : TXT_SWITCH_LAND;
 	}
 
 	private String usageStatsText() {

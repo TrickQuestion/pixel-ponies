@@ -9,7 +9,7 @@ import com.watabou.noosa.Game;
 import com.watabou.noosa.InterstitialPoint;
 import com.watabou.noosa.Text;
 import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.SaveUtils;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.scenes.PixelScene;
@@ -116,7 +116,7 @@ public class WndSaveSlotSelect extends Window implements InterstitialPoint {
 			}
 		}
 
-		if (PixelDungeon.donated() == 0 && PixelDungeon.canDonate()) {
+		if (PixelPonies.donated() == 0 && PixelPonies.canDonate()) {
 			DonateButton btn = new DonateButton();
 			add(btn);
 			btn.setPos(width / 2 - btn.width() / 2, height);
@@ -139,7 +139,7 @@ public class WndSaveSlotSelect extends Window implements InterstitialPoint {
 	}
 
 	private static String windowText() {
-		if (PixelDungeon.donated() == 0 && PixelDungeon.canDonate()) {
+		if (PixelPonies.donated() == 0 && PixelPonies.canDonate()) {
 			return Game.getVar(R.string.WndSaveSlotSelect_dontLike);
 		}
 		return EMPTY_STRING;
@@ -181,7 +181,7 @@ public class WndSaveSlotSelect extends Window implements InterstitialPoint {
 
 		slot = getSlotToLoad(index);
 
-		if (PixelDungeon.donated() < 1) {
+		if (PixelPonies.donated() < 1) {
 			Ads.displaySaveAndLoadAd(returnTo);
 		} else {
 			returnToWork(true);

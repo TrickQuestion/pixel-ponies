@@ -6,7 +6,7 @@ import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
 import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.windows.WndDonate;
 
 public class DonateButton extends Button {
@@ -26,7 +26,7 @@ public class DonateButton extends Button {
 			remove(image);
 		}
 		
-		switch (PixelDungeon.donated()) {
+		switch (PixelPonies.donated()) {
 		default:
 		case 0:
 			image = Icons.SUPPORT.get();
@@ -54,7 +54,7 @@ public class DonateButton extends Button {
 	}
 
 	public String getText() {
-		switch (PixelDungeon.donated()) {
+		switch (PixelPonies.donated()) {
 		case 1:
 		case 2:
 		case 3:

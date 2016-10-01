@@ -20,7 +20,7 @@ package com.watabou.pixeldungeon.windows;
 import com.nyrds.android.util.GuiProperties;
 import com.watabou.noosa.Text;
 import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
@@ -43,7 +43,7 @@ public class WndItem extends Window {
 		
 		super();
 
-		int WIDTH = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		int WIDTH = PixelPonies.landscape() ? WIDTH_L : WIDTH_P;
 
 		IconTitle titlebar = new IconTitle();
 		titlebar.icon( new ItemSprite( item ) );

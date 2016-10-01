@@ -4,7 +4,7 @@
     package="com.nyrds.pixeldungeon.ml"
     android:installLocation="auto"
     android:versionCode="305"
-    android:versionName="remix.25.fix.5" >
+    android:versionName="alpha.0.1" >
 
     <uses-sdk tools:overrideLibrary="com.google.android.gms.ads,
                                      com.google.android.gms,
@@ -27,7 +27,7 @@
 
     <!-- android:xlargeScreens="true" -->
     <application
-        android:name=".RemixedPixelDungeonApp"
+        android:name=".PixelPoniesApp"
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -39,7 +39,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.watabou.pixeldungeon.PixelDungeon"
+            android:name="com.watabou.pixeldungeon.PixelPonies"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

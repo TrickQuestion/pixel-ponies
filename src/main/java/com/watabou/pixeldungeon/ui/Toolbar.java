@@ -22,7 +22,7 @@ import com.watabou.noosa.Gizmo;
 import com.watabou.noosa.ui.Component;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
@@ -146,12 +146,12 @@ public class Toolbar extends Component {
 		btnQuick1.show(true);
 		add(btnQuick1);
 		
-		if (! PixelDungeon.landscape() && PixelDungeon.thirdQuickslot()) {
-			PixelDungeon.thirdQuickslot(false);
-			PixelDungeon.secondQuickslot(true);
+		if (! PixelPonies.landscape() && PixelPonies.thirdQuickslot()) {
+			PixelPonies.thirdQuickslot(false);
+			PixelPonies.secondQuickslot(true);
 		}
 		
-		if (PixelDungeon.thirdQuickslot()) {			
+		if (PixelPonies.thirdQuickslot()) {
 			btnQuick2.setPos(btnQuick1.left() - btnQuick2.width(), y);
 			btnQuick3.setPos(btnQuick2.left() - btnQuick3.width(), y);
 			
@@ -161,7 +161,7 @@ public class Toolbar extends Component {
 			btnQuick3.show(true);
 			
 			btnInventory.setPos(btnQuick3.left() - btnInventory.width(), y);
-		} else if (PixelDungeon.secondQuickslot()) {
+		} else if (PixelPonies.secondQuickslot()) {
 			btnQuick2.setPos(btnQuick1.left() - btnQuick2.width(), y);
 			add(btnQuick2);
 			btnQuick2.show(true);

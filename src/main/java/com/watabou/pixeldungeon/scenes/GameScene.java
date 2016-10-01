@@ -36,7 +36,7 @@ import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.DungeonTilemap;
 import com.watabou.pixeldungeon.FogOfWar;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.Statistics;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.blobs.Blob;
@@ -124,11 +124,11 @@ public class GameScene extends PixelScene {
 		Music.INSTANCE.play(Assets.TUNE, true);
 		Music.INSTANCE.volume(1f);
 
-		PixelDungeon.lastClass(Dungeon.hero.heroClass.ordinal());
+		PixelPonies.lastClass(Dungeon.hero.heroClass.ordinal());
 
 		super.create();
 
-		Camera.main.zoom(defaultZoom + PixelDungeon.zoom());
+		Camera.main.zoom(defaultZoom + PixelPonies.zoom());
 
 		scene = this;
 
@@ -208,7 +208,7 @@ public class GameScene extends PixelScene {
 		fog.updateVisibility(Dungeon.visible, Dungeon.level.visited, Dungeon.level.mapped);
 		add(fog);
 
-		brightness(PixelDungeon.brightness());
+		brightness(PixelPonies.brightness());
 
 		spells = new Group();
 		add(spells);
@@ -356,7 +356,7 @@ public class GameScene extends PixelScene {
 			log.newLine();
 		}
 
-		if (!PixelDungeon.realtime()) {
+		if (!PixelPonies.realtime()) {
 			cellSelector.enabled = Dungeon.hero.isReady();
 		} else {
 			cellSelector.enabled = Dungeon.hero.isAlive();

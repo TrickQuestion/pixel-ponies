@@ -8,7 +8,7 @@ import com.watabou.noosa.NinePatch;
 import com.watabou.noosa.Text;
 import com.watabou.noosa.ui.Component;
 import com.watabou.pixeldungeon.Chrome;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.Preferences;
 import com.watabou.pixeldungeon.ui.Archs;
 import com.watabou.pixeldungeon.ui.RedButton;
@@ -84,7 +84,7 @@ public class WelcomeScene extends PixelScene {
 		RedButton okay = new RedButton(Game.getVar(R.string.Welcome_Ok)) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.version(Game.versionCode);
+				PixelPonies.version(Game.versionCode);
 				if(Preferences.INSTANCE.getInt(Preferences.KEY_COLLECT_STATS,0) == 0) {
 					Game.switchScene(AllowStatisticsCollectionScene.class);
 				} else {

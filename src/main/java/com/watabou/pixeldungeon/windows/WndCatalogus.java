@@ -23,7 +23,7 @@ import com.watabou.noosa.Game;
 import com.watabou.noosa.Text;
 import com.watabou.noosa.ui.Component;
 import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.potions.Potion;
 import com.watabou.pixeldungeon.items.scrolls.Scroll;
@@ -65,7 +65,7 @@ public class WndCatalogus extends WndTabbed {
 		
 		super();
 		
-		if (PixelDungeon.landscape()) {
+		if (PixelPonies.landscape()) {
 			resize( WIDTH_L, HEIGHT_L );
 		} else {
 			resize( WIDTH_P, HEIGHT_P );

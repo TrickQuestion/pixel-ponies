@@ -62,7 +62,7 @@ public enum Rankings {
 		rec.heroClass	= Dungeon.hero.heroClass;
 		rec.armorTier	= Dungeon.hero.tier();
 		rec.score	    = score(winLevel != gameOver.LOSE);
-		rec.mod			= PixelDungeon.activeMod();
+		rec.mod			= PixelPonies.activeMod();
 
 		EventCollector.logEvent("gameover", Dungeon.hero.heroClass.getClass().getSimpleName(), resultDescription);
 

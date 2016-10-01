@@ -31,7 +31,7 @@ import com.watabou.noosa.Text;
 import com.watabou.noosa.Visual;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.effects.BadgeBanner;
 import com.watabou.utils.BitmapCache;
 
@@ -65,7 +65,7 @@ public class PixelScene extends Scene {
 
 		float minWidth, minHeight;
 
-		if (PixelDungeon.landscape()) {
+		if (PixelPonies.landscape()) {
 			minWidth = MIN_WIDTH_L;
 			minHeight = MIN_HEIGHT_L;
 		} else {
@@ -188,7 +188,7 @@ public class PixelScene extends Scene {
 	}
 
 	public static float computeFontScale() {
-		float scale = 0.5f + 0.01f*PixelDungeon.fontScale();
+		float scale = 0.5f + 0.01f* PixelPonies.fontScale();
 
 		if(scale < 0.1f) return 0.1f;
 		if(scale > 4)   return 4;

@@ -28,7 +28,7 @@ import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.Text;
 import com.watabou.noosa.TouchArea;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.effects.Flare;
 import com.watabou.pixeldungeon.ui.Archs;
 import com.watabou.pixeldungeon.ui.ExitButton;
@@ -103,7 +103,7 @@ public class AboutScene extends PixelScene {
 		super.create();
 		
 		//uiCamera.visible = false;
-		//camera().zoom( defaultZoom + PixelDungeon.zoom() );
+		//camera().zoom( defaultZoom + PixelPonies.zoom() );
 		
 		Text text = createText( TXT, null );
 		
@@ -140,6 +140,6 @@ public class AboutScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		PixelPonies.switchNoFade( TitleScene.class );
 	}
 }

@@ -111,7 +111,7 @@ public class Dungeon {
 	}
 
 	public static void init() {
-		challenges = PixelDungeon.challenges();
+		challenges = PixelPonies.challenges();
 
 		Scroll.initLabels();
 		Potion.initColors();
@@ -672,7 +672,7 @@ public class Dungeon {
 
 	public static void setDifficulty(int _difficulty) {
 		difficulty = _difficulty;
-		PixelDungeon.setDifficulty(difficulty);
+		PixelPonies.setDifficulty(difficulty);
 	}
 
 	public static int gold() {

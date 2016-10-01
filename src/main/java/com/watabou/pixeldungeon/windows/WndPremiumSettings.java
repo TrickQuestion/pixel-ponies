@@ -3,7 +3,7 @@ package com.watabou.pixeldungeon.windows;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.ui.RedButton;
 import com.watabou.pixeldungeon.ui.Window;
 
@@ -42,17 +42,17 @@ public class WndPremiumSettings extends Window {
 		RedButton btn = new RedButton(assetName) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.scene().add(
+				PixelPonies.scene().add(
 						new WndOptions(assetName, "", STD, SILVER,
 								GOLD, RUBY) {
 							@Override
 							protected void onSelect(int index) {
-								if (PixelDungeon.donated() >= index) {
+								if (PixelPonies.donated() >= index) {
 									Assets.use(assetKind, index);
-									PixelDungeon.scene().add(
+									PixelPonies.scene().add(
 											new WndMessage("ok!"));
 								} else {
-									PixelDungeon.scene().add(
+									PixelPonies.scene().add(
 											new WndMessage(NOT_AVALIABLE));
 								}
 							}
@@ -68,6 +68,6 @@ public class WndPremiumSettings extends Window {
 	@Override
 	public void onBackPressed() {
 		hide();
-		PixelDungeon.resetScene();
+		PixelPonies.resetScene();
 	}
 }

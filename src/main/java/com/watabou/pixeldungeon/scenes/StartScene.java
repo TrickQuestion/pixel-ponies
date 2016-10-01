@@ -32,7 +32,7 @@ import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.GamesInProgress;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.effects.BannerSprites;
 import com.watabou.pixeldungeon.effects.BannerSprites.Type;
@@ -119,7 +119,7 @@ public class StartScene extends PixelScene {
 		int h = Camera.main.height;
 
 		float width, height;
-		if (PixelDungeon.landscape()) {
+		if (PixelPonies.landscape()) {
 			width = WIDTH_L;
 			height = HEIGHT_L;
 		} else {
@@ -183,7 +183,7 @@ public class StartScene extends PixelScene {
 			shields.put(cl, shield);
 			add(shield);
 		}
-		if (PixelDungeon.landscape()) {
+		if (PixelPonies.landscape()) {
 			float shieldW = width / 5;
 			float shieldH = Math.min(centralHeight, shieldW);
 			top = title.y + title.height + (centralHeight - shieldH) / 2;
@@ -248,7 +248,7 @@ public class StartScene extends PixelScene {
 //		unlockElf = new Group();
 //		add(unlockElf);
 //
-//		if (!(huntressUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_3) || (PixelDungeon.donated() >= 1) )) {
+//		if (!(huntressUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_3) || (PixelPonies.donated() >= 1) )) {
 //			Text text = PixelScene
 //					.createMultiline(TXT_UNLOCK, GuiProperties.titleFontSize());
 //			text.maxWidth((int) width);
@@ -264,7 +264,7 @@ public class StartScene extends PixelScene {
 //
 //		}
 //
-//		if (!(elfUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_4) || (PixelDungeon.donated() >= 2) )) {
+//		if (!(elfUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_4) || (PixelPonies.donated() >= 2) )) {
 //			Text text = PixelScene
 //					.createMultiline(TXT_UNLOCK_ELF, GuiProperties.titleFontSize());
 //			text.maxWidth((int) width);
@@ -285,7 +285,7 @@ public class StartScene extends PixelScene {
 		add(btnExit);
 
 		curClass = null;
-		updateClass(HeroClass.values()[PixelDungeon.lastClass()]);
+		updateClass(HeroClass.values()[PixelPonies.lastClass()]);
 
 		fadeIn();
 	}
@@ -406,13 +406,13 @@ public class StartScene extends PixelScene {
 		Dungeon.heroClass = curClass;
 
 		EventCollector.logEvent("game","new", curClass.name());
-		EventCollector.logEvent("game","mod",PixelDungeon.activeMod());
+		EventCollector.logEvent("game","mod", PixelPonies.activeMod());
 		EventCollector.logEvent("game","difficulty",String.valueOf(difficulty));
 
 		InterlevelScene.mode = InterlevelScene.Mode.DESCEND;
 		
-		if (PixelDungeon.intro()) {
-			PixelDungeon.intro(false);
+		if (PixelPonies.intro()) {
+			PixelPonies.intro(false);
 			Game.switchScene(IntroScene.class);
 		} else {
 			Game.switchScene(InterlevelScene.class);
@@ -421,7 +421,7 @@ public class StartScene extends PixelScene {
 
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade(TitleScene.class);
+		PixelPonies.switchNoFade(TitleScene.class);
 	}
 
 	private static class GameButton extends RedButton {
@@ -601,7 +601,7 @@ public class StartScene extends PixelScene {
 			super.createChildren();
 
 			image = Icons
-					.get(PixelDungeon.challenges() > 0 ? Icons.CHALLENGE_ON
+					.get(PixelPonies.challenges() > 0 ? Icons.CHALLENGE_ON
 							: Icons.CHALLENGE_OFF);
 			add(image);
 		}
@@ -619,10 +619,10 @@ public class StartScene extends PixelScene {
 		protected void onClick() {
 			if (Badges.isUnlocked(Badges.Badge.VICTORY)) {
 				StartScene.this.add(new WndChallenges(
-						PixelDungeon.challenges(), true) {
+						PixelPonies.challenges(), true) {
 					public void onBackPressed() {
 						super.onBackPressed();
-						image.copy(Icons.get(PixelDungeon.challenges() > 0 ? Icons.CHALLENGE_ON
+						image.copy(Icons.get(PixelPonies.challenges() > 0 ? Icons.CHALLENGE_ON
 								: Icons.CHALLENGE_OFF));
 					}
 				});

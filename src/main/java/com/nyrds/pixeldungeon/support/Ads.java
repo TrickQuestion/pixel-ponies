@@ -12,7 +12,7 @@ import com.nyrds.android.util.Util;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.InterstitialPoint;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class Ads {
 	}
 
 	private static boolean needDisplaySmallScreenEasyModeIs() {
-		return Game.getDifficulty() == 0 && isSmallScreen() && PixelDungeon.donated() == 0;
+		return Game.getDifficulty() == 0 && isSmallScreen() && PixelPonies.donated() == 0;
 	}
 
 	private static boolean googleAdsUsable() {

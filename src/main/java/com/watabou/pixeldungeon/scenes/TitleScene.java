@@ -27,7 +27,7 @@ import com.watabou.noosa.audio.Music;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
 import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.effects.BannerSprites;
 import com.watabou.pixeldungeon.effects.Fireball;
 import com.watabou.pixeldungeon.ui.Archs;
@@ -73,7 +73,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnNews = new DashboardItem(TXT_NEWS, 4) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(WelcomeScene.class);
+				PixelPonies.switchNoFade(WelcomeScene.class);
 			}
 		};
 		btnNews.setPos(w / 2 - btnNews.width(), (h + height) / 2 - DashboardItem.SIZE);
@@ -82,7 +82,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnAbout = new DashboardItem(TXT_ABOUT, 1) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(AboutScene.class);
+				PixelPonies.switchNoFade(AboutScene.class);
 			}
 		};
 		btnAbout.setPos(w / 2, (h + height) / 2 - DashboardItem.SIZE);
@@ -91,7 +91,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnHighscores = new DashboardItem(TXT_HIGHSCORES, 2) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(RankingsScene.class);
+				PixelPonies.switchNoFade(RankingsScene.class);
 			}
 		};
 		btnHighscores.setPos(w / 2 - (btnHighscores.width()/2), btnAbout.top() - DashboardItem.SIZE);
@@ -100,7 +100,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnPlay = new DashboardItem(TXT_PLAY, 0) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(StartScene.class);
+				PixelPonies.switchNoFade(StartScene.class);
 			}
 		};
 		btnPlay.setPos(w / 2 - btnPlay.width() - (btnHighscores.width()/2), btnHighscores.top());
@@ -109,7 +109,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnBadges = new DashboardItem(TXT_BADGES, 3) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade(BadgesScene.class);
+				PixelPonies.switchNoFade(BadgesScene.class);
 			}
 		};
 		btnBadges.setPos(w / 2 + (btnHighscores.width()/2), (h + height) / 2 - DashboardItem.SIZE);
@@ -128,7 +128,7 @@ public class TitleScene extends PixelScene {
 
 		float dashBaseline = btnDonate.top() - DashboardItem.SIZE;
 
-		if (PixelDungeon.landscape()) {
+		if (PixelPonies.landscape()) {
 			btnHighscores.setPos(w / 2 - btnHighscores.width() - (btnBadges.width()/2), dashBaseline);
 			btnBadges.setPos(btnHighscores.right(), dashBaseline);
 			btnPlay.setPos(btnHighscores.left() - btnPlay.width(), dashBaseline);
@@ -170,7 +170,7 @@ public class TitleScene extends PixelScene {
 		btnPrefs.setPos(0, 0);
 		add(btnPrefs);
 
-		if (PixelDungeon.donated() > 0) {
+		if (PixelPonies.donated() > 0) {
 			PremiumPrefsButton btnPPrefs = new PremiumPrefsButton();
 			btnPPrefs.setPos(btnPrefs.right() + 2, 0);
 			add(btnPPrefs);
@@ -191,7 +191,7 @@ public class TitleScene extends PixelScene {
 		time += Game.elapsed;
 		
 		if(!donationAdded) {
-			if (PixelDungeon.canDonate()) {
+			if (PixelPonies.canDonate()) {
 				add(pleaseSupport);
 				add(btnDonate);
 			}

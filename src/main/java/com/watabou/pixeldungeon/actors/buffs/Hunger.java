@@ -20,7 +20,7 @@ package com.watabou.pixeldungeon.actors.buffs;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.ResultDescriptions;
 import com.watabou.pixeldungeon.actors.Char;
@@ -101,7 +101,7 @@ public class Hunger extends Buff implements Hero.Doom {
 				
 				float delta = STEP - bonus;
 				
-				if(PixelDungeon.realtime()) {
+				if(PixelPonies.realtime()) {
 					delta *= 0.3;
 				}
 				

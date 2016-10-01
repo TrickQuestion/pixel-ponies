@@ -6,8 +6,8 @@ import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
 
-@ReportsCrashes(mailTo = "nyrdsofficial@gmail.com", mode = ReportingInteractionMode.TOAST, resToastText = R.string.RemixedPixelDungeonApp_sendCrash)
-public class RemixedPixelDungeonApp extends Application {
+@ReportsCrashes(mailTo = "wolf.trickster@gmail.com", mode = ReportingInteractionMode.TOAST, resToastText = R.string.PixelPoniesApp_SendCrash)
+public class PixelPoniesApp extends Application {
 
 	@Override
 	public void onCreate() {

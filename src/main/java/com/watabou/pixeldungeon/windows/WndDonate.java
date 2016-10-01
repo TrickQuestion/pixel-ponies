@@ -6,7 +6,7 @@ import com.nyrds.pixeldungeon.support.Iap;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Text;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.PixelPonies;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.ui.Icons;
 import com.watabou.pixeldungeon.ui.SystemRedButton;
@@ -96,7 +96,7 @@ public class WndDonate extends WndTabbed {
 
 			pos += GAP;
 
-			if (PixelDungeon.donated() < level) {
+			if (PixelPonies.donated() < level) {
 				String price = Iap.getDonationPriceString(level);
 				String btnText;
 				if( price != null ) {
