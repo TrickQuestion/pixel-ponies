@@ -23,43 +23,46 @@ import com.watabou.pixeldungeon.actors.hero.HeroClass;
 
 public enum Icons {
 
+	COMPASS,
+	DEPTH,
 	SKULL,
 	BUSY,
-	COMPASS, 
-	PREFS,
-	WARNING,
-	TARGET,
-	AUTHORS_ICON,
-	EARTH,
-	MAGE,
-	ROGUE,
-	ELF,
-	CLOSE,
-	DEPTH,
+	MIND_CONTROL,
 	SLEEP,
 	ALERT,
-	SUPPORT,
-	SUPPORTED,
+
 	BACKPACK,
-	SEED_POUCH,
-	SCROLL_HOLDER,
-	WAND_HOLSTER,
-	POTIONS_BELT,
 	KEYRING,
+	SEED_POUCH,
+	POTIONS_BELT,
+	SCROLL_HOLDER,
+	QUIVER,
+	WAND_HOLSTER,
+
 	CHECKED,
 	UNCHECKED,
 	EXIT,
+	TRANSPARENT_EXIT,
+	WARNING,
+
+	TARGET,
+	EARTH_PONY,
+	UNICORN,
+	PEGASUS,
+	ZEBRA,
+	NIGHTWING,
+
+	SETTINGS,
+	PLEASE_DONATE,
+	THANKS_DONATED,
+	EARTH_PATRON,
+	PEGASUS_PATRON,
+	UNICORN_PATRON,
+	ALICORN_PATRON,
+
 	CHALLENGE_OFF,
 	CHALLENGE_ON,
-	RESUME,
-	CHEST_SILVER,
-	CHEST_GOLD,
-	CHEST_RUBY,
-	HUNTRESS,
-	MODDING_MODE,
-	QUIVER,
-	MIND_CONTROL,
-	GRAPHS;
+	AUTHORS_ICON;
 
 	
 	public Image get() {
@@ -69,117 +72,123 @@ public enum Icons {
 	public static Image get( Icons type ) {
 		Image icon = new Image( Assets.ICONS );
 		switch (type) {
-		case SKULL:
-			icon.frame( icon.texture.uvRect( 0, 0, 8, 8 ) );
-			break;
-		case BUSY:
-			icon.frame( icon.texture.uvRect( 8, 0, 16, 8 ) );
-			break;
-		case COMPASS:
-			icon.frame( icon.texture.uvRect( 0, 8, 7, 13 ) );
-			break;
-		case PREFS:
-			icon.frame( icon.texture.uvRect( 30, 0, 46, 16 ) );
-			break;
-		case WARNING:
-			icon.frame( icon.texture.uvRect( 46, 0, 58, 12 ) );
-			break;
-		case TARGET:
-			icon.frame( icon.texture.uvRect( 0, 13, 16, 29 ) );
-			break;
-		case AUTHORS_ICON:
-			icon.frame( icon.texture.uvRect( 0, 84, 32, 100 ) );
-			break;
-		case EARTH:
-			icon.frame( icon.texture.uvRect( 0, 29, 16, 45 ) );
-			break;
-		case MAGE:
-			icon.frame( icon.texture.uvRect( 16, 29, 32, 45 ) );
-			break;
-		case ROGUE:
-			icon.frame( icon.texture.uvRect( 32, 29, 48, 45 ) );
-			break;
-		case ELF:
-			icon.frame( icon.texture.uvRect( 48, 29, 64, 45 ) );
-			break;
-		case CLOSE:
-			icon.frame( icon.texture.uvRect( 1, 46, 12, 57 ) );
-			break;
-		case DEPTH:
-			icon.frame( icon.texture.uvRect( 45, 12, 54, 20 ) );
-			break;
-		case SLEEP:
-			icon.frame( icon.texture.uvRect( 13, 45, 22, 53 ) );
-			break;
-		case ALERT:
-			icon.frame( icon.texture.uvRect( 22, 45, 30, 53 ) );
-			break;
-		case SUPPORT:
-			icon.frame( icon.texture.uvRect( 30, 45, 46, 61 ) );
-			break;
-		case SUPPORTED:
-			icon.frame( icon.texture.uvRect( 46, 45, 62, 61 ) );
-			break;
-		case BACKPACK:
-			icon.frame( icon.texture.uvRect( 58, 0, 68, 10 ) );
-			break;
-		case SCROLL_HOLDER:
-			icon.frame( icon.texture.uvRect( 68, 0, 78, 10 ) );
-			break;
-		case SEED_POUCH:
-			icon.frame( icon.texture.uvRect( 78, 0, 88, 10 ) );
-			break;
-		case WAND_HOLSTER:
-			icon.frame( icon.texture.uvRect( 88, 0, 98, 10 ) );
-			break;
-		case POTIONS_BELT:
-			icon.frame( icon.texture.uvRect( 98, 0, 108, 10 ) );
-			break;
-		case KEYRING:
-			icon.frame( icon.texture.uvRect( 64, 29, 74, 39 ) );
-			break;
-		case CHECKED:
-			icon.frame( icon.texture.uvRect( 54, 12, 66, 24 ) );
-			break;
-		case UNCHECKED:
-			icon.frame( icon.texture.uvRect( 66, 12, 78, 24 ) );
-			break;
-		case EXIT:
-			icon.frame( icon.texture.uvRect( 108, 0, 124, 16 ) );
-			break;
-		case CHALLENGE_OFF:
-			icon.frame( icon.texture.uvRect( 78, 16, 102, 40 ) );
-			break;
-		case CHALLENGE_ON:
-			icon.frame( icon.texture.uvRect( 102, 16, 126, 40 ) );
-			break;
-		case RESUME:
-			icon.frame( icon.texture.uvRect( 114, 0, 126, 11 ) );
-			break;
-		case CHEST_SILVER:
-			icon.frame( icon.texture.uvRect( 63, 46, 77, 59 ) );
-			break;
-		case CHEST_GOLD:
-			icon.frame( icon.texture.uvRect( 79, 46, 93, 59 ) );
-			break;
-		case CHEST_RUBY:
-			icon.frame( icon.texture.uvRect( 95, 46, 109, 59 ) );
-			break;
-		case HUNTRESS:
-			icon.frame( icon.texture.uvRect( 110, 45, 126, 61 ) );
-			break;
-		case MODDING_MODE:
-			icon.frame( icon.texture.uvRect( 0, 58, 12, 70) );
-			break;
-		case QUIVER:
-			icon.frame( icon.texture.uvRect( 13,54,  23,64 ) );
-			break;
-		case MIND_CONTROL:
-			icon.frame( icon.texture.uvRect( 13,69,  27,78 ) );
-			break;
-		case GRAPHS:
-			icon.frame( icon.texture.uvRect( 41,63,  51,73 ) );
-			break;
+
+			// 7x5 for COMPASS, 8x8 for others.
+			case COMPASS:
+				icon.frame( icon.texture.uvRect( 0, 0, 7, 5 ) );
+				break;
+			case DEPTH:
+				icon.frame( icon.texture.uvRect( 8, 0, 16, 8 ) );
+				break;
+			case SKULL:
+				icon.frame( icon.texture.uvRect( 16, 0, 24, 8 ) );
+				break;
+			case BUSY:
+				icon.frame( icon.texture.uvRect( 24, 0, 32, 8 ) );
+				break;
+			case MIND_CONTROL:
+				icon.frame( icon.texture.uvRect( 32, 0, 40, 8 ) );
+				break;
+			case SLEEP:
+				icon.frame( icon.texture.uvRect( 40, 0, 48, 8 ) );
+				break;
+			case ALERT:
+				icon.frame( icon.texture.uvRect( 48, 0, 56, 8 ) );
+				break;
+
+			// 10x10
+			case BACKPACK:
+				icon.frame( icon.texture.uvRect( 0, 8, 10, 18 ) );
+				break;
+			case KEYRING:
+				icon.frame( icon.texture.uvRect( 10, 8, 20, 18 ) );
+				break;
+			case SEED_POUCH:
+				icon.frame( icon.texture.uvRect( 20, 8, 30, 18 ) );
+				break;
+			case POTIONS_BELT:
+				icon.frame( icon.texture.uvRect( 30, 8, 40, 18 ) );
+				break;
+			case SCROLL_HOLDER:
+				icon.frame( icon.texture.uvRect( 40, 8, 50, 18 ) );
+				break;
+			case QUIVER:
+				icon.frame( icon.texture.uvRect( 50, 8, 60, 18 ) );
+				break;
+			case WAND_HOLSTER:
+				icon.frame( icon.texture.uvRect( 60, 8, 70, 18 ) );
+				break;
+
+			// 12x12
+			case CHECKED:
+				icon.frame( icon.texture.uvRect( 0, 18, 12, 30 ) );
+				break;
+			case UNCHECKED:
+				icon.frame( icon.texture.uvRect( 12, 18, 24, 30 ) );
+				break;
+			case EXIT:
+				icon.frame( icon.texture.uvRect( 24, 18, 36, 30 ) );
+				break;
+			case TRANSPARENT_EXIT:
+				icon.frame( icon.texture.uvRect( 36, 18, 48, 30 ) );
+				break;
+			case WARNING:
+				icon.frame( icon.texture.uvRect( 48, 18, 60, 30 ) );
+				break;
+
+			// 16x16, first line (in game stuff)
+			case TARGET:
+				icon.frame( icon.texture.uvRect( 0, 30, 16, 46 ) );
+				break;
+			case EARTH_PONY:
+				icon.frame( icon.texture.uvRect( 16, 30, 32, 46 ) );
+				break;
+			case UNICORN:
+				icon.frame( icon.texture.uvRect( 32, 30, 48, 46 ) );
+				break;
+			case PEGASUS:
+				icon.frame( icon.texture.uvRect( 48, 30, 64, 46 ) );
+				break;
+			case ZEBRA:
+				icon.frame( icon.texture.uvRect( 64, 30, 80, 46 ) );
+				break;
+			case NIGHTWING:
+				icon.frame( icon.texture.uvRect( 80, 30, 96, 46 ) );
+				break;
+
+			// 16x16, second line (system stuff)
+			case SETTINGS:
+				icon.frame( icon.texture.uvRect( 0, 46, 16, 62 ) );
+				break;
+			case PLEASE_DONATE:
+				icon.frame( icon.texture.uvRect( 16, 46, 32, 62 ) );
+				break;
+			case THANKS_DONATED:
+				icon.frame( icon.texture.uvRect( 32, 46, 48, 62 ) );
+				break;
+			case EARTH_PATRON:
+				icon.frame( icon.texture.uvRect( 48, 46, 64, 62 ) );
+				break;
+			case PEGASUS_PATRON:
+				icon.frame( icon.texture.uvRect( 64, 46, 80, 62 ) );
+				break;
+			case UNICORN_PATRON:
+				icon.frame( icon.texture.uvRect( 80, 46, 96, 62 ) );
+				break;
+			case ALICORN_PATRON:
+				icon.frame( icon.texture.uvRect( 96, 46, 112, 62 ) );
+				break;
+
+			// Large icons: 24x24, 24x24, 32x16
+			case CHALLENGE_OFF:
+				icon.frame( icon.texture.uvRect( 0, 62, 24, 86 ) );
+				break;
+			case CHALLENGE_ON:
+				icon.frame( icon.texture.uvRect( 24, 62, 48, 86 ) );
+				break;
+			case AUTHORS_ICON:
+				icon.frame( icon.texture.uvRect( 48, 62, 80, 78 ) );
+				break;
 		}
 		return icon;
 	}
@@ -187,15 +196,15 @@ public enum Icons {
 	public static Image get( HeroClass cl ) {
 		switch (cl) {
 		case EARTH_PONY:
-			return get( EARTH );
+			return get(EARTH_PONY);
 		case UNICORN:
-			return get( MAGE );
+			return get(UNICORN);
 		case PEGASUS:
-			return get( ROGUE );
+			return get(PEGASUS);
 		case ZEBRA:
-			return get( HUNTRESS );
+			return get(ZEBRA);
 		case NIGHTWING:
-			return get( ELF );
+			return get(NIGHTWING);
 		default:
 			return null;
 		}

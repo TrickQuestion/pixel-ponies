@@ -29,16 +29,19 @@ public class DonateButton extends Button {
 		switch (PixelPonies.donated()) {
 		default:
 		case 0:
-			image = Icons.SUPPORT.get();
+			image = Icons.PLEASE_DONATE.get();
 			break;
 		case 1:
-			image = Icons.CHEST_SILVER.get();
+			image = Icons.EARTH_PATRON.get();
 			break;
 		case 2:
-			image = Icons.CHEST_GOLD.get();
+			image = Icons.PEGASUS_PATRON.get();
 			break;
 		case 3:
-			image = Icons.CHEST_RUBY.get();
+			image = Icons.UNICORN_PATRON.get();
+			break;
+		case 4:
+			image = Icons.ALICORN_PATRON.get();
 			break;
 		}
 		
@@ -58,9 +61,9 @@ public class DonateButton extends Button {
 		case 1:
 		case 2:
 		case 3:
-			return Game.getVar(R.string.DonateButton_thanks);
+			return Game.getVar(R.string.DonateButton_Thanks);
 		default:
-			return Game.getVar(R.string.DonateButton_pleaseDonate);
+			return Game.getVar(R.string.DonateButton_PleaseDonate);
 		}
 	}
 

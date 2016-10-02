@@ -21,7 +21,7 @@ public class PremiumPrefsButton extends Button {
 	protected void createChildren() {
 		super.createChildren();
 		
-		image = Icons.SUPPORTED.get();
+		image = Icons.THANKS_DONATED.get();
 		add( image );
 	}
 	

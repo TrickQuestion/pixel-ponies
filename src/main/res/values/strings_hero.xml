@@ -40,7 +40,7 @@
         <item>Earth ponies are very good with melee weapons.</item>
         <item>They can use bows, but having neither wings nor a horn, they have a slow rate of fire.</item>
         <item>Eating a piece of food restores a small amount of health.</item>
-        <item>Earth Ponies automatically know Potions of Honesty.</item>
+        <item>Earth ponies automatically know potions of honesty.</item>
     </string-array>
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>

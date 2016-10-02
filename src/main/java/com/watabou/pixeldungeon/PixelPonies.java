@@ -141,6 +141,7 @@ public class PixelPonies extends Game {
 		switchScene(c);
 	}
 
+	// TODO: Figure out why Iap.isReady() returns false on my tablet.
 	public static boolean canDonate() {
 		return Flavours.haveDonations() && Iap.isReady();
 	}

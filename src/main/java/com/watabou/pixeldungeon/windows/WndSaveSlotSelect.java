@@ -74,7 +74,7 @@ public class WndSaveSlotSelect extends Window implements InterstitialPoint {
 				buttons.add(btn);
 
 				if (!options[index].isEmpty()) {
-					SimpleButton deleteBtn = new SimpleButton(Icons.get(Icons.CLOSE)) {
+					SimpleButton deleteBtn = new SimpleButton(Icons.get(Icons.EXIT)) {
 						protected void onClick() {
 							final int slotIndex = index;
 							WndOptions reallyDelete = new WndOptions(Game.getVar(R.string.WndSaveSlotSelect_Delete_Title), "",

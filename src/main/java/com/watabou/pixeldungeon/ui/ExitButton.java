@@ -40,7 +40,7 @@ public class ExitButton extends Button {
 	protected void createChildren() {
 		super.createChildren();
 		
-		image = Icons.EXIT.get();
+		image = Icons.TRANSPARENT_EXIT.get();
 		add( image );
 	}
 	

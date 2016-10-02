@@ -33,7 +33,7 @@
 
     <!-- STRINGS OF Challenges CLASS -->
     <string-array name="Challenges_Names">
-        <item>On diet</item>
+        <item>On a diet</item>
         <item>Faith is my barding</item>
         <item>Pharmacophobia</item>
         <item>Barren land</item>
@@ -42,8 +42,8 @@
     </string-array>
 
     <!-- STRINGS OF DonateButton CLASS -->
-    <string name="DonateButton_pleaseDonate">please consider donating</string>
-    <string name="DonateButton_thanks">Thanks for Your support!</string>
+    <string name="DonateButton_PleaseDonate">Donate to support the game?</string>
+    <string name="DonateButton_Thanks">Thanks for your support!</string>
 
     <!-- STRINGS OF GameScene CLASS -->
     <string name="GameScene_Welcome">Welcome to adventure level %d of Pixel Ponies!</string>

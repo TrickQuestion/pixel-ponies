@@ -38,7 +38,7 @@ public class PrefsButton extends Button {
 	protected void createChildren() {
 		super.createChildren();
 		
-		image = Icons.PREFS.get();
+		image = Icons.SETTINGS.get();
 		add( image );
 	}
 	

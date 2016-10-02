@@ -53,8 +53,8 @@ public class WndDonate extends WndTabbed {
 	private static final int GAP = 2;
 	private static final int TAB_WIDTH = 47;
 
-	private static final Icons[] icons = { Icons.CHEST_SILVER,
-			Icons.CHEST_GOLD, Icons.CHEST_RUBY };
+	private static final Icons[] icons = { Icons.EARTH_PATRON,
+			Icons.PEGASUS_PATRON, Icons.UNICORN_PATRON};
 	private static final String[] title = { SILVER_DONATE, GOLD_DONATE,
 			RUBY_DONATE };
 	
