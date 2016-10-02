@@ -84,26 +84,26 @@ public class MeleeWeapon extends Weapon {
 		
 		StringBuilder info = new StringBuilder( desc() );
 
-		String typical  = Game.getVar(R.string.MeleeWeapon_Info1b);
-		String upgraded = Game.getVar(R.string.MeleeWeapon_Info1c);
-		String degraded = Game.getVar(R.string.MeleeWeapon_Info1d);
+		String typical  = Game.getVar(R.string.MeleeWeapon_AWord);
+		String upgraded = Game.getVar(R.string.MeleeWeapon_UpgradedType);
+		String degraded = Game.getVar(R.string.MeleeWeapon_DegradedType);
 		String quality = levelKnown && level() != 0 ? (level() > 0 ? upgraded : degraded) : typical;
 		info.append(p);
-		info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.MeleeWeapon_Info1a), name, quality, tier)));
+		info.append(Utils.capitalize(Utils.format(Game.getVar(R.string.MeleeWeapon_Info), name, quality, tier)));
 		info.append(" ");
 		
 		if (levelKnown) {
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2a), (MIN + (MAX - MIN) / 2)));
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_AverageDam), (MIN + (MAX - MIN) / 2)));
 		} else {
 			if (this instanceof Bow) {
-				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2d), (min() + (max() - min()) / 2), typicalMinimum()));
+				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_AverageDamAndLoyalty), (min() + (max() - min()) / 2), typicalMinimum()));
 				if (typicalMinimum() > Dungeon.hero.effectiveLoyalty()) {
-					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2e));
+					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_ProbablyInadequateLoyalty));
 				}
 			} else {
-				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info2b), (min() + (max() - min()) / 2), typicalMinimum()));
+				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_AverageDamAndHonesty), (min() + (max() - min()) / 2), typicalMinimum()));
 				if (typicalMinimum() > Dungeon.hero.effectiveHonesty()) {
-					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_Info2c));
+					info.append(" ").append(Game.getVar(R.string.MeleeWeapon_ProbablyInadequateHonesty));
 				}
 			}
 		}
@@ -111,51 +111,53 @@ public class MeleeWeapon extends Weapon {
 		quality = "";
 		info.append(" ");
 		if (DLY != 1f) {
-			quality += (DLY < 1f ? Game.getVar(R.string.MeleeWeapon_Info3b) : Game.getVar(R.string.MeleeWeapon_Info3c));
+			quality += (DLY < 1f ? Game.getVar(R.string.MeleeWeapon_FastType) : Game.getVar(R.string.MeleeWeapon_SlowType));
 			if (ACU != 1f) {
 				quality += " ";
 				if ((ACU > 1f) == (DLY < 1f)) {
-					quality += Game.getVar(R.string.MeleeWeapon_Info3d);
+					quality += Game.getVar(R.string.MeleeWeapon_AndWord);
 				} else {
-					quality += Game.getVar(R.string.MeleeWeapon_Info3e);
+					quality += Game.getVar(R.string.MeleeWeapon_ButWord);
 				}
 				quality += " ";
-				quality += ACU > 1f ? Game.getVar(R.string.MeleeWeapon_Info3f) : Game.getVar(R.string.MeleeWeapon_Info3g);
+				quality += ACU > 1f ? Game.getVar(R.string.MeleeWeapon_AccurateType) : Game.getVar(R.string.MeleeWeapon_InaccurateType);
 			}
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info3a), quality));
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_RatherSomething), quality));
 		} else if (ACU != 1f) {
-			quality += ACU > 1f ? Game.getVar(R.string.MeleeWeapon_Info3f) : Game.getVar(R.string.MeleeWeapon_Info3g);
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info3a), quality));
+			quality += ACU > 1f ? Game.getVar(R.string.MeleeWeapon_AccurateType) : Game.getVar(R.string.MeleeWeapon_InaccurateType);
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_RatherSomething), quality));
 		}
 
 		info.append(" ");
 		switch (imbue) {
 		case SPEED:
-			info.append(Game.getVar(R.string.MeleeWeapon_Info4a));
+			info.append(Game.getVar(R.string.MeleeWeapon_BalancedSpeed));
 			break;
 		case ACCURACY:
-			info.append(Game.getVar(R.string.MeleeWeapon_Info4b));
+			info.append(Game.getVar(R.string.MeleeWeapon_BalancedAccuracy));
 			break;
 		case NONE:
 		}
 
 		info.append(" ");
 		if (getEnchantment() != null) {
-			info.append(Game.getVar(R.string.MeleeWeapon_Info5));
+			info.append(Game.getVar(R.string.MeleeWeapon_IsEnchanted));
 		}
 
-		if (levelKnown && Dungeon.hero.belongings.backpack.items.contains( this )) {
-			info.append(p);
+		if (levelKnown && (isEquipped(Dungeon.hero) || Dungeon.hero.belongings.backpack.items.contains( this ))) {
 			if (this instanceof Bow) {
+				info.append(p);
 				if (minAttribute > Dungeon.hero.effectiveLoyalty()) {
-					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6c), name));
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_InadequateLoyalty), name));
 				}
 			} else {
 				if (minAttribute > Dungeon.hero.effectiveHonesty()) {
-					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6a), name));
+					info.append(p);
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_InadequateHonesty), name));
 				}
 				if (minAttribute < Dungeon.hero.effectiveHonesty()) {
-					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info6b), name));
+					info.append(p);
+					info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_ExcessHonesty), name));
 				}
 			}
 
@@ -163,11 +165,11 @@ public class MeleeWeapon extends Weapon {
 		
 		if (isEquipped( Dungeon.hero )) {
 			info.append(p);
-			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info7a), name, (cursed ? Game.getVar(R.string.MeleeWeapon_Info7b) : ".")) );
+			info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_HoldReady), name, (cursed ? Game.getVar(R.string.MeleeWeapon_CursedGrip) : ".")) );
 		} else {
 			if (cursedKnown && cursed) {
 				info.append(p);
-				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_Info7c), name));
+				info.append(Utils.format(Game.getVar(R.string.MeleeWeapon_SenseCurse), name));
 			}
 		}
 		

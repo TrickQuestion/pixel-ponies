@@ -55,19 +55,14 @@ public class StartScene extends PixelScene {
 	private static final float BUTTON_HEIGHT = 24;
 	private static final float GAP = 2;
 
-	private static final String TXT_LOAD = Game
-			.getVar(R.string.StartScene_Load);
+	private static final String TXT_LOAD = Game.getVar(R.string.StartScene_Load);
 	private static final String TXT_NEW = Game.getVar(R.string.StartScene_New);
 
-	private static final String TXT_ERASE = Game
-			.getVar(R.string.StartScene_Erase);
-	public static final String TXT_DPTH_LVL = Game
-			.getVar(R.string.StartScene_Depth);
+	private static final String TXT_ERASE = Game.getVar(R.string.StartScene_Erase);
+	public static final String TXT_DPTH_LVL = Game.getVar(R.string.StartScene_Depth);
 
-	private static final String TXT_REALLY = Game
-			.getVar(R.string.StartScene_Really);
-	private static final String TXT_WARNING = Game
-			.getVar(R.string.StartScene_Warning);
+	private static final String TXT_REALLY = Game.getVar(R.string.StartScene_Really);
+	private static final String TXT_WARNING = Game.getVar(R.string.StartScene_Warning);
 	private static final String TXT_YES = Game.getVar(R.string.StartScene_Yes);
 	private static final String TXT_NO = Game.getVar(R.string.StartScene_No);
 

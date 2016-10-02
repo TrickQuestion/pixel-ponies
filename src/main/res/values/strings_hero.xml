@@ -36,7 +36,7 @@
 
     <string-array name="HeroClass_EarthPonyPerks">
         <item>Earth ponies are honest, humorous, and durable, but are less kind and magical.</item>
-        <item>They begin with a unique Scythe that can later be reforged to upgrade another weapon.</item>
+        <item>They begin with a unique scythe that can later be reforged to upgrade another weapon.</item>
         <item>Earth ponies are very good with melee weapons.</item>
         <item>They can use bows, but having neither wings nor a horn, they have a slow rate of fire.</item>
         <item>Eating a piece of food restores a small amount of health.</item>
@@ -44,26 +44,26 @@
     </string-array>
     <string-array name="HeroClass_UnicornPerks">
         <item>Unicorns are generous and magical, but have a weak sense of humor.</item>
-        <item>They begin with a unique Wand of Mana Bolts that can later be reforged to upgrade another wand.</item>
-        <item>Unicorns have a horn, which allows them to cast Telekinesis at will.</item>
-        <item>The magic from their horn prevents unicorns from equipping a magic accessory on their mane. They can still wear one on their tail.</item>
-        <item>Eating a piece of food will restore 1 charge to all wands.</item>
+        <item>They begin with a unique wand of mana bolts that can later be reforged to upgrade another wand.</item>
+        <item>Unicorns have a horn, which allows them to cast telekinesis at will.</item>
+        <item>The magic interference from their horn prevents unicorns from equipping a magic accessory on their mane. They can still wear one on their tail.</item>
+        <item>Eating a piece of food will restore one charge to all wands.</item>
         <item>Unicorns can fully identify a wand just by using it.</item>
-        <item>They automatically know Scrolls of Identify and Scrolls of Curse.</item>
+        <item>They automatically know scrolls of identify and cursing.</item>
     </string-array>
     <string-array name="HeroClass_PegasusPerks">
         <item>Pegasi are loyal and kind, but less generous and physically fragile.</item>
         <item>They can fly over pits, traps, and spikes. Unlike levitation, flight still triggers special plants and hidden traps.</item>
         <item>Encumbered pegasi cannot fly well, but they can still safely glide into pits.</item>
-        <item>They get a damage bonus for excess Loyalty when using thrown weapons.</item>
-        <item>Pegasi automatically know Scrolls of Loyal Oath and Scrolls of Magic Mapping.</item>
+        <item>They get a damage bonus for excess loyalty when using thrown weapons.</item>
+        <item>Pegasi automatically know Scrolls of loyal oath and magic mapping.</item>
     </string-array>
     <string-array name="HeroClass_ZebraPerks">
         <item>Zebras are generous, magical, and durable, but less loyal.</item>
         <item>They begin with a unique throwable boomerang that can be reused and upgraded.</item>
-        <item>Zebras excel with throwing weapons. They use honesty instead of loyalty to throw (bows still require loyalty).</item>
+        <item>Zebras excel with throwing weapons. They use honesty instead of loyalty to throw, and get a bonus for excess honesty.</item>
         <item>They can use bows, but having neither wings nor a horn, they have a slow rate of fire.</item>
-        <item>Zebras gain more health from dewdrops, and are immune to Rooting.</item>
+        <item>Zebras gain more health from dewdrops, and are immune to rooting.</item>
     </string-array>
     <string-array name="HeroClass_NightwingPerks">
         <item>Nightwings are loyal and humorous, but less honest and physically fragile.</item>
@@ -77,7 +77,7 @@
     <string name="HeroSubClass_NameFarmer">farmer</string>
     <string name="HeroSubClass_DescFarmer">The _Farmer_ can gather dewdrops and seeds from special plants, and can go longer without food.</string>
     <string name="HeroSubClass_NameBard">bard</string>
-    <string name="HeroSubClass_DescBard">The _Bard_ uses Laughter to recover more quickly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
+    <string name="HeroSubClass_DescBard">The _Bard_ uses laughter to recover rapidly from negative effects. This won\'t help with effects that cause damage, like being on fire.</string>
     <string name="HeroSubClass_NameRoyalGuard">royal guard</string>
     <string name="HeroSubClass_DescRoyalGuard">A successful attack with a melee weapon allows the _Royal Guard_ to start a combo, in which every additional hit inflicts bonus damage.</string>
     <string name="HeroSubClass_NameMagician">magician</string>
@@ -89,7 +89,7 @@
     <string name="HeroSubClass_NameScout">scout</string>
     <string name="HeroSubClass_DescScout">The _Scout_ gains a bonus to damage when blindsiding a monster.</string>
     <string name="HeroSubClass_NameBeastmaster">beastmaster</string>
-    <string name="HeroSubClass_DescBeastmaster">When the _Beastmaster_ attempts to hit an undamaged monster with a melee attack, there is a Kindness-based chance the monster will become a pet. This only works with animal monsters.</string>
+    <string name="HeroSubClass_DescBeastmaster">When the _Beastmaster_ attempts to hit an undamaged monster with a melee attack, there is a kindness-based chance the monster will become a pet. This only works with animal monsters.</string>
     <string name="HeroSubClass_NameThunderbolt">thunderbolt</string>
     <string name="HeroSubClass_DescThunderbost">After flying unencumbered for a short distance, the _Thunderbolt_ gains a bonus to all attributes. The bonus lasts until one turn after the flight ends. (Tweak this.)</string>
     <string name="HeroSubClass_NameShaman">shaman</string>
@@ -97,11 +97,11 @@
     <string name="HeroSubClass_NameSeer">seer</string>
     <string name="HeroSubClass_DescSeer">The _Seer_ can sense cursed items (resolve this with Artist at some point). All basic potion and scroll types are known to him. He can detect changelings on sight, which allows him to strike first. (And bonus? Tweak.)</string>
     <string name="HeroSubClass_NameEnchanter">enchanter</string>
-    <string name="HeroSubClass_DescEnchanter">Thrown weapon strikes from the _Enchanter_ have a Magic-based chance of inflicting a random negative status. Additionally, weapon and barding enchantments are chosen rather than randomly assigned. (The \'evil dances\' and \'pony stew\' rumors are somewhat exaggerated, however.)</string>
+    <string name="HeroSubClass_DescEnchanter">Thrown weapon strikes from the _Enchanter_ have a magic-based chance of inflicting a random negative status. Additionally, weapon and barding enchantments are chosen rather than randomly assigned. (The \'evil dances\' and \'pony stew\' rumors are somewhat exaggerated, however.)</string>
     <string name="HeroSubClass_NameNocturne">nocturne</string>
-    <string name="HeroSubClass_DescNocturne">The _Nocturne_ berserks when her health is low. This temporarily lowers her Kindness, but she deals significantly more damage.</string>
+    <string name="HeroSubClass_DescNocturne">The _Nocturne_ berserks when her health is low. This temporarily lowers her kindness, but she deals significantly more damage.</string>
     <string name="HeroSubClass_NameAssassin">assassin</string>
-    <string name="HeroSubClass_DescAssassin">The _Assassin_ has a Loyalty-based chance to completely bypass monster armor whenever she fires a Bow.</string>
+    <string name="HeroSubClass_DescAssassin">The _Assassin_ has a loyalty-based chance to completely bypass monster armor whenever she fires a bow.</string>
     <string name="HeroSubClass_NameVampony">vampony</string>
     <string name="HeroSubClass_DescVampony">The _Vampony_ gains health and reduces hunger each time she defeats a monster. She also gains a boost to damage whenever she is hungry, but not starving. (Tweak to make cooler?)</string>
 </resources>

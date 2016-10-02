@@ -72,10 +72,10 @@
     <string name="StartScene_Warning">Your current game progress will be erased.</string>
     <string name="StartScene_Yes">Yes, start new game</string>
     <string name="StartScene_No">No, return to main menu</string>
-    <string name="StartScene_UnlockUnicorn">To unlock this character race, slay the 1st boss with any other race</string>
-    <string name="StartScene_UnlockPegasus">To unlock this character race, slay the 3rd boss with any other race</string>
-    <string name="StartScene_UnlockZebra">To unlock this character race, slay the 5th boss with any other race</string>
-    <string name="StartScene_UnlockNightwing">To unlock this character race, discover the master class for any other race</string>
+    <string name="StartScene_UnlockUnicorn">To unlock this character race, defeat the Smelly Ooze with any other race</string>
+    <string name="StartScene_UnlockPegasus">To unlock this character race, defeat the Repurposed Cider Squeezer with any other race</string>
+    <string name="StartScene_UnlockZebra">To unlock this character race, defeat the Changeling Queen any other race</string>
+    <string name="StartScene_UnlockNightwing">To unlock this character race, beat the game on expert with any other race</string>
     <string name="StartScene_WinGame">To unlock \"Challenges\", win the game with any character class.</string>
     <string name="StartScene_DifficultySelect">Choose your destiny</string>
     <string name="StartScene_DifficultyEasy">Easy</string>

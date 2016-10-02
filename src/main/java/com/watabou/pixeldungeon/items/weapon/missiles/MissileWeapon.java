@@ -46,16 +46,17 @@ public class MissileWeapon extends Weapon {
 	}
 
 
-	// TODO: Is this saying "rog/hunt aren't retarded enough to equip missile as melee"?
-//	@Override
-//	public ArrayList<String> actions( Hero hero ) {
-//		ArrayList<String> actions = super.actions( hero );
-//		if (hero.heroClass != HeroClass.ZEBRA && hero.heroClass != HeroClass.PEGASUS) {
-//			actions.remove( AC_EQUIP );
-//			actions.remove( AC_UNEQUIP );
-//		}
-//		return actions;
-//	}
+	// TODO: Previously this seemed to let huntress and rogue equip all missile weapons. Why??
+	// Currently I have it set to "only the Boomerang can be equipped", which makes more sense.
+	@Override
+	public ArrayList<String> actions(Hero hero ) {
+		ArrayList<String> actions = super.actions( hero );
+		if (!(this instanceof Boomerang)) {
+			actions.remove( AC_EQUIP );
+			actions.remove( AC_UNEQUIP );
+		}
+		return actions;
+	}
 
 	@Override
 	protected void onThrow( int cell ) {
@@ -141,20 +142,30 @@ public class MissileWeapon extends Weapon {
 		
 		StringBuilder info = new StringBuilder( desc() );
 		
-		info.append(Utils.format(Game.getVar(R.string.MissileWeapon_Info1),MIN + (MAX - MIN) / 2));
+		info.append(Utils.format(Game.getVar(R.string.MissileWeapon_AverageDam),MIN + (MAX - MIN) / 2));
 		info.append(" ");
 
-		if (Dungeon.hero.belongings.backpack.items.contains( this )) {
-			if (minAttribute > Dungeon.hero.effectiveLoyalty()) {
-				info.append(Utils.format(Game.getVar(R.string.MissileWeapon_Info2), name));
-			}
-			if (minAttribute < Dungeon.hero.effectiveLoyalty()) {
-				info.append(Utils.format(Game.getVar(R.string.MissileWeapon_Info3), name));
+		if (Dungeon.hero.belongings.backpack.items.contains( this ) && !(this instanceof Arrow)) {
+			if (Dungeon.hero.heroClass == HeroClass.ZEBRA) {
+				if (minAttribute > Dungeon.hero.effectiveHonesty()) {
+					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_InadequateHonestyZebra), name));
+				}
+				if (minAttribute < Dungeon.hero.effectiveHonesty()) {
+					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_ExcessHonestyZebra), name));
+				}
+			} else {
+
+				if (minAttribute > Dungeon.hero.effectiveLoyalty()) {
+					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_InadequateLoyalty), name));
+				}
+				if (minAttribute < Dungeon.hero.effectiveLoyalty() && Dungeon.hero.heroClass == HeroClass.PEGASUS) {
+					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_ExcessLoyaltyPegasus), name));
+				}
 			}
 		}
 		
 		if (isEquipped( Dungeon.hero )) {
-			info.append(Utils.format(Game.getVar(R.string.MissileWeapon_Info4), name));
+			info.append(Utils.format(Game.getVar(R.string.MissileWeapon_HoldReady), name));
 		}
 		
 		return info.toString();

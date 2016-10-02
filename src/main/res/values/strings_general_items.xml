@@ -57,8 +57,8 @@
     <!-- STRINGS OF TomeOfMastery CLASS -->
     <string name="TomeOfMastery_Name">Tome of Mastery</string>
     <string name="TomeOfMastery_ACRead">READ</string>
-    <string name="TomeOfMastery_Info">This worn pleather book is not that thick, but you feel somehow, that you can gather a lot from it. Remember though that reading this tome may require some time.</string>
-    <string name="TomeOfMastery_Blinded">You can\'t read while blinded</string>
+    <string name="TomeOfMastery_Info">This worn pleather book is not very thick, but it seems to have rare and valuable information. It may take a while to read, however.</string>
+    <string name="TomeOfMastery_Blinded">You can\'t read while blinded!</string>
     <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
     <string name="TomeOfMastery_WayAlreadyChosen">You cannot change your way!</string>
 

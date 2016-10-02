@@ -15,7 +15,7 @@
 
     <!-- STRINGS OF FreezeDriedHay CLASS -->
     <string name="FreezeDriedHay_Name">freeze dried hay</string>
-    <string name="FreezeDriedHay_Info">It\'s a chunk of frozen hay, crisp and surprisingly tasty. It\'s safe to eat, but may still retain the unusual properties of its origin.</string>
+    <string name="FreezeDriedHay_Info">It\'s a chunk of frozen hay, crunchy and surprisingly tasty. Although it\'s safe to eat now, it may retain some of the unusual properties of its origin.</string>
     <string name="FreezeDriedHay_Info1">You see your hooves turn invisible!</string>
     <string name="FreezeDriedHay_Info2">You feel your skin harden!</string>
     <string name="FreezeDriedHay_Info3">Refreshing!</string>
@@ -23,7 +23,7 @@
 
     <!-- STRINGS OF MysteriousHay CLASS -->
     <string name="MysteriousHay_Name">mysterious hay</string>
-    <string name="MysteriousHay_Info">Eat at your own risk!</string>
+    <string name="MysteriousHay_Info">This plant matter looks a lot like hay, but it has a strange gooey substance on it that would probably keep it from burning well. Eat at your own risk!</string>
     <string name="MysteriousHay_Info1">Oh it\'s hot!</string>
     <string name="MysteriousHay_Info2">You can\'t feel your legs!</string>
     <string name="MysteriousHay_Info3">You are not feeling well.</string>

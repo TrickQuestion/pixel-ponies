@@ -5,7 +5,7 @@
     <string name="Scroll_Name">scroll \"%s\"</string>
     <string name="Scroll_Info">This parchment is covered with indecipherable writing, and bears a title of rune %s. Who knows what it will do when read aloud?</string>
     <string name="Scroll_ACRead">READ</string>
-    <string name="Scroll_Blinded">You can\'t read a scroll while blinded</string>
+    <string name="Scroll_Blinded">You can\'t read while blinded!</string>
 
     <string-array name="Scroll_Runes">
         <item>PRIRPA</item>
