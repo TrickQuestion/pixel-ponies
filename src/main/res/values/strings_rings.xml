@@ -34,11 +34,11 @@
         <item>rainbow quartz</item>
     </string-array>
 
-    <string name="Ring_Cursed_Mane">Your %s tightens around your forelock, making it impossible to remove!</string>
+    <string name="Ring_Cursed_Mane">Your %s tightens around your mane, making it impossible to remove!</string>
     <string name="Ring_Cursed_Tail">Your %s tightens around your tail, making it impossible to remove!</string>
     <string name="Ring_Cursed_Horn">Your %s tightens painfully around your horn!</string>
     <string name="Ring_Info_Horn">The %1$s is on your horn, and you hold it at the ready</string>
-    <string name="Ring_Info_Mane">The %1$s is on your forelock</string>
+    <string name="Ring_Info_Mane">The %1$s is on your mane</string>
     <string name="Ring_Info_Tail">The %1$s is on your tail</string>
     <string name="Ring_Info_Cursed">, and because it is cursed, you are powerless to remove it.</string>
     <string name="Ring_Info_Danger">You can feel a malevolent magic lurking within the %1$s.</string>

@@ -41,7 +41,7 @@ import com.watabou.pixeldungeon.items.armor.FreeRunnerArmor;
 import com.watabou.pixeldungeon.items.armor.HuntressArmor;
 import com.watabou.pixeldungeon.items.armor.PleatherArmor;
 import com.watabou.pixeldungeon.items.armor.MageArmor;
-import com.watabou.pixeldungeon.items.armor.MailArmor;
+import com.watabou.pixeldungeon.items.armor.ChainmailArmor;
 import com.watabou.pixeldungeon.items.armor.PlateArmor;
 import com.watabou.pixeldungeon.items.armor.RogueArmor;
 import com.watabou.pixeldungeon.items.armor.ScaleArmor;
@@ -303,7 +303,7 @@ public class ItemFactory {
 		registerItemClass(PoisonArrow.class);
 		registerItemClass(FrostArrow.class);
 		registerItemClass(PlateArmor.class);
-		registerItemClass(MailArmor.class);
+		registerItemClass(ChainmailArmor.class);
 		registerItemClass(ClothArmor.class);
 		registerItemClass(ScaleArmor.class);
 		registerItemClass(PleatherArmor.class);

@@ -21,9 +21,9 @@ import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 
 
-public class MailArmor extends Armor {
+public class ChainmailArmor extends Armor {
 
-	public MailArmor() {
+	public ChainmailArmor() {
 		super( 3 );
 		image = 2;
 	}

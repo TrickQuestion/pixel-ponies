@@ -66,12 +66,12 @@
     <string name="MageArmor_ACSpecial">MOLTEN EARTH</string>
     <string name="MageArmor_NotMage">Only Mages can use this barding!</string>
 
-    <!-- STRINGS OF MailArmor CLASS -->
+    <!-- STRINGS OF ChainmailArmor CLASS -->
     <string name="MailArmor_Name">chainmail barding</string>
     <string name="MailArmor_Desc">Interlocking metal links make for a tough but flexible suit of barding.</string>
 
     <!-- STRINGS OF PlateArmor CLASS -->
-    <string name="PlateArmor_Name">platemail barding</string>
+    <string name="PlateArmor_Name">plate barding</string>
     <string name="PlateArmor_Desc">Enormous plates of metal are joined together to form this heavy barding designed only for the honest and true. It features a steel saddle.</string>
 
     <!-- STRINGS OF RogueArmor CLASS -->
