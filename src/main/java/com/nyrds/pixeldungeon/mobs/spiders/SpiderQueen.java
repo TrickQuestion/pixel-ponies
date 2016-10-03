@@ -1,7 +1,7 @@
 package com.nyrds.pixeldungeon.mobs.spiders;
 
 import com.nyrds.pixeldungeon.items.chaos.ChaosCrystal;
-import com.nyrds.pixeldungeon.items.common.armor.SpiderArmor;
+import com.nyrds.pixeldungeon.items.common.barding.SpiderBarding;
 import com.nyrds.pixeldungeon.mobs.spiders.sprites.SpiderQueenSprite;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
@@ -30,7 +30,7 @@ public class SpiderQueen extends Boss {
 		} else if( dice < 0.66 ){
 			loot = new SpiderCharm();
 		} else{
-			loot = new SpiderArmor();
+			loot = new SpiderBarding();
 		}
 		lootChance = 1f;
 		

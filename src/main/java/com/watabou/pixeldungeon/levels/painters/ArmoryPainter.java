@@ -63,7 +63,7 @@ public class ArmoryPainter extends Painter {
 	
 	private static Item prize( Level level ) {
 		return Generator.random( Random.oneOf( 
-			Generator.Category.ARMOR, 
+			Generator.Category.BARDING,
 			Generator.Category.WEAPON
 		) );
 	}

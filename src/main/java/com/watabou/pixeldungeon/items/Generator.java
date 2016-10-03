@@ -20,7 +20,7 @@ package com.watabou.pixeldungeon.items;
 import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.items.common.GoldenSword;
 import com.nyrds.pixeldungeon.items.common.SacrificialSword;
-import com.watabou.pixeldungeon.items.armor.AncientArmor;
+import com.watabou.pixeldungeon.items.barding.AncientBarding;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Claymore;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Halberd;
 import com.nyrds.pixeldungeon.items.guts.weapon.ranged.CompositeCrossbow;
@@ -29,12 +29,12 @@ import com.nyrds.pixeldungeon.items.guts.weapon.ranged.WoodenCrossbow;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.WandMaker.Rotberry;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
-import com.watabou.pixeldungeon.items.armor.PleatherArmor;
-import com.watabou.pixeldungeon.items.armor.ChainmailArmor;
-import com.watabou.pixeldungeon.items.armor.PlateArmor;
-import com.watabou.pixeldungeon.items.armor.ScaleArmor;
+import com.watabou.pixeldungeon.items.barding.Barding;
+import com.watabou.pixeldungeon.items.barding.ChainmailBarding;
+import com.watabou.pixeldungeon.items.barding.ClothBarding;
+import com.watabou.pixeldungeon.items.barding.PleatherBarding;
+import com.watabou.pixeldungeon.items.barding.PlateBarding;
+import com.watabou.pixeldungeon.items.barding.ScaleBarding;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.food.ApplePie;
 import com.watabou.pixeldungeon.items.food.Food;
@@ -142,7 +142,7 @@ public class Generator {
 
 	public enum Category {
 		WEAPON	( 15,	Weapon.class ),
-		ARMOR	( 10,	Armor.class ),
+		BARDING( 10,	Barding.class ),
 		POTION	( 50,	Potion.class ),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
@@ -260,14 +260,14 @@ public class Generator {
 			GoldenSword.class,};
 		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0.1f, 0.1f, 1, 1, 0.1f};
 		
-		Category.ARMOR.classes = new Class<?>[]{ 
-			ClothArmor.class, 
-			PleatherArmor.class,
-			ChainmailArmor.class,
-			ScaleArmor.class, 
-			PlateArmor.class,
-			AncientArmor.class};
-		Category.ARMOR.probs = new float[]{ 1, 1, 1, 1, 1, 1 };
+		Category.BARDING.classes = new Class<?>[]{
+			ClothBarding.class,
+			PleatherBarding.class,
+			ChainmailBarding.class,
+			ScaleBarding.class,
+			PlateBarding.class,
+			AncientBarding.class};
+		Category.BARDING.probs = new float[]{ 1, 1, 1, 1, 1, 1 };
 		
 		Category.FOOD.classes = new Class<?>[]{ 
 			Ration.class, 
@@ -337,8 +337,8 @@ public class Generator {
 			categoryProbs.put( cat, categoryProbs.get( cat ) / 2 );
 			
 			switch (cat) {
-			case ARMOR:
-				return randomArmor();
+			case BARDING:
+				return randomBarding();
 			case WEAPON:
 				return randomWeapon();
 			default:
@@ -357,14 +357,14 @@ public class Generator {
 		}
 	}
 	
-	public static Armor randomArmor() throws Exception {
+	public static Barding randomBarding() throws Exception {
 		
 		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
-		Category cat = Category.ARMOR;
+		Category cat = Category.BARDING;
 		
-		Armor a1 = (Armor)cat.classes[Random.chances( cat.probs )].newInstance();
-		Armor a2 = (Armor)cat.classes[Random.chances( cat.probs )].newInstance();
+		Barding a1 = (Barding)cat.classes[Random.chances( cat.probs )].newInstance();
+		Barding a2 = (Barding)cat.classes[Random.chances( cat.probs )].newInstance();
 		
 		a1.random();
 		a2.random();

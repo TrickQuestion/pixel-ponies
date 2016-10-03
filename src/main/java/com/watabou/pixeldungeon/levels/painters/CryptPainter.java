@@ -65,10 +65,10 @@ public class CryptPainter extends Painter {
 	
 	private static Item prize( Level level ) {
 		
-		Item prize = Generator.random( Generator.Category.ARMOR );
+		Item prize = Generator.random( Generator.Category.BARDING);
 
 		for (int i=0; i < 3; i++) {
-			Item another = Generator.random( Generator.Category.ARMOR );
+			Item another = Generator.random( Generator.Category.BARDING);
 			if (another.level() > prize.level()) {
 				prize = another;
 			}

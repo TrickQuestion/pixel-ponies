@@ -21,7 +21,7 @@ import com.nyrds.pixeldungeon.mobs.common.ArmoredStatue;
 import com.nyrds.pixeldungeon.mobs.common.GoldenStatue;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.actors.mobs.Statue;
+import com.watabou.pixeldungeon.actors.mobs.WeaponStatue;
 import com.watabou.pixeldungeon.items.keys.IronKey;
 import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.levels.Room;
@@ -68,13 +68,13 @@ public class StatuePainter extends Painter {
 		}
 
 		Mob statue;
-		//Statue type proc
+		//WeaponStatue type proc
 		if (Random.Int(10) > 5){
 			if (Random.Int(10) == 1){
 				statue = new GoldenStatue();
 			}
 			else{
-				statue = new Statue();
+				statue = new WeaponStatue();
 			}
 		}
 		else{

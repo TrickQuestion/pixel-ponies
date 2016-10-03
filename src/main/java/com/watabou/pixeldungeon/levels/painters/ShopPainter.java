@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.painters;
 
-import com.watabou.pixeldungeon.items.armor.AncientArmor;
+import com.watabou.pixeldungeon.items.barding.AncientBarding;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Claymore;
 import com.nyrds.pixeldungeon.items.guts.weapon.melee.Halberd;
 import com.nyrds.pixeldungeon.mobs.npc.AzuterronNPC;
@@ -31,10 +31,10 @@ import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Torch;
 import com.watabou.pixeldungeon.items.Weightstone;
-import com.watabou.pixeldungeon.items.armor.PleatherArmor;
-import com.watabou.pixeldungeon.items.armor.ChainmailArmor;
-import com.watabou.pixeldungeon.items.armor.PlateArmor;
-import com.watabou.pixeldungeon.items.armor.ScaleArmor;
+import com.watabou.pixeldungeon.items.barding.PleatherBarding;
+import com.watabou.pixeldungeon.items.barding.ChainmailBarding;
+import com.watabou.pixeldungeon.items.barding.PlateBarding;
+import com.watabou.pixeldungeon.items.barding.ScaleBarding;
 import com.watabou.pixeldungeon.items.bags.PotionBelt;
 import com.watabou.pixeldungeon.items.bags.Quiver;
 import com.watabou.pixeldungeon.items.bags.ScrollHolder;
@@ -112,21 +112,21 @@ public class ShopPainter extends Painter {
 		
 		case 6:
 			items.add( (Random.Int( 2 ) == 0 ? new Quarterstaff() : new Spear()).identify() );
-			items.add( new PleatherArmor().identify() );
+			items.add( new PleatherBarding().identify() );
 			items.add( new PotionBelt() );
 			items.add( new Weightstone() );
 			break;
 			
 		case 11:
 			items.add( (Random.Int( 2 ) == 0 ? new Sword() : new Mace()).identify() );
-			items.add( new ChainmailArmor().identify() );
+			items.add( new ChainmailBarding().identify() );
 			items.add( new SeedPouch() );
 			items.add( new Quiver() );
 			break;
 			
 		case 16:
 			items.add( (Random.Int( 2 ) == 0 ? new Longsword() : new BattleAxe()).identify() );
-			items.add( new ScaleArmor().identify() );
+			items.add( new ScaleBarding().identify() );
 			items.add( new ScrollHolder() );
 			items.add( new Weightstone() );
 			break;
@@ -140,7 +140,7 @@ public class ShopPainter extends Painter {
 				items.add( new WarHammer().identify() );
 				break;
 			case 2:
-				items.add( new PlateArmor().identify() );
+				items.add( new PlateBarding().identify() );
 				break;
 			}
 			items.add( new WandHolster() );
@@ -157,7 +157,7 @@ public class ShopPainter extends Painter {
 					items.add( new Halberd().identify() );
 					break;
 				case 2:
-					items.add( new AncientArmor().identify() );
+					items.add( new AncientBarding().identify() );
 					break;
 			}
 			items.add( new PotionOfHealing() );

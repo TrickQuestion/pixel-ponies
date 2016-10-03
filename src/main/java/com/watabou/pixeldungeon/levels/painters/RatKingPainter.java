@@ -82,7 +82,7 @@ public class RatKingPainter extends Painter {
 			}
 			break;
 		case 1:
-			prize = Generator.random( Generator.Category.ARMOR ).degrade( Random.Int( 3 ) );
+			prize = Generator.random( Generator.Category.BARDING).degrade( Random.Int( 3 ) );
 			break;
 		default:
 			prize = new Gold( Random.IntRange( 1, 5 ) );

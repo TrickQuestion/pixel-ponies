@@ -53,7 +53,7 @@ public class BuffIndicator extends Component {
 	public static final int COMBO		= 17;
 	public static final int FURY		= 18;
 	public static final int HEALING		= 19;
-	public static final int ARMOR		= 20;
+	public static final int BARDING = 20;
 	public static final int HEART		= 21;
 	public static final int LIGHT		= 22;
 	public static final int CRIPPLE		= 23;

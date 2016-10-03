@@ -57,8 +57,8 @@ public class ScrollOfCurse extends Scroll {
 			Class <? extends FlavourBuff> buffClass = (Class<? extends FlavourBuff>) Random.oneOf(badBuffs);
 			Buff.prolong( hero, buffClass, 10);
 			
-			if(getCurUser().belongings.armor != null) { 
-				getCurUser().belongings.armor.cursed = true;
+			if(getCurUser().belongings.barding != null) {
+				getCurUser().belongings.barding.cursed = true;
 			}
 			if(getCurUser().belongings.weapon != null) {
 				getCurUser().belongings.weapon.cursed = true;

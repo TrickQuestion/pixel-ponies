@@ -23,7 +23,7 @@ import com.watabou.noosa.Game;
 public class Challenges {
 
 	public static final int NO_FOOD				= 1;
-	public static final int NO_ARMOR			= 2;
+	public static final int NO_BARDING			= 2;
 	public static final int NO_HEALING			= 4;
 	public static final int NO_HERBALISM		= 8;
 	public static final int SWARM_INTELLIGENCE	= 16;
@@ -32,7 +32,7 @@ public class Challenges {
 	public static final String[] NAMES = Game.getVars(R.array.Challenges_Names);
 	
 	public static final int[] MASKS = {
-		NO_FOOD, NO_ARMOR, NO_HEALING, NO_HERBALISM, SWARM_INTELLIGENCE, DARKNESS
+		NO_FOOD, NO_BARDING, NO_HEALING, NO_HERBALISM, SWARM_INTELLIGENCE, DARKNESS
 	};
 	
 }

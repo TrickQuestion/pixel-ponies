@@ -9,10 +9,8 @@ import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.tweeners.Tweener;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Callback;
 
 import org.json.JSONException;
@@ -32,7 +30,7 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 	// body goes as main texture
     private static final String LAYER_BODY        = "body";
-	private static final String LAYER_ARMOR       = "armor";
+	private static final String LAYER_BARDING 	  = "barding";
 	private static final String LAYER_HEAD        = "head";
 	private static final String LAYER_HELMET      = "helmet";
     private static final String LAYER_WINGS       = "wings";
@@ -44,7 +42,7 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 	private static final String[] layersOrder = {
 		LAYER_BODY,
-		LAYER_ARMOR,
+		LAYER_BARDING,
 		LAYER_HEAD,
 		LAYER_HELMET,
         LAYER_WINGS,
@@ -63,9 +61,9 @@ public class HeroSpriteDef extends MobSpriteDef {
 		applyLayersDesc(lookDesc);
 	}
 
-	public HeroSpriteDef(Armor armor){
+	public HeroSpriteDef(Barding barding){
 		super("spritesDesc/ArmoredStatue.json",0);
-		createStatueSprite(armor);
+		createStatueSprite(barding);
 		applyLayersDesc(getLayersDesc());
 	}
 
@@ -92,34 +90,31 @@ public class HeroSpriteDef extends MobSpriteDef {
 	public void createLayersDesc(Hero hero, Accessory accessory) {
 		layersDesc.clear();
 
-        String armorImage = BLANK_IMAGE;
+        String bardingImage = BLANK_IMAGE;
         String helmetImage = BLANK_IMAGE;
         String wingsImage = BLANK_IMAGE;
         String accessoryImage = BLANK_IMAGE;
 
-        if (hero.belongings.armor != null) {
-            armorImage = "layeredSprites/armor/hero/" + hero.gender().toString() + "/";
-            if (hero.heroClass.hasWings()) {
-                armorImage += "winged/";
-            }
-            armorImage += armorDescriptor(hero.belongings.armor) + ".png";
+        if (hero.belongings.barding != null) {
+            bardingImage = "layeredSprites/barding/" + hero.gender().toString() + "/";
+            bardingImage += bardingDescriptor(hero.belongings.barding) + ".png";
         }
 
         if (hero.heroClass.hasWings()) {
-            wingsImage = "layeredSprites/wings/hero/" + hero.heroClass.toString() + ".png";
+            wingsImage = "layeredSprites/wings/" + hero.heroClass.toString() + ".png";
         }
 
 		if (accessory  == null){
-			if (hero.belongings.armor != null && hero.belongings.armor.isHasHelmet()){
-				helmetImage = "layeredSprites/helmet/hero/" + hero.gender().toString() + "/";
-                helmetImage += armorDescriptor(hero.belongings.armor) + ".png";
+			if (hero.belongings.barding != null && hero.belongings.barding.isHasHelmet()){
+				helmetImage = "layeredSprites/helmet/" + hero.gender().toString() + "/";
+                helmetImage += bardingDescriptor(hero.belongings.barding) + ".png";
 			}
 		} else {
 			accessoryImage = accessory.getLayerFile();
 		}
 
 		layersDesc.put(LAYER_BODY, "layeredSprites/body/" + hero.heroClass.toString() + ".png");
-        layersDesc.put(LAYER_ARMOR, armorImage);
+        layersDesc.put(LAYER_BARDING, bardingImage);
 		layersDesc.put(LAYER_HEAD, "layeredSprites/head/" + hero.heroClass.toString() + ".png");
 		layersDesc.put(LAYER_HELMET, helmetImage);
         layersDesc.put(LAYER_WINGS, wingsImage);
@@ -128,20 +123,20 @@ public class HeroSpriteDef extends MobSpriteDef {
 		layersDesc.put(LAYER_ACCESSORY, accessoryImage);
 	}
 
-	public void createStatueSprite(Armor armor) {
+	public void createStatueSprite(Barding barding) {
         layersDesc.clear();
 
-        String armorImage = BLANK_IMAGE;
+        String bardingImage = BLANK_IMAGE;
         String helmetImage = BLANK_IMAGE;
-        if (armor != null) {
-            armorImage = "layeredSprites/armor/statue/" + armorDescriptor(armor) + ".png";
-            if (armor.isHasHelmet()) {
-                helmetImage = "layeredSprites/helmet/statue/" + armorDescriptor(armor) + ".png";
+        if (barding != null) {
+            bardingImage = "layeredSprites/barding/masculine/" + bardingDescriptor(barding) + ".png";
+            if (barding.isHasHelmet()) {
+                helmetImage = "layeredSprites/helmet/masculine/" + bardingDescriptor(barding) + ".png";
             }
         }
 
 		layersDesc.put(LAYER_BODY, "layeredSprites/body/(statue).png");
-        layersDesc.put(LAYER_ARMOR, armorImage);
+        layersDesc.put(LAYER_BARDING, bardingImage);
 		layersDesc.put(LAYER_HEAD, "layeredSprites/head/(statue).png");
 		layersDesc.put(LAYER_HELMET, helmetImage);
         layersDesc.put(LAYER_WINGS, BLANK_IMAGE);
@@ -172,8 +167,8 @@ public class HeroSpriteDef extends MobSpriteDef {
 		}
 	}
 
-	private String armorDescriptor(Armor armor) {
-		return armor.trueName();
+	private String bardingDescriptor(Barding barding) {
+		return barding.trueName();
 	}
 
 	@Override
@@ -244,7 +239,7 @@ public class HeroSpriteDef extends MobSpriteDef {
 
 
 		avatar.addLayer(getLayerTexture(LAYER_BODY));
-        avatar.addLayer(getLayerTexture(LAYER_ARMOR));
+        avatar.addLayer(getLayerTexture(LAYER_BARDING));
 		avatar.addLayer(getLayerTexture(LAYER_HEAD));
         avatar.addLayer(getLayerTexture(LAYER_HELMET));
         avatar.addLayer(getLayerTexture(LAYER_WINGS));

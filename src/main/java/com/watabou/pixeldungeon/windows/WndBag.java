@@ -33,7 +33,7 @@ import com.watabou.pixeldungeon.actors.hero.Belongings;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Gold;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.bags.Keyring;
 import com.watabou.pixeldungeon.items.bags.PotionBelt;
@@ -68,7 +68,7 @@ public class WndBag extends WndTabbed {
 		QUICKSLOT,
 		FOR_SALE,
 		WEAPON,
-		ARMOR,
+		BARDING,
 		WAND,
 		SEED,
 		INSCRIBABLE,
@@ -188,7 +188,7 @@ public class WndBag extends WndTabbed {
 		// Equipped items
 		Belongings stuff = Dungeon.hero.belongings;
 		placeItem( stuff.weapon != null ? stuff.weapon : new Placeholder( ItemSpriteSheet.WEAPON ) );
-		placeItem( stuff.armor != null ? stuff.armor : new Placeholder( ItemSpriteSheet.ARMOR ) );
+		placeItem( stuff.barding != null ? stuff.barding : new Placeholder( ItemSpriteSheet.BARDING) );
 		placeItem( stuff.mane != null ? stuff.mane : new Placeholder( ItemSpriteSheet.RING ) );
 		placeItem( stuff.tail != null ? stuff.tail : new Placeholder( ItemSpriteSheet.RING ) );
 		
@@ -386,12 +386,12 @@ public class WndBag extends WndTabbed {
 						mode == Mode.UNIDENTIFED && !item.isIdentified() ||
 						mode == Mode.QUICKSLOT && (item.defaultAction != null) ||
 						mode == Mode.WEAPON && (item instanceof MeleeWeapon || item instanceof Boomerang) ||
-						mode == Mode.ARMOR && (item instanceof Armor) ||
+						mode == Mode.BARDING && (item instanceof Barding) ||
 						mode == Mode.WAND && (item instanceof Wand) ||
 						mode == Mode.SEED && (item instanceof Seed) ||
-						mode == Mode.INSCRIBABLE && (item instanceof Armor || item instanceof BlankScroll) || 
+						mode == Mode.INSCRIBABLE && (item instanceof Barding || item instanceof BlankScroll) ||
 						mode == Mode.MOISTABLE && ( item instanceof Arrow || item instanceof Scroll || item instanceof RottenFood ) ||
-						mode == Mode.FUSEABLE && ((item instanceof Scroll || item instanceof MeleeWeapon || item instanceof Armor || item instanceof Bow || item instanceof Wand) && !(item instanceof IChaosItem)) ||
+						mode == Mode.FUSEABLE && ((item instanceof Scroll || item instanceof MeleeWeapon || item instanceof Barding || item instanceof Bow || item instanceof Wand) && !(item instanceof IChaosItem)) ||
 						mode == Mode.UPGRADABLE_WEAPON && ((item instanceof MeleeWeapon || item instanceof Boomerang ) && (item.isUpgradable())) ||
 						mode == Mode.ALL
 					);

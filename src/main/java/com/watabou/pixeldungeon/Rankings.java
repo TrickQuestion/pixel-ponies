@@ -60,7 +60,7 @@ public enum Rankings {
 		rec.info	    = resultDescription;
 		rec.win		    = winLevel  != gameOver.LOSE;
 		rec.heroClass	= Dungeon.hero.heroClass;
-		rec.armorTier	= Dungeon.hero.tier();
+		rec.bardingTier = Dungeon.hero.tier();
 		rec.score	    = score(winLevel != gameOver.LOSE);
 		rec.mod			= PixelPonies.activeMod();
 
@@ -182,7 +182,7 @@ public enum Rankings {
 		public boolean win;
 		
 		public HeroClass heroClass;
-		public int armorTier;
+		public int bardingTier;
 		
 		public int score;
 		
@@ -197,7 +197,7 @@ public enum Rankings {
 			score	= bundle.getInt     ( SCORE  );
 			
 			heroClass	= HeroClass.restoreFromBundle(bundle);
-			armorTier	= bundle.getInt( TIER );
+			bardingTier = bundle.getInt( TIER );
 			
 			gameFile	= bundle.getString( GAME );
 			mod			= bundle.optString(MOD, ModdingMode.REMIXED);
@@ -211,7 +211,7 @@ public enum Rankings {
 			bundle.put( SCORE, score );
 			
 			heroClass.storeInBundle( bundle );
-			bundle.put( TIER, armorTier );
+			bundle.put( TIER, bardingTier);
 			
 			bundle.put( GAME, gameFile );
 			bundle.put( MOD, mod );

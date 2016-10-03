@@ -44,7 +44,7 @@ public class ScrollOfRemoveCurse extends Scroll {
 		boolean procced = uncurse( getCurUser(), getCurUser().belongings.backpack.items.toArray(new Item[getCurUser().belongings.backpack.items.size()]));
 		procced = uncurse( getCurUser(), 
 			getCurUser().belongings.weapon, 
-			getCurUser().belongings.armor, 
+			getCurUser().belongings.barding,
 			getCurUser().belongings.mane,
 			getCurUser().belongings.tail ) || procced;
 		

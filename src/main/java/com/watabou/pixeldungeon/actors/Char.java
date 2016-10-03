@@ -286,9 +286,9 @@ public abstract class Char extends Actor {
 
 	public int defenseProc(Char enemy, int damage) {
 
-		Earthroot.Armor armor = buff(Earthroot.Armor.class);
-		if (armor != null) {
-			damage = armor.absorb(damage);
+		Earthroot.Barding barding = buff(Earthroot.Barding.class);
+		if (barding != null) {
+			damage = barding.absorb(damage);
 		}
 
 		return damage;

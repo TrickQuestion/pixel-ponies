@@ -11,12 +11,12 @@
     <string name="Ankh_Name">Ankh</string>
     <string name="Ankh_Info">This ancient symbol of immortality grants an ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
 
-    <!-- STRINGS OF ArmorKit CLASS -->
-    <string name="ArmorKit_Name">Crystalling kit</string>
-    <string name="ArmorKit_ACAplly">APPLY</string>
-    <string name="ArmorKit_Info">Using this kit of small tools and materials, a pony can transform any barding into an \"epic barding\". It will keep the properties of the original barding, but will also provide its wearer with a special ability depending on their class. No skills in tailoring or blacksmithing are required.</string>
-    <string name="ArmorKit_SelectArmor">Select an barding to upgrade</string>
-    <string name="ArmorKit_Upgraded">You applied the Crystalling kit to upgrade your %s</string>
+    <!-- STRINGS OF CrystallingKit CLASS -->
+    <string name="CrystallingKit_Name">Crystalling kit</string>
+    <string name="CrystallingKit_ACAplly">APPLY</string>
+    <string name="CrystallingKit_Info">Using this kit of small tools and materials, a pony can transform any barding into an \"epic barding\". It will keep the properties of the original barding, but will also provide its wearer with a special ability depending on their class. No skills in tailoring or blacksmithing are required.</string>
+    <string name="CrystallingKit_SelectBarding">Select an barding to upgrade</string>
+    <string name="CrystallingKit_Upgraded">You applied the Crystalling kit to upgrade your %s</string>
 
     <!-- STRINGS OF Dewdrop CLASS -->
     <string name="Dewdrop_Name">dewdrop</string>
@@ -51,7 +51,7 @@
     <string name="Stylus_Name">arcane stylus</string>
     <string name="Stylus_ACInscribe">INSCRIBE</string>
     <string name="Stylus_Info">This arcane stylus is made of some dark, very hard stone. Using it you can inscribe a glyph or a rune, but you have no power over choosing what it will be, the stylus will decide it for you.</string>
-    <string name="Stylus_SelectArmor">Select an item to inscribe on</string>
+    <string name="Stylus_SelectBarding">Select an item to inscribe on</string>
     <string name="Stylus_Inscribed">you inscribed the %1$s on your %2$s</string>
 
     <!-- STRINGS OF TomeOfMastery CLASS -->

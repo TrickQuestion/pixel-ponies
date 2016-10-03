@@ -40,7 +40,7 @@ public class BlacksmithPainter extends Painter {
 			} while (level.map[pos] != Terrain.EMPTY_SP);
 			level.drop( 
 				Generator.random( Random.oneOf( 
-					Generator.Category.ARMOR, 
+					Generator.Category.BARDING,
 					Generator.Category.WEAPON
 				) ), pos );
 		}

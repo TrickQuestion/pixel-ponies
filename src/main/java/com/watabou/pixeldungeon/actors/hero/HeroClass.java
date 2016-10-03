@@ -26,8 +26,8 @@ import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.items.TomeOfMastery;
-import com.watabou.pixeldungeon.items.armor.ClassArmor;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
+import com.watabou.pixeldungeon.items.barding.ClassBarding;
+import com.watabou.pixeldungeon.items.barding.ClothBarding;
 import com.watabou.pixeldungeon.items.food.Ration;
 import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.rings.RingOfHaste;
@@ -173,7 +173,7 @@ public enum HeroClass {
 	}
 
 	private static void initCommon(Hero hero) {
-		(hero.belongings.armor = new ClothArmor()).identify();
+		(hero.belongings.barding = new ClothBarding()).identify();
 		hero.collect(new Ration());
 		if(BuildConfig.DEBUG) initDebug(hero);
 		QuickSlot.cleanStorage();
@@ -265,7 +265,7 @@ public enum HeroClass {
 		hero.ht(hero.ht() - 5);
 		hero.hp(hero.ht());
 
-		(hero.belongings.armor = new ClothArmor()).upgrade().identify();
+		(hero.belongings.barding = new ClothBarding()).upgrade().identify();
 		(hero.belongings.weapon = new WoodenBow()).upgrade().identify();
 
 		hero.collect(new Dagger().upgrade().identify());
@@ -314,7 +314,7 @@ public enum HeroClass {
 		return null;
 	}
 
-	public ClassArmor classArmor() {
+	public ClassBarding classBarding() {
 		return null;
 	}
 

@@ -24,7 +24,7 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.Amulet;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.KindOfWeapon;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.keys.IronKey;
 import com.watabou.pixeldungeon.items.keys.Key;
@@ -45,7 +45,7 @@ public class Belongings implements Iterable<Item> {
 	public Bag backpack;	
 
 	public KindOfWeapon weapon = null;
-	public Armor armor = null;
+	public Barding barding = null;
 	public Artifact mane = null;
 	public Artifact tail = null;
 
@@ -60,7 +60,7 @@ public class Belongings implements Iterable<Item> {
 	}
 	
 	private static final String WEAPON		= "weapon";
-	private static final String ARMOR		= "armor";
+	private static final String BARDING = "barding";
 	private static final String MANE		= "mane";
 	private static final String TAIL		= "tail";
 	
@@ -69,7 +69,7 @@ public class Belongings implements Iterable<Item> {
 		backpack.storeInBundle(bundle);
 		
 		bundle.put( WEAPON, weapon );
-		bundle.put( ARMOR, armor );
+		bundle.put(BARDING, barding);
 		bundle.put( MANE, mane );
 		bundle.put( TAIL, tail );
 	}
@@ -84,7 +84,7 @@ public class Belongings implements Iterable<Item> {
 			weapon.activate( owner );
 		}
 		
-		armor = (Armor)bundle.get( ARMOR );
+		barding = (Barding)bundle.get( BARDING );
 		
 		mane = (Artifact)bundle.get( MANE );
 		if (mane != null) {
@@ -143,9 +143,9 @@ public class Belongings implements Iterable<Item> {
 			weapon.identify();
 			Badges.validateItemLevelAquired( weapon );
 		}
-		if (armor != null) {
-			armor.identify();
-			Badges.validateItemLevelAquired( armor );
+		if (barding != null) {
+			barding.identify();
+			Badges.validateItemLevelAquired(barding);
 		}
 		if (mane != null) {
 			mane.identify();
@@ -161,7 +161,7 @@ public class Belongings implements Iterable<Item> {
 	}
 	
 	public void uncurseEquipped() {
-		ScrollOfRemoveCurse.uncurse( owner, armor, weapon, mane, tail );
+		ScrollOfRemoveCurse.uncurse( owner, barding, weapon, mane, tail );
 	}
 	
 	public Item randomUnequipped() {
@@ -200,8 +200,8 @@ public class Belongings implements Iterable<Item> {
 			weapon.activate( owner );
 		}
 		
-		if (armor != null) {
-			armor.cursed = false;
+		if (barding != null) {
+			barding.cursed = false;
 		}
 		
 		if (mane != null) {
@@ -263,7 +263,7 @@ public class Belongings implements Iterable<Item> {
 		
 		private Iterator<Item> backpackIterator = backpack.iterator();
 		
-		private Item[] equipped = {weapon, armor, mane, tail};
+		private Item[] equipped = {weapon, barding, mane, tail};
 		private int backpackIndex = equipped.length;
 		
 		@Override
@@ -300,7 +300,7 @@ public class Belongings implements Iterable<Item> {
 				equipped[0] = weapon = null;
 				break;
 			case 1:
-				equipped[1] = armor = null;
+				equipped[1] = barding = null;
 				break;
 			case 2:
 				equipped[2] = mane = null;

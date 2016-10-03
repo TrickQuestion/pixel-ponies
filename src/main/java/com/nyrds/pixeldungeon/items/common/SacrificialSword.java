@@ -3,7 +3,6 @@ package com.nyrds.pixeldungeon.items.common;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.actors.mobs.Boss;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
@@ -34,8 +33,8 @@ public class SacrificialSword extends SpecialWeapon {
 	private double baseChance(Hero hero) {
 		double armorPenalty = 1;
 		
-		if(hero.belongings.armor != null) {
-			armorPenalty += hero.belongings.armor.tier;
+		if(hero.belongings.barding != null) {
+			armorPenalty += hero.belongings.barding.tier;
 		}
 		
 		double classBonus = 1;

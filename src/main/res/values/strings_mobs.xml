@@ -127,7 +127,7 @@
     <string name="Monk_Name">dwarf monk</string>
     <string name="Monk_Gender">masculine</string>
     <string name="Monk_Name_Objective">dwarf monk</string>
-    <string name="Monk_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hoof-to-hoof combat.</string>
+    <string name="Monk_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any barding or weapons, relying solely on the art of hoof-to-hoof combat.</string>
     <string name="Monk_Defense">parried</string>
     <string name="Monk_Disarm">%1$s has knocked the %2$s from your hooves!</string>
 
@@ -153,7 +153,7 @@
     <string name="Senior_Name">senior monk</string>
     <string name="Senior_Gender">masculine</string>
     <string name="Senior_Name_Objective">senior monk</string>
-    <string name="Senior_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any armor or weapons, relying solely on the art of hoof-to-hoof combat. This particular monk has mastered the art of disabling hiss opponents.</string>
+    <string name="Senior_Desc">These monks are fanatics, who devoted themselves to protecting their city\'s secrets from all aliens. They don\'t use any barding or weapons, relying solely on the art of hoof-to-hoof combat. This particular monk has mastered the art of disabling hiss opponents.</string>
 
     <!-- STRINGS OF Shadow CLASS -->
     <string name="Shadow_Name">shadow</string>
@@ -197,11 +197,11 @@
     <string name="Spinner_Name_Objective">cave spinner</string>
     <string name="Spinner_Desc">These greenish furry cave spiders try to avoid direct combat, preferring to wait in the distance while their victim, entangled in the spinner\'s excreted cobweb, slowly dies from their poisonous bite.</string>
 
-    <!-- STRINGS OF Statue CLASS -->
-    <string name="Statue_Name">animated statue</string>
-    <string name="Statue_Gender">feminine</string>
-    <string name="Statue_Name_Objective">animated statue</string>
-    <string name="Statue_Desc">You would think that it\'s just another ugly statue of this dungeon, but its red glowing eyes give itself away. While the statue itself is made of stone, the _%s_, it\'s wielding, looks real.</string>
+    <!-- STRINGS OF WeaponStatue CLASS -->
+    <string name="WeaponStatue_Name">animated statue</string>
+    <string name="WeaponStatue_Gender">feminine</string>
+    <string name="WeaponStatue_Name_Objective">animated statue</string>
+    <string name="WeaponStatue_Desc">You would think that it\'s just another ugly statue of this dungeon, but its red glowing eyes give itself away. While the statue itself is made of stone, the _%s_, it\'s wielding, looks real.</string>
 
     <!-- STRINGS OF Succubus CLASS -->
     <string name="Succubus_Name">succubus</string>
@@ -433,7 +433,7 @@
     <string name="DeathKnight_Name">death knight</string>
     <string name="DeathKnight_Gender">masculine</string>
     <string name="DeathKnight_Name_Objective">death knight</string>
-    <string name="DeathKnight_Desc">At first glance a mighty warrior in massive armor, but skeletal grin gives him away, a Death Knight is a manifestation of a spirit of a knight that failed to pursue his vows. And in his curse he will forever wonder the land, seeking to cleanse his name in battle, killing the innocent, unable to remember what he swore to protect.</string>
+    <string name="DeathKnight_Desc">At first glance a mighty warrior in massive barding, but skeletal grin gives him away, a Death Knight is a manifestation of a spirit of a knight that failed to pursue his vows. And in his curse he will forever wonder the land, seeking to cleanse his name in battle, killing the innocent, unable to remember what he swore to protect.</string>
 
     <!-- STRINGS OF DreadKnight CLASS -->
     <string name="DreadKnight_Name">dread knight</string>

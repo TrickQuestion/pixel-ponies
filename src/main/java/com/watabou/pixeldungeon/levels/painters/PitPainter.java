@@ -62,7 +62,7 @@ public class PitPainter extends Painter {
 		} else {
 			level.drop( Generator.random( Random.oneOf( 
 				Generator.Category.WEAPON, 
-				Generator.Category.ARMOR
+				Generator.Category.BARDING
 			) ), remains );
 		}
 		

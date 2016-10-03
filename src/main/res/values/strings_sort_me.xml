@@ -200,7 +200,7 @@
     <string name="WndSadGhost_Rose">Yes! Yes!!! This is it! Please give it to me! And you can take one of these items, maybe they will be useful to you in your journey...</string>
     <string name="WndSadGhost_Rat">Yes! The ugly creature is slain and I can finally rest... Please take one of these items, maybe they will be useful to you in your journey...</string>
     <string name="WndSadGhost_Wepon">Ghost\'s weapon</string>
-    <string name="WndSadGhost_Armor">Ghost\'s barding</string>
+    <string name="WndSadGhost_Barding">Ghost\'s barding</string>
     <string name="WndSadGhost_Farewell">Farewell, adventurer!</string>
 
     <!-- STRINGS OF WndStory CLASS -->

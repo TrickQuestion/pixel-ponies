@@ -38,7 +38,7 @@ public class WndSadGhost extends Window {
 	private static final String TXT_ROSE     = Game.getVar(R.string.WndSadGhost_Rose);
 	private static final String TXT_RAT      = Game.getVar(R.string.WndSadGhost_Rat);
 	private static final String TXT_WEAPON   = Game.getVar(R.string.WndSadGhost_Wepon);
-	private static final String TXT_ARMOR    = Game.getVar(R.string.WndSadGhost_Armor);
+	private static final String TXT_BARDING = Game.getVar(R.string.WndSadGhost_Barding);
 	private static final String TXT_FAREWELL = Game.getVar(R.string.WndSadGhost_Farewell);
 	
 	private static final int WIDTH		= 120;
@@ -70,16 +70,16 @@ public class WndSadGhost extends Window {
 		btnWeapon.setRect( 0, message.y + message.height() + GAP, WIDTH, BTN_HEIGHT );
 		add( btnWeapon );
 		
-		RedButton btnArmor = new RedButton( TXT_ARMOR ) {
+		RedButton btnBarding = new RedButton( TXT_BARDING ) {
 			@Override
 			protected void onClick() {
-				selectReward( ghost, item, Ghost.Quest.armor );
+				selectReward( ghost, item, Ghost.Quest.barding);
 			}
 		};
-		btnArmor.setRect( 0, btnWeapon.bottom() + GAP, WIDTH, BTN_HEIGHT );
-		add( btnArmor );
+		btnBarding.setRect( 0, btnWeapon.bottom() + GAP, WIDTH, BTN_HEIGHT );
+		add( btnBarding );
 		
-		resize( WIDTH, (int)btnArmor.bottom() );
+		resize( WIDTH, (int)btnBarding.bottom() );
 	}
 	
 	private void selectReward( Ghost ghost, Item item, Item reward ) {

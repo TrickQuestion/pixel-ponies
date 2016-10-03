@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.actors.blobs;
 
-import com.nyrds.pixeldungeon.items.common.armor.SpiderArmor;
+import com.nyrds.pixeldungeon.items.common.barding.SpiderBarding;
 import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.Actor;
@@ -48,7 +48,7 @@ public class Web extends Blob {
 					rootable = true;
 					if(ch instanceof Hero)
 					{
-						if (((Hero) ch).belongings.armor instanceof SpiderArmor){
+						if (((Hero) ch).belongings.barding instanceof SpiderBarding){
 							rootable = false;
 						}
 					}

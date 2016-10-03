@@ -12,8 +12,8 @@
 
     <!-- STRINGS OF Earthroot CLASS -->
     <string name="Earthroot_Name">Earthroot</string>
-    <string name="Earthroot_Desc">When a creature touches an Earthroot, its roots create a kind of natural armor around it.</string>
-    <string name="Earthroot_Buff">Herbal Armor</string>
+    <string name="Earthroot_Desc">When a creature touches an Earthroot, its roots create a kind of natural barding around it.</string>
+    <string name="Earthroot_Buff">Herbal Barding</string>
 
     <!-- STRINGS OF Fadeleaf CLASS -->
     <string name="Fadeleaf_Name">Fadeleaf</string>

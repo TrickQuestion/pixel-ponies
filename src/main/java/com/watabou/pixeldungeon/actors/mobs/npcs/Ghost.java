@@ -37,8 +37,8 @@ import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.Generator;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
+import com.watabou.pixeldungeon.items.barding.Barding;
+import com.watabou.pixeldungeon.items.barding.ClothBarding;
 import com.watabou.pixeldungeon.items.quest.DriedRose;
 import com.watabou.pixeldungeon.items.quest.RatSkull;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
@@ -172,13 +172,13 @@ public class Ghost extends NPC {
 		private static int left2kill;
 		
 		public static Weapon weapon;
-		public static Armor armor;
+		public static Barding barding;
 		
 		public static void reset() {
 			spawned = false; 
 			
 			weapon = null;
-			armor = null;
+			barding = null;
 		}
 		
 		private static final String NODE		= "sadGhost";
@@ -190,7 +190,7 @@ public class Ghost extends NPC {
 		private static final String PROCESSED	= "processed";
 		private static final String DEPTH		= "depth";
 		private static final String WEAPON		= "weapon";
-		private static final String ARMOR		= "armor";
+		private static final String BARDING = "barding";
 		
 		public static void storeInBundle( Bundle bundle ) {
 			
@@ -210,7 +210,7 @@ public class Ghost extends NPC {
 				node.put( PROCESSED, processed );
 				
 				node.put( WEAPON, weapon );
-				node.put( ARMOR, armor );
+				node.put(BARDING, barding);
 			}
 			
 			bundle.put( NODE, node );
@@ -232,7 +232,7 @@ public class Ghost extends NPC {
 				processed	= node.getBoolean( PROCESSED );
 				
 				weapon	= (Weapon)node.get( WEAPON );
-				armor	= (Armor)node.get( ARMOR );
+				barding = (Barding)node.get( BARDING );
 			} else {
 				reset();
 			}
@@ -262,10 +262,10 @@ public class Ghost extends NPC {
 					weapon = (Weapon)Generator.random( Generator.Category.WEAPON );
 				} while (weapon instanceof MissileWeapon);
 				
-				if (Dungeon.isChallenged( Challenges.NO_ARMOR )) {
-					armor = (Armor)new ClothArmor().degrade();
+				if (Dungeon.isChallenged( Challenges.NO_BARDING)) {
+					barding = (Barding)new ClothBarding().degrade();
 				} else {
-					armor = (Armor)Generator.random( Generator.Category.ARMOR );
+					barding = (Barding)Generator.random( Generator.Category.BARDING);
 				}
 					
 				for (int i=0; i < 3; i++) {
@@ -276,13 +276,13 @@ public class Ghost extends NPC {
 					if (another.level() > weapon.level()) {
 						weapon = (Weapon)another;
 					}
-					another = Generator.random( Generator.Category.ARMOR );
-					if (another.level() > armor.level()) {
-						armor = (Armor)another;
+					another = Generator.random( Generator.Category.BARDING);
+					if (another.level() > barding.level()) {
+						barding = (Barding)another;
 					}
 				}
 				weapon.identify();
-				armor.identify();
+				barding.identify();
 			}
 		}
 
@@ -312,7 +312,7 @@ public class Ghost extends NPC {
 		
 		public static void complete() {
 			weapon = null;
-			armor = null;
+			barding = null;
 			
 			Journal.remove( Journal.Feature.GHOST );
 		}

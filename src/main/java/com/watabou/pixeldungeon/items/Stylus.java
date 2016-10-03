@@ -23,7 +23,7 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.effects.particles.PurpleParticle;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.scrolls.BlankScroll;
 import com.watabou.pixeldungeon.items.scrolls.Scroll;
 import com.watabou.pixeldungeon.scenes.GameScene;
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 public class Stylus extends Item {
 	
-	private static final String TXT_SELECT_ARMOR	= Game.getVar(R.string.Stylus_SelectArmor);
+	private static final String TXT_SELECT_BARDING  = Game.getVar(R.string.Stylus_SelectBarding);
 	private static final String TXT_INSCRIBED		= Game.getVar(R.string.Stylus_Inscribed);
 	
 	private static final float TIME_TO_INSCRIBE = 2;
@@ -60,7 +60,7 @@ public class Stylus extends Item {
 		if (action == AC_INSCRIBE) {
 
 			setCurUser(hero);
-			GameScene.selectItem( itemSelector, WndBag.Mode.INSCRIBABLE, TXT_SELECT_ARMOR );
+			GameScene.selectItem( itemSelector, WndBag.Mode.INSCRIBABLE, TXT_SELECT_BARDING);
 			
 		} else {
 			
@@ -88,19 +88,19 @@ public class Stylus extends Item {
 		getCurUser().busy();
 	}
 	
-	private void inscribeArmor ( Armor armor ) {
+	private void inscribeBarding(Barding barding) {
 		
 		detach( getCurUser().belongings.backpack );
 		
-		Class<? extends Armor.Glyph> oldGlyphClass = armor.glyph != null ? armor.glyph.getClass() : null;
-		Armor.Glyph glyph = Armor.Glyph.random();
+		Class<? extends Barding.Glyph> oldGlyphClass = barding.glyph != null ? barding.glyph.getClass() : null;
+		Barding.Glyph glyph = Barding.Glyph.random();
 		while (glyph.getClass() == oldGlyphClass) {
-			glyph = Armor.Glyph.random();
+			glyph = Barding.Glyph.random();
 		}
 		
-		GLog.w( TXT_INSCRIBED, glyph.name(), armor.name() );
+		GLog.w( TXT_INSCRIBED, glyph.name(), barding.name() );
 		
-		armor.inscribe( glyph );
+		barding.inscribe( glyph );
 		
 		inscribeEffect();
 	}
@@ -124,8 +124,8 @@ public class Stylus extends Item {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {
-				if(item instanceof Armor){
-					inscribeArmor ( (Armor)item );
+				if(item instanceof Barding){
+					inscribeBarding( (Barding)item );
 				}
 				if(item instanceof BlankScroll){
 					inscribeScroll( (BlankScroll)item );

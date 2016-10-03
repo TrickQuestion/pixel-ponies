@@ -49,7 +49,7 @@ import com.watabou.pixeldungeon.actors.mobs.Shadow;
 import com.watabou.pixeldungeon.actors.mobs.Shaman;
 import com.watabou.pixeldungeon.actors.mobs.Skeleton;
 import com.watabou.pixeldungeon.actors.mobs.Spinner;
-import com.watabou.pixeldungeon.actors.mobs.Statue;
+import com.watabou.pixeldungeon.actors.mobs.WeaponStatue;
 import com.watabou.pixeldungeon.actors.mobs.Succubus;
 import com.watabou.pixeldungeon.actors.mobs.Swarm;
 import com.watabou.pixeldungeon.actors.mobs.Tengu;
@@ -125,7 +125,7 @@ public class MobFactory {
 		registerMobClass(Wraith.class);
 		registerMobClass(Mimic.class);
 		registerMobClass(MimicPie.class);
-		registerMobClass(Statue.class);
+		registerMobClass(WeaponStatue.class);
 		registerMobClass(Piranha.class);
 
 		registerMobClass(MimicAmulet.class);

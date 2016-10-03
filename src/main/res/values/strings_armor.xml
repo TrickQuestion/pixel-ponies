@@ -1,101 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- PACKAGE items/armor -->
-    <!-- STRINGS OF Armor CLASS -->
-    <string name="Armor_EquipCursed">your %s constricts around you painfully</string>
-    <string name="Armor_Identify">you are now familiar enough with your %1$s to identify it. It is %2$s.</string>
-    <string name="Armor_ToString">%1$s H:%2$d</string>
-    <string name="Armor_Incompatible">Interaction of different types of magic has erased the glyph on this barding!</string>
-    <string name="Armor_Info1">This %1$s provides damage absorption up to \"%2$d\"  points per attack.</string>
-    <string name="Armor_Info2">\n\nBecause of your inadequate Honesty, your movement speed and defense skill are decreased.</string>
-    <string name="Armor_Info3">\n\nBecause of your inadequate Honesty, wearing this barding will decrease your movement speed and defense skill.</string>
-    <string name="Armor_Info4">\n\nTypical %1$s provides damage absorption up to %2$d points per attack and requires %3$d points of Honesty.</string>
-    <string name="Armor_Info5">This barding probably requires more Honesty than you have.</string>
-    <string name="Armor_Info6">It is inscribed.</string>
-    <string name="Armor_Info7a">\n\nYou are wearing the %1$s%2$s</string>
-    <string name="Armor_Info7b">, and because it is cursed, you are powerless to remove it.</string>
-    <string name="Armor_Info8">\n\nYou can feel a malevolent magic lurking within the %s.</string>
-    <string name="Armor_Glyph">glyph</string>
+    <!-- PACKAGE items/barding -->
+    <!-- STRINGS OF Barding CLASS -->
+    <string name="Barding_EquipCursed">your %s constricts around you painfully</string>
+    <string name="Barding_Identify">you are now familiar enough with your %1$s to identify it. It is %2$s.</string>
+    <string name="Barding_ToString">%1$s H:%2$d</string>
+    <string name="Barding_Incompatible">Interaction of different types of magic has erased the glyph on this barding!</string>
+    <string name="Barding_MaxSoak">This %1$s provides damage absorption up to \"%2$d\"  points per attack.</string>
+    <string name="Barding_InadequateHonestyWearing">\n\nBecause of your inadequate Honesty, your movement speed and defense skill are decreased.</string>
+    <string name="Barding_InadequateHonestyNotWearing">\n\nBecause of your inadequate Honesty, wearing this barding will decrease your movement speed and defense skill.</string>
+    <string name="Barding_TypicalSoakAndHonesty">\n\nTypical %1$s provides damage absorption up to %2$d points per attack and requires %3$d points of Honesty.</string>
+    <string name="Barding_ProbablyInadequateHonesty">This barding probably requires more Honesty than you have.</string>
+    <string name="Barding_IsInscribed">It is inscribed.</string>
+    <string name="Barding_Wearing">\n\nYou are wearing the %1$s%2$s</string>
+    <string name="Barding_CursedGrip">, and because it is cursed, you are powerless to remove it.</string>
+    <string name="Barding_SenseCurse">\n\nYou can feel a malevolent magic lurking within the %s.</string>
+    <string name="Barding_GlyphWord">glyph</string>
 
-    <!-- STRINGS OF AncientArmor CLASS -->
-    <string name="AncientArmor_Name">ancient barding</string>
-    <string name="AncientArmor_Desc">This ancient orichalcum suit of barding provides unmatched protection for those rare ponies honest enough to shoulder its massive burden. There\'s no saddle, but it has a linked helm that prevents ponies with horns from wearing it.</string>
-    <string name="AncientArmor_NotHorn">Ponies with horns can\'t wear this barding! The helmet is permanently fixed to the neck plate, and there is no room for a horn.</string>
+    <!-- STRINGS OF AncientBarding CLASS -->
+    <string name="AncientBarding_Name">ancient barding</string>
+    <string name="AncientBarding_Desc">This ancient orichalcum suit of barding provides unmatched protection for those rare ponies honest enough to shoulder its massive burden. There\'s no saddle, but it has a linked helm that prevents ponies with horns from wearing it.</string>
+    <string name="AncientBarding_NotHorn">Ponies with horns can\'t wear this barding! The helmet is permanently fixed to the neck plate, and there is no room for a horn.</string>
 
-    <!-- STRINGS OF BardArmor CLASS -->
-    <string name="BardArmor_Name">harlequin costume</string>
-    <string name="BardArmor_Desc">The Bard wearing this harlequin costume can enter a frenzied _Sugar Rush_, producing a temporary boost to Laughter.</string>
-    <string name="BardArmor_ACSpecial">SUGAR RUSH</string>
-    <string name="BardArmor_NotBard">Only Bards can use this barding!</string>
+    <!-- STRINGS OF HarlequinCostume CLASS -->
+    <string name="HarlequinCostume_Name">harlequin costume</string>
+    <string name="HarlequinCostume_Desc">This is the most gaudy, ridiculous, outrageous outfit you\'ve ever seen in your life. It\'s perfect! The bard wearing this harlequin costume can enter a frenzied _Sugar Rush_, producing a temporary boost to laughter.</string>
+    <string name="HarlequinCostume_ACSpecial">SUGAR RUSH</string>
+    <string name="HarlequinCostume_NotBard">Only bards can wear this costume!</string>
 
-    <!-- STRINGS OF ClassArmor CLASS -->
-    <string name="ClassArmor_Desc">The thing looks awesome!</string>
-    <string name="ClassArmor_LowHealt">Your health is too low!</string>
-    <string name="ClassArmor_NotEquipped">You need to be wearing this barding to use its special power!</string>
+    <!-- STRINGS OF ClassBarding CLASS -->
+    <string name="ClassBarding_Desc">The thing looks awesome!</string>
+    <string name="ClassBarding_LowHealth">Your health is too low!</string>
+    <string name="ClassBarding_NotEquipped">You need to be wearing this barding to use its special power!</string>
 
-    <!-- STRINGS OF ClothArmor CLASS -->
-    <string name="ClothArmor_Name">cloth barding</string>
-    <string name="ClothArmor_Desc">This lightweight barding offers basic protection. It\'s so light, even dishonest ne\'er-do-well\'s can use it with little difficulty.</string>
+    <!-- STRINGS OF ClothBarding CLASS -->
+    <string name="ClothBarding_Name">cloth barding</string>
+    <string name="ClothBarding_Desc">This lightweight barding offers basic protection. It\'s so light, even dishonest ne\'er-do-well\'s can use it with little difficulty.</string>
 
-    <!-- STRINGS OF ElfArmor CLASS -->
-    <string name="ElfArmor_Name">Elven mantle</string>
-    <string name="ElfArmor_Desc">With the help of this mantle, the Elf can summon the forces of nature itself. High grass will grow in the blink of an eye even through solid stone, immobilizing all enemies in sight.</string>
-    <string name="ElfArmor_ACSpecial">NATURE CALL</string>
-    <string name="ElfArmor_NotElf">Only Elves can use this barding!</string>
+    <!-- STRINGS OF ElfBarding CLASS -->
+    <string name="ElfBarding_Name">Elven mantle</string>
+    <string name="ElfBarding_Desc">With the help of this mantle, the Elf can summon the forces of nature itself. High grass will grow in the blink of an eye even through solid stone, immobilizing all enemies in sight.</string>
+    <string name="ElfBarding_ACSpecial">NATURE CALL</string>
+    <string name="ElfBarding_NotElf">Only Elves can use this barding!</string>
 
-    <!-- STRINGS OF FarmerArmor CLASS -->
-    <string name="FarmerArmor_Name">yoke and plant team vest</string>
-    <string name="FarmerArmor_Desc">A yoked Farmer can _Harvest_ grass. After activating the ability, stepping on tall grass will satisfy hunger. (Don\'t tell anypony about the Secret of Grass, or you\'ll ruin the food market.) Eating grass doesn\'t count as eating a piece of food, so it won\'t restore any health.</string>
-    <string name="FarmerArmor_ACSpecial">HARVEST</string>
-    <string name="FarmerArmor_NotFarmer">Only Farmers can use this barding!</string>
+    <!-- STRINGS OF YokeAndPlantTeamVest CLASS -->
+    <string name="YokeAndPlantTeamVest_Name">yoke and plant team vest</string>
+    <string name="YokeAndPlantTeamVest_Desc">It\'s a yoke, vest, and legband, which mark you as a member of the Plant Team charged with wrapping-up Winter. A yoked farmer can _Harvest_ grass. After activating the ability, stepping on tall grass will satisfy hunger. Just don\'t tell anypony about the Secret of Grass, or you\'ll ruin the food market. Eating grass doesn\'t count as eating a piece of food, so it won\'t restore any health.</string>
+    <string name="YokeAndPlantTeamVest_ACSpecial">HARVEST</string>
+    <string name="YokeAndPlantTeamVest_NotFarmer">Only farmers can wear this outfit!</string>
 
-    <!-- STRINGS OF HuntressArmor CLASS -->
-    <string name="HuntressArmor_Name">huntress cloak</string>
-    <string name="HuntressArmor_Desc">A Huntress in such cloak can create a fan of _Spectral Blades_. Each of these blades will target a single enemy in the Huntress\'s field of view, inflicting damage depending on her currently equipped melee weapon.</string>
-    <string name="HuntressArmor_ACSpecial">SPECTRAL BLADES</string>
-    <string name="HuntressArmor_NoEnemies">No enemies in sight</string>
-    <string name="HuntressArmor_NotHuntress">Only Huntresses can use this barding!</string>
+    <!-- STRINGS OF HuntressBarding CLASS -->
+    <string name="HuntressBarding_Name">huntress cloak</string>
+    <string name="HuntressBarding_Desc">A Huntress in such cloak can create a fan of _Spectral Blades_. Each of these blades will target a single enemy in the Huntress\'s field of view, inflicting damage depending on her currently equipped melee weapon.</string>
+    <string name="HuntressBarding_ACSpecial">SPECTRAL BLADES</string>
+    <string name="HuntressBarding_NoEnemies">No enemies in sight</string>
+    <string name="HuntressBarding_NotHuntress">Only Huntresses can use this barding!</string>
 
-    <!-- STRINGS OF PleatherArmor CLASS -->
-    <string name="PleatherArmor_Name">pleather barding</string>
-    <string name="PleatherArmor_Desc">This barding is made from tightly-woven and chemically treated cloth. It features a gaudy-looking brass saddle. The purpose of saddles is a complete mystery to you.</string>
+    <!-- STRINGS OF PleatherBarding CLASS -->
+    <string name="PleatherBarding_Name">pleather barding</string>
+    <string name="PleatherBarding_Desc">This barding is made from tightly-woven and chemically treated cloth. It features a gaudy-looking brass saddle. The purpose of saddles is a complete mystery to you.</string>
 
-    <!-- STRINGS OF MageArmor CLASS -->
-    <string name="MageArmor_Name">mage robe</string>
-    <string name="MageArmor_Desc">Wearing this gorgeous robe, a Mage can cast a spell of molten earth: all the enemies in his field of view will be set on fire and will be unable to move at the same time.</string>
-    <string name="MageArmor_ACSpecial">MOLTEN EARTH</string>
-    <string name="MageArmor_NotMage">Only Mages can use this barding!</string>
+    <!-- STRINGS OF MageBarding CLASS -->
+    <string name="MageBarding_Name">mage robe</string>
+    <string name="MageBarding_Desc">Wearing this gorgeous robe, a Mage can cast a spell of molten earth: all the enemies in his field of view will be set on fire and will be unable to move at the same time.</string>
+    <string name="MageBarding_ACSpecial">MOLTEN EARTH</string>
+    <string name="MageBarding_NotMage">Only Mages can use this barding!</string>
 
-    <!-- STRINGS OF ChainmailArmor CLASS -->
-    <string name="MailArmor_Name">chainmail barding</string>
-    <string name="MailArmor_Desc">Interlocking metal links make for a tough but flexible suit of barding.</string>
+    <!-- STRINGS OF ChainmailBarding CLASS -->
+    <string name="ChainmailBarding_Name">chainmail barding</string>
+    <string name="ChainmailBarding_Desc">Interlocking metal links make for a tough but flexible suit of barding.</string>
 
-    <!-- STRINGS OF PlateArmor CLASS -->
-    <string name="PlateArmor_Name">plate barding</string>
-    <string name="PlateArmor_Desc">Enormous plates of metal are joined together to form this heavy barding designed only for the honest and true. It features a steel saddle.</string>
+    <!-- STRINGS OF PlateBarding CLASS -->
+    <string name="PlateBarding_Name">plate barding</string>
+    <string name="PlateBarding_Desc">Enormous plates of metal are joined together to form this heavy barding designed only for the honest and true. It features a steel saddle.</string>
 
-    <!-- STRINGS OF RogueArmor CLASS -->
-    <string name="RogueArmor_Name">rogue garb</string>
-    <string name="RogueArmor_Desc">Wearing this dark garb, a Rogue can perform a trick called _Smoke Bomb_ (though no real explosives are used): he blinds enemies who can see him and jumps aside.</string>
-    <string name="RogueArmor_ACSpecial">SMOKE BOMB</string>
-    <string name="RogueArmor_NotRogue">Only Rogues can use this barding!</string>
-    <string name="RogueArmor_Fov">You can only jump to an empty location in your field of view</string>
-    <string name="RogueArmor_Prompt">Choose a location to jump to</string>
+    <!-- STRINGS OF RogueBarding CLASS -->
+    <string name="RogueBarding_Name">rogue garb</string>
+    <string name="RogueBarding_Desc">Wearing this dark garb, a Rogue can perform a trick called _Smoke Bomb_ (though no real explosives are used): he blinds enemies who can see him and jumps aside.</string>
+    <string name="RogueBarding_ACSpecial">SMOKE BOMB</string>
+    <string name="RogueBarding_NotRogue">Only Rogues can use this barding!</string>
+    <string name="RogueBarding_Fov">You can only jump to an empty location in your field of view</string>
+    <string name="RogueBarding_Prompt">Choose a location to jump to</string>
 
-    <!-- STRINGS OF ScaleArmor CLASS -->
-    <string name="ScaleArmor_Name">scale barding</string>
-    <string name="ScaleArmor_Desc">The metal scales sewn onto a thick pleather vest create a flexible yet highly protective barding. It includes a red pleather saddle.</string>
+    <!-- STRINGS OF ScaleBarding CLASS -->
+    <string name="ScaleBarding_Name">scale barding</string>
+    <string name="ScaleBarding_Desc">The metal scales sewn onto a thick pleather vest create a flexible yet highly protective barding. It includes a red pleather saddle.</string>
 
-    <!-- STRINGS OF SpiderArmor CLASS -->
-    <string name="SpiderArmor_Name">spider armor</string>
-    <string name="SpiderArmor_Info">This armor is made of old spider carcases and some strange cloth. Surprisingly enough, it seems that it still contains functional spinnerets. If you apply enough pressure on one of the plates it shoots cobweb. Spiky surface of boot soles allows you to walk on that web freely.</string>
-    <string name="SpiderArmor_Gender">feminine</string>
+    <!-- STRINGS OF SpiderBarding CLASS -->
+    <string name="SpiderBarding_Name">spider barding</string>
+    <string name="SpiderBarding_Info">This barding is made of old spider carcases and some strange cloth. Surprisingly enough, it seems that it still contains functional spinnerets. If you apply enough pressure on one of the plates it shoots cobweb. Spiky surface of boot soles allows you to walk on that web freely.</string>
+    <string name="SpiderBarding_Gender">feminine</string>
 
-    <!-- STRINGS OF ChaosArmor CLASS -->
-    <string name="ChaosArmor_Name">Chaos armor</string>
-    <string name="ChaosArmor_Info">A blood red plates of this armor is sewed together with dark red chains. It irradiates chaotic energy as you touch it.</string>
+    <!-- STRINGS OF ChaosBarding CLASS -->
+    <string name="ChaosBarding_Name">Chaos barding</string>
+    <string name="ChaosBarding_Info">A blood red plates of this barding is sewed together with dark red chains. It irradiates chaotic energy as you touch it.</string>
 
-    <!-- PACKAGE /armor/Gyphs -->
+    <!-- STRING OF Royal Barding CLASS -->
+    <string name="RoyalBarding_Name">royal barding</string>
+    <string name="RoyalBarding_Desc">This tempered steel plate barding with gold saddle and helm is designed for the dedicated earth ponies who defend the Crown. Although it looks very heavy, it allows a royal guard to perform a _Heroic Leap_ toward a target location. Slamming into the ground will stun all adjacent enemies.</string>
+    <string name="RoyalBarding_ACSpecial">HEROIC LEAP</string>
+    <string name="RoyalBarding_NotRoyalGuard">Only royal guards can wear this armor!</string>
+    <string name="RoyalBarding_Prompt">Choose jump target</string>
+
+    <!-- PACKAGE /barding/Gyphs -->
     <!-- STRINGS OF Affection CLASS -->
     <string name="Affection_Txt">%s of Affection</string>
     <!-- STRINGS OF AntiEntropy CLASS -->

@@ -47,7 +47,7 @@ public class Earthroot extends Plant {
 
 	public void effect(int pos, Char ch) {
 		if (ch != null) {
-			Buff.affect(ch, Armor.class).level = ch.ht();
+			Buff.affect(ch, Barding.class).level = ch.ht();
 		}
 
 		if (Dungeon.visible[pos]) {
@@ -89,7 +89,7 @@ public class Earthroot extends Plant {
 		}
 	}
 	
-	public static class Armor extends Buff {
+	public static class Barding extends Buff {
 		
 		private static final float STEP = 1f;
 		
@@ -129,7 +129,7 @@ public class Earthroot extends Plant {
 		
 		@Override
 		public int icon() {
-			return BuffIndicator.ARMOR;
+			return BuffIndicator.BARDING;
 		}
 		
 		@Override

@@ -53,7 +53,7 @@ import com.watabou.pixeldungeon.items.Gold;
 import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Stylus;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.food.ChangelingPie;
 import com.watabou.pixeldungeon.items.food.Food;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
@@ -735,8 +735,8 @@ public abstract class Level implements Bundlable {
 
 		if (Dungeon.isChallenged(Challenges.NO_FOOD) && item instanceof Food) {
 			item = new Gold(item.price());
-		} else if (Dungeon.isChallenged(Challenges.NO_ARMOR)
-				&& item instanceof Armor) {
+		} else if (Dungeon.isChallenged(Challenges.NO_BARDING)
+				&& item instanceof Barding) {
 			item = new Gold(item.price());
 		} else if (Dungeon.isChallenged(Challenges.NO_HEALING)
 				&& item instanceof PotionOfHealing) {

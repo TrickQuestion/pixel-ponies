@@ -11,8 +11,8 @@ import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.items.Generator;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
+import com.watabou.pixeldungeon.items.barding.Barding;
+import com.watabou.pixeldungeon.items.barding.ClothBarding;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
@@ -25,21 +25,21 @@ import com.watabou.utils.Random;
 public class ArmoredStatue extends Mob {
 
 	@NonNull
-	private Armor armor;
+	private Barding barding;
 
 	public ArmoredStatue() {
 		EXP = 0;
 		state = PASSIVE;
 
 		do {
-			armor = (Armor) Generator.random( Generator.Category.ARMOR );
-		} while (!(armor instanceof Armor) || armor.level() < 0);
+			barding = (Barding) Generator.random( Generator.Category.BARDING);
+		} while (!(barding instanceof Barding) || barding.level() < 0);
 
-		armor.identify();
-		armor.inscribe( Armor.Glyph.random() );
+		barding.identify();
+		barding.inscribe( Barding.Glyph.random() );
 
 		hp(ht(15 + Dungeon.depth * 5));
-		defenseSkill = 4 + Dungeon.depth + armor.resistance;
+		defenseSkill = 4 + Dungeon.depth + barding.resistance;
 		
 		RESISTANCES.add( ToxicGas.class );
 		RESISTANCES.add( Poison.class );
@@ -48,18 +48,18 @@ public class ArmoredStatue extends Mob {
 		IMMUNITIES.add( Leech.class );
 	}
 
-	private static final String ARMOR	= "armor";
+	private static final String BARDING = "barding";
 
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		super.storeInBundle( bundle );
-		bundle.put( ARMOR, armor );
+		bundle.put(BARDING, barding);
 	}
 	
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
-		armor = (Armor) bundle.get( ARMOR );
+		barding = (Barding) bundle.get(BARDING);
 	}
 	
 	@Override
@@ -72,7 +72,7 @@ public class ArmoredStatue extends Mob {
 
 	@Override
 	public int dr() {
-		return Dungeon.depth + armor.resistance;
+		return Dungeon.depth + barding.resistance;
 	}
 
 	@Override
@@ -88,7 +88,7 @@ public class ArmoredStatue extends Mob {
 	@Override
 	public int defenseProc(Char enemy, int damage) {
 		damage = super.defenseProc(enemy, damage);
-		return armor.proc(enemy, this, damage);
+		return barding.proc(enemy, this, damage);
 	}
 
 	@Override
@@ -106,8 +106,8 @@ public class ArmoredStatue extends Mob {
 	
 	@Override
 	public void die( Object cause ) {
-		if (armor != null) {
-			Dungeon.level.drop( armor, getPos() ).sprite.drop();
+		if (barding != null) {
+			Dungeon.level.drop(barding, getPos() ).sprite.drop();
 		}
 		super.die( cause );
 	}
@@ -126,17 +126,17 @@ public class ArmoredStatue extends Mob {
 
 	@Override
 	public String description() {
-		return Utils.format(Game.getVar(R.string.ArmoredStatue_Desc), armor.name());
+		return Utils.format(Game.getVar(R.string.ArmoredStatue_Desc), barding.name());
 	}
 
 	@Override
 	public CharSprite sprite() {
-		if(armor !=null)
+		if(barding != null)
 		{
-			return new HeroSpriteDef(armor);
+			return new HeroSpriteDef(barding);
 		}
 		else{
-			return new HeroSpriteDef(new ClothArmor());
+			return new HeroSpriteDef(new ClothBarding());
 		}
 	}
 }

@@ -47,7 +47,7 @@ public class Bones {
 			item = Dungeon.hero.belongings.weapon;
 			break;
 		case 1:
-			item = Dungeon.hero.belongings.armor;
+			item = Dungeon.hero.belongings.barding;
 			break;
 		case 2:
 			item = Dungeon.hero.belongings.mane;

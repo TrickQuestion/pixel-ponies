@@ -22,7 +22,7 @@ import android.support.annotation.NonNull;
 import com.nyrds.android.util.Scrambler;
 import com.nyrds.pixeldungeon.items.chaos.IChaosItem;
 import com.nyrds.pixeldungeon.items.common.RatKingCrown;
-import com.nyrds.pixeldungeon.items.common.armor.SpiderArmor;
+import com.nyrds.pixeldungeon.items.common.barding.SpiderBarding;
 import com.nyrds.pixeldungeon.items.guts.HeartOfDarkness;
 import com.nyrds.pixeldungeon.ml.EventCollector;
 import com.nyrds.pixeldungeon.ml.R;
@@ -79,7 +79,7 @@ import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Heap.Type;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.KindOfWeapon;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.keys.GoldenKey;
 import com.watabou.pixeldungeon.items.keys.IronKey;
 import com.watabou.pixeldungeon.items.keys.Key;
@@ -163,7 +163,7 @@ public class Hero extends Char {
 
 	private Char enemy;
 
-	public Armor.Glyph killerGlyph = null;
+	public Barding.Glyph killerGlyph = null;
 
 	private Item theKey;
 
@@ -386,7 +386,7 @@ public class Hero extends Char {
 	}
 
 	public int tier() {
-		return belongings.armor == null ? 0 : belongings.armor.tier;
+		return belongings.barding == null ? 0 : belongings.barding.tier;
 	}
 
 	public boolean bowEquiped() {
@@ -442,7 +442,7 @@ public class Hero extends Char {
 			evasion *= 1.2;
 		}
 
-		int aEnc = belongings.armor != null ? belongings.armor.minHonesty - effectiveHonesty() : 0;
+		int aEnc = belongings.barding != null ? belongings.barding.minHonesty - effectiveHonesty() : 0;
 
 		if (aEnc > 0) {
 			return (int) (defenseSkill * evasion / Math.pow(1.5, aEnc));
@@ -464,7 +464,7 @@ public class Hero extends Char {
 
 	@Override
 	public int dr() {
-		int dr = belongings.armor != null ? Math.max(belongings.armor.resistance, 0) : 0;
+		int dr = belongings.barding != null ? Math.max(belongings.barding.resistance, 0) : 0;
 		Barkskin barkskin = buff(Barkskin.class);
 		if (barkskin != null) {
 			dr += barkskin.level();
@@ -491,7 +491,7 @@ public class Hero extends Char {
 	@Override
 	public float speed() {
 
-		int aEnc = belongings.armor != null ? belongings.armor.minHonesty - effectiveHonesty() : 0;
+		int aEnc = belongings.barding != null ? belongings.barding.minHonesty - effectiveHonesty() : 0;
 		if (aEnc > 0) {
 
 			return (float) (super.speed() * Math.pow(1.3, -aEnc));
@@ -1111,8 +1111,8 @@ public class Hero extends Char {
 			}
 		}
 
-		if (belongings.armor != null) {
-			damage = belongings.armor.proc(enemy, this, damage);
+		if (belongings.barding != null) {
+			damage = belongings.barding.proc(enemy, this, damage);
 		}
 
 		return damage;
@@ -1126,9 +1126,9 @@ public class Hero extends Char {
 		checkIfFurious();
 		interrupt();
 
-		if (belongings.armor instanceof SpiderArmor)
+		if (belongings.barding instanceof SpiderBarding)
 		{
-			//Armor proc
+			//Barding proc
 			if (Random.Int(100) < 50){
 				GameScene.add( Blob.seed( getPos(), Random.Int( 5, 7 ), Web.class ) );
 			}

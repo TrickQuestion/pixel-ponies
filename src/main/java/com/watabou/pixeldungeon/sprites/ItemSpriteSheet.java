@@ -21,7 +21,7 @@ public class ItemSpriteSheet {
 	
 	// Placeholders
 	public static final int WEAPON	= 5;
-	public static final int ARMOR	= 6;
+	public static final int BARDING = 6;
 	public static final int RING	= 7;
 	public static final int SMTH	= 127;
 	

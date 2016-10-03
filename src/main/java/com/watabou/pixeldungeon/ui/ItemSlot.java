@@ -21,7 +21,7 @@ import com.watabou.noosa.Text;
 import com.watabou.noosa.ui.Button;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.armor.Armor;
+import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.rings.Artifact;
 import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
@@ -146,7 +146,7 @@ public class ItemSlot extends Button {
 
 		topLeft.text(item.status());
 
-		boolean isArmor = item instanceof Armor;
+		boolean isBarding = item instanceof Barding;
 		boolean isWeapon = item instanceof Weapon;
 		boolean isBow = item instanceof Bow;
 		boolean isRing = item instanceof Ring;
@@ -191,17 +191,17 @@ public class ItemSlot extends Button {
 			}
 			topRight.measure();
 
-		} else if (isArmor) {
+		} else if (isBarding) {
 
 			if (item.levelKnown) {
-				topRight.text(Utils.format(TXT_HONESTY, ((Armor) item).minHonesty));
-				if (((Armor) item).minHonesty > Dungeon.hero.effectiveHonesty()) {
+				topRight.text(Utils.format(TXT_HONESTY, ((Barding) item).minHonesty));
+				if (((Barding) item).minHonesty > Dungeon.hero.effectiveHonesty()) {
 					topRight.hardlight(DEGRADED);
 				} else {
 					topRight.resetColor();
 				}
 			} else {
-				topRight.text(Utils.format(TXT_TYPICAL_HONESTY, ((Armor) item).typicalHonesty()));
+				topRight.text(Utils.format(TXT_TYPICAL_HONESTY, ((Barding) item).typicalHonesty()));
 				topRight.hardlight(WARNING);
 			}
 			topRight.measure();
