@@ -11,11 +11,11 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 
-public class RingOfStoneWalking extends Ring {
+public class RingOfStoneWalking extends Artifact {
 
 
 	public RingOfStoneWalking() {
-		super(Game.getVar(R.string.RingOfStoneWalking_Tier));
+		super();
 		image = ItemSpriteSheet.RING_OF_STONE_WALKING;
 		identify();
 	}

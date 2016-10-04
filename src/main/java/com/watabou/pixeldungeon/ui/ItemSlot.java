@@ -27,6 +27,7 @@ import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
@@ -146,9 +147,12 @@ public class ItemSlot extends Button {
 
 		topLeft.text(item.status());
 
+		// Horse jesus this is janky and stupid. I guess Watabou never heard of polymorphism.
 		boolean isBarding = item instanceof Barding;
-		boolean isWeapon = item instanceof Weapon;
+		boolean isMelee = item instanceof MeleeWeapon;
+		boolean isMissile = item instanceof MissileWeapon;
 		boolean isBow = item instanceof Bow;
+		boolean isArrow = item instanceof Arrow;
 		boolean isRing = item instanceof Ring;
 
 		if (isBow) {
@@ -166,7 +170,7 @@ public class ItemSlot extends Button {
 			}
 			topRight.measure();
 
-		} else if (item instanceof MissileWeapon) {
+		} else if (isMissile && !isArrow) {
 
 			topRight.text(Utils.format(TXT_LOYALTY, ((MissileWeapon) item).minAttribute()));
 			if (((MissileWeapon) item).minAttribute() > Dungeon.hero.effectiveLoyalty()) {
@@ -176,7 +180,7 @@ public class ItemSlot extends Button {
 			}
 			topRight.measure();
 
-		} else if (item instanceof MeleeWeapon) {
+		} else if (isMelee) {
 
 			if (item.levelKnown) {
 				topRight.text(Utils.format(TXT_HONESTY, ((MeleeWeapon) item).minAttribute()));

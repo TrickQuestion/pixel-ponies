@@ -29,7 +29,7 @@ public abstract class Arrow extends MissileWeapon {
 
 	public Arrow(int number) {
 		super();
-		minAttribute = 2;
+		minAttribute = 0;
 		quantity(number);
 
 	}

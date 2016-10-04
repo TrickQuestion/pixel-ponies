@@ -40,6 +40,7 @@ import com.watabou.pixeldungeon.items.weapon.enchantments.Slow;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Swing;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
@@ -202,10 +203,13 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public String toString() {
-		if (this instanceof Bow || this instanceof MissileWeapon) {
+		if (this instanceof Arrow) {
+			return super.toString();
+		} else if (this instanceof Bow || this instanceof MissileWeapon) {
 			return levelKnown ? Utils.format(TXT_RANGED_TO_STRING, super.toString(), minAttribute) : super.toString();
+		} else {
+			return levelKnown ? Utils.format(TXT_MELEE_TO_STRING, super.toString(), minAttribute) : super.toString();
 		}
-		return levelKnown ? Utils.format(TXT_MELEE_TO_STRING, super.toString(), minAttribute) : super.toString();
 	}
 	
 	@Override
