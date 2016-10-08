@@ -71,7 +71,7 @@ public class Scorpio extends Mob {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 2 ) == 0) {
+		if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 			Buff.prolong( enemy, Cripple.class, Cripple.DURATION );
 		}
 		
@@ -89,9 +89,13 @@ public class Scorpio extends Mob {
 	
 	@Override
 	protected void dropLoot() {
-		if (Random.Int( 8 ) == 0) {
+
+		// Slight increase in drop chance for the lucky.
+		boolean bonusLootChance = Random.luckBonus() && Random.luckBonus() && Random.luckBonus();
+
+		if (Random.Int( 9 ) == 0 || bonusLootChance) {
 			Dungeon.level.drop( new PotionOfHealing(), getPos() ).sprite.drop();
-		} else if (Random.Int( 6 ) == 0) {
+		} else if (Random.Int( 7 ) == 0 || bonusLootChance) {
 			Dungeon.level.drop( new MysteriousHay(), getPos() ).sprite.drop();
 		}
 	}	

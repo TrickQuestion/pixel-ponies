@@ -27,7 +27,7 @@ import com.watabou.pixeldungeon.Journal;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.EquipableItem;
+import com.watabou.pixeldungeon.items.EquippableItem;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.quest.DarkGold;
 import com.watabou.pixeldungeon.items.quest.Pickaxe;
@@ -194,7 +194,7 @@ public class Blacksmith extends NPC {
 		Item.evoke( Dungeon.hero );
 		
 		if (first.isEquipped( Dungeon.hero )) {
-			((EquipableItem)first).doUnequip( Dungeon.hero, true );
+			((EquippableItem)first).doUnequip( Dungeon.hero, true );
 		}
 		first.upgrade();
 		GLog.p( TXT_LOOKS_BETTER, first.name() );
@@ -202,7 +202,7 @@ public class Blacksmith extends NPC {
 		Badges.validateItemLevelAquired( first );
 		
 		if (second.isEquipped( Dungeon.hero )) {
-			((EquipableItem)second).doUnequip( Dungeon.hero, false );
+			((EquippableItem)second).doUnequip( Dungeon.hero, false );
 		}
 		second.detachAll( Dungeon.hero.belongings.backpack );
 		

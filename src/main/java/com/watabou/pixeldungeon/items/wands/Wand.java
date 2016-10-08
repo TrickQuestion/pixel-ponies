@@ -34,7 +34,7 @@ import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.effects.MagicMissile;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.ItemStatusHandler;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
+import com.watabou.pixeldungeon.items.weapon.KindOfWeapon;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.rings.RingOfPower.Power;
 import com.watabou.pixeldungeon.mechanics.Ballistica;
@@ -166,6 +166,12 @@ public abstract class Wand extends KindOfWeapon {
 			curItem = this;
 			GameScene.selectCell(zapper);
 
+			// Unicorns automatically identify wands by trying to fire them.
+			if (Dungeon.hero.heroClass == HeroClass.UNICORN) {
+				this.identify();
+			}
+
+
 		} else {
 
 			super.execute(hero, action);
@@ -208,11 +214,22 @@ public abstract class Wand extends KindOfWeapon {
 	}
 
 	public int effectiveLevel() {
+
+		// Let's pump wands final eL based on user's magic level, by a small margin.
+		// Note that this can reduce a wand's power if your magic is awful.
+		int magicBonus = 0;
+		if (wandUser == Dungeon.hero && level() > 0) {
+			magicBonus = (Dungeon.hero.effectiveMagic() / 5) - 1;
+			if (Random.Int(5) < Dungeon.hero.effectiveMagic() % 5) {
+				magicBonus++;
+			}
+		}
+
 		if (charger != null) {
 			Power power = charger.target.buff(Power.class);
-			return power == null ? super.level() : Math.max(super.level() + power.level, 0);
+			return power == null ? super.level() + magicBonus : Math.max(super.level() + power.level, 0) + magicBonus;
 		} else {
-			return super.level();
+			return super.level() + magicBonus;
 		}
 	}
 
@@ -263,13 +280,10 @@ public abstract class Wand extends KindOfWeapon {
 	public String info() {
 		StringBuilder info = new StringBuilder(isKnown() ? desc()
 				: Utils.format(TXT_WOOD, wood));
-		if (Dungeon.hero.heroClass == HeroClass.UNICORN
-				|| Dungeon.hero.subClass == HeroSubClass.SHAMAN) {
-			info.append("\n\n");
+		if (Dungeon.hero.heroClass == HeroClass.UNICORN) {
 			if (levelKnown) {
+				info.append("\n\n");
 				info.append(Utils.format(TXT_DAMAGE, MIN + (MAX - MIN) / 2));
-			} else {
-				info.append(TXT_WEAPON);
 			}
 		}
 		return info.toString();
@@ -355,9 +369,11 @@ public abstract class Wand extends KindOfWeapon {
 
 	@Override
 	public Item random() {
-		if (Random.Float() < 0.5f) {
+
+		// Changing this to be totally laugh-determined.
+		if (Random.luckBonus()) {
 			upgrade();
-			if (Random.Float() < 0.15f) {
+			if (Random.luckBonus() && Random.luckBonus()) {
 				upgrade();
 			}
 		}
@@ -432,8 +448,9 @@ public abstract class Wand extends KindOfWeapon {
 			GLog.w(TXT_FIZZLES);
 			levelKnown = true;
 
-			if (Random.Int(5) == 0) {
-				identify();
+			// Unicorns automatically identify wands by firing them.
+			if (Dungeon.hero.heroClass == HeroClass.UNICORN) {
+				this.identify();
 			}
 
 			updateQuickslot();

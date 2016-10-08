@@ -23,7 +23,7 @@ import com.watabou.pixeldungeon.items.rings.RingOfMending;
 
 public class Regeneration extends Buff {
 
-    private static final float REGENERATION_DELAY = 10;
+    private static final float REGENERATION_DELAY = 10.0F;
 
     @Override
     public boolean act() {
@@ -36,9 +36,15 @@ public class Regeneration extends Buff {
                 }
             }
 
-            int bonus = 0;
+            float bonus = 0;
             for (Buff buff : target.buffs(RingOfMending.Rejuvenation.class)) {
-                bonus += ((RingOfMending.Rejuvenation) buff).level;
+                bonus += (float) ((RingOfMending.Rejuvenation) buff).level;
+            }
+
+            // TODO: Expand this to affect other monsters, if we ever add the six stats to them.
+            // Currently this is worth a tad less than +3 ring steps for highly generous characters.
+            if ( target instanceof Hero && !((Hero) target).isStarving() ) {
+                bonus += (float) (((Hero) target).effectiveGenerosity() - 3) * 0.30F;
             }
 
             spend((float) (REGENERATION_DELAY / Math.pow(1.2, bonus)));

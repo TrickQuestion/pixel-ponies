@@ -30,7 +30,7 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.DungeonTilemap;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Hedgehog;
-import com.watabou.pixeldungeon.items.Torch;
+import com.watabou.pixeldungeon.items.utility.Torch;
 import com.watabou.utils.PointF;
 import com.watabou.utils.Random;
 

@@ -39,11 +39,22 @@ public class ScrollOfPsionicBlast extends Scroll {
 		
 		for (Mob mob : Dungeon.level.mobs.toArray(new Mob[Dungeon.level.mobs.size()])) {
 			if (Dungeon.level.fieldOfView[mob.getPos()]) {
-				Buff.prolong( mob, Blindness.class, Random.Int( 3, 6 ) );
-				mob.damage( Random.IntRange( 1, mob.ht() * 2 / 3 ), this );
+
+				// Magic is going to make this whole spell significantly more powerful.
+				int blindTurns = 2 + Random.Int(Dungeon.hero.effectiveMagic()) / 2;
+
+				// Let's make magic cause magic% damage as min level.
+				int min = Dungeon.hero.effectiveMagic() * (1 + mob.ht()/100);
+
+				// Keeping the old max. (When min > max, the two switch.)
+				int max = mob.ht() * 2/3;
+
+				Buff.prolong( mob, Blindness.class, blindTurns );
+				mob.damage( Random.IntRange( min, max ), this );
 			}
 		}
-		
+
+		// Luck won't help you get unblind faster! You did this to yourself.
 		Buff.prolong( getCurUser(), Blindness.class, Random.Int( 3, 6 ) );
 		Dungeon.observe();
 		

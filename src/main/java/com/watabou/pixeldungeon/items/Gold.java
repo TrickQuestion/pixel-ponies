@@ -121,7 +121,14 @@ public class Gold extends Item {
 	
 	@Override
 	public Item random() {
-		quantity(Random.Int( 20 + Dungeon.depth * 10, 40 + Dungeon.depth * 20 ));
+		int gold = Random.Int( 20 + Dungeon.depth * 10, 35 + Dungeon.depth * 20 );
+
+		// Lucky characters get a gold boost of up to double gold!
+		for (int i = 0 ; i < 4 && Random.luckBonus() ; i++) {
+			gold *= 1.15F;
+		}
+
+		quantity(gold);
 		return this;
 	}
 	

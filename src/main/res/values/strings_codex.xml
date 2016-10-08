@@ -6,6 +6,137 @@
     <string name="Codex_Info">One of the many books that can be found in any library</string>
     <string name="Codex_Blinded">You can\'t read while blinded</string>
 
+    <!-- Temporary stuff, eventually will replace Codex system with this. -->
+    <string name="Codex_Library">
+        <item>
+            <name>The Art of Invisibility Spells</name>
+            <scarcity></scarcity>
+            <desc></desc>
+        </item>
+        <item>
+            <name>The Art of the To-Do List</name>
+            <scarcity></scarcity>
+            <desc></desc>
+        </item>
+        <item>
+            <name>The Astronomical Astronomer\'s Almanac to All Things Astronomy</name>
+            <scarcity></scarcity>
+            <desc></desc>
+        </item>
+        <item>
+            <name>A Brief History of the Wagon Harness</name>
+            <scarcity>common</scarcity>
+            <desc>This paperback book doesn\'t seem very interesting by its title, but it does
+                contain some useful information about the merits of honesty.
+                \n\n
+                \"Honesty is a necessary virtue for the proper use of any kind of harness or barding.
+                If a pony isn\'t honest enough, they won\'t be able to bear its weight. This causes
+                the pony to suffer an encumbrance penalty, and the larger the discrepancy, the
+                greater the penalty. Encumbered ponies move more slowly and are less capable of
+                defending themselves. If a flying pony is encumbered, the penalty is even more
+                obvious because they also lose their natural ability to fly quickly. Additionally,
+                flying ponies cannot gain altitude while encumbered, even when the encumbrance is
+                small.\"
+                \n\n
+                \"Whether bucking trees or punching monsters, honesty determines how much damage a
+                pony can deal. If a pony is wielding horseshoes or another hoof-to-hoof weapon, they
+                must have sufficient honesty for the weapon or they will attack more slowly, hit
+                less frequently, and do less damage. On the other hoof, if a pony has more honesty
+                than a hoof-to-hoof weapon requires, they will deal additional damage with it. As
+                before, the degree of penalty or bonus depends on the size of the discrepancy.\"
+                \n\n
+                \"It should be noted that honesty requirements do not apply to bow or cannon use.
+                They do apply to throwing weapons, but having excess honesty for a thrown weapon
+                will not confer any bonus to damage. Although there are old legends of tiger-striped
+                equines possessing the ability to throw weapons more forcefully with honesty, this
+                is not a book in ancient mythology so we shall not elaborate further.\"
+            </desc>
+        </item>
+        <item>
+            <name>Bygone Griffins of Greatness</name>
+            <scarcity>common</scarcity>
+            <desc>This paperback history guide reads more like a tourist brochure. Nonetheless, even
+                though it wasn\'t written by ponies, it contains a lot of practical information on
+                the virtue of loyalty.
+                \n\n
+                \"The practical benefits to the virtue of loyalty are rather surprising, and form a
+                keystone of the military wing of our kingdom. Anybirdy who is unencumbered by armor
+                too heavy for their honesty will find that their flight speed increases in accord
+                with their loyalty virture. Indeed, even running speed is faster for loyal griffons.
+                This is one reason traitors rarely escape the nesting grounds.\"
+                \n\n
+                \"Loyalty also plays an important role in accuracy with weapons. This applies to all
+                kinds of weapons: claw-to-claw, thrown, or the aim of a bow or cannon. The higher
+                one\'s loyalty, the more precise the aim becomes.\"
+                \n\n
+                \"Even beyond this benefit, proper use of a missile weapon such as a bow or cannon
+                will require a minimum loyalty based on the difficulty of using the weapons. More
+                powerful weapons require greater loyalty. If a bird lacks the loyalty needed to
+                wield a bow or cannon, they will miss more frequently and it will take them longer
+                to fire the weapon. The larger the discrepancy between the bird\'s loyalty and the
+                weapon\'s minimum requirement, the more severe these penalties are.\"
+                \n\n
+                \"There is no special benefit to having excess loyalty for a weapon\'s requirements,
+                however due to the everpresent accuracy benefit loyalty applies to all weapons,
+                the most loyal soldiers and crew are generally the most valuable regardless as to
+                whether the weapons in employ are primitive slings or monster cloud-turrets.\"
+            </desc>
+        </item>
+        <item>
+            <name>Slumber 101</name>
+            <scarcity>common</scarcity>
+            <desc>This silly-looking paperback manual describes how to have fun at sleepovers.
+                While that might not seem particularly useful in your present situation, it also
+                contains useful information about the virtue of laughter.
+                \n\n
+                \"The number one think you\'re supposed to do at a sleepover is have fun! Laughter is
+                an extremely important virtue for ponies of all ages, for a number of reasons.\"
+                \n\n
+                \"First of all, humor keeps you in good shape by quickening your wit and reflexes.
+                Ponies who laugh regularly lead more active lives. They can get more done in the
+                same space of time, whether it\'s running, eating, working, playing, or even resting!
+                There is a small down-side, of course: by being so active, they get hungry quicker
+                too! But a larger appetite is a small price to pay for having so much energy.
+                Fortunately, if you\'re super-duper funny (or if you find another way to speed
+                yourself up considerably), eventually you\'ll end up doing more things for less food
+                overall.\"
+                \n\n
+                \"There\'s a reason for the expression \'happy-go-lucky\': when you laugh, things
+                just seem to go your way more often! This comes up in all sorts of different areas,
+                whether it\'s finding just the thing you need or other sorts of \'random\'
+                situations, fortune will smile upon you.\"
+                \n\n
+                \"And finally, the rumor is true: laughter is the best medicine! Not only will
+                laughter help good things happen to you, it protects you from bad things and makes
+                them go away more quickly.\"
+            </desc>
+        </item>
+
+            <name>Perplexing Pony Plagues</name>
+        <name>The Virtues of Friendship: A Reference Guide</name>
+
+
+
+        <name>Daring Do books (numerous, don\'t use the name)</name>
+        <name>Ferrets of Fairyland</name>
+        <name>Ghost, Goblins, and Ghoulish Figures</name>
+        <name>Haycarte\'s Treatise on Ponies</name>
+        <name>Inspiration Manifestation</name>
+        <name>The Journal of the Two Sisters</name>
+        <name>The Life and Times of Marwari the Maneless</name>
+        <name>Magical Compendium</name>
+        <name>Modern Spellcasting</name>
+        <name>Mythological Mysteries</name>
+
+        <name>Predictions and Prophesies</name>
+        <name>Principles of Magic</name>
+
+        <name>Super Naturals</name>
+
+
+    </string>
+
+
     <string-array name="Codex_Story">
         <item>Bounce Glyph - Causes enemies to be pushed back after hitting the Hero.</item>
         <item>Affection Glyph - The enemy will be charmed for few turns, while the Hero will be charmed for a few turns too, but never more than the enemy.</item>

@@ -2,7 +2,7 @@
 <resources>
     
     <!-- STRINGS OF Bow CLASS -->
-    <string name="Bow_Info1">This is a ranged weapon that shoots arrows. Most ponies can\'t aim a bow at adjacent monsters (they\'ll attack with their hooves instead).\n\n</string>
+    <string name="Bow_Info">This is a ranged weapon that shoots arrows. Most ponies can\'t aim a bow at adjacent monsters (they\'ll attack with their hooves instead).\n\n</string>
     
     <!-- STRINGS OF WoodenBow CLASS -->
     <string name="WoodenBow_Name">wooden bow</string>

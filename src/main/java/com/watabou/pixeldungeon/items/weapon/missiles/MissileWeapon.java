@@ -46,15 +46,14 @@ public class MissileWeapon extends Weapon {
 	}
 
 
-	// TODO: Previously this seemed to let huntress and rogue equip all missile weapons. Why??
-	// Currently I have it set to "only the Boomerang can be equipped", which makes more sense.
+	// TODO: Previously this seemed to let huntress and rogue equip all missile weapons. Why?
+	// Currently I have it set to "nothing can be equipped", which makes more sense!
+	// See below, also, where I don't bother to check the "at the ready" phrase.
 	@Override
 	public ArrayList<String> actions(Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );
-		if (!(this instanceof Boomerang)) {
-			actions.remove( AC_EQUIP );
-			actions.remove( AC_UNEQUIP );
-		}
+		actions.remove( AC_EQUIP );
+		actions.remove( AC_UNEQUIP );
 		return actions;
 	}
 
@@ -142,31 +141,35 @@ public class MissileWeapon extends Weapon {
 		
 		StringBuilder info = new StringBuilder( desc() );
 		
-		info.append(Utils.format(Game.getVar(R.string.MissileWeapon_AverageDam),MIN + (MAX - MIN) / 2));
-		info.append(" ");
+		info.append(Utils.format(Game.getVar(R.string.MissileWeapon_AverageDam), MIN + (MAX - MIN) / 2));
 
 		if (Dungeon.hero.belongings.backpack.items.contains( this ) && !(this instanceof Arrow)) {
+
+			int effectiveHonesty = Dungeon.hero.effectiveHonesty();
+
+			// Report zeebee bonuses, to be more transparent.
 			if (Dungeon.hero.heroClass == HeroClass.ZEBRA) {
-				if (minAttribute > Dungeon.hero.effectiveHonesty()) {
+				if (minAttribute > effectiveHonesty + 2) {
+					info.append(" ");
 					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_InadequateHonestyZebra), name));
-				}
-				if (minAttribute < Dungeon.hero.effectiveHonesty()) {
+				} else if (minAttribute > effectiveHonesty) {
+					info.append(" ");
+					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_BareHonestyZebra), name));
+				} else if (minAttribute < effectiveHonesty) {
+					info.append(" ");
 					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_ExcessHonestyZebra), name));
 				}
-			} else {
-
-				if (minAttribute > Dungeon.hero.effectiveLoyalty()) {
-					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_InadequateLoyalty), name));
-				}
-				if (minAttribute < Dungeon.hero.effectiveLoyalty() && Dungeon.hero.heroClass == HeroClass.PEGASUS) {
-					info.append(Utils.format(Game.getVar(R.string.MissileWeapon_ExcessLoyaltyPegasus), name));
-				}
+			} else if (minAttribute > effectiveHonesty){
+				info.append(" ");
+				info.append(Utils.format(Game.getVar(R.string.MissileWeapon_InadequateHonesty), name));
 			}
+
 		}
-		
-		if (isEquipped( Dungeon.hero )) {
-			info.append(Utils.format(Game.getVar(R.string.MissileWeapon_HoldReady), name));
-		}
+
+		// This should no longer be possible.
+//		if (isEquipped( Dungeon.hero )) {
+//			info.append(Utils.format(Game.getVar(R.string.MissileWeapon_HoldReady), name));
+//		}
 		
 		return info.toString();
 	}

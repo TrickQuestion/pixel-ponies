@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.painters;
 
-import com.watabou.pixeldungeon.items.Codex;
+import com.watabou.pixeldungeon.items.utility.Codex;
 import com.watabou.pixeldungeon.items.Generator;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.keys.IronKey;
@@ -69,6 +69,8 @@ public class LibraryPainter extends Painter {
 		}
 
 		int n = Random.IntRange(2, 3);
+		if (Random.luckBonus()) n++;
+
 		for (int i = 0; i < n; i++) {
 			int pos;
 			do {
@@ -77,11 +79,14 @@ public class LibraryPainter extends Painter {
 					|| level.getHeap(pos) != null);
 			level.drop(prize(level), pos);
 
-			if (Random.Int(4) == 0) {
-				level.drop(new BlankScroll(), pos);
+			int luckTest = 4;
+			if (Random.luckBonus()) luckTest--;
+
+			if (Random.Int(luckTest) == 0) {
+				level.drop(new Codex(), pos);
 			} else {
-				if (Random.Int(4) == 0) {
-					level.drop(new Codex(), pos);
+				if (Random.Int(luckTest) == 0) {
+					level.drop(new BlankScroll(), pos);
 				}
 			}
 		}

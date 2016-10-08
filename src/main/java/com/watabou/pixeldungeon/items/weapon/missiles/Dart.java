@@ -49,7 +49,12 @@ public class Dart extends MissileWeapon {
 	
 	@Override
 	public Item random() {
-		quantity(Random.Int( 5, 15 ));
+		int newQuantity = Random.Int( 3, 12 );
+		if (Random.luckBonus()) newQuantity+= 3;
+		if (Random.luckBonus()) newQuantity+= 3;
+		if (Random.luckBonus()) newQuantity+= 3;
+
+		quantity(newQuantity);
 		return this;
 	}
 	

@@ -52,7 +52,7 @@ import com.watabou.pixeldungeon.items.Generator;
 import com.watabou.pixeldungeon.items.Gold;
 import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.Stylus;
+import com.watabou.pixeldungeon.items.utility.Stylus;
 import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.food.ChangelingPie;
 import com.watabou.pixeldungeon.items.food.Food;
@@ -981,7 +981,7 @@ public abstract class Level implements Bundlable {
 					updateFovForObjectAt(mob.getPos());
 				}
 			} else if (c == Dungeon.hero
-					&& ((Hero) c).heroClass == HeroClass.ZEBRA) {
+					&& ((Hero) c).heroClass == HeroClass.NIGHTWING) {
 				for (Mob mob : mobs) {
 					int p = mob.getPos();
 					if (distance(c.getPos(), p) == 2) {

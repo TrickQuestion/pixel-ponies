@@ -30,11 +30,11 @@ public class Worm extends Mob {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Roots proc
-        if (Random.Int(7) == 1){
+        if (Random.Int(5) == 0 && !Random.luckBonus()){
             Buff.affect(enemy, Roots.class);
         }
         //Poison proc
-        if (Random.Int(5) == 1){
+        if (Random.Int(4) == 0 && !Random.luckBonus()){
             Buff.affect( enemy, Poison.class ).set( Random.Int( 7, 9 ) * Poison.durationFactor( enemy ) );
         }
         return damage;

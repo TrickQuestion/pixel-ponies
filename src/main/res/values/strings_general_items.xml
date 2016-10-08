@@ -5,11 +5,11 @@
     <!-- STRINGS OF Amulet CLASS -->
     <string name="Amulet_Name">Pegacorn Pendant</string>
     <string name="Amulet_ACEnd">END THE GAME</string>
-    <string name="Amulet_Info">The Pegacorn Pendant is one of the most powerful artifacts in pony history. It is said that the Pendant is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it, even for ponies with no innate magical ability. However, unbridled power rarely comes without consequences.</string>
+    <string name="Amulet_Info">The Pegacorn Pendant is one of the most powerful artifacts in pony history. It is said that the Pendant is able to fulfill any wish if its owner\'s will-power is strong enough to \"persuade\" it to do it, even for ponies with no innate magical abilities. However, unbridled power rarely comes without consequences.</string>
 
     <!-- STRINGS OF Ankh CLASS -->
     <string name="Ankh_Name">Ankh</string>
-    <string name="Ankh_Info">This ancient symbol of immortality grants an ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
+    <string name="Ankh_Info">This ancient symbol of immortality grants the holder the ability to return to life after death. Upon resurrection all non-equipped items are lost.</string>
 
     <!-- STRINGS OF CrystallingKit CLASS -->
     <string name="CrystallingKit_Name">Crystalling kit</string>

@@ -26,7 +26,7 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.DungeonTilemap;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Ghost;
-import com.watabou.pixeldungeon.items.DewVial;
+import com.watabou.pixeldungeon.items.utility.DewVial;
 import com.watabou.pixeldungeon.items.bags.Keyring;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.utils.ColorMath;

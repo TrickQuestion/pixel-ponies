@@ -88,7 +88,12 @@ public class Swarm extends Mob {
 
 	@Override
 	protected void dropLoot() {
-		if (Random.Int( 5 * (generation + 1) ) == 0) {
+
+		// VERY small luck chance added here. Monty Hall.
+		boolean bonusLootChance = Random.luckBonus() && Random.luckBonus() &&
+				Random.luckBonus() && Random.luckBonus();
+
+		if (Random.Int( 5 * (generation + 1) ) == 0 || bonusLootChance) {
 			Dungeon.level.drop( new PotionOfHealing(), getPos() ).sprite.drop();
 		}
 	}

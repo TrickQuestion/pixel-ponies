@@ -24,14 +24,11 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Barkskin;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.SpellSprite;
 import com.watabou.pixeldungeon.effects.particles.LeafParticle;
-import com.watabou.pixeldungeon.items.Dewdrop;
 import com.watabou.pixeldungeon.items.Generator;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.food.Food;
@@ -73,7 +70,7 @@ public class Plant implements Bundlable {
 			CellEmitter.get(pos).burst(LeafParticle.GENERAL, 6);
 		}
 
-		if (Dungeon.hero.subClass == HeroSubClass.SHAMAN) {
+		if (Dungeon.hero.subClass == HeroSubClass.FARMER) {
 			if (Random.Int(5) == 0) {
 				Dungeon.level.drop(Generator.random(Generator.Category.SEED),
 						pos).sprite.drop();

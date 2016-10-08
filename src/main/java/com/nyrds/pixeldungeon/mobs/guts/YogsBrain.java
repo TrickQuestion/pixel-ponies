@@ -47,7 +47,7 @@ public class YogsBrain extends Boss {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Paralysis proc
-        if (Random.Int(3) == 1){
+        if (Random.Int(5) < 3 && !Random.luckBonus()){
             Buff.affect(enemy, Paralysis.class);
         }
         return damage;
@@ -123,7 +123,7 @@ public class YogsBrain extends Boss {
     @Override
     public boolean act() {
 
-        if (Random.Int(10) < 6){
+        if (Random.Int(12) < 6 || Random.luckBonus()){
             return super.act();
         }
 

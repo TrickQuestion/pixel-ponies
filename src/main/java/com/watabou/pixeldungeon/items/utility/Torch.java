@@ -15,42 +15,57 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.watabou.pixeldungeon.items.utility;
 
-import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
+import com.watabou.noosa.particles.Emitter;
+import com.watabou.pixeldungeon.actors.buffs.Buff;
+import com.watabou.pixeldungeon.actors.buffs.Light;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.scenes.AmuletScene;
+import com.watabou.pixeldungeon.effects.particles.FlameParticle;
+import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class Amulet extends Item {
-	
-	private static final String AC_END = Game.getVar(R.string.Amulet_ACEnd);
+public class Torch extends Item {
+
+	public static final String AC_LIGHT	= Game.getVar(R.string.Torch_ACLight);
+
+	public static final float TIME_TO_LIGHT = 1;
 	
 	{
-		name = Game.getVar(R.string.Amulet_Name);
-		image = ItemSpriteSheet.AMULET;
+		name = Game.getVar(R.string.Torch_Name);
+		image = ItemSpriteSheet.TORCH;
+		
+		stackable = true;
+		
+		defaultAction = AC_LIGHT;
 	}
 	
 	@Override
 	public ArrayList<String> actions( Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );
-		actions.add( AC_END );
+		actions.add( AC_LIGHT );
 		return actions;
 	}
 	
 	@Override
 	public void execute( Hero hero, String action ) {
-		if (action == AC_END) {
+		
+		if (action == AC_LIGHT) {
 			
-			showAmuletScene( false );
+			hero.spend( TIME_TO_LIGHT );
+			hero.busy();
+			
+			hero.getSprite().operate( hero.getPos() );
+			
+			detach( hero.belongings.backpack );
+			Buff.affect( hero, Light.class, Light.DURATION );
+			
+			Emitter emitter = hero.getSprite().centerEmitter();
+			emitter.start( FlameParticle.FACTORY, 0.2f, 3 );
 			
 		} else {
 			
@@ -60,30 +75,8 @@ public class Amulet extends Item {
 	}
 	
 	@Override
-	public boolean doPickUp( Hero hero ) {
-		if (super.doPickUp( hero )) {
-			
-			if (!Statistics.amuletObtained) {
-				Statistics.amuletObtained = true;
-				Badges.validateVictory();
-
-				showAmuletScene( true );
-			}
-			
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	private void showAmuletScene( boolean showText ) {
-		try {
-			Dungeon.saveAll();
-			AmuletScene.noText = !showText;
-			Game.switchScene( AmuletScene.class );
-		} catch (IOException e) {
-			throw new TrackedRuntimeException(e);
-		}
+	public boolean isUpgradable() {
+		return false;
 	}
 	
 	@Override
@@ -92,7 +85,7 @@ public class Amulet extends Item {
 	}
 	
 	@Override
-	public boolean isUpgradable() {
-		return false;
+	public int price() {
+		return 10 * quantity();
 	}
 }

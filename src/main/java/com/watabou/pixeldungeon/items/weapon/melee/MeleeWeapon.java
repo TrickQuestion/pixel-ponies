@@ -201,8 +201,14 @@ public class MeleeWeapon extends Weapon {
 	@Override
 	public Item random() {
 		super.random();
-		
-		if (Random.Int( 10 + level() ) == 0) {
+
+		// Make enchantments a tiny bit more likely for the lucky.
+		int difficultyDrop = 0;
+		if (Random.luckBonus()) difficultyDrop++;
+		if (Random.luckBonus()) difficultyDrop++;
+		if (Random.luckBonus()) difficultyDrop++;
+
+		if (Random.Int( 10 + level() - difficultyDrop ) == 0) {
 			enchant( Enchantment.random() );
 		}
 		

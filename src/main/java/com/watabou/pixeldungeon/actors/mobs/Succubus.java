@@ -69,7 +69,7 @@ public class Succubus extends Mob {
 	@Override
 	public int attackProc(Char enemy, int damage) {
 
-		if (Random.Int(3) == 0) {
+		if (Random.Int(2) == 0 && !Random.luckBonus()) {
 			float duration = Charm.durationFactor(enemy) * Random.IntRange(2, 5);
 
 			if (enemy.buff(DriedRose.OneWayCursedLoveBuff.class) != null) {

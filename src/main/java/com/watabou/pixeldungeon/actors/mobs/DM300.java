@@ -91,6 +91,7 @@ public class DM300 extends Boss {
 	public void move( int step ) {
 		super.move( step );
 
+		// This is deterministic, so I don't want luck involved.
 		if (Dungeon.level.map[step] == Terrain.INACTIVE_TRAP && hp() < ht()) {
 			
 			hp(hp() + Random.Int( 1, ht() - hp() ));

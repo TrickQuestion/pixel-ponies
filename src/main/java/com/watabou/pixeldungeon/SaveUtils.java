@@ -33,15 +33,15 @@ public class SaveUtils {
 	static private boolean hasClassTag(HeroClass cl, String fname) {
 		switch (cl) {
 		case PEGASUS:
-			return fname.contains("rogue");
+			return fname.contains("pegasus");
 		case ZEBRA:
-			return fname.contains("ranger");
+			return fname.contains("zebra");
 		case UNICORN:
-			return fname.contains("mage");
+			return fname.contains("unicorn");
 		case NIGHTWING:
-			return fname.contains("elf");
+			return fname.contains("nightwing");
 		case EARTH_PONY:
-			return fname.contains("earth");
+			return fname.contains("earth pony");
 		default:
 			throw new TrackedRuntimeException("unknown hero class!");
 		}

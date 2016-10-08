@@ -5,7 +5,7 @@ import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
+import com.watabou.pixeldungeon.items.weapon.KindOfWeapon;
 import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.utils.GLog;
 

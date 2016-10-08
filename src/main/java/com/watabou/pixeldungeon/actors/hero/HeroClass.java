@@ -25,7 +25,7 @@ import com.nyrds.pixeldungeon.ml.BuildConfig;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.items.TomeOfMastery;
+import com.watabou.pixeldungeon.items.utility.TomeOfMastery;
 import com.watabou.pixeldungeon.items.barding.ClassBarding;
 import com.watabou.pixeldungeon.items.barding.ClothBarding;
 import com.watabou.pixeldungeon.items.food.Ration;
@@ -33,7 +33,9 @@ import com.watabou.pixeldungeon.items.potions.PotionOfHonesty;
 import com.watabou.pixeldungeon.items.rings.RingOfHaste;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
 import com.watabou.pixeldungeon.items.rings.RingOfThorns;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfCurse;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
+import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.wands.WandOfMagicMissile;
 import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
@@ -147,7 +149,6 @@ public enum HeroClass {
 			new TomeOfMastery().collect(hero);
 		}
 
-		hero.updateAwareness();
 	}
 
 	private static void initDebug(Hero hero) {
@@ -224,32 +225,38 @@ public enum HeroClass {
 		QuickSlot.selectItem(wand, 0);
 
 		new ScrollOfIdentify().setKnown();
+		new ScrollOfCurse().setKnown();
 	}
 
 	private static void initPegasus(Hero hero) {
-
-		// TODO: None of this is right.
-
-		(hero.belongings.weapon = new Dagger()).identify();
-		(hero.belongings.mane = new RingOfShadows()).upgrade().identify();
-
-		hero.collect(new Dart(8).identify());
-
-		hero.belongings.mane.activate(hero);
-
-		QuickSlot.selectItem(Dart.class, 0);
-
-		new ScrollOfMagicMapping().setKnown();
-	}
-
-	private static void initZebra(Hero hero) {
-
-		// TODO: None of this is right.
-
+		hero.setLoyalty(hero.loyalty() + 1);
+		hero.setKindness(hero.kindness() + 1);
+		hero.setGenerosity(hero.generosity() - 1);
 		hero.ht(hero.ht() - 5);
 		hero.hp(hero.ht());
 
 		(hero.belongings.weapon = new Dagger()).identify();
+
+		hero.collect(new Dart(8).identify());
+
+		// TODO: Leaving this here to remember how to activate rings.
+//		hero.belongings.mane.activate(hero);
+
+		QuickSlot.selectItem(Dart.class, 0);
+
+		new ScrollOfLoyalOath().setKnown();
+		new ScrollOfMagicMapping().setKnown();
+	}
+
+	private static void initZebra(Hero hero) {
+		hero.setGenerosity(hero.generosity() + 1);
+		hero.setMagic(hero.magic() + 1);
+		hero.setLoyalty(hero.loyalty() - 1);
+		hero.ht(hero.ht() + 5);
+		hero.hp(hero.ht());
+
+		(hero.belongings.weapon = new Knuckles()).identify();
+
 		Boomerang boomerang = new Boomerang();
 		hero.collect(boomerang.identify());
 

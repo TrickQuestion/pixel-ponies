@@ -26,8 +26,9 @@ public class TreacherousSpirit extends Mob {
 
     @Override
     public int attackProc( Char enemy, int damage ) {
+
         //Summon proc
-        if (Random.Int(4) == 1){
+        if (Random.Int(3) == 0 && !Random.luckBonus()){
             int spiritPos = Dungeon.level.getEmptyCellNextTo(getPos());
 
             if (Dungeon.level.cellValid(spiritPos)) {

@@ -26,6 +26,8 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Gold;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.rings.RingOfHaggler;
+import com.watabou.pixeldungeon.items.utility.Codex;
+import com.watabou.pixeldungeon.items.utility.TomeOfMastery;
 import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.sprites.ThiefSprite;
 import com.watabou.pixeldungeon.utils.GLog;
@@ -120,7 +122,9 @@ public class Thief extends Mob {
 	protected boolean steal( Hero hero ) {
 		
 		Item item = hero.belongings.randomUnequipped();
-		if (item != null) {
+
+		// Kludge: don't let the Tome of Mastery get stolen. I want it to be STUCK in inventory.
+		if (item != null && !(item instanceof TomeOfMastery)) {
 			
 			GLog.w( TXT_STOLE, this.getName(), item.name() );
 			

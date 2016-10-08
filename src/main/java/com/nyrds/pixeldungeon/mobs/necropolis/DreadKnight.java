@@ -26,14 +26,14 @@ public class DreadKnight extends UndeadMob {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Double damage proc
-        if (Random.Int(4) == 1){
-            if (enemy !=null){
+        if (Random.Int(3) == 0 && !Random.luckBonus()){
+            if (enemy != null){
                 DeathStroke.hit(enemy);
             }
             return damage * 2;
         }
         //Paralysis proc
-        if (Random.Int(10) == 1){
+        if (Random.Int(8) == 0 && !Random.luckBonus()){
             Buff.affect(enemy, Paralysis.class);
         }
         return damage;

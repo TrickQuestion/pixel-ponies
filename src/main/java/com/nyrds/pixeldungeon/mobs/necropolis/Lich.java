@@ -196,7 +196,8 @@ public class Lich extends Boss {
             }
         }
 
-        if (Random.Int(2) == 1 && this.isAlive()){
+        // I don't think this is really good or bad exactly, so no luck bonus here.
+        if (Random.Int(2) == 0 && this.isAlive()){
             jump();
         }
 

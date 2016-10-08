@@ -61,7 +61,8 @@ public class RingOfElements extends Ring {
 	}
 	
 	public class Resistance extends RingBuff {
-		
+
+		// I'm not messing with this. Luck shouldn't influence how the ring works.
 		public HashSet<Class<?>> resistances() {
 			if (Random.Int( level + 3 ) >= 3) {
 				return FULL;

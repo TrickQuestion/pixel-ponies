@@ -37,7 +37,7 @@ public class Senior extends Monk {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 10 ) == 0) {
+		if (Random.Int( 7 ) == 0 && !Random.luckBonus()) {
 			Buff.prolong( enemy, Paralysis.class, 1.1f );
 		}
 		return super.attackProc( enemy, damage );

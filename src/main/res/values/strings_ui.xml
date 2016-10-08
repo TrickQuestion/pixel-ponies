@@ -116,18 +116,18 @@
     <string name="Welcome_Title">Welcome!</string>
     <string name="Welcome_Text">
         Pixel Ponies is a modification of Watabou\'s Pixel Dungeon plus some of the work from Nyrds\' Remixed Pixel Dungeon. It was created to ponify the existing game and expand it into a more complex adventure experience.\n\n
-        The largest difference is the attribute system. In place of the single statistic (Strength) are the six elements of friendship. Successful play will require balancing several attributes rather than advancing a single one.\n\n
+        The largest difference is the underlying hero system. In place of the single statistic (Strength) are the six virtues of friendship. Successful play will require balancing many virtues rather than advancing a single one.\n\n
         Other differences include: \n
         - Character classes are now pony races.\n
         - Some races have innate magic or flying.\n
         - Level layout has been changed.\n
         - Most of the monsters are different.\n
         - Most of the graphics are new.\n
-        - New ways exist to advance attributes.\n
+        - New ways exist to advance virtues.\n
         - New items, both consumable and unique.\n
-        - Ranged attacks use a different stat.\n
-        - Rings/wands need Magic, or will backfire.\n
-        - Items can\'t be enchanted to stat below 0.\n
+        - Bow attacks use a different virtue.\n
+        - Rings/wands require Magic, or may backfire.\n
+        - Items can\'t be enchanted to go below X:0.\n
         - New secrets, with many more planned.\n\n
         And plenty of other exciting stuff you\'ll want to discover on your own! /)^3^(\\\n
     </string>

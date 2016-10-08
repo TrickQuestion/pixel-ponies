@@ -49,6 +49,7 @@ import com.watabou.pixeldungeon.actors.buffs.Blindness;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Burning;
 import com.watabou.pixeldungeon.actors.buffs.Charm;
+import com.watabou.pixeldungeon.actors.buffs.Combo;
 import com.watabou.pixeldungeon.actors.buffs.Cripple;
 import com.watabou.pixeldungeon.actors.buffs.Fury;
 import com.watabou.pixeldungeon.actors.buffs.GasesImmunity;
@@ -71,14 +72,14 @@ import com.watabou.pixeldungeon.effects.CheckedCell;
 import com.watabou.pixeldungeon.effects.Flare;
 import com.watabou.pixeldungeon.effects.Pushing;
 import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.Amulet;
-import com.watabou.pixeldungeon.items.Ankh;
-import com.watabou.pixeldungeon.items.DewVial;
-import com.watabou.pixeldungeon.items.Dewdrop;
+import com.watabou.pixeldungeon.items.utility.Amulet;
+import com.watabou.pixeldungeon.items.utility.Ankh;
+import com.watabou.pixeldungeon.items.utility.DewVial;
+import com.watabou.pixeldungeon.plants.Dewdrop;
 import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Heap.Type;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
+import com.watabou.pixeldungeon.items.weapon.KindOfWeapon;
 import com.watabou.pixeldungeon.items.barding.Barding;
 import com.watabou.pixeldungeon.items.keys.GoldenKey;
 import com.watabou.pixeldungeon.items.keys.IronKey;
@@ -98,6 +99,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
+import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.watabou.pixeldungeon.items.weapon.melee.SpecialWeapon;
 import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
@@ -151,6 +153,16 @@ public class Hero extends Char {
 	private static final float TIME_TO_REST = 1f;
 	private static final float TIME_TO_SEARCH = 2f;
 
+	// This shit literally replaces acres of magic number calculations, and it scales better.
+	// Chance = [level]. Search chance = [2 * level + 1]. Rogue bonus = [(int) (1.5 * prev + 0.5)].
+	// But we're going to modify it to work with generosity now, and calculate on the fly!
+	private static final float[] detectChances = new float[50];
+	static {
+		for (int i = 0; i < detectChances.length ; i++) {
+			detectChances[i] = 1.0F - 1.0F / (0.1F * ((float) i) + 1.0F );
+		}
+	}
+
 	public HeroClass heroClass = HeroClass.PEGASUS;
 	public HeroSubClass subClass = HeroSubClass.NONE;
 
@@ -182,8 +194,6 @@ public class Hero extends Char {
 	public boolean weakened = false;
     public boolean sugarRush = false;
 
-	private float awareness;    // TODO: Change this to generosity.
-
 	private int lvl = Scrambler.scramble(1);
 	private int exp = Scrambler.scramble(0);
 
@@ -209,8 +219,6 @@ public class Hero extends Char {
 		setGenerosity(STARTING_GENEROSITY);
 		setKindness(STARTING_KINDNESS);
 		setMagic(STARTING_MAGIC);
-
-		awareness = 0.1f;
 
 		belongings = new Belongings(this);
 
@@ -347,7 +355,6 @@ public class Hero extends Char {
         setGenerosity(bundle.getInt(GENEROSITY));
         setKindness(bundle.getInt(KINDNESS));
         setMagic(bundle.getInt(MAGIC));
-		updateAwareness();
 
 		lvl(bundle.getInt(LEVEL));
 		setExp(bundle.getInt(EXPERIENCE));
@@ -406,12 +413,24 @@ public class Hero extends Char {
 	public int attackSkill(Char target) {
 
 		int bonus = 0;
+
+		// Mix in loyalty, which is now 1/2 of attack skill's progression.
+		float loyaltyPartOfAttack = (effectiveLoyalty() - 3) * 2.5f + 1.0f;
+		float attack = (loyaltyPartOfAttack + (float) attackSkill) / 2.0f;
+
 		for (Buff buff : buffs(RingOfAccuracy.Accuracy.class)) {
 			bonus += ((RingOfAccuracy.Accuracy) buff).level;
 		}
-		float accuracy = (bonus == 0) ? 1 : (float) Math.pow(1.4, bonus);
+		float accuracy = (bonus == 0) ? 1.0f : (float) Math.pow(1.4, bonus);
+
 		if (rangedWeapon != null && Dungeon.level.distance(getPos(), target.getPos()) == 1) {
-			accuracy *= 0.5f;
+
+			// Zeebees don't suffer as much from making point-blank thrown attacks.
+			if (heroClass == HeroClass.ZEBRA) {
+				accuracy *= 0.75f;
+			} else {
+				accuracy *= 0.5f;
+			}
 		}
 
 		if (getDifficulty() == 0) {
@@ -420,9 +439,9 @@ public class Hero extends Char {
 
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		if (wep != null) {
-			return (int) (attackSkill * accuracy * wep.accuracyFactor(this));
+			return (int) (attack * accuracy * wep.accuracyFactor(this));
 		} else {
-			return (int) (attackSkill * accuracy);
+			return (int) (attack * accuracy);
 		}
 	}
 
@@ -430,36 +449,45 @@ public class Hero extends Char {
 	public int defenseSkill(Char enemy) {
 
 		int bonus = 0;
+
+		// Mix in kindness, which is now 2/3rds of defense skill's progression.
+		float kindnessPartOfDefense = (effectiveKindness() - 3) * 2.5f + 1.0f;
+		float defense = (kindnessPartOfDefense * 2.0f + (float) defenseSkill) / 3.0f;
+
 		for (Buff buff : buffs(RingOfEvasion.Evasion.class)) {
 			bonus += ((RingOfEvasion.Evasion) buff).level;
 		}
-		float evasion = bonus == 0 ? 1 : (float) Math.pow(1.2, bonus);
+		float evasion = bonus == 0 ? 1.0f : (float) Math.pow(1.2, bonus);
+
 		if (paralysed) {
-			evasion /= 2;
+			evasion /= 2.0f;
 		}
 
+		// Easy mode is easy.
 		if (getDifficulty() == 0) {
 			evasion *= 1.2;
 		}
 
-		int aEnc = belongings.barding != null ? belongings.barding.minHonesty - effectiveHonesty() : 0;
+		defense *= evasion;
 
+		int aEnc = 0 - effectiveHonesty();
+		if (belongings.barding != null) {
+			aEnc += belongings.barding.minHonesty;
+		}
+
+		// Encumbrance hits you pretty hard, but at least you can absorb the blows now maybe?
 		if (aEnc > 0) {
-			return (int) (defenseSkill * evasion / Math.pow(1.5, aEnc));
+			defense /= Math.pow(1.5, aEnc);
+
 		} else {
 
-			if (heroClass == HeroClass.PEGASUS) {
-
-				// TODO: Possible reuse of this logic later
-//				if (curAction != null && subClass == HeroSubClass.FREERUNNER && !isStarving()) {
-//					evasion *= 2;
-//				}
-
-				return (int) ((defenseSkill - aEnc) * evasion);
-			} else {
-				return (int) (defenseSkill * evasion);
+			// Nightwings get a special bonus for having excess honesty above armor level.
+			if (heroClass == HeroClass.NIGHTWING) {
+				defense -= (float) aEnc * evasion;
 			}
 		}
+
+		return (int) defense;
 	}
 
 	@Override
@@ -483,7 +511,7 @@ public class Hero extends Char {
 		if (wep != null) {
 			dmg = wep.damageRoll(this);
 		} else {
-			dmg = effectiveHonesty() > 10 ? Random.IntRange(1, effectiveHonesty() - 9) : 1;
+			dmg = Random.IntRange(1, effectiveHonesty());
 		}
 		return inFury() ? (int) (dmg * 1.5f) : dmg;
 	}
@@ -491,27 +519,36 @@ public class Hero extends Char {
 	@Override
 	public float speed() {
 
+		int loyaltyBoost =  effectiveLoyalty() - 3;
+
+		double speed = super.speed();
+
 		int aEnc = belongings.barding != null ? belongings.barding.minHonesty - effectiveHonesty() : 0;
 		if (aEnc > 0) {
 
-			return (float) (super.speed() * Math.pow(1.3, -aEnc));
+			// TODO: Fold this into the other calculation at some point. For now just test it.
+			speed = speed * Math.pow(1.3, -aEnc);
 
 		} else {
 
-			float speed = super.speed();
+			// Let's say pegasi always move more quickly when unencumbered.
+			if (heroClass == HeroClass.PEGASUS) {
+				loyaltyBoost += 4;
+			}
 
-			// TODO: As above.
-			//return getHeroSprite().sprint(subClass == HeroSubClass.FREERUNNER && !isStarving()) ? 1.6f * speed : speed;
-
-			return speed;
+			// TODO: Cannibalize later for THUNDERBOLT
+			// return getHeroSprite().sprint(subClass == HeroSubClass.FREERUNNER && !isStarving()) ? 1.6f * speed : speed;
 
 		}
+
+		// Movement is 95% at Y:2, 128% at Y:10, 155% at Y:12, 200% at crazy Y:18 (+4 Y for pega).
+		speed = speed * Math.pow(1.05, loyaltyBoost);
+		return (float) speed;
 	}
 
 	public float attackDelay() {
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		if (wep != null) {
-
 			return wep.speedFactor(this);
 
 		} else {
@@ -521,20 +558,16 @@ public class Hero extends Char {
 
 	@Override
 	public void spend(float time) {
-		int hasteLevel = 0;
-
-		// TODO: As above.
-//		if (heroClass == HeroClass.NIGHTWING) {
-//			hasteLevel++;
-//			if (subClass == HeroSubClass.DERP) {
-//				hasteLevel++;
-//			}
-//		}
+		int hasteLevel = this.effectiveLaughter() - 3;
 
 		for (Buff buff : buffs(RingOfHaste.Haste.class)) {
-			hasteLevel += ((RingOfHaste.Haste) buff).level;
+			hasteLevel += ((RingOfHaste.Haste) buff).level * 2;
 		}
-		super.spend(hasteLevel == 0 ? time : (float) (time * Math.pow(1.1, -hasteLevel)));
+
+		// This makes laughter points 1/2 of a Haste step, which is pretty strong,
+		// without changing the underlying mechanics of Haste's buffing.
+		// Will need to pump up the baseSpeeds of mobs on lower levels to compensate.
+		super.spend(hasteLevel == 0 ? time : (float) (time * Math.pow(1.05, -hasteLevel)));
 	}
 
 	public void spendAndNext(float time) {
@@ -1063,11 +1096,11 @@ public class Hero extends Char {
 			wep.proc(this, enemy, damage);
 
 			switch (subClass) {
-//				case GLADIATOR:
-//					if (wep instanceof MeleeWeapon) {
-//						damage += Buff.affect(this, Combo.class).hit(enemy, damage);
-//					}
-//					break;
+				case ROYAL_GUARD:
+					if (wep instanceof MeleeWeapon) {
+						damage += Buff.affect(this, Combo.class).hit(enemy, damage);
+					}
+					break;
 
 				case ASSASSIN:
 					if (rangedWeapon != null) {
@@ -1144,12 +1177,12 @@ public class Hero extends Char {
 	}
 
 	public void checkIfFurious() {
-//		if (subClass == HeroSubClass.BERSERKER && 0 < hp() && hp() <= ht() * Fury.LEVEL) {
-//			if (buff(Fury.class) == null) {
-//				Buff.affect(this, Fury.class);
-//				ready();
-//			}
-//		}
+		if (subClass == HeroSubClass.NOCTURNE && 0 < hp() && hp() <= ht() * Fury.LEVEL) {
+			if (buff(Fury.class) == null) {
+				Buff.affect(this, Fury.class);
+				ready();
+			}
+		}
 	}
 
 	private void checkVisibleMobs() {
@@ -1332,10 +1365,6 @@ public class Hero extends Char {
 			attackSkill++;
 			defenseSkill++;
 
-			if (lvl() < 10) {
-				updateAwareness();
-			}
-
 			levelUp = true;
 		}
 
@@ -1366,10 +1395,6 @@ public class Hero extends Char {
 		} else {
 			return 5 + lvl() * 4;
 		}
-	}
-
-	void updateAwareness() {
-		awareness = (float) (1 - Math.pow((heroClass == HeroClass.PEGASUS ? 0.85 : 0.90), (1 + Math.min(lvl(), 9)) * 0.5));
 	}
 
 	public boolean isStarving() {
@@ -1436,6 +1461,14 @@ public class Hero extends Char {
 		for (Buff buff : buffs(RingOfShadows.Shadows.class)) {
 			stealth += ((RingOfShadows.Shadows) buff).level;
 		}
+
+		int kindnessVal = effectiveKindness() - 2;
+
+		stealth += (kindnessVal / 3);
+
+		// Not sure this residual calculation is worth the overhead...
+		if (Random.Int(3) < kindnessVal % 3) stealth++;
+
 		return stealth;
 	}
 
@@ -1587,7 +1620,7 @@ public class Hero extends Char {
 
 	public boolean search(boolean intentional) {
 
-		boolean smthFound = false;
+		boolean found = false;
 
 		int positive = 0;
 		int negative = 0;
@@ -1601,9 +1634,41 @@ public class Hero extends Char {
 		}
 		int distance = 1 + positive + negative;
 
-		float level = intentional ? (2 * awareness - awareness * awareness) : awareness;
+
+		// This is the correct code for the original approach, translated into new, not-shit system.
+//		int awarenessIndex = Math.max(lvl(), 9);
+//		if (intentional) {
+//			awarenessIndex = awarenessIndex * 2 + 1;
+//		}
+//		if (heroClass == HeroClass.PEGASUS) {
+//			awarenessIndex = (int) ((float) awarenessIndex * 1.5F + 0.5F);
+//		}
+
+		// This is the experimental code that uses generosity instead of only relying on character level.
+		int awarenessIndex;
+
+		// Generosity should now count for about 2/3rds of the detection effect.
+		if (effectiveGenerosity() >= 2) {
+			awarenessIndex = Math.min(0, effectiveGenerosity() - 2);
+
+		// If your generosity is abominably low, penalize it off-chart by adding distance.
+		} else {
+			awarenessIndex = 0;
+			distance += 2 - effectiveGenerosity();
+		}
+
+		// Character level counts for the other 1/3rd.
+		awarenessIndex += lvl() / 6;
+
+		// Trying to search is much easier, naturally.
+		if (intentional) {
+			awarenessIndex = awarenessIndex * 2 + 1;
+		}
+
+		float detectChance = detectChances[awarenessIndex];
+
 		if (distance <= 0) {
-			level /= 2 - distance;
+			detectChance /= 2.0F - (float) distance;
 			distance = 1;
 		}
 
@@ -1635,7 +1700,7 @@ public class Hero extends Char {
 						getSprite().getParent().addToBack(new CheckedCell(p));
 					}
 
-					if (Dungeon.level.secret[p] && (intentional || Random.Float() < level)) {
+					if (Dungeon.level.secret[p] && (intentional || Random.Float() < detectChance)) {
 
 						int oldValue = Dungeon.level.map[p];
 
@@ -1647,7 +1712,7 @@ public class Hero extends Char {
 
 						ScrollOfMagicMapping.discover(p);
 
-						smthFound = true;
+						found = true;
 					}
 				}
 			}
@@ -1656,21 +1721,21 @@ public class Hero extends Char {
 		if (intentional) {
 			getSprite().showStatus(CharSprite.DEFAULT, TXT_SEARCH);
 			getSprite().operate(getPos());
-			if (smthFound) {
-				spendAndNext(Random.Float() < level ? TIME_TO_SEARCH : TIME_TO_SEARCH * 2);
+			if (found) {
+				spendAndNext(Random.Float() < detectChance ? TIME_TO_SEARCH : TIME_TO_SEARCH * 2);
 			} else {
 				spendAndNext(TIME_TO_SEARCH);
 			}
 
 		}
 
-		if (smthFound) {
+		if (found) {
 			GLog.w(TXT_NOTICED_SMTH);
 			Sample.INSTANCE.play(Assets.SND_SECRET);
 			interrupt();
 		}
 
-		return smthFound;
+		return found;
 	}
 
 	public void resurrect(int resetLevel) {

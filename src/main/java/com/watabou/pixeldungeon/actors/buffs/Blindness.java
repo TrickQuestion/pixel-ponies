@@ -20,10 +20,28 @@ package com.watabou.pixeldungeon.actors.buffs;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Dungeon;
 import com.nyrds.pixeldungeon.ml.R;
+import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 
 public class Blindness extends FlavourBuff {
 
+
+	@Override
+	public boolean attachTo( Char target ) {
+
+		//FIX ME we must implement customizable Hero immunities
+		if (target instanceof Hero && ((Hero)target).heroClass == HeroClass.NIGHTWING){
+			return false;
+		}
+
+		if ( super.attachTo( target )) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	@Override
 	public void detach() {
 		super.detach();

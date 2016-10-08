@@ -155,7 +155,7 @@ public class Warlock extends Mob implements Callback {
 		spend(TIME_TO_ZAP);
 
 		if (hit(this, getEnemy(), true)) {
-			if (getEnemy() == Dungeon.hero && Random.Int(2) == 0) {
+			if (getEnemy() == Dungeon.hero && Random.Int(2) == 0 && !Random.luckBonus()) {
 				Buff.prolong(getEnemy(), Weakness.class, Weakness.duration(getEnemy()));
 			}
 

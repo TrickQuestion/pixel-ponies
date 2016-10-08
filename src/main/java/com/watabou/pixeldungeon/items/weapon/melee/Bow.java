@@ -22,7 +22,7 @@ public abstract class Bow extends MeleeWeapon {
 	
 	@Override
 	public String info() {
-		return Game.getVar(R.string.Bow_Info1) + desc();
+		return Game.getVar(R.string.Bow_Info) + desc();
 	}
 	
 	@Override

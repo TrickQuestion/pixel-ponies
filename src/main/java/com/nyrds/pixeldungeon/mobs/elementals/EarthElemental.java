@@ -74,7 +74,8 @@ public class EarthElemental extends Mob {
 
 		int cell = enemy.getPos();
 
-		if (Random.Int(2) == 0) {
+		// Elemental ground-pound is less likely to affect lucky characters.
+		if (Random.Int(5) < 3  && !Random.luckBonus()) {
 			int c = Dungeon.level.map[cell];
 			if (c == Terrain.EMPTY || c == Terrain.EMBERS
 					|| c == Terrain.EMPTY_DECO || c == Terrain.GRASS

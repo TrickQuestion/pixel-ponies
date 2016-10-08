@@ -42,7 +42,10 @@ public class TreasuryPainter extends Painter {
 			do {
 				pos = room.random(level);
 			} while (level.map[pos] != Terrain.EMPTY || level.getHeap( pos ) != null);
-			level.drop( new Gold().random(), pos ).type = (i == 0 && heapType == Heap.Type.CHEST ? Heap.Type.MIMIC : heapType);
+
+			// Make it slightly less likely that you find a mimic if you're lucky.
+			boolean mimicSave = Random.luckBonus() && Random.luckBonus();
+			level.drop( new Gold().random(), pos ).type = (i == 0 && heapType == Heap.Type.CHEST && !mimicSave ? Heap.Type.MIMIC : heapType);
 		}
 		
 		if (heapType == Heap.Type.HEAP) {

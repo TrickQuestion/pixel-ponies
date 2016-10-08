@@ -26,7 +26,7 @@ public class SpiderGuard extends MultiKindMob {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 10 ) == 0) {
+		if (Random.Int( 8 ) == 0 && !Random.luckBonus()) {
 			Buff.prolong( enemy, Paralysis.class, 3);
 		}
 		return damage;

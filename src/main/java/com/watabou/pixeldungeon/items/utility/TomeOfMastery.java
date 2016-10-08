@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.watabou.pixeldungeon.items.utility;
 
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
@@ -27,6 +27,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.effects.SpellSprite;
+import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
@@ -53,6 +54,10 @@ public class TomeOfMastery extends Item {
 	public ArrayList<String> actions( Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );		
 		actions.add( AC_READ );
+
+		// I want it to be impossible to lose the Tome (for now).
+		actions.remove( AC_DROP );
+		actions.remove( AC_THROW );
 		
 		return actions;
 	}

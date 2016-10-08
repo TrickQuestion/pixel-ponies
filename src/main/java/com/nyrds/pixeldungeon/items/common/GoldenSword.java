@@ -31,8 +31,9 @@ public class GoldenSword extends SpecialWeapon {
 
 	@Override
 	public void proc( Char attacker, Char defender, int damage ) {
-		//Gold proc
-		if (Random.Int(10) == 1){
+
+		// Gold proc (less likely sword will get destroyed if hero is lucky)
+		if (Random.Int(8) == 0 && !Random.luckBonus() ){
 			int price = this.price() / 10;
 			if ( price > 500) { price = 500;}
 			Dungeon.level.drop(new Gold(price), defender.getPos());

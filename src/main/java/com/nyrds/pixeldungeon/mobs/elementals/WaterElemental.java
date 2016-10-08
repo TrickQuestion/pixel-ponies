@@ -61,7 +61,8 @@ public class WaterElemental extends Mob {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 2 ) == 0) {
+
+		if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 			Freezing.affect( enemy.getPos(), (Fire)Dungeon.level.blobs.get( Fire.class ) );
 		}
 		

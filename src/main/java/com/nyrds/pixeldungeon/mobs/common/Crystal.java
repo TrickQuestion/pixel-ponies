@@ -57,6 +57,11 @@ public class Crystal extends MultiKindMob {
 	
 	@Override
 	public int damageRoll() {
+
+		// These guys pack a wallop, so let's reduce damage a little for lucky heroes.
+		if (Random.luckBonus()) {
+			return Random.NormalIntRange( hp() / 3, ht() / 3 );
+		}
 		return Random.NormalIntRange( hp() / 2, ht() / 2 );
 	}
 	
@@ -90,7 +95,7 @@ public class Crystal extends MultiKindMob {
 			return 0;
 		} else {
 			getSprite().zap(enemy.getPos());
-			if (enemy == Dungeon.hero && Random.Int(2) == 0) {
+			if (enemy == Dungeon.hero && Random.Int(5) < 3 && !Random.luckBonus()) {
 				Buff.prolong(enemy, Weakness.class, Weakness.duration(enemy));
 			}
 			return damage;

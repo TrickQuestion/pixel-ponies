@@ -219,8 +219,15 @@ public abstract class Ring extends Artifact {
 	
 	@Override
 	public Item random() {
-		level(Random.Int( 0, 2 ));
-		if (Random.Float() < 0.3f) {
+		level(Random.Int( 0, 1 ));
+
+		// Make the highest level luck-dependent. Yes, this makes the curses worse, too.
+		if (level() == 1 && (Random.luckBonus() || Random.luckBonus())) {
+			level(2);
+		}
+
+		// Changing this so ring curses can be lucked out of a little easier.
+		if (Random.Int(2) == 0 && !Random.luckBonus() && !Random.luckBonus()) {
 			level(-level());
 			cursed = true;
 		}
@@ -249,7 +256,6 @@ public abstract class Ring extends Artifact {
 		}
 		return price;
 	}
-
 
 	@Override
 	public String toString() {
@@ -290,6 +296,11 @@ public abstract class Ring extends Artifact {
 		
 		@Override
 		public boolean act() {
+
+			// Very high generosity nearly doubles how quickly rings are identified.
+			if (isEquipped(Dungeon.hero) && Random.Int(16) < Dungeon.hero.effectiveGenerosity()) {
+				ticksToKnow--;
+			}
 			
 			if (!isIdentified() && --ticksToKnow <= 0) {
 				String gemName = name();

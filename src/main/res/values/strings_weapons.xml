@@ -2,12 +2,14 @@
 <resources>
 
     <!-- STRINGS OF KindOfWeapon CLASS -->
-    <string name="KindOfWeapon_EquipCursed">you wince as your grip involuntarily tightens around your %s</string>
+    <string name="KindOfWeapon_EquipCursed">you wince as your grip involuntarily tightens around your %s!</string>
 
     <!-- PACKAGE /items/weapon -->
     <!-- STRINGS OF Weapon CLASS -->
     <string name="Weapon_Identify">You are now familiar enough with your %1$s to identify it. It is %2$s.</string>
     <string name="Weapon_Incompatible">Interaction of different types of magic has negated the enchantment on this weapon!</string>
+    <string name="Weapon_Magic_Save">The old enchantment was not compatible with the new magic, but you were able to suppress its erasure with your magic ability!</string>
+
 
     <!-- PACKAGE /weapon/Enchantment -->
     <!-- STRINGS OF Death CLASS -->
@@ -178,11 +180,10 @@
     <string name="MissileWeapon_No">No, I changed my mind</string>
     <string name="MissileWeapon_Sure">Do you really want to equip it as a melee weapon?</string>
     <string name="MissileWeapon_AverageDam">\n\nAverage damage of this weapon equals to %d points per hit.</string>
-    <string name="MissileWeapon_InadequateHonestyZebra">As a Zebra, because of your inadequate Honesty the accuracy and speed of your attack with this %s is decreased.</string>
-    <string name="MissileWeapon_ExcessHonestyZebra">As a Zebra, because of your excess Honesty the damage of your attack with this %s is increased.</string>
-    <string name="MissileWeapon_InadequateLoyalty">Because of your inadequate Loyalty the accuracy and speed of your attack with this %s is decreased.</string>
-    <string name="MissileWeapon_ExcessLoyaltyPegasus">As a Pegasus, because of your excess Loyalty the damage of your attack with this %s is increased.</string>
-    <string name="MissileWeapon_HoldReady">\n\nYou hold the %s at the ready.</string>
+    <string name="MissileWeapon_InadequateHonesty">Because of your inadequate Honesty the accuracy and speed of your attack with this %s is decreased.</string>
+    <string name="MissileWeapon_InadequateHonestyZebra">Even as a Zebra, this thrown weapon is too unwieldy for your current honesty level. The accuracy and speed of your attack with this %s is decreased.</string>
+    <string name="MissileWeapon_BareHonestyZebra">As a zebra, even though your honesty is slightly inadequate, it is still high enough to wield this %s without loss of accuracy or speed.</string>
+    <string name="MissileWeapon_ExcessHonestyZebra">As a zebra, because of your excess Honesty the damage of your attack with this %s is increased.</string>
 
     <!-- STRINGS OF Boomerang CLASS -->
     <string name="Boomerang_Name">boomerang</string>

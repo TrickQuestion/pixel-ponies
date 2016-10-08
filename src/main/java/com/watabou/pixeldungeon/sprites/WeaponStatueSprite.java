@@ -26,7 +26,7 @@ public class WeaponStatueSprite extends MobSprite {
 	public WeaponStatueSprite() {
 		super();
 		
-		texture( Assets.WEAPON_STATUE);
+		texture( Assets.WEAPON_STATUE );
 		
 		TextureFilm frames = new TextureFilm( texture, 12, 15 );
 		

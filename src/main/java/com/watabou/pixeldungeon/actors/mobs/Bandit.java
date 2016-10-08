@@ -34,8 +34,13 @@ public class Bandit extends Thief {
 	@Override
 	protected boolean steal( Hero hero ) {
 		if (super.steal( hero )) {
-			
-			Buff.prolong( getEnemy(), Blindness.class, Random.Int( 5, 12 ) );
+
+			// You get a little less blind if you're lucky.
+			int blindAdded = Random.Int( 5, 12 );
+			if (Random.luckBonus()) blindAdded--;
+			if (Random.luckBonus()) blindAdded--;
+
+			Buff.prolong( getEnemy(), Blindness.class, blindAdded );
 			Dungeon.observe();
 			
 			return true;

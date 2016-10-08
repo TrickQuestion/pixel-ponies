@@ -24,7 +24,7 @@ import com.watabou.pixeldungeon.Dungeon;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Shopkeeper;
-import com.watabou.pixeldungeon.items.EquipableItem;
+import com.watabou.pixeldungeon.items.EquippableItem;
 import com.watabou.pixeldungeon.items.Gold;
 import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Item;
@@ -200,7 +200,7 @@ public class WndTradeItem extends Window {
 		
 		Hero hero = Dungeon.hero;
 		
-		if (item.isEquipped( hero ) && !((EquipableItem)item).doUnequip( hero, false )) {
+		if (item.isEquipped( hero ) && !((EquippableItem)item).doUnequip( hero, false )) {
 			return;
 		}
 		item.detachAll( hero.belongings.backpack );
@@ -228,12 +228,24 @@ public class WndTradeItem extends Window {
 	}
 	
 	private int price( Item item ) {
-		// This formula is not completely correct...
-		int price = item.price() * 5 * (Dungeon.depth / 5 + 1);
-		if (Dungeon.hero.buff( RingOfHaggler.Haggling.class ) != null && price >= 2) {
-			price /= 2;
+
+		// This is one-fifth of the official "buy" price.
+		int price = item.price() * (Dungeon.depth / 5 + 1);
+
+		float priceFactor = 5.0F;
+
+		if (Dungeon.hero.buff( RingOfHaggler.Haggling.class ) != null) {
+			priceFactor = 2.5F;
 		}
-		return price;
+
+		// Increases cost for kindness < 5, else decreases cost to asymptotic max of 1.0F
+		float kindFactor = 1.0F - ( 1.0F / (0.1F * (Dungeon.hero.effectiveKindness()-5) + 1));
+
+		priceFactor -= kindFactor;
+
+		price = (int) ((float) price * priceFactor);
+
+		return Math.max(price, 1);
 	}
 	
 	private void buy( Heap heap ) {

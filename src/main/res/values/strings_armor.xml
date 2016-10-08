@@ -6,6 +6,7 @@
     <string name="Barding_Identify">you are now familiar enough with your %1$s to identify it. It is %2$s.</string>
     <string name="Barding_ToString">%1$s H:%2$d</string>
     <string name="Barding_Incompatible">Interaction of different types of magic has erased the glyph on this barding!</string>
+    <string name="Barding_Magic_Save">The armor glyph was not compatible with the new magic, but you were able to suppress its erasure with your magic ability!</string>
     <string name="Barding_MaxSoak">This %1$s provides damage absorption up to \"%2$d\"  points per attack.</string>
     <string name="Barding_InadequateHonestyWearing">\n\nBecause of your inadequate Honesty, your movement speed and defense skill are decreased.</string>
     <string name="Barding_InadequateHonestyNotWearing">\n\nBecause of your inadequate Honesty, wearing this barding will decrease your movement speed and defense skill.</string>

@@ -142,7 +142,7 @@ public class Generator {
 
 	public enum Category {
 		WEAPON	( 15,	Weapon.class ),
-		BARDING( 10,	Barding.class ),
+		BARDING ( 10,	Barding.class ),
 		POTION	( 50,	Potion.class ),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
@@ -155,6 +155,7 @@ public class Generator {
 		
 		public Class<?>[] classes;
 		public float[] probs;
+		public float[] luckyProbs;
 		
 		public float prob;
 		public Class<? extends Item> superClass;
@@ -182,6 +183,7 @@ public class Generator {
 		Category.GOLD.classes = new Class<?>[]{ 
 			Gold.class };
 		Category.GOLD.probs = new float[]{ 1 };
+		Category.GOLD.luckyProbs = new float[]{ 1 };
 		
 		Category.SCROLL.classes = new Class<?>[]{ 
 			ScrollOfIdentify.class, 
@@ -201,7 +203,8 @@ public class Generator {
 			ScrollOfCurse.class,
 			ScrollOfLoyalOath.class
 		};
-		Category.SCROLL.probs = new float[]{ 30, 10, 15, 0, 10, 15, 12, 8, 8, 0, 4, 6, 10, 8, 6, 0};
+		Category.SCROLL.probs = 		new float[]{ 30, 10, 15, 0, 10, 15, 12, 8, 8, 0, 4, 6, 10, 8, 6, 0};
+		Category.SCROLL.luckyProbs = 	new float[]{ 30, 10, 15, 0, 10, 20, 6, 8, 8, 0, 8, 6, 15, 12, 3, 0};
 		
 		Category.POTION.classes = new Class<?>[]{ 
 			PotionOfHealing.class, 
@@ -216,8 +219,9 @@ public class Generator {
 			PotionOfInvisibility.class,
 			PotionOfMight.class,
 			PotionOfFrost.class };
-		Category.POTION.probs = new float[]{ 45, 4, 15, 10, 15, 10, 0, 20, 12, 10, 0, 10 };
-		
+		Category.POTION.probs = 		new float[]{ 45, 4, 15, 10, 15, 10, 0, 20, 12, 10, 0, 10 };
+		Category.POTION.luckyProbs = 	new float[]{ 45, 6, 10, 7, 15, 12, 0, 20, 12, 15, 0, 10 };
+
 		Category.WAND.classes = new Class<?>[]{ 
 			WandOfTeleportation.class, 
 			WandOfSlowness.class,
@@ -232,7 +236,8 @@ public class Generator {
 			WandOfMagicMissile.class,
 			WandOfDisintegration.class,
 			WandOfAvalanche.class };
-		Category.WAND.probs = new float[]{ 10, 10, 15, 6, 10, 11, 15, 10, 6, 10, 0, 5, 5 };
+		Category.WAND.probs = 		new float[]{ 10, 10, 15, 6, 10, 11, 15, 10, 6, 10, 0, 5, 5 };
+		Category.WAND.luckyProbs = 	new float[]{ 10, 10, 18, 6, 12, 14, 18, 8, 6, 5, 0, 8, 5 };
 		
 		Category.WEAPON.classes = new Class<?>[]{ 
 			Dagger.class, 
@@ -258,7 +263,8 @@ public class Generator {
 			Claymore.class,
 		    Halberd.class,
 			GoldenSword.class,};
-		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0.1f, 0.1f, 1, 1, 0.1f};
+		Category.WEAPON.probs = 		new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0.1f, 0.1f, 1, 1, 0.1f};
+		Category.WEAPON.luckyProbs =	new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0.15f, 0.15f, 1, 1, 0.15f};
 		
 		Category.BARDING.classes = new Class<?>[]{
 			ClothBarding.class,
@@ -268,13 +274,15 @@ public class Generator {
 			PlateBarding.class,
 			AncientBarding.class};
 		Category.BARDING.probs = new float[]{ 1, 1, 1, 1, 1, 1 };
+		Category.BARDING.luckyProbs = new float[]{ 1, 1, 1, 1, 1, 1 };
 		
 		Category.FOOD.classes = new Class<?>[]{ 
 			Ration.class, 
 			ApplePie.class,
 			MysteriousHay.class };
 		Category.FOOD.probs = new float[]{ 4, 1, 0 };
-			
+		Category.FOOD.luckyProbs = new float[]{ 4, 1, 0 };
+
 		Category.RING.classes = new Class<?>[]{ 
 			RingOfMending.class,
 			RingOfDetection.class,
@@ -289,7 +297,8 @@ public class Generator {
 			RingOfHaggler.class,
 			RingOfThorns.class };
 		Category.RING.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 };
-		
+		Category.RING.luckyProbs = new float[]{ 6, 5, 4, 4, 4, 5, 6, 4, 7, 4, 0, 0 };
+
 		Category.SEED.classes = new Class<?>[]{ 
 			Firebloom.Seed.class,
 			Icecap.Seed.class,
@@ -300,7 +309,8 @@ public class Generator {
 			Fadeleaf.Seed.class,
 			Rotberry.Seed.class };
 		Category.SEED.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0 };
-		
+		Category.SEED.luckyProbs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0 };
+
 		Category.RANGED.classes = new Class<?>[] {
 				WoodenBow.class,
 				WoodenCrossbow.class,
@@ -310,6 +320,7 @@ public class Generator {
 				RubyCrossbow.class
 		};
 		Category.RANGED.probs = new float[]{ 3, 4, 3, 3, 1, 1 };
+		Category.RANGED.luckyProbs = new float[]{ 2, 3, 3, 3, 2, 2 };
 		
 		Category.BULLETS.classes = new Class<?>[] {
 				CommonArrow.class,
@@ -318,7 +329,8 @@ public class Generator {
 				ParalysisArrow.class,
 		};
 		Category.BULLETS.probs = new float[]{ 10, 2, 2, 2 };
-		
+		Category.BULLETS.luckyProbs = new float[]{ 10, 3, 3, 3 };
+
 	}
 	
 	public static void reset() {
@@ -342,7 +354,8 @@ public class Generator {
 			case WEAPON:
 				return randomWeapon();
 			default:
-				return ((Item)cat.classes[Random.chances( cat.probs )].newInstance()).random();
+				float[] theseProbs = (Random.luckBonus()) ? cat.luckyProbs : cat.probs;
+				return ((Item)cat.classes[Random.chances( theseProbs )].newInstance()).random();
 			}
 		} catch (Exception e) {
 			throw new TrackedRuntimeException("item generator",e);
@@ -362,9 +375,10 @@ public class Generator {
 		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
 		Category cat = Category.BARDING;
-		
-		Barding a1 = (Barding)cat.classes[Random.chances( cat.probs )].newInstance();
-		Barding a2 = (Barding)cat.classes[Random.chances( cat.probs )].newInstance();
+		float[] theseProbs = (Random.luckBonus()) ? cat.luckyProbs : cat.probs;
+
+		Barding a1 = (Barding)cat.classes[Random.chances( theseProbs )].newInstance();
+		Barding a2 = (Barding)cat.classes[Random.chances( theseProbs )].newInstance();
 		
 		a1.random();
 		a2.random();
@@ -377,9 +391,10 @@ public class Generator {
 		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
 		Category cat = Category.WEAPON;
-		
-		Weapon w1 = (Weapon)cat.classes[Random.chances( cat.probs )].newInstance();
-		Weapon w2 = (Weapon)cat.classes[Random.chances( cat.probs )].newInstance();
+		float[] theseProbs = (Random.luckBonus()) ? cat.luckyProbs : cat.probs;
+
+		Weapon w1 = (Weapon)cat.classes[Random.chances( theseProbs )].newInstance();
+		Weapon w2 = (Weapon)cat.classes[Random.chances( theseProbs )].newInstance();
 		
 		w1.random();
 		w2.random();

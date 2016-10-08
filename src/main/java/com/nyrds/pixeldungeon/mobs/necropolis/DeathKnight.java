@@ -23,8 +23,8 @@ public class DeathKnight extends UndeadMob {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Double damage proc
-        if (Random.Int(7) == 1){
-            if (enemy !=null){
+        if (Random.Int(5) == 0 && !Random.luckBonus()){
+            if (enemy != null){
                 DeathStroke.hit(enemy);
             }
             return damage * 2;

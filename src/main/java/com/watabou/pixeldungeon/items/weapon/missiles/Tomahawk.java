@@ -57,7 +57,12 @@ public class Tomahawk extends MissileWeapon {
 	
 	@Override
 	public Item random() {
-		quantity(Random.Int( 5, 12 ));
+		int newQuantity = Random.Int( 3, 10 );
+		if (Random.luckBonus()) newQuantity+= 2;
+		if (Random.luckBonus()) newQuantity+= 2;
+		if (Random.luckBonus()) newQuantity+= 2;
+
+		quantity(newQuantity);
 		return this;
 	}
 	

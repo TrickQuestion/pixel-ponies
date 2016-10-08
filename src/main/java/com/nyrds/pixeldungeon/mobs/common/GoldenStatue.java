@@ -96,7 +96,7 @@ public class GoldenStatue extends Mob {
 	@Override
 	public int attackProc( Char enemy, int damage ) {
 
-		if (Random.Int( 10 ) == 1) {
+		if (Random.Int( 8 ) == 0 && !Random.luckBonus()) {
 			Buff.affect( enemy, Burning.class ).reignite( enemy );
 		}
 

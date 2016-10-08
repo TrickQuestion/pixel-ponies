@@ -10,7 +10,7 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
 import com.watabou.pixeldungeon.actors.buffs.Regeneration;
 import com.watabou.pixeldungeon.actors.mobs.Boss;
-import com.watabou.pixeldungeon.items.SpiderCharm;
+import com.watabou.pixeldungeon.items.utility.SpiderCharm;
 import com.watabou.utils.Random;
 
 public class SpiderQueen extends Boss {
@@ -48,7 +48,7 @@ public class SpiderQueen extends Boss {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 2 ) == 0) {
+		if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 			Buff.affect( enemy, Poison.class ).set( Random.Int( 7, 9 ) * Poison.durationFactor( enemy ) );
 		}
 		

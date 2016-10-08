@@ -27,6 +27,9 @@ abstract public class RottenFood extends Food{
 	private boolean molder(int cell){
 		
 		Sample.INSTANCE.play( Assets.SND_ROTTEN_DROP );
+
+		// Small luck chance for food to be edible.
+		if (Random.luckBonus() && Random.luckBonus()) return false;
 		
 		switch (Random.Int( 4 )) {
 		case 0:

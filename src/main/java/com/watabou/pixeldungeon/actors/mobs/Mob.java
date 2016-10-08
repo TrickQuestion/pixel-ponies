@@ -475,8 +475,6 @@ public abstract class Mob extends Char {
 			Wound.hit(this);
 		}
 
-		// TODO: Recannibalize this for one of the subclasses. SCOUT probably ain't the right one.
-
 		return damage;
 	}
 
@@ -612,7 +610,11 @@ public abstract class Mob extends Char {
 
 	@SuppressWarnings("unchecked")
 	protected void dropLoot() {
-		if (loot != null && Random.Float() <= lootChance) {
+
+		// Tiny increased chance of loot drops.
+		boolean bonusLootChance = (Random.luckBonus() && Random.luckBonus() && Random.luckBonus());
+
+		if (loot != null && (Random.Float() <= lootChance || bonusLootChance)) {
 			Item item;
 			if (loot instanceof Generator.Category) {
 

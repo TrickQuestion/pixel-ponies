@@ -25,7 +25,7 @@ import com.watabou.pixeldungeon.actors.buffs.Amok;
 import com.watabou.pixeldungeon.actors.buffs.Terror;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Imp;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
+import com.watabou.pixeldungeon.items.weapon.KindOfWeapon;
 import com.watabou.pixeldungeon.items.food.Ration;
 import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
 import com.watabou.pixeldungeon.sprites.MonkSprite;
@@ -81,8 +81,9 @@ public class Monk extends Mob {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		
-		if (Random.Int( 6 ) == 0 && enemy == Dungeon.hero) {
+
+		// This guy's now a lot harder if you have low laughter for luck.
+		if (Random.Int( 4 ) == 0 && enemy == Dungeon.hero && !Random.luckBonus()) {
 			
 			Hero hero = Dungeon.hero;
 			KindOfWeapon weapon = hero.belongings.weapon;

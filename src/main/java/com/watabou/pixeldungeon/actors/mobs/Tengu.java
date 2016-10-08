@@ -28,9 +28,10 @@ import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
+import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.TomeOfMastery;
+import com.watabou.pixeldungeon.items.utility.TomeOfMastery;
 import com.watabou.pixeldungeon.items.keys.SkeletonKey;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.levels.Terrain;
@@ -74,7 +75,12 @@ public class Tengu extends Boss {
 	
 	@Override
 	public void die( Object cause ) {
-		Dungeon.level.drop( new TomeOfMastery(), getPos() ).sprite.drop();
+
+		// Reset so Tengu only drops tome if you didn't have it at start.
+		// It should be impossible to lose the tome from your inventory now -- can't drop, throw, be stolen.
+		if (Dungeon.hero.subClass == HeroSubClass.NONE && !Dungeon.hero.belongings.backpack.contains(new TomeOfMastery()) ) {
+			Dungeon.level.drop(new TomeOfMastery(), getPos()).sprite.drop();
+		}
 
 		GameScene.bossSlain();
 		Dungeon.level.drop( new SkeletonKey(), getPos() ).sprite.drop();

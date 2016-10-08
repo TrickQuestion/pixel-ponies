@@ -51,7 +51,14 @@ public abstract class Arrow extends MissileWeapon {
 
 	@Override
 	public Item random() {
-		quantity(Random.Int(15, 30));
+		int newQuantity = Random.Int(15, 30);
+
+		// More arrows for the lucky.
+		if (Random.luckBonus()) newQuantity = newQuantity * 12 / 10;
+		if (Random.luckBonus()) newQuantity = newQuantity * 12 / 10;
+		if (Random.luckBonus()) newQuantity = newQuantity * 12 / 10;
+
+		quantity(newQuantity);
 		return this;
 	}
 

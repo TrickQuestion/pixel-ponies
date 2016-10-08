@@ -51,12 +51,14 @@ public class ElfBarding extends ClassBarding {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass == HeroClass.NIGHTWING) {
-			return super.doEquip( hero );
-		} else {
-			GLog.w( TXT_NOT_ELF );
-			return false;
-		}
+		// DERP DERP DERP
+//		if (hero.heroClass == HeroClass.NIGHTWING) {
+//			return super.doEquip( hero );
+//		} else {
+//			GLog.w( TXT_NOT_ELF );
+//			return false;
+//		}
+		return false;
 	}
 	
 	@Override

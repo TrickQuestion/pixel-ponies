@@ -49,9 +49,9 @@ public class SummoningTrap {
 		}
 		
 		int nMobs = 1;
-		if (Random.Int( 2 ) == 0) {
+		if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 			nMobs++;
-			if (Random.Int( 2 ) == 0) {
+			if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 				nMobs++;
 			}
 		}

@@ -50,7 +50,9 @@ public class Combo extends Buff {
 			
 			GLog.p( TXT_COMBO, count );
 			postpone( 1.41f - count / 10f );
-			return (int)(damage * (count - 2) / 5f);
+
+			// TODO: Test this. Beefed it up from /5.0 to /4.0 for maximum punchage.
+			return (int)(damage * (count - 2) / 4.0f);
 			
 		} else {
 			

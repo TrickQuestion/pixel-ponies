@@ -79,12 +79,17 @@ public class Burning extends Buff implements Hero.Doom {
 	public boolean act() {
 		
 		if (target.isAlive()) {
-			
+
+			int damage = Random.Int( 1, 5 );
+
 			if (target instanceof Hero) {
 				Buff.prolong( target, Light.class, TICK * 1.01f );
+
+				// Give a small damage reduction if you're a lucky hero.
+				if (Random.luckBonus() && damage > 1) damage--;
 			}
-			
-			target.damage( Random.Int( 1, 5 ), this );
+
+			target.damage( damage, this );
 			
 			applyToCarriedItems(new burnItem());
 		} else {

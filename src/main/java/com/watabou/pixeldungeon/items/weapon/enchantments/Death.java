@@ -38,21 +38,27 @@ public class Death extends Weapon.Enchantment {
 		int level = Math.max( 0, weapon.level() );
 		
 		if (Random.Int( level + 100 ) >= 92) {
-			
-			defender.damage( defender.hp(), this );
-			defender.getSprite().emitter().burst( ShadowParticle.UP, 5 );
-			
-			if (!defender.isAlive() && attacker instanceof Hero) {
-				Badges.validateGrimWeapon();
+
+			// You get a SMALL luck chance to not insta-die here.
+			boolean alreadySafe = !(defender instanceof Hero);
+			boolean saveRoll = Random.luckBonus() && Random.luckBonus();
+
+			// Either defender isn't the hero, or defender is hero but failed save.
+			if (alreadySafe || !saveRoll) {
+
+				defender.damage(defender.hp(), this);
+				defender.getSprite().emitter().burst(ShadowParticle.UP, 5);
+
+				if (!defender.isAlive() && attacker instanceof Hero) {
+					Badges.validateGrimWeapon();
+				}
+
+				return true;
 			}
-			
-			return true;
-			
-		} else {
-			
-			return false;
-			
 		}
+			
+		return false;
+
 	}
 	
 	@Override

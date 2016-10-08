@@ -46,7 +46,10 @@ public class MysteriousHay extends Food {
 		super.execute( hero, action );
 		
 		if (action.equals( AC_EAT )) {
-			
+
+			// Small luck chance to not suffer ill effects.
+			if (Random.luckBonus() && Random.luckBonus()) return;
+
 			switch (Random.Int( 5 )) {
 			case 0:
 				GLog.w(Game.getVar(R.string.MysteriousHay_Info1));

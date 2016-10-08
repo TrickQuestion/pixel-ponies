@@ -22,11 +22,11 @@ public class Nightmare extends Mob {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Roots proc
-        if (Random.Int(10) == 1){
+        if (Random.Int(8) == 0 && !Random.luckBonus()){
             Buff.affect(enemy, Roots.class);
         }
         //Paralysis proc
-        if (Random.Int(10) == 1){
+        if (Random.Int(8) == 0 && !Random.luckBonus()){
             Buff.affect(enemy, Paralysis.class);
         }
         return damage;

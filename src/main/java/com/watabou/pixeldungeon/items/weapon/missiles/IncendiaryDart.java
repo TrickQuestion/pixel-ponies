@@ -79,7 +79,11 @@ public class IncendiaryDart extends MissileWeapon {
 	
 	@Override
 	public Item random() {
-		quantity(Random.Int( 3, 6 ));
+		int newQuantity = Random.Int( 2, 5 );
+		if (Random.luckBonus()) newQuantity++;
+		if (Random.luckBonus()) newQuantity++;
+		if (Random.luckBonus()) newQuantity++;
+		quantity(newQuantity);
 		return this;
 	}
 	

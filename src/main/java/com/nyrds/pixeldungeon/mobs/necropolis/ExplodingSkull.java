@@ -37,6 +37,10 @@ public class ExplodingSkull extends UndeadMob {
 
     @Override
     public int damageRoll() {
+
+        // There's a small chance you can save for half damage here.
+        if (Random.luckBonus() && Random.luckBonus()) return Random.NormalIntRange(18, 28);
+
         return Random.NormalIntRange(35, 55);
     }
 

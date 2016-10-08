@@ -31,7 +31,7 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Paralysis;
 import com.watabou.pixeldungeon.effects.Flare;
 import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.CrystallingKit;
+import com.watabou.pixeldungeon.items.utility.CrystallingKit;
 import com.watabou.pixeldungeon.items.keys.SkeletonKey;
 import com.watabou.pixeldungeon.items.wands.WandOfBlink;
 import com.watabou.pixeldungeon.items.wands.WandOfDisintegration;
@@ -239,9 +239,14 @@ public class King extends Boss {
 		@Override
 		public int attackProc( Char enemy, int damage ) {
 			if (Random.Int( MAX_ARMY_SIZE ) == 0) {
+
+				// Toss in a slight luck chance of avoiding paralysis attack.
+				if (Random.luckBonus() && Random.luckBonus()) {
+					return damage;
+				}
+
 				Buff.prolong( enemy, Paralysis.class, 1 );
 			}
-			
 			return damage;
 		}
 		

@@ -44,7 +44,7 @@ public class EnslavedSoul extends UndeadMob {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Buff proc
-        if (Random.Int(5) == 1){
+        if (Random.Int(4) == 0 && !Random.luckBonus()){
             if(enemy instanceof Hero) {
                 Class <? extends FlavourBuff> buffClass = (Class<? extends FlavourBuff>) Random.oneOf(BuffsForEnemy);
                 Buff.prolong( enemy, buffClass, 3 );

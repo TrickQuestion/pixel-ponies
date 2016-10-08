@@ -27,7 +27,7 @@ import com.watabou.pixeldungeon.actors.buffs.Light;
 import com.watabou.pixeldungeon.actors.buffs.Terror;
 import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.particles.PurpleParticle;
-import com.watabou.pixeldungeon.items.Dewdrop;
+import com.watabou.pixeldungeon.plants.Dewdrop;
 import com.watabou.pixeldungeon.items.wands.WandOfDisintegration;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;

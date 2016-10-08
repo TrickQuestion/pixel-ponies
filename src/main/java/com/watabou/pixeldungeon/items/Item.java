@@ -297,7 +297,7 @@ public class Item implements Bundlable {
 	public void removeItemFrom(Hero hero) {
 		onDetach();
 		cursed = false;
-		if (!(this instanceof EquipableItem) || !isEquipped(hero) || !((EquipableItem) this).doUnequip(hero, false)) {
+		if (!(this instanceof EquippableItem) || !isEquipped(hero) || !((EquippableItem) this).doUnequip(hero, false)) {
 			hero.belongings.removeItem(this);
 		}
 

@@ -27,7 +27,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
 import com.watabou.pixeldungeon.utils.GLog;
 
-public abstract class EquipableItem extends Item {
+public abstract class EquippableItem extends Item {
 
 	public static final String AC_EQUIP		= Game.getVar(R.string.EquipableItem_ACEquip);
 	public static final String AC_UNEQUIP	= Game.getVar(R.string.EquipableItem_ACUnequip);
@@ -37,7 +37,7 @@ public abstract class EquipableItem extends Item {
 
 	private static final String TXT_UNEQUIP_CURSED	= Game.getVar(R.string.EquipableItem_Unequip);
 
-	protected int minAttribute = 3;
+	protected int	minAttribute = 3;
 
 	public int minAttribute() {
 		return minAttribute;

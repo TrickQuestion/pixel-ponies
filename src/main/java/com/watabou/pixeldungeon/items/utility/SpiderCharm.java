@@ -1,4 +1,4 @@
-package com.watabou.pixeldungeon.items;
+package com.watabou.pixeldungeon.items.utility;
 
 import com.nyrds.pixeldungeon.mobs.spiders.SpiderServant;
 import com.watabou.pixeldungeon.Dungeon;

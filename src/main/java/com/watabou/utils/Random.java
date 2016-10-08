@@ -17,10 +17,25 @@
 
 package com.watabou.utils;
 
+import com.watabou.pixeldungeon.Dungeon;
+
 import java.util.Collection;
 import java.util.Map;
 
 public class Random {
+
+	/**
+	 * Returns true iff hero's laughter value merits a 'luck bonus'.
+	 * Odds are roughly: 3=13%, 6=25%, 9=35%, 12=44%.
+	 *
+	 * @return		true iff hero's laughter stat merits a bonus this time
+     */
+	public static boolean luckBonus() {
+		if (Math.pow(1.05, -Dungeon.hero.effectiveLaughter()) < Math.random()) {
+			return true;
+		}
+		return false;
+	}
 
 	public static float Float( float min, float max ) {
 		return (float)(min + Math.random() * (max - min)); 
@@ -33,7 +48,7 @@ public class Random {
 	public static float Float() {
 		return (float)Math.random();
 	}
-	
+
 	public static int Int( int max ) {
 		return max > 0 ? (int)(Math.random() * max) : 0;
 	}

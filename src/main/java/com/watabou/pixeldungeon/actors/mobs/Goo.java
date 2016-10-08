@@ -27,7 +27,7 @@ import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Ooze;
 import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.LloydsBeacon;
+import com.watabou.pixeldungeon.items.utility.LloydsBeacon;
 import com.watabou.pixeldungeon.items.keys.SkeletonKey;
 import com.watabou.pixeldungeon.items.rings.RingOfStoneWalking;
 import com.watabou.pixeldungeon.scenes.GameScene;
@@ -114,7 +114,7 @@ public class Goo extends Boss {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 3 ) == 0) {
+		if (Random.Int( 5 ) < 2 && !Random.luckBonus()) {
 			Buff.affect( enemy, Ooze.class );
 			enemy.getSprite().burst( 0x000000, 5 );
 		}
@@ -128,7 +128,7 @@ public class Goo extends Boss {
 	
 	@Override
 	protected boolean doAttack( Char enemy ) {		
-		if (pumpedUp || Random.Int( 3 ) > 0) {
+		if (pumpedUp || (Random.Int( 5 ) < 2 && !Random.luckBonus())) {
 		
 			return super.doAttack( enemy );
 

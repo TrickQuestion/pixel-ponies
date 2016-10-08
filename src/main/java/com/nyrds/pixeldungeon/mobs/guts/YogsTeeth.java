@@ -38,16 +38,16 @@ public class YogsTeeth extends Boss {
     @Override
     public int attackProc( Char enemy, int damage ) {
         //Life drain proc
-        if (Random.Int(3) == 1){
+        if (Random.Int(5) < 3 && !Random.luckBonus()){
             CellEmitter.center(this.getPos()).start(Speck.factory(Speck.HEALING), 0.3f, 3);
             this.hp(this.hp() + damage );
         }
         //Bleeding proc
-        if (Random.Int(3) == 1){
+        if (Random.Int(5) < 3 && !Random.luckBonus()){
             Buff.affect(enemy, Bleeding.class).set(damage);
         }
         //Double damage proc
-        if (Random.Int(3) == 1){
+        if (Random.Int(5) < 3 && !Random.luckBonus()){
             Devour.hit(enemy);
             Sample.INSTANCE.play(Assets.SND_BITE);
             return damage*2;

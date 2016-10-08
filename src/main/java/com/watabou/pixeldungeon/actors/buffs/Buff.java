@@ -26,6 +26,7 @@ import com.watabou.pixeldungeon.actors.mobs.Thief;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 import com.watabou.pixeldungeon.utils.GLog;
+import com.watabou.utils.Random;
 
 public class Buff extends Actor {
 	
@@ -109,11 +110,14 @@ public class Buff extends Actor {
 	protected void applyToCarriedItems(itemAction action ){
 		if (target instanceof Hero) {
 			Hero hero = (Hero) target;
-			
-			int n = 1;
-			
+
+			// Try twice minus luck for beginners, five times minus up to two luck for experts.
+			int n = 2;
+			if (Random.luckBonus()) n--;
+
 			if(hero.getDifficulty()>=3) {
-				n = 5;
+				n += 3;
+				if (Random.luckBonus()) n--;
 			}
 			
 			for (int i = 0; i < n; i++) {

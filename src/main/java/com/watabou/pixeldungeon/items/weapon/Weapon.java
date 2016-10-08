@@ -21,12 +21,13 @@ import com.nyrds.android.util.TrackedRuntimeException;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
+import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
+import com.watabou.pixeldungeon.items.wands.Wand;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Fire;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Horror;
@@ -55,11 +56,12 @@ public class Weapon extends KindOfWeapon {
 
 	private static final String TXT_IDENTIFY     = Game.getVar(R.string.Weapon_Identify);
 	private static final String TXT_INCOMPATIBLE = Game.getVar(R.string.Weapon_Incompatible);
+	private static final String TXT_MAGIC_SAVE   = Game.getVar(R.string.Weapon_Magic_Save);
 
 	// NOTE: Weird issue here. For some reason I can't put these in the resource files.
 	//       It must be parsing them in a way that breaks them, but I'm not sure why.
 	private static final String TXT_MELEE_TO_STRING = "%s H:%d";
-	private static final String TXT_RANGED_TO_STRING = "%s Y:%d";
+	private static final String TXT_BOW_TO_STRING = "%s Y:%d";
 
 	
 	public float	ACU	= 1;
@@ -75,16 +77,37 @@ public class Weapon extends KindOfWeapon {
 	}
 	public Imbue imbue = Imbue.NONE;
 	
-	private int hitsToKnow = 20;
+	private int hitFractionsToKnow = 200;
 	
 	private Enchantment enchantment;
 	
 	public void usedForHit() {
-		if (!levelKnown && --hitsToKnow <= 0) {
-			levelKnown = true;
-			GLog.i(TXT_IDENTIFY, name(), toString());
-			Badges.validateItemLevelAquired(this);
+
+		if (!levelKnown) {
+
+			// Might need to update this if we ever make wands equippable again, not sure.
+			if (this.isEquipped(Dungeon.hero)) {
+
+				// Drop hitFractionsToKnow based on Generosity level!
+				// Multiplying fractions by 10, then Generosity removes (gen+1) * 2 many.
+				// For base this takes ~26 hits.
+				// Eventually this drops to ~8 for very generous characters.
+				hitFractionsToKnow -= Dungeon.hero.effectiveGenerosity() * 2 + 2;
+
+			// Does it even make sense in this case...?
+			} else {
+				hitFractionsToKnow -= 10;
+			}
+
+			if (hitFractionsToKnow <= 0) {
+				levelKnown = true;
+				GLog.i(TXT_IDENTIFY, name(), toString());
+				Badges.validateItemLevelAquired(this);
+			}
+
 		}
+
+
 	}
 	
 	@Override
@@ -123,20 +146,38 @@ public class Weapon extends KindOfWeapon {
 				encumbrance = minAttribute - hero.effectiveLoyalty();
 			} else {
 				encumbrance = minAttribute - hero.effectiveHonesty();
-				if (hero.heroClass == HeroClass.NIGHTWING) {
-					encumbrance += 3;
-				}
 			}
+
+		// Should only be thrown weapons at this point.
 		} else {
-			encumbrance = minAttribute - hero.effectiveLoyalty();
+			encumbrance = minAttribute - hero.effectiveHonesty();
+
+			// Zebras can use weapons well if they're within 2 of the required honesty limit.
 			if (hero.heroClass == HeroClass.ZEBRA) {
 				encumbrance -= 2;
 			}
 		}
-		
-		return 
-			(encumbrance > 0 ? (float)(ACU / Math.pow( 1.5, encumbrance )) : ACU) *
-			(imbue == Imbue.ACCURACY ? 1.5f : 1.0f);
+
+		float accuracy = ACU;
+		if (encumbrance > 0) {
+			accuracy /= (float) Math.pow(1.5, encumbrance);
+		}
+		if (imbue == Imbue.ACCURACY) {
+			accuracy *= 1.5f;
+		}
+		// Earth ponies are more accurate with melee weapons.
+		if (hero.heroClass == HeroClass.EARTH_PONY && this instanceof MeleeWeapon && !(this instanceof Bow)) {
+			accuracy *= 1.2f;
+		}
+		// Earth ponies aren't too accurate with thrown weapons.
+		if (hero.heroClass == HeroClass.EARTH_PONY && this instanceof MissileWeapon) {
+			accuracy *= 0.9f;
+		}
+
+		// Nightwings are more accurate with bows.
+		// EDIT: REMOVED AS THIS IS HANDLED IN Arrow!!!
+
+		return accuracy;
 	}
 	
 	@Override
@@ -146,9 +187,18 @@ public class Weapon extends KindOfWeapon {
 		if (this instanceof MeleeWeapon) {
 			if (this instanceof Bow) {
 				encumbrance = minAttribute - hero.effectiveLoyalty();
+
+				// Earth ponies and zeebees are ALWAYS slow with bows!
+				if (Dungeon.hero.heroClass == HeroClass.EARTH_PONY ||
+						Dungeon.hero.heroClass == HeroClass.ZEBRA) {
+						encumbrance = (encumbrance > 0) ? encumbrance + 2 : 2;
+				}
+
 			} else {
 				encumbrance = minAttribute - hero.effectiveHonesty();
 			}
+
+		// Should only be thrown weapons at this point.
 		} else {
 			encumbrance = minAttribute - hero.effectiveHonesty();
 			if (hero.heroClass == HeroClass.ZEBRA) {
@@ -163,34 +213,30 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public int damageRoll( Hero hero ) {
-		
 		int damage = super.damageRoll( hero );
-		int bonus = 0;
+		boolean isMelee = this instanceof MeleeWeapon && !(this instanceof Bow);
+		boolean isThrown = this instanceof MissileWeapon && !(this instanceof Arrow);
 
-		if (this instanceof MeleeWeapon) {
-			if (this instanceof Bow) {
-				bonus = 0;
-			} else {
-				bonus = hero.effectiveHonesty() - minAttribute;
-			}
-		} else {
-			if (hero.heroClass == HeroClass.ZEBRA) {
-				bonus = hero.effectiveLoyalty() - minAttribute;
+		if (isMelee || (isThrown && hero.heroClass == HeroClass.ZEBRA)) {
+			int bonus = hero.effectiveHonesty() - minAttribute;
+			if (bonus > 0) {
+				damage += Random.IntRange( 0, bonus );
 			}
 		}
-
-		if (bonus > 0) {
-			damage += Random.IntRange( 0, bonus );
-		}
-		
 		return damage;
 	}
 	
 	public Item upgrade( boolean enchant ) {		
 		if (getEnchantment() != null) {
 			if (!enchant && Random.Int( level() ) > 0) {
-				GLog.w( TXT_INCOMPATIBLE );
-				enchant( null );
+
+				// Add in a chance for Magic level to prevent the overwriting.
+				if (Random.Int( level() + 4 ) + 3 > Dungeon.hero.effectiveMagic()) {
+					GLog.w(TXT_INCOMPATIBLE);
+					enchant(null);
+				} else {
+					GLog.w(TXT_MAGIC_SAVE);
+				}
 			}
 		} else {
 			if (enchant) {
@@ -205,8 +251,8 @@ public class Weapon extends KindOfWeapon {
 	public String toString() {
 		if (this instanceof Arrow) {
 			return super.toString();
-		} else if (this instanceof Bow || this instanceof MissileWeapon) {
-			return levelKnown ? Utils.format(TXT_RANGED_TO_STRING, super.toString(), minAttribute) : super.toString();
+		} else if (this instanceof Bow) {
+			return levelKnown ? Utils.format(TXT_BOW_TO_STRING, super.toString(), minAttribute) : super.toString();
 		} else {
 			return levelKnown ? Utils.format(TXT_MELEE_TO_STRING, super.toString(), minAttribute) : super.toString();
 		}
@@ -219,19 +265,19 @@ public class Weapon extends KindOfWeapon {
 	
 	@Override
 	public Item random() {
-		if (Random.Float() < 0.4) {
+		if (Random.luckBonus() || Random.luckBonus()) {
 			int n = 1;
-			if (Random.Int( 3 ) == 0) {
+			if (Random.luckBonus()) {
 				n++;
-				if (Random.Int( 3 ) == 0) {
+				if (Random.luckBonus()) {
 					n++;
 				}
 			}
-			if (Random.Int( 2 ) == 0) {
-				upgrade( n );
-			} else {
+			if (Random.Int( 5 ) < 3  && !Random.luckBonus()) {
 				degrade( n );
 				cursed = true;
+			} else {
+				upgrade( n );
 			}
 		}
 		return this;
@@ -267,7 +313,8 @@ public class Weapon extends KindOfWeapon {
 			Fire.class, Poison.class, Death.class, Paralysis.class, Leech.class, 
 			Slow.class, Swing.class, Piercing.class, Instability.class, Horror.class, Luck.class };
 		private static final float[] chances= new float[]{ 10, 10, 1, 2, 1, 2, 3, 3, 3, 2, 2 };
-			
+		private static final float[] luckChances= new float[]{ 10, 10, 2, 3, 2, 3, 3, 3, 3, 3, 4 };
+
 		public abstract boolean proc( Weapon weapon, Char attacker, Char defender, int damage );
 		
 		public String name( String weaponName, Gender gender) {
@@ -300,7 +347,11 @@ public class Weapon extends KindOfWeapon {
 		@SuppressWarnings("unchecked")
 		public static Enchantment random() {
 			try {
-				return ((Class<Enchantment>)enchants[ Random.chances( chances ) ]).newInstance();
+				if (Random.luckBonus()) {
+					return ((Class<Enchantment>) enchants[Random.chances(luckChances)]).newInstance();
+				} else {
+					return ((Class<Enchantment>) enchants[Random.chances(chances)]).newInstance();
+				}
 			} catch (Exception e) {
 				throw new TrackedRuntimeException(e);
 			}

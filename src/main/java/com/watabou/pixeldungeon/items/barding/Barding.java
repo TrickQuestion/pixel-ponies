@@ -24,7 +24,7 @@ import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.EquipableItem;
+import com.watabou.pixeldungeon.items.EquippableItem;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.barding.glyphs.Affection;
 import com.watabou.pixeldungeon.items.barding.glyphs.AntiEntropy;
@@ -45,7 +45,7 @@ import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 
-public class Barding extends EquipableItem {
+public class Barding extends EquippableItem {
 
 	private static final String TXT_EQUIP_CURSED    = Game.getVar(R.string.Barding_EquipCursed);
 		
@@ -54,6 +54,8 @@ public class Barding extends EquipableItem {
 	private static final String TXT_TO_STRING       = Game.getVar(R.string.Barding_ToString);
 	
 	private static final String TXT_INCOMPATIBLE    = Game.getVar(R.string.Barding_Incompatible);
+
+	private static final String TXT_MAGIC_SAVE      = Game.getVar(R.string.Barding_Magic_Save);
 
 	protected boolean hasHelmet;
 	protected boolean hasCollar;
@@ -64,7 +66,7 @@ public class Barding extends EquipableItem {
 	public int minHonesty;
 	public int resistance;
 
-	private int hitsToKnow = 10;
+	private int hitFractionsToKnow = 100;
 	
 	public Glyph glyph;
 	
@@ -160,8 +162,14 @@ public class Barding extends EquipableItem {
 		
 		if (glyph != null) {
 			if (!inscribe && Random.Int( level() ) > 0) {
-				GLog.w( TXT_INCOMPATIBLE );
-				inscribe( null );
+
+				// Add in a chance for Magic level to prevent the overwriting.
+				if (Random.Int( level() + 4 ) + 3 > Dungeon.hero.effectiveMagic()) {
+					GLog.w(TXT_INCOMPATIBLE);
+					inscribe(null);
+				} else {
+					GLog.w(TXT_MAGIC_SAVE);
+				}
 			}
 		} else {
 			if (inscribe) {
@@ -190,7 +198,20 @@ public class Barding extends EquipableItem {
 		}
 		
 		if (!levelKnown) {
-			if (--hitsToKnow <= 0) {
+
+			// Drop hitFractionsToKnow based on Generosity level!
+			// Multiplying fractions by 10, then Generosity removes (gen+1) * 2 many.
+			// For base this takes 13 hits.
+			// Eventually this drops to 4 for very generous characters.
+			if (defender instanceof Hero) {
+				hitFractionsToKnow -= ((Hero) defender).effectiveGenerosity() * 2 + 2;
+
+			// Does it even make sense in this case...?
+			} else {
+				hitFractionsToKnow -= 10;
+			}
+
+			if (hitFractionsToKnow <= 0) {
 				levelKnown = true;
 				GLog.w( TXT_IDENTIFY, name(), toString() );
 				Badges.validateItemLevelAquired( this );
@@ -254,23 +275,23 @@ public class Barding extends EquipableItem {
 	
 	@Override
 	public Item random() {
-		if (Random.Float() < 0.4) {
+		if (Random.luckBonus() || Random.luckBonus()) {
 			int n = 1;
-			if (Random.Int( 3 ) == 0) {
+			if (Random.luckBonus()) {
 				n++;
-				if (Random.Int( 3 ) == 0) {
+				if (Random.luckBonus()) {
 					n++;
 				}
 			}
-			if (Random.Int( 2 ) == 0) {
-				upgrade( n );
-			} else {
+			if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 				degrade( n );
 				cursed = true;
+			} else {
+				upgrade( n );
 			}
 		}
 		
-		if (Random.Int( 10 ) == 0) {
+		if (Random.Int( 8 ) == 0 || (Random.luckBonus() && Random.luckBonus())) {
 			inscribe( Glyph.random() );
 		}
 		

@@ -85,7 +85,11 @@ public class Skeleton extends UndeadMob {
 		if (Dungeon.hero.levelKind.equals("NecroBossLevel")){
 			return;
 		}
-		if (Random.Int( 5 ) == 0) {
+
+		// Tiny chance of increased loot. This is just a Monty Hall increase.
+		boolean bonusLootChance = Random.luckBonus() && Random.luckBonus() && Random.luckBonus();
+
+		if (Random.Int( 5 ) == 0 || bonusLootChance) {
 			Item loot = Generator.random( Generator.Category.WEAPON );
 			for (int i=0; i < 2; i++) {
 				Item l = Generator.random( Generator.Category.WEAPON );

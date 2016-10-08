@@ -26,6 +26,7 @@ import com.watabou.pixeldungeon.ResultDescriptions;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
+import com.watabou.pixeldungeon.actors.hero.HeroSubClass;
 import com.watabou.pixeldungeon.items.rings.RingOfSatiety;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 import com.watabou.pixeldungeon.utils.GLog;
@@ -69,12 +70,13 @@ public class Hunger extends Buff implements Hero.Doom {
 			
 			if (isStarving()) {
 
-				if (Random.Float() < 0.3f && (target.hp() > 1 || !target.paralysed)) {
+				// Make starving a little more likely, but require a luck bonus check.
+				if (Random.Float() < 0.45F && (target.hp() > 1 || !target.paralysed) && !Random.luckBonus()) {
 					
 					GLog.n( TXT_STARVING[hero.gender().ordinal()] );
 					
 					if(hero.getDifficulty() >= 3) {
-						hero.damage(Math.max(hero.effectiveHonesty() - 3, 1), this);
+						hero.damage(Math.max((hero.ht()-15)/10, 1), this);
 					} else {
 						hero.damage( 1, this );
 					}
@@ -100,13 +102,17 @@ public class Hunger extends Buff implements Hero.Doom {
 				}
 				
 				float delta = STEP - bonus;
+
+				// Add in extra hunger for humorous ponies.
+				// This starts to pay back once you hit (Haste*2+L:)10.
+				delta += ((float) (hero.effectiveLaughter()-3)) * 0.07F;
 				
 				if(PixelPonies.realtime()) {
-					delta *= 0.3;
+					delta *= 0.3F;
 				}
 				
 				if(hero.getDifficulty() == 0) {
-					delta *= 0.8;
+					delta *= 0.8F;
 				}
 				
 				float newLevel = level + delta;
@@ -132,7 +138,7 @@ public class Hunger extends Buff implements Hero.Doom {
 				
 			}
 			
-			float step = hero.heroClass == HeroClass.PEGASUS ? STEP * 1.2f : STEP;
+			float step = hero.subClass == HeroSubClass.FARMER ? STEP * 1.2f : STEP;
 			spend( target.buff( Shadows.class ) == null ? step : step * 1.5f );
 			
 		} else {

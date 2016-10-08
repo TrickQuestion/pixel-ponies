@@ -219,7 +219,7 @@ public class Yog extends Boss {
 
 		@Override
 		public int attackProc(Char enemy, int damage) {
-			if (Random.Int(3) == 0) {
+			if (Random.Int(2) == 0 && !Random.luckBonus()) {
 				Buff.affect(enemy, Ooze.class);
 				enemy.getSprite().burst(0xFF000000, 5);
 			}

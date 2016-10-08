@@ -90,6 +90,7 @@ public class Bestiary {
 	public static Mob mutable(int depth, String levelKind) {
 		Class<? extends Mob> cl = getMobFromExternalBestiary(depth, levelKind);
 
+		// These are cool enough that luck shouldn't influence them showing up.
 		if (Random.Int(30) == 0) {
 			if (cl == Rat.class) {
 				cl = Albino.class;

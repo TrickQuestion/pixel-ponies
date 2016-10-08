@@ -57,11 +57,18 @@ public class Bones {
 			break;
 		}
 		if (item == null || (item instanceof Artifact && !(item instanceof Ring))) {
+			int maxGold = 1;
 			if (Dungeon.gold() > 0) {
-				item = new Gold( Random.IntRange( 1, Dungeon.gold()) );
-			} else {
-				item = new Gold( 1 );
+				maxGold = Random.IntRange( 1, Dungeon.gold());
 			}
+
+			// Lucky characters get a gold boost of up to double gold!
+			for (int i = 0 ; i < 4 && Random.luckBonus() ; i++) {
+				maxGold += 2;
+				maxGold *= 1.15F;
+			}
+
+			item = new Gold( Random.IntRange( 1, maxGold ));
 		}
 		
 		depth = Dungeon.depth;

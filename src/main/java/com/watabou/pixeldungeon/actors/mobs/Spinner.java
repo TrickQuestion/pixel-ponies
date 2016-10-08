@@ -78,7 +78,7 @@ public class Spinner extends Mob {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
-		if (Random.Int( 2 ) == 0) {
+		if (Random.Int( 5 ) < 3 && !Random.luckBonus()) {
 			Buff.affect( enemy, Poison.class ).set( Random.Int( 7, 9 ) * Poison.durationFactor( enemy ) );
 			state = FLEEING;
 		}
