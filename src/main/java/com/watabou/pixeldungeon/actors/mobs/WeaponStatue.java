@@ -31,6 +31,7 @@ import com.watabou.pixeldungeon.items.weapon.Weapon.Enchantment;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.sprites.WeaponStatueSprite;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
@@ -39,12 +40,16 @@ import com.watabou.utils.Random;
 public class WeaponStatue extends Mob {
 	
 	private Weapon weapon;
-	
-	public WeaponStatue() {
-		spriteClass = WeaponStatueSprite.class;
 
+	private boolean flipInitially = false;
+	
+	public WeaponStatue(boolean flipInitially) {
+		this.flipInitially = flipInitially;
+
+		spriteClass = WeaponStatueSprite.class;
 		EXP = 0;
 		state = PASSIVE;
+
 		
 		do {
 			weapon = (Weapon)Generator.random( Generator.Category.WEAPON );
@@ -146,5 +151,12 @@ public class WeaponStatue extends Mob {
 	@Override
 	public String description() {
 		return Utils.format(Game.getVar(R.string.WeaponStatue_Desc), weapon.name());
-	}	
+	}
+
+	@Override
+	public CharSprite sprite() {
+		CharSprite sprite = super.sprite();
+		sprite.flipHorizontal = flipInitially;
+		return sprite;
+	}
 }

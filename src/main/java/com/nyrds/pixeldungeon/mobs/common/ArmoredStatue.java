@@ -27,7 +27,11 @@ public class ArmoredStatue extends Mob {
 	@NonNull
 	private Barding barding;
 
-	public ArmoredStatue() {
+	private boolean flipInitially = false;
+
+	public ArmoredStatue(boolean flipInitially) {
+		this.flipInitially = flipInitially;
+
 		EXP = 0;
 		state = PASSIVE;
 
@@ -133,10 +137,14 @@ public class ArmoredStatue extends Mob {
 	public CharSprite sprite() {
 		if(barding != null)
 		{
-			return new HeroSpriteDef(barding);
+			HeroSpriteDef sprite = new HeroSpriteDef(barding);
+			sprite.flipHorizontal = flipInitially;
+			return sprite;
 		}
 		else{
-			return new HeroSpriteDef(new ClothBarding());
+			HeroSpriteDef sprite = new HeroSpriteDef(new ClothBarding());
+			sprite.flipHorizontal = flipInitially;
+			return sprite;
 		}
 	}
 }

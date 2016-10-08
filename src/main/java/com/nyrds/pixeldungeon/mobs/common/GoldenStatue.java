@@ -15,6 +15,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
+import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -23,7 +24,11 @@ public class GoldenStatue extends Mob {
 
 	private Weapon weapon;
 
-	public GoldenStatue() {
+	private boolean flipInitially;
+
+	public GoldenStatue(boolean flipInitially) {
+		this.flipInitially = flipInitially;
+
 		EXP = 0;
 		state = PASSIVE;
 
@@ -128,5 +133,12 @@ public class GoldenStatue extends Mob {
 	@Override
 	public String description() {
 		return Utils.format(Game.getVar(R.string.GoldenStatue_Desc), weapon.name());
+	}
+
+	@Override
+	public CharSprite sprite() {
+		CharSprite sprite = super.sprite();
+		sprite.flipHorizontal = flipInitially;
+		return sprite;
 	}
 }

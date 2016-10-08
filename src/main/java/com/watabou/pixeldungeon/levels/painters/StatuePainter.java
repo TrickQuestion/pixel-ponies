@@ -57,36 +57,37 @@ public class StatuePainter extends Painter {
 			
 			fill( level, room.left + 1, room.top + 1, 1, room.height() - 1 , Terrain.STATUE );
 			cx = room.left + 2;
+			flipSprite = false;
 			
 		} else if (door.y == room.top) {
 			
 			fill( level, room.left + 1, room.bottom - 1, room.width() - 1, 1 , Terrain.STATUE );
 			cy = room.bottom - 2;
+			flipSprite = (door.x <= cx) ? true : false;
 
 		} else if (door.y == room.bottom) {
 			
 			fill( level, room.left + 1, room.top + 1, room.width() - 1, 1 , Terrain.STATUE );
 			cy = room.top + 2;
-			flipSprite = true;
+			flipSprite = (door.x < cx) ? true : false;
 		}
 
 		Mob statue;
 		//WeaponStatue type proc
 		if (Random.Int(10) > 5){
 			if (Random.Int(10) == 1){
-				statue = new GoldenStatue();
+				statue = new GoldenStatue(flipSprite);
 			}
 			else{
-				statue = new WeaponStatue();
+				statue = new WeaponStatue(flipSprite);
 			}
 		}
 		else{
-			statue = new ArmoredStatue();
+			statue = new ArmoredStatue(flipSprite);
 		}
 
 		statue.setPos(cx + cy * level.getWidth());
 		level.mobs.add( statue );
 		Actor.occupyCell( statue );
-		statue.sprite().flipHorizontal = flipSprite;
 	}
 }

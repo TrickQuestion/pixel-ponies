@@ -1665,7 +1665,17 @@ public class Hero extends Char {
 			awarenessIndex = awarenessIndex * 2 + 1;
 		}
 
-		float detectChance = detectChances[awarenessIndex];
+		float detectChance;
+
+		// Now that I'm pretty sure this works somewhat correctly, adding a safeguard so we can delay testing.
+		if (awarenessIndex < detectChances.length) {
+			detectChance = detectChances[awarenessIndex];
+
+		// We're hushing an error for now: this should not be possible with current char level and generosity limits. But for the future, this scales.
+		} else {
+			awarenessIndex -= detectChances.length;
+			detectChance = detectChances[detectChances.length - 1] + ((float)awarenessIndex * 0.0035F);
+		}
 
 		if (distance <= 0) {
 			detectChance /= 2.0F - (float) distance;
