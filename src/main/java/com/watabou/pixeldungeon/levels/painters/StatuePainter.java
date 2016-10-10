@@ -63,13 +63,13 @@ public class StatuePainter extends Painter {
 			
 			fill( level, room.left + 1, room.bottom - 1, room.width() - 1, 1 , Terrain.STATUE );
 			cy = room.bottom - 2;
-			flipSprite = (door.x <= cx) ? true : false;
+			flipSprite = (door.x <= cx);
 
 		} else if (door.y == room.bottom) {
 			
 			fill( level, room.left + 1, room.top + 1, room.width() - 1, 1 , Terrain.STATUE );
 			cy = room.top + 2;
-			flipSprite = (door.x < cx) ? true : false;
+			flipSprite = (door.x < cx);
 		}
 
 		Mob statue;

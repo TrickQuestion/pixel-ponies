@@ -28,7 +28,7 @@ import com.watabou.utils.Bundle;
 
 public enum HeroSubClass {
 
-	NONE(      	null, null, null ),
+	NONE(      	Game.getVar(R.string.HeroSubClass_NameNone), Game.getVar(R.string.HeroSubClass_DescNone), ClassBarding.class ),
     FARMER(    	Game.getVar(R.string.HeroSubClass_NameFarmer), Game.getVar(R.string.HeroSubClass_DescFarmer), YokeAndPlantTeamVest.class),
 	BARD(      	Game.getVar(R.string.HeroSubClass_NameBard), Game.getVar(R.string.HeroSubClass_DescBard), HarlequinCostume.class),
 	ROYAL_GUARD(Game.getVar(R.string.HeroSubClass_NameRoyalGuard), Game.getVar(R.string.HeroSubClass_DescRoyalGuard), RoyalBarding.class),
@@ -76,7 +76,7 @@ public enum HeroSubClass {
                 return subClass;
             }
         }
-        return null;
+        return NONE;
 	}
 
 	public ClassBarding classBarding() {

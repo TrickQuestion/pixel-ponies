@@ -1,11 +1,16 @@
 package com.watabou.pixeldungeon.items.weapon.missiles;
 
+import com.nyrds.pixeldungeon.ml.R;
+import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.utils.Random;
+
+import java.util.ArrayList;
 
 public abstract class Arrow extends MissileWeapon {
 
@@ -31,7 +36,7 @@ public abstract class Arrow extends MissileWeapon {
 		super();
 		minAttribute = 0;
 		quantity(number);
-
+		defaultAction = Game.getVar(R.string.Arrow_ACFire);
 	}
 
 	protected void updateStatsForInfo() {
@@ -50,6 +55,18 @@ public abstract class Arrow extends MissileWeapon {
 	}
 
 	@Override
+	public ArrayList<String> actions(Hero hero) {
+		ArrayList<String> actions = super.actions( hero );
+		if (hero.belongings.weapon instanceof Bow) {
+			actions.add(Game.getVar(R.string.Arrow_ACFire));
+		} else {
+			actions.remove(Game.getVar(R.string.Arrow_ACFire));
+		}
+
+		return actions;
+	}
+
+	@Override
 	public Item random() {
 		int newQuantity = Random.Int(15, 30);
 
@@ -62,8 +79,7 @@ public abstract class Arrow extends MissileWeapon {
 		return this;
 	}
 
-	@Override
-	protected void onThrow(int cell) {
+	public void onFire(int cell) {
 		if (getCurUser().bowEquiped()) {
 
 			if (Dungeon.level.adjacent(getCurUser().getPos(), cell)
@@ -99,9 +115,16 @@ public abstract class Arrow extends MissileWeapon {
 			firedFrom.useArrowType(this);
 
 			super.onThrow(cell);
+
+		// This should no longer be possible.
 		} else {
 			miss(cell);
 		}
+	}
+
+	@Override
+	protected void onThrow(int cell) {
+		miss(cell);
 	}
 
 	@Override

@@ -172,8 +172,8 @@ public class ItemSlot extends Button {
 
 		} else if (isMissile && !isArrow) {
 
-			topRight.text(Utils.format(TXT_LOYALTY, ((MissileWeapon) item).minAttribute()));
-			if (((MissileWeapon) item).minAttribute() > Dungeon.hero.effectiveLoyalty()) {
+			topRight.text(Utils.format(TXT_HONESTY, ((MissileWeapon) item).minAttribute()));
+			if (((MissileWeapon) item).minAttribute() > Dungeon.hero.effectiveHonesty()) {
 				topRight.hardlight(DEGRADED);
 			} else {
 				topRight.resetColor();

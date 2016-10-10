@@ -458,7 +458,7 @@ public class Dungeon {
 		@SuppressWarnings("unused")
 		String version = bundle.getString(VERSION);
 
-		hero = (Hero) bundle.get(HERO);
+		Dungeon.hero = (Hero) bundle.get(HERO);
 
 		gold(bundle.getInt(GOLD));
 		depth = bundle.getInt(DEPTH);

@@ -281,7 +281,7 @@ public class Hero extends Char {
 
 	private static final String ATTACK = "attackSkill";
 	private static final String DEFENSE = "defenseSkill";
-    private static final String HONESTY = "minHonesty";
+    private static final String HONESTY = "honesty";
     private static final String LOYALTY = "loyalty";
     private static final String LAUGHTER = "laughter";
     private static final String GENEROSITY = "generosity";
@@ -549,7 +549,7 @@ public class Hero extends Char {
 	public float attackDelay() {
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		if (wep != null) {
-			return wep.speedFactor(this);
+			return wep.speedFactor(this, wep instanceof Arrow);
 
 		} else {
 			return 1f;

@@ -12,39 +12,11 @@ import com.watabou.pixeldungeon.utils.Utils;
 import java.io.File;
 
 public class SaveUtils {
-	private static final String RG_GAME_FILE = "rogue.dat";
-	private static final String RG_DEPTH_FILE = "rogue%d.dat";
-
-	private static final String WR_GAME_FILE = "warrior.dat";
-	private static final String WR_DEPTH_FILE = "warrior%d.dat";
-
-	private static final String MG_GAME_FILE = "mage.dat";
-	private static final String MG_DEPTH_FILE = "mage%d.dat";
-
-	private static final String RN_GAME_FILE = "ranger.dat";
-	private static final String RN_DEPTH_FILE = "ranger%d.dat";
-
-	private static final String EL_GAME_FILE = "elf.dat";
-	private static final String EL_DEPTH_FILE = "elf%d.dat";
-
-	private static final String EARTH_GAME_FILE = "earth.dat";
-	private static final String EARTH_DEPTH_FILE = "earth%d.dat";
+	private static final String GAME_FILE_EXTENSION = ".dat";
+	private static final String DEPTH_FILE_EXTENSION = "%d.dat";
 
 	static private boolean hasClassTag(HeroClass cl, String fname) {
-		switch (cl) {
-		case PEGASUS:
-			return fname.contains("pegasus");
-		case ZEBRA:
-			return fname.contains("zebra");
-		case UNICORN:
-			return fname.contains("unicorn");
-		case NIGHTWING:
-			return fname.contains("nightwing");
-		case EARTH_PONY:
-			return fname.contains("earth pony");
-		default:
-			throw new TrackedRuntimeException("unknown hero class!");
-		}
+		return fname.contains(cl.toString());
 	}
 
 	public static void loadGame(String slot, HeroClass heroClass) {
@@ -193,21 +165,7 @@ public class SaveUtils {
 	}
 
 	public static String gameFile(HeroClass cl) {
-
-		switch (cl) {
-		case PEGASUS:
-			return RG_GAME_FILE;
-		case UNICORN:
-			return MG_GAME_FILE;
-		case ZEBRA:
-			return RN_GAME_FILE;
-		case NIGHTWING:
-			return EL_GAME_FILE;
-		case EARTH_PONY:
-			return EARTH_GAME_FILE;
-		default:
-			throw new TrackedRuntimeException("unknown hero class!");
-		}
+		return cl.toString() + GAME_FILE_EXTENSION;
 	}
 
 	public static String depthFileForLoad(HeroClass cl, int depth, String levelKind, String levelId) {
@@ -224,20 +182,6 @@ public class SaveUtils {
 	}
 	
 	private static String _depthFile(HeroClass cl) {
-
-		switch (cl) {
-		case PEGASUS:
-			return RG_DEPTH_FILE;
-		case UNICORN:
-			return MG_DEPTH_FILE;
-		case ZEBRA:
-			return RN_DEPTH_FILE;
-		case NIGHTWING:
-			return EL_DEPTH_FILE;
-		case EARTH_PONY:
-			return EARTH_DEPTH_FILE;
-		default:
-			throw new TrackedRuntimeException("unknown hero class!");
-		}
+		return cl.toString() + DEPTH_FILE_EXTENSION;
 	}
 }

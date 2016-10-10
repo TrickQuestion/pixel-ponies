@@ -46,6 +46,7 @@ import com.watabou.pixeldungeon.items.weapon.melee.WoodenBow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
 import com.watabou.pixeldungeon.items.weapon.missiles.CommonArrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.Dart;
+import com.watabou.pixeldungeon.items.weapon.missiles.FireArrow;
 import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.utils.Bundle;
@@ -166,11 +167,12 @@ public enum HeroClass {
 		hero.collect(new RingOfHaste().upgrade().identify());
 		hero.collect(new Spear().upgrade().identify());
 
+		hero.collect(new CommonArrow(100));
+		hero.collect(new FireArrow(100));
+		hero.collect(new WoodenBow().upgrade().upgrade().upgrade().upgrade().identify());
+
 		hero.ht(1000);
 		hero.hp(1000);
-		hero.attackSkill = 1000;
-		//hero.defenseSkill = 1000;
-
 	}
 
 	private static void initCommon(Hero hero) {

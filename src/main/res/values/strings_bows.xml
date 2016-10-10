@@ -3,7 +3,7 @@
     
     <!-- STRINGS OF Bow CLASS -->
     <string name="Bow_Info">This is a ranged weapon that shoots arrows. Most ponies can\'t aim a bow at adjacent monsters (they\'ll attack with their hooves instead).\n\n</string>
-    
+
     <!-- STRINGS OF WoodenBow CLASS -->
     <string name="WoodenBow_Name">wooden bow</string>
     <string name="WoodenBow_Info">This simple wooden bow might prove to be useful, once you find some arrows.</string>
@@ -38,6 +38,10 @@
     <string name="Quiver_Name">quiver</string>
     <string name="Quiver_Info">Pleather quiver suitable to hold any amount of arrows.</string>
     <string name="Quiver_Gender">masculine</string>
+
+    <!-- STRINGS OF Arrow CLASS -->
+    <string name="Arrow_Info">This is an arrow. You can fire it if you have a bow equipped: either manually, or automatically by tapping on the enemy. When firing automatically, the most recently-used arrow type will be selected.</string>
+    <string name="Arrow_ACFire">FIRE</string>
 	
 	<!-- STRINGS OF CommonArrow CLASS -->
     <string name="CommonArrow_Name">arrow</string>

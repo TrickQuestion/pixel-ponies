@@ -181,26 +181,25 @@ public class Weapon extends KindOfWeapon {
 	}
 	
 	@Override
-	public float speedFactor( Hero hero ) {
+	public float speedFactor( Hero hero, boolean isFiredArrow ) {
 
-		int encumbrance = 0;
-		if (this instanceof MeleeWeapon) {
-			if (this instanceof Bow) {
-				encumbrance = minAttribute - hero.effectiveLoyalty();
+		int encumbrance = minAttribute - hero.effectiveHonesty();
 
-				// Earth ponies and zeebees are ALWAYS slow with bows!
-				if (Dungeon.hero.heroClass == HeroClass.EARTH_PONY ||
-						Dungeon.hero.heroClass == HeroClass.ZEBRA) {
-						encumbrance = (encumbrance > 0) ? encumbrance + 2 : 2;
-				}
+		// I had to add this bool in so when a bow can't be fired, it uses melee correctly instead.
+		if (isFiredArrow) {
+			GLog.w("Shot fired (debug)");
 
-			} else {
-				encumbrance = minAttribute - hero.effectiveHonesty();
+			encumbrance = minAttribute - hero.effectiveLoyalty();
+
+			// Earth ponies and zeebees are ALWAYS slow with bows!
+			if (Dungeon.hero.heroClass == HeroClass.EARTH_PONY ||
+					Dungeon.hero.heroClass == HeroClass.ZEBRA) {
+					encumbrance = (encumbrance > 0) ? encumbrance + 2 : 2;
 			}
 
-		// Should only be thrown weapons at this point.
-		} else {
-			encumbrance = minAttribute - hero.effectiveHonesty();
+
+		// Zeebees can throw well if they're within two points of the minimum honesty.
+		} else if (this instanceof MissileWeapon){
 			if (hero.heroClass == HeroClass.ZEBRA) {
 				encumbrance -= 2;
 			}

@@ -31,6 +31,8 @@ import com.watabou.pixeldungeon.actors.buffs.SnipersMark;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.bags.Bag;
+import com.watabou.pixeldungeon.items.weapon.melee.Bow;
+import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.mechanics.Ballistica;
 import com.watabou.pixeldungeon.scenes.CellSelector;
@@ -465,7 +467,7 @@ public class Item implements Bundlable {
 		if (this instanceof MissileWeapon) {
 
 			// FIXME
-			delay *= ((MissileWeapon) this).speedFactor(user);
+			delay *= ((MissileWeapon) this).speedFactor(user, this instanceof Arrow);
 			if (enemy != null && enemy.buff(SnipersMark.class) != null) {
 				delay *= 0.5f;
 			}
@@ -477,7 +479,12 @@ public class Item implements Bundlable {
 					@Override
 					public void call() {
 						Item item = Item.this.detach(user.belongings.backpack);
-						item.onThrow(cell);
+						if (item instanceof Arrow && user.belongings.weapon instanceof Bow) {
+							((Arrow) item).onFire(cell);
+						}
+						else {
+							item.onThrow(cell);
+						}
 						user.spendAndNext(finalDelay);
 					}
 				});

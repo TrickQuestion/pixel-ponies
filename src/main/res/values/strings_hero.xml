@@ -76,6 +76,8 @@
     </string-array>
 
     <!-- STRINGS OF HeroSubClass CLASS -->
+    <string name="HeroSubClass_NameNone">(none)</string>
+    <string name="HeroSubClass_DescNone"></string>
     <string name="HeroSubClass_NameFarmer">farmer</string>
     <string name="HeroSubClass_DescFarmer">The _Farmer_ can gather dewdrops and seeds from special plants, and can go longer without food.</string>
     <string name="HeroSubClass_NameBard">bard</string>
