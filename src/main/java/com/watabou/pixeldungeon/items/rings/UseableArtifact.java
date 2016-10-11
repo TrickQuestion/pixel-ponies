@@ -6,7 +6,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 
 import java.util.ArrayList;
 
-public class UsableArtifact extends Artifact {
+public class UseableArtifact extends Artifact {
 
 	public static final String AC_USE = Game.getVar(R.string.Artifact_Use);
 

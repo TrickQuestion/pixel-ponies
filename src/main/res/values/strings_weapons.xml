@@ -129,10 +129,10 @@
     <string name="Glaive_Info">A polearm consisting of a sword blade on the end of a pole. It has a longer reach than most melee weapons.</string>
     <string name="Glaive_Gender">feminine</string>
     
-    <!-- STRINGS OF Knuckles CLASS -->
-    <string name="Knuckles_Name">steel horseshoe</string>
-    <string name="Knuckles_Info">A horseshoe made of steel.</string>
-    <string name="Knuckles_Gender">masculine</string>
+    <!-- STRINGS OF SteelHorseshoes CLASS -->
+    <string name="SteelHorseshoes_Name">steel horseshoes</string>
+    <string name="SteelHorseshoes_Info">Horseshoes made of steel.</string>
+    <string name="SteelHorseshoes_Gender">masculine</string>
     
     <!-- STRINGS OF Longsword CLASS -->
     <string name="Longsword_Name">longsword</string>

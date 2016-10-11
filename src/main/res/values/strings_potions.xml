@@ -81,7 +81,7 @@
     <string name="PotionOfParalyticGas_Name">Potion of Paralytic Gas</string>
     <string name="PotionOfParalyticGas_Info">Upon exposure to open air, the liquid in this flask will vaporize into a numbing yellow haze. Anyone who inhales the cloud will be paralyzed instantly, unable to move for some time after the cloud dissipates. This item can be thrown at distant enemies to catch them within the effect of the gas.</string>
 
-    <!-- STRINGS OF PotionOfPurity CLASS -->
+    <!-- STRINGS OF PotionOfPurification CLASS -->
     <string name="PotionOfPurity_Name">Potion of Purification</string>
     <string name="PotionOfPurity_Info">This reagent will quickly neutralize all harmful gases and germs in the area of effect. Drinking it will give you a temporary immunity to harmful gases.</string>
     <string name="PotionOfPurity_Freshness">You feel uncommon freshness in the air.</string>

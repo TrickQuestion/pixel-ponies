@@ -21,12 +21,12 @@ import com.watabou.noosa.Game;
 import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-public class Knuckles extends MeleeWeapon {
+public class SteelHorseshoes extends MeleeWeapon {
 	{
-		image = ItemSpriteSheet.KNUCKLEDUSTER;
+		image = ItemSpriteSheet.STEEL_HORSESHOES;
 	}
 	
-	public Knuckles() {
+	public SteelHorseshoes() {
 		super( 1, 1f, 0.5f );
 	}
 	

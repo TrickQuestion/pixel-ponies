@@ -187,7 +187,6 @@ public class Weapon extends KindOfWeapon {
 
 		// I had to add this bool in so when a bow can't be fired, it uses melee correctly instead.
 		if (isFiredArrow) {
-			GLog.w("Shot fired (debug)");
 
 			encumbrance = minAttribute - hero.effectiveLoyalty();
 

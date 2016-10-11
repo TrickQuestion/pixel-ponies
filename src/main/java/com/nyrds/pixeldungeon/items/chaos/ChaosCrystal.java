@@ -6,7 +6,7 @@ import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.barding.Barding;
-import com.watabou.pixeldungeon.items.rings.UsableArtifact;
+import com.watabou.pixeldungeon.items.rings.UseableArtifact;
 import com.watabou.pixeldungeon.items.scrolls.Scroll;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfWeaponUpgrade;
 import com.watabou.pixeldungeon.items.wands.Wand;
@@ -22,7 +22,7 @@ import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
 
-public class ChaosCrystal extends UsableArtifact implements IChaosItem {
+public class ChaosCrystal extends UseableArtifact implements IChaosItem {
 
 	private static final String IDENTETIFY_LEVEL_KEY = "identetifyLevel";
 	private static final String CHARGE_KEY = "charge";

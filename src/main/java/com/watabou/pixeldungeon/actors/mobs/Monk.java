@@ -27,7 +27,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Imp;
 import com.watabou.pixeldungeon.items.weapon.KindOfWeapon;
 import com.watabou.pixeldungeon.items.food.Ration;
-import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
+import com.watabou.pixeldungeon.items.weapon.melee.SteelHorseshoes;
 import com.watabou.pixeldungeon.sprites.MonkSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
@@ -88,7 +88,7 @@ public class Monk extends Mob {
 			Hero hero = Dungeon.hero;
 			KindOfWeapon weapon = hero.belongings.weapon;
 			
-			if (weapon != null && !(weapon instanceof Knuckles) && !weapon.cursed) {
+			if (weapon != null && !(weapon instanceof SteelHorseshoes) && !weapon.cursed) {
 				hero.belongings.weapon = null;
 				Dungeon.level.drop( weapon, hero.getPos() ).sprite.drop();
 				GLog.w( TXT_DISARM, getName(), weapon.name() );

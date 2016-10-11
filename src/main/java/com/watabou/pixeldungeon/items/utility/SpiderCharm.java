@@ -8,12 +8,12 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.effects.Pushing;
 import com.watabou.pixeldungeon.effects.Wound;
-import com.watabou.pixeldungeon.items.rings.UsableArtifact;
+import com.watabou.pixeldungeon.items.rings.UseableArtifact;
 import com.watabou.pixeldungeon.plants.Sungrass.Health;
 import com.watabou.pixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
-public class SpiderCharm extends UsableArtifact {
+public class SpiderCharm extends UseableArtifact {
 
 	public SpiderCharm() {
 		image = ItemSpriteSheet.SPIDER_CHARM;

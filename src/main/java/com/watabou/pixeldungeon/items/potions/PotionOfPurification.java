@@ -35,7 +35,7 @@ import com.watabou.pixeldungeon.utils.BArray;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.PathFinder;
 
-public class PotionOfPurity extends Potion {
+public class PotionOfPurification extends Potion {
 
 	private static final String TXT_FRESHNESS = Game.getVar(R.string.PotionOfPurity_Freshness);
 	private static final String TXT_NO_SMELL  = Game.getVar(R.string.PotionOfPurity_NoSmell);

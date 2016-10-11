@@ -76,7 +76,7 @@ public class Potion extends Item {
 		PotionOfParalyticGas.class,
 		PotionOfLevitation.class,
 		PotionOfMindVision.class, 
-		PotionOfPurity.class,
+		PotionOfPurification.class,
 		PotionOfInvisibility.class,
 		PotionOfMight.class,
 		PotionOfFrost.class

@@ -8,6 +8,8 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
+import com.watabou.pixeldungeon.scenes.GameScene;
+import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;
@@ -36,7 +38,7 @@ public abstract class Arrow extends MissileWeapon {
 		super();
 		minAttribute = 0;
 		quantity(number);
-		defaultAction = Game.getVar(R.string.Arrow_ACFire);
+		defaultAction = Game.getVar(R.string.Arrow_ACShoot);
 	}
 
 	protected void updateStatsForInfo() {
@@ -55,12 +57,23 @@ public abstract class Arrow extends MissileWeapon {
 	}
 
 	@Override
+	public void execute(Hero hero, String action) {
+		super.execute(hero, action);
+
+		setCurUser(hero);
+		curItem = this;
+		if (action.equals(Game.getVar(R.string.Arrow_ACShoot))) {
+			GameScene.selectCell(thrower);
+		}
+	}
+
+	@Override
 	public ArrayList<String> actions(Hero hero) {
 		ArrayList<String> actions = super.actions( hero );
 		if (hero.belongings.weapon instanceof Bow) {
-			actions.add(Game.getVar(R.string.Arrow_ACFire));
+			actions.add(Game.getVar(R.string.Arrow_ACShoot));
 		} else {
-			actions.remove(Game.getVar(R.string.Arrow_ACFire));
+			actions.remove(Game.getVar(R.string.Arrow_ACShoot));
 		}
 
 		return actions;
@@ -80,6 +93,7 @@ public abstract class Arrow extends MissileWeapon {
 	}
 
 	public void onFire(int cell) {
+
 		if (getCurUser().bowEquiped()) {
 
 			if (Dungeon.level.adjacent(getCurUser().getPos(), cell)
@@ -136,4 +150,7 @@ public abstract class Arrow extends MissileWeapon {
 	public String imageFile() {
 		return "items/arrows.png";
 	}
+
+	@Override
+	public String info() {return Game.getVar(R.string.Arrow_Info) + desc(); }
 }

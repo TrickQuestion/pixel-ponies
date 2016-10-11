@@ -204,7 +204,16 @@ public class QuickSlot extends Button implements WndBag.Listener {
 			if (Actor.all().contains(lastTarget)) {
 				lastTarget.getSprite().getParent().add(crossM);
 				crossM.point(DungeonTilemap.tileToWorld(lastTarget.getPos()));
-				crossB.setVisible(true);
+
+				// Quickie modification to make sure you can't target with two slots at once.
+				// I have no idea if this fixes the underlying issue: it may just be cosmetic.
+				for (QuickSlot other : slots) {
+					if (other.index != this.index) {
+						other.crossB.setVisible(false);
+					}
+				}
+
+				this.crossB.setVisible(true);
 			} else {
 				lastTarget = null;
 			}

@@ -32,7 +32,7 @@ public class ItemSpriteSheet {
 	
 	// Melee weapons
 	public static final int SHORT_SWORD		= 2;
-	public static final int KNUCKLEDUSTER	= 16;
+	public static final int STEEL_HORSESHOES= 16;
 	public static final int QUARTERSTAFF	= 17;
 	public static final int MACE			= 18;
 	public static final int DAGGER			= 19;

@@ -51,7 +51,7 @@ import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.watabou.pixeldungeon.items.potions.PotionOfMight;
 import com.watabou.pixeldungeon.items.potions.PotionOfMindVision;
 import com.watabou.pixeldungeon.items.potions.PotionOfParalyticGas;
-import com.watabou.pixeldungeon.items.potions.PotionOfPurity;
+import com.watabou.pixeldungeon.items.potions.PotionOfPurification;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.items.rings.Ring;
 import com.watabou.pixeldungeon.items.rings.RingOfAccuracy;
@@ -103,7 +103,7 @@ import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.CompoundBow;
 import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
 import com.watabou.pixeldungeon.items.weapon.melee.Glaive;
-import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
+import com.watabou.pixeldungeon.items.weapon.melee.SteelHorseshoes;
 import com.watabou.pixeldungeon.items.weapon.melee.Kusarigama;
 import com.watabou.pixeldungeon.items.weapon.melee.Longsword;
 import com.watabou.pixeldungeon.items.weapon.melee.Mace;
@@ -215,7 +215,7 @@ public class Generator {
 			PotionOfLevitation.class,
 			PotionOfHonesty.class,
 			PotionOfMindVision.class,
-			PotionOfPurity.class,
+			PotionOfPurification.class,
 			PotionOfInvisibility.class,
 			PotionOfMight.class,
 			PotionOfFrost.class };
@@ -241,7 +241,7 @@ public class Generator {
 		
 		Category.WEAPON.classes = new Class<?>[]{ 
 			Dagger.class, 
-			Knuckles.class,
+			SteelHorseshoes.class,
 			Quarterstaff.class, 
 			Spear.class, 
 			Mace.class, 

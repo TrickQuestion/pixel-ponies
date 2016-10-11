@@ -27,6 +27,7 @@ import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.weapon.Weapon;
 import com.watabou.pixeldungeon.scenes.GameScene;
+import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndOptions;
 
@@ -60,7 +61,7 @@ public class MissileWeapon extends Weapon {
 	@Override
 	protected void onThrow( int cell ) {
 		Char enemy = Actor.findChar( cell );
-		if (enemy == null || enemy == getCurUser()) {
+		if (enemy == null || enemy == getCurUser() || this instanceof Arrow) {
 			super.onThrow( cell );
 		} else {
 			if (!getCurUser().shoot( enemy, this )) {
@@ -70,7 +71,7 @@ public class MissileWeapon extends Weapon {
 	}
 	
 	protected void miss( int cell ) {
-		
+
 		if(this instanceof Arrow) {
 			Arrow arrow = (Arrow) this;
 			if(arrow.firedFrom != null ) {

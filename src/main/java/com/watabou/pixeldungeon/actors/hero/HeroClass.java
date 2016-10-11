@@ -39,7 +39,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfLoyalOath;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.watabou.pixeldungeon.items.wands.WandOfMagicMissile;
 import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
-import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
+import com.watabou.pixeldungeon.items.weapon.melee.SteelHorseshoes;
 import com.watabou.pixeldungeon.items.weapon.melee.Scythe;
 import com.watabou.pixeldungeon.items.weapon.melee.Spear;
 import com.watabou.pixeldungeon.items.weapon.melee.WoodenBow;
@@ -219,7 +219,7 @@ public enum HeroClass {
 		hero.setMagic(hero.magic() + 1);
 		hero.setLaughter(hero.laughter() - 1);
 
-		(hero.belongings.weapon = new Knuckles()).identify();
+		(hero.belongings.weapon = new SteelHorseshoes()).identify();
 
 		WandOfMagicMissile wand = new WandOfMagicMissile();
 		hero.collect(wand.identify());
@@ -257,7 +257,7 @@ public enum HeroClass {
 		hero.ht(hero.ht() + 5);
 		hero.hp(hero.ht());
 
-		(hero.belongings.weapon = new Knuckles()).identify();
+		(hero.belongings.weapon = new SteelHorseshoes()).identify();
 
 		Boomerang boomerang = new Boomerang();
 		hero.collect(boomerang.identify());

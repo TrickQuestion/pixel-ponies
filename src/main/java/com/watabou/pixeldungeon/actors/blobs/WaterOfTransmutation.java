@@ -89,10 +89,10 @@ public class WaterOfTransmutation extends WellWater {
 		
 		MeleeWeapon n = null;
 		
-		if (w instanceof Knuckles) {
+		if (w instanceof SteelHorseshoes) {
 			n = new Dagger();
 		} else if (w instanceof Dagger) {
-			n = new Knuckles();
+			n = new SteelHorseshoes();
 		}
 		
 		else if (w instanceof Spear) {
