@@ -2,7 +2,7 @@
 <resources>
     
     <!-- STRINGS OF Bow CLASS -->
-    <string name="Bow_Info">This is a ranged weapon that shoots arrows. Most ponies can\'t shoot when standing adjacent to another character.\n\n</string>
+    <string name="Bow_Info">This is a ranged weapon that shoots arrows. Most ponies can\'t use a bow while standing next to a hostile character.\n\n</string>
 
     <!-- STRINGS OF WoodenBow CLASS -->
     <string name="WoodenBow_Name">wooden bow</string>
@@ -40,8 +40,9 @@
     <string name="Quiver_Gender">masculine</string>
 
     <!-- STRINGS OF Arrow CLASS -->
-    <string name="Arrow_Info">This is an arrow. If you have a bow equipped, you can shoot it manually, or auto-shoot the most recent ammo type by tapping an enemy. Most ponies can\'t shoot when standing adjacent to another character.\n\n</string>
+    <string name="Arrow_Info">This is an arrow. If you have a bow equipped, you can shoot it manually, or auto-shoot the most recent ammo type by tapping an enemy.\n\n</string>
     <string name="Arrow_ACShoot">SHOOT</string>
+    <string name="Arrow_Flanked">You can\'t shoot while next to an enemy!</string>
 	
 	<!-- STRINGS OF CommonArrow CLASS -->
     <string name="CommonArrow_Name">arrow</string>

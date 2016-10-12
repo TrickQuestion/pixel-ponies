@@ -54,6 +54,7 @@ public class Item implements Bundlable {
 
 	private static final   String TXT_PACK_FULL = Game.getVar(R.string.Item_PackFull);
 	protected static final String TXT_DIR_THROW = Game.getVar(R.string.Item_DirThrow);
+	protected static final String TXT_DIR_SHOOT = Game.getVar(R.string.Item_DirShoot);
 
 	private static final String TXT_TO_STRING       = "%s";
 	private static final String TXT_TO_STRING_X     = "%s x%d";
@@ -467,7 +468,7 @@ public class Item implements Bundlable {
 		if (this instanceof MissileWeapon) {
 
 			// FIXME
-			delay *= ((MissileWeapon) this).speedFactor(user, this instanceof Arrow);
+			delay *= ((MissileWeapon) this).speedFactor(user);
 			if (enemy != null && enemy.buff(SnipersMark.class) != null) {
 				delay *= 0.5f;
 			}
@@ -505,6 +506,18 @@ public class Item implements Bundlable {
 			return TXT_DIR_THROW;
 		}
 	};
+	protected static CellSelector.Listener shooter = new CellSelector.Listener() {
+		@Override
+		public void onSelect(Integer target) {
+			if (target != null) {
+				curItem.cast(getCurUser(), target);
+			}
+		}
+
+		@Override
+		public String prompt() { return TXT_DIR_SHOOT; }
+	};
+
 
 	protected String getClassParam(String paramName, String defaultValue, boolean warnIfAbsent) {
 		return Utils.getClassParam(this.getClass().getSimpleName(), paramName, defaultValue, warnIfAbsent);

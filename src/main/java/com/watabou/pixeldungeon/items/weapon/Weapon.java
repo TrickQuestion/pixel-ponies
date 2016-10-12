@@ -22,12 +22,13 @@ import com.nyrds.pixeldungeon.ml.R;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
+import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.Gender;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
+import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.wands.Wand;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Fire;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Horror;
@@ -43,6 +44,7 @@ import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.watabou.pixeldungeon.items.weapon.missiles.Arrow;
 import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
+import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
@@ -179,16 +181,20 @@ public class Weapon extends KindOfWeapon {
 
 		return accuracy;
 	}
+
 	
 	@Override
-	public float speedFactor( Hero hero, boolean isFiredArrow ) {
+	public float speedFactor( Hero hero ) {
 
 		int encumbrance = minAttribute - hero.effectiveHonesty();
 
-		// I had to add this bool in so when a bow can't be fired, it uses melee correctly instead.
-		if (isFiredArrow) {
+		boolean isShot = this instanceof Arrow && hero.bowEquipped();
+		isShot = isShot && (!hero.isFlanked() || hero.heroClass == HeroClass.NIGHTWING);
 
-			encumbrance = minAttribute - hero.effectiveLoyalty();
+		if (isShot) {
+
+			GLog.w("Twang! (debug)");
+			encumbrance =  hero.belongings.weapon.minAttribute() - hero.effectiveLoyalty();
 
 			// Earth ponies and zeebees are ALWAYS slow with bows!
 			if (Dungeon.hero.heroClass == HeroClass.EARTH_PONY ||
@@ -198,13 +204,13 @@ public class Weapon extends KindOfWeapon {
 
 
 		// Zeebees can throw well if they're within two points of the minimum honesty.
-		} else if (this instanceof MissileWeapon){
+		} else if (this instanceof MissileWeapon && !(this instanceof Arrow)){
 			if (hero.heroClass == HeroClass.ZEBRA) {
 				encumbrance -= 2;
 			}
 		}
 
-		return 
+		return
 			(encumbrance > 0 ? (float)(DLY * Math.pow( 1.2, encumbrance )) : DLY) *
 			(imbue == Imbue.SPEED ? 0.6f : 1.0f);
 	}

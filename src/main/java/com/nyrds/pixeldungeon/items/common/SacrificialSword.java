@@ -39,8 +39,6 @@ public class SacrificialSword extends SpecialWeapon {
 		
 		double classBonus = 1;
 
-		// TODO: I don't even know what this sword is supposed to do!
-
 //		if(hero.subClass == HeroSubClass.WARDEN ) {
 //			classBonus = 1.5;
 //		}

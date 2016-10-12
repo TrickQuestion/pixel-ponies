@@ -188,7 +188,6 @@ public abstract class Char extends Actor {
 				GLog.i(TXT_HIT[gender.ordinal()], name, enemy.getName_objective());
 			}
 
-			// FIXME
 			int dr = this instanceof Hero && ((Hero) this).rangedWeapon != null && ((Hero) this).subClass == HeroSubClass.ASSASSIN ? 0 :
 					Random.IntRange(0, enemy.dr());
 

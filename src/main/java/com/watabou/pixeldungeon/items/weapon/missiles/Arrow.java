@@ -9,6 +9,7 @@ import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
 import com.watabou.pixeldungeon.scenes.GameScene;
+import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
@@ -63,7 +64,16 @@ public abstract class Arrow extends MissileWeapon {
 		setCurUser(hero);
 		curItem = this;
 		if (action.equals(Game.getVar(R.string.Arrow_ACShoot))) {
-			GameScene.selectCell(thrower);
+			if (hero.bowEquipped()) {
+				if (!hero.isFlanked() || hero.heroClass == HeroClass.NIGHTWING) {
+					GameScene.selectCell(shooter);
+				} else {
+					GLog.w(Game.getVar(R.string.Arrow_Flanked));
+					QuickSlot.cancel();
+				}
+			} else {
+				GameScene.selectCell(thrower);
+			}
 		}
 	}
 
@@ -94,11 +104,12 @@ public abstract class Arrow extends MissileWeapon {
 
 	public void onFire(int cell) {
 
-		if (getCurUser().bowEquiped()) {
+		if (getCurUser().bowEquipped()) {
 
-			if (Dungeon.level.adjacent(getCurUser().getPos(), cell)
-					&& getCurUser().heroClass != HeroClass.NIGHTWING) {
+			// Hopefully, this isn't possible anymore.
+			if (getCurUser().isFlanked() && getCurUser().heroClass != HeroClass.NIGHTWING) {
 				miss(cell);
+				GLog.w("This shouldn\'t happen... (debug)");
 				return;
 			}
 

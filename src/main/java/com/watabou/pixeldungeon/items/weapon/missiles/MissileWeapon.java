@@ -46,10 +46,6 @@ public class MissileWeapon extends Weapon {
 		defaultAction = AC_THROW;
 	}
 
-
-	// TODO: Previously this seemed to let huntress and rogue equip all missile weapons. Why?
-	// Currently I have it set to "nothing can be equipped", which makes more sense!
-	// See below, also, where I don't bother to check the "at the ready" phrase.
 	@Override
 	public ArrayList<String> actions(Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );
@@ -61,7 +57,7 @@ public class MissileWeapon extends Weapon {
 	@Override
 	protected void onThrow( int cell ) {
 		Char enemy = Actor.findChar( cell );
-		if (enemy == null || enemy == getCurUser() || this instanceof Arrow) {
+		if (enemy == null || enemy == getCurUser()) {
 			super.onThrow( cell );
 		} else {
 			if (!getCurUser().shoot( enemy, this )) {

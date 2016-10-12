@@ -32,6 +32,6 @@ public class SteelHorseshoes extends MeleeWeapon {
 	
 	@Override
 	public String desc() {
-		return Game.getVar(R.string.Knuckles_Info);
+		return Game.getVar(R.string.SteelHorseshoes_Info);
 	}
 }

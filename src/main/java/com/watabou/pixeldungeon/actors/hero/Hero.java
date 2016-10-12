@@ -75,6 +75,7 @@ import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.utility.Amulet;
 import com.watabou.pixeldungeon.items.utility.Ankh;
 import com.watabou.pixeldungeon.items.utility.DewVial;
+import com.watabou.pixeldungeon.items.weapon.missiles.CommonArrow;
 import com.watabou.pixeldungeon.plants.Dewdrop;
 import com.watabou.pixeldungeon.items.Heap;
 import com.watabou.pixeldungeon.items.Heap.Type;
@@ -182,6 +183,7 @@ public class Hero extends Char {
 	public boolean restoreHealth = false;
 
 	public MissileWeapon rangedWeapon = null;
+	public Class<? extends Arrow> lastArrowType = CommonArrow.class;
 	public Belongings belongings;
 
     private int honesty;	// done
@@ -396,7 +398,7 @@ public class Hero extends Char {
 		return belongings.barding == null ? 0 : belongings.barding.tier;
 	}
 
-	public boolean bowEquiped() {
+	public boolean bowEquipped() {
 		return belongings.weapon instanceof Bow;
 	}
 
@@ -526,7 +528,7 @@ public class Hero extends Char {
 		int aEnc = belongings.barding != null ? belongings.barding.minHonesty - effectiveHonesty() : 0;
 		if (aEnc > 0) {
 
-			// TODO: Fold this into the other calculation at some point. For now just test it.
+			// TODO: Fold this into the other calculation at some point.
 			speed = speed * Math.pow(1.3, -aEnc);
 
 		} else {
@@ -549,7 +551,7 @@ public class Hero extends Char {
 	public float attackDelay() {
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		if (wep != null) {
-			return wep.speedFactor(this, wep instanceof Arrow);
+			return wep.speedFactor(this);
 
 		} else {
 			return 1f;
@@ -1005,27 +1007,35 @@ public class Hero extends Char {
 	private boolean actBowAttack() {
 
 		Bow bow = (Bow) belongings.weapon;
-
-		Class<? extends Arrow> arrowType = bow.arrowType();
-
+		Class<? extends Arrow> selectedArrowType = bow.arrowType();
 		Arrow arrow;
 
-		if (arrowType.equals(Arrow.class)) { // no arrow type selected
-			arrow = belongings.getItem(Arrow.class);
+		// No arrow type selected: try using last arrow type
+		if (selectedArrowType.equals(Arrow.class)) {
+			arrow = belongings.getItem(lastArrowType);
+
+		// Specific arrow type was selected
 		} else {
-			arrow = belongings.getItem(arrowType);
-			if (arrow == null) {
-				arrow = belongings.getItem(Arrow.class);
-			}
+			arrow = belongings.getItem(selectedArrowType);
 		}
 
-		if (arrow != null) { // We have arrows!
+		// All out of those arrows: try to grab first arrow type in class order
+		if (arrow == null) {
+			arrow = belongings.getItem(Arrow.class);
+		}
+
+		// Totally out of arrows, or can't shoot because we're flanked
+		if (arrow == null || (this.isFlanked() && !(heroClass == HeroClass.NIGHTWING))) {
+			return actMeleeAttack();
+
+		// Time to use that arrow, and update lastArrowType
+		} else {
+			lastArrowType = arrow.getClass();
 			arrow.cast(this, enemy.getPos());
 			ready();
 			return false;
-		} // no arrows? just get closer...
+		}
 
-		return actMeleeAttack();
 
 	}
 
@@ -1038,8 +1048,7 @@ public class Hero extends Char {
 				return actSpecialAttack(action);
 			}
 
-			if (bowEquiped()
-					&& (!Dungeon.level.adjacent(getPos(), enemy.getPos()) || this.heroClass == HeroClass.NIGHTWING)) {
+			if (bowEquipped()) {
 				return actBowAttack();
 			} else {
 				return actMeleeAttack();
@@ -1838,6 +1847,17 @@ public class Hero extends Char {
 	private void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
 		Dungeon.setDifficulty(difficulty);
+	}
+
+	public boolean isFlanked() {
+		for (Mob mob : Dungeon.level.mobs) {
+
+			// TODO: I'm pretty sure this field falsely reports 'true' for pets.
+			if (mob.hostile && mob.distance(this) == 1) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

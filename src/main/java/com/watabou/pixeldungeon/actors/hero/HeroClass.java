@@ -241,7 +241,7 @@ public enum HeroClass {
 
 		hero.collect(new Dart(8).identify());
 
-		// TODO: Leaving this here to remember how to activate rings.
+		// TODO: Leaving this here just to remember how to activate rings.
 //		hero.belongings.mane.activate(hero);
 
 		QuickSlot.selectItem(Dart.class, 0);

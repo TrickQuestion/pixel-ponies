@@ -49,14 +49,14 @@ public class Combo extends Buff {
 			Badges.validateMasteryCombo( count );
 			
 			GLog.p( TXT_COMBO, count );
-			postpone( 1.41f - count / 10f );
+			postpone( 1.41F - (float) count / 10.0F );
 
-			// TODO: Test this. Beefed it up from /5.0 to /4.0 for maximum punchage.
-			return (int)(damage * (count - 2) / 4.0f);
+			// Beefed it up from /5.0 to /4.0.
+			return (damage * (count - 2)) / 4;
 			
 		} else {
 			
-			postpone( 1.1f );
+			postpone( 1.1F );
 			return 0;
 			
 		}

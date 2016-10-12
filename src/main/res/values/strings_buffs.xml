@@ -79,12 +79,14 @@
     <string name="Vertigo_Info">Vertigo</string>
     <!-- STRINGS OF Weakness CLASS -->
     <string name="Weakness_Info">Weakened</string>
-
-    <!-- TODO: mark which classes these buffs come from. -->
+    <!-- STRINGS OF CorpseDust CLASS -->
     <string name="CorpseDust_Buff">Bloodlust</string>
+    <!-- STRINGS OF DriedRose CLASS -->
     <string name="DriedRose_Buff">Charming</string>
     <string name="DriedRose_CursedBuff">Amorous</string>
+    <!-- STRINGS OF RatSkull CLASS -->
     <string name="RatSkull_Buff">Ratter</string>
+    <!-- STRINGS OF RatKingCrown CLASS -->
     <string name="RatKingCrown_Buff">Ratness</string>
 
 </resources>
