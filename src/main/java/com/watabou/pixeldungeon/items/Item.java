@@ -29,6 +29,7 @@ import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.SnipersMark;
 import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.weapon.melee.Bow;
@@ -467,7 +468,6 @@ public class Item implements Bundlable {
 		float delay = TIME_TO_THROW;
 		if (this instanceof MissileWeapon) {
 
-			// FIXME
 			delay *= ((MissileWeapon) this).speedFactor(user);
 			if (enemy != null && enemy.buff(SnipersMark.class) != null) {
 				delay *= 0.5f;
@@ -477,10 +477,13 @@ public class Item implements Bundlable {
 
 		((MissileSprite) user.getSprite().getParent().recycle(MissileSprite.class)).
 				reset(user.getPos(), cell, this, null, new Callback() {
+
 					@Override
 					public void call() {
 						Item item = Item.this.detach(user.belongings.backpack);
-						if (item instanceof Arrow && user.belongings.weapon instanceof Bow) {
+
+						if (item instanceof Arrow && user.belongings.weapon instanceof Bow &&
+								(!user.isFlanked() || user.heroClass == HeroClass.NIGHTWING)) {
 							((Arrow) item).onFire(cell);
 						}
 						else {

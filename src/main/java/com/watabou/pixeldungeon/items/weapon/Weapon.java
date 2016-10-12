@@ -188,12 +188,12 @@ public class Weapon extends KindOfWeapon {
 
 		int encumbrance = minAttribute - hero.effectiveHonesty();
 
+		// I think this recalculation is necessary with the current janky structure.
+		// Without it, sF() might apply bow effects to 'can't shoot, so barehoof attack' cases.
 		boolean isShot = this instanceof Arrow && hero.bowEquipped();
 		isShot = isShot && (!hero.isFlanked() || hero.heroClass == HeroClass.NIGHTWING);
 
 		if (isShot) {
-
-			GLog.w("Twang! (debug)");
 			encumbrance =  hero.belongings.weapon.minAttribute() - hero.effectiveLoyalty();
 
 			// Earth ponies and zeebees are ALWAYS slow with bows!

@@ -104,47 +104,32 @@ public abstract class Arrow extends MissileWeapon {
 
 	public void onFire(int cell) {
 
-		if (getCurUser().bowEquipped()) {
+		firedFrom = (Bow) getCurUser().belongings.weapon;
 
-			// Hopefully, this isn't possible anymore.
-			if (getCurUser().isFlanked() && getCurUser().heroClass != HeroClass.NIGHTWING) {
-				miss(cell);
-				GLog.w("This shouldn\'t happen... (debug)");
-				return;
-			}
+		MAX = (int) (baseMax * firedFrom.dmgFactor());
+		MIN = (int) (baseMin * firedFrom.dmgFactor());
+		ACU = (float) (baseAcu * firedFrom.acuFactor());
+		DLY = (float) (baseDly * firedFrom.dlyFactor());
 
-			firedFrom = (Bow) getCurUser().belongings.weapon;
+		float sDelta = getCurUser().effectiveLoyalty() - firedFrom.minAttribute();
 
-			MAX = (int) (baseMax * firedFrom.dmgFactor());
-			MIN = (int) (baseMin * firedFrom.dmgFactor());
-			ACU = (float) (baseAcu * firedFrom.acuFactor());
-			DLY = (float) (baseDly * firedFrom.dlyFactor());
-
-			float sDelta = getCurUser().effectiveLoyalty() - firedFrom.minAttribute();
-
-			if (sDelta < 0) {
-				DLY += sDelta * 0.5;
-				ACU -= sDelta * 0.1;
-			}
-
-			if (sDelta > 2) {
-				MAX += MIN;
-			}
-
-			if (getCurUser().heroClass == HeroClass.NIGHTWING) {
-				ACU *= 1.1;
-				DLY *= 0.9;
-			}
-
-			firedFrom.usedForHit();
-			firedFrom.useArrowType(this);
-
-			super.onThrow(cell);
-
-		// This should no longer be possible.
-		} else {
-			miss(cell);
+		if (sDelta < 0) {
+			DLY += sDelta * 0.5;
+			ACU -= sDelta * 0.1;
+		} else if (sDelta > 2) {
+			MAX += MIN;
 		}
+
+		if (getCurUser().heroClass == HeroClass.NIGHTWING) {
+			ACU *= 1.1;
+			DLY *= 0.9;
+		}
+
+		firedFrom.usedForHit();
+		firedFrom.useArrowType(this);
+
+		super.onThrow(cell);
+
 	}
 
 	@Override
