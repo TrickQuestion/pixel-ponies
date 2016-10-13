@@ -30,11 +30,12 @@ public class AncientBarding extends Barding {
 	public AncientBarding() {
 		super( 6 );
 		image = 5;
+		hasHelmet = true;
 	}
 
 	@Override
 	public boolean doEquip( Hero hero ) {
-		if (hero.heroClass.hasHorn()) {
+		if (!hero.heroClass.hasHorn()) {
 			return super.doEquip( hero );
 		} else {
 			GLog.w( TXT_HORN );

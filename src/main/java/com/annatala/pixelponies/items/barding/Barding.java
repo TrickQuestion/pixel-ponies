@@ -48,13 +48,9 @@ import java.util.ArrayList;
 public class Barding extends EquippableItem {
 
 	private static final String TXT_EQUIP_CURSED    = Game.getVar(R.string.Barding_EquipCursed);
-		
 	private static final String TXT_IDENTIFY        = Game.getVar(R.string.Barding_Identify);
-	
 	private static final String TXT_TO_STRING       = Game.getVar(R.string.Barding_ToString);
-	
 	private static final String TXT_INCOMPATIBLE    = Game.getVar(R.string.Barding_Incompatible);
-
 	private static final String TXT_MAGIC_SAVE      = Game.getVar(R.string.Barding_Magic_Save);
 
 	protected boolean hasHelmet;

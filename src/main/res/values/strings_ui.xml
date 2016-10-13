@@ -26,7 +26,7 @@
     <!-- STRINGS OF AmuletScene CLASS -->
     <string name="AmuletScene_Exit">Let\'s call it a day</string>
     <string name="AmuletScene_Stay">I\'m not done yet</string>
-    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Pegacorn Pendant! With its power, you can do practically anything. You\'ve won the game... but perhaps you have something left to accomplish?</string>
+    <string name="AmuletScene_Txt">You finally hold it in your hooves: the Pegacorn Pendant! With its power, you can do practically anything. You\'ve won the game, but perhaps you have something left to accomplish?</string>
 
     <!-- STRINGS OF Assets CLASS -->
     <string name="Assets_Prefix"></string>
