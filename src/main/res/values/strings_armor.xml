@@ -92,10 +92,6 @@
     <string name="SpiderBarding_Info">This barding is made of old spider carcases and some strange cloth. Surprisingly enough, it seems that it still contains functional spinnerets. If you apply enough pressure on one of the plates it shoots cobweb. Spiky surface of boot soles allows you to walk on that web freely.</string>
     <string name="SpiderBarding_Gender">feminine</string>
 
-    <!-- STRINGS OF ChaosBarding CLASS -->
-    <string name="ChaosBarding_Name">Chaos barding</string>
-    <string name="ChaosBarding_Info">A blood red plates of this barding is sewed together with dark red chains. It irradiates chaotic energy as you touch it.</string>
-
     <!-- STRING OF Royal Barding CLASS -->
     <string name="RoyalBarding_Name">royal barding</string>
     <string name="RoyalBarding_Desc">This tempered steel plate barding with gold saddle and helm is designed for the dedicated earth ponies who defend the Crown. Although it looks very heavy, it allows a royal guard to perform a _Heroic Leap_ toward a target location. Slamming into the ground will stun all adjacent enemies.</string>

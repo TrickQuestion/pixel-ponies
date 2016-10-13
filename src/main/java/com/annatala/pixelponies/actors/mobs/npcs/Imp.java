@@ -1,0 +1,234 @@
+/*
+ * Pixel Dungeon
+ * Copyright (C) 2012-2014  Oleg Dolya
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+package com.annatala.pixelponies.actors.mobs.npcs;
+
+import com.annatala.noosa.Game;
+import com.annatala.pixelponies.Dungeon;
+import com.annatala.pixelponies.Journal;
+import com.annatala.pixelponies.android.R;
+import com.annatala.pixelponies.actors.Actor;
+import com.annatala.pixelponies.actors.Char;
+import com.annatala.pixelponies.actors.buffs.Buff;
+import com.annatala.pixelponies.actors.hero.Hero;
+import com.annatala.pixelponies.actors.mobs.Golem;
+import com.annatala.pixelponies.actors.mobs.Mob;
+import com.annatala.pixelponies.actors.mobs.Monk;
+import com.annatala.pixelponies.items.Generator;
+import com.annatala.pixelponies.items.quest.DwarfToken;
+import com.annatala.pixelponies.items.rings.Ring;
+import com.annatala.pixelponies.levels.CityLevel;
+import com.annatala.pixelponies.levels.Room;
+import com.annatala.pixelponies.scenes.GameScene;
+import com.annatala.pixelponies.sprites.ImpSprite;
+import com.annatala.utils.Utils;
+import com.annatala.pixelponies.windows.WndImp;
+import com.annatala.pixelponies.windows.WndQuest;
+import com.annatala.utils.Bundle;
+import com.annatala.utils.Random;
+
+public class Imp extends NPC {
+
+	public Imp() {
+		spriteClass = ImpSprite.class;
+	}
+	
+	private static final String TXT_GOLEMS1	= Game.getVar(R.string.Imp_Golems1);
+	private static final String TXT_GOLEMS2	= Game.getVar(R.string.Imp_Golems2);
+	private static final String TXT_MONKS1	= Game.getVar(R.string.Imp_Monks1);
+	private static final String TXT_MONKS2	= Game.getVar(R.string.Imp_Monks2);	
+	private static final String TXT_CYA	    = Game.getVar(R.string.Imp_Cya);
+	private static final String TXT_HEY	    = Game.getVar(R.string.Imp_Hey);
+	
+	private boolean seenBefore = false;
+	
+	@Override
+	protected boolean act() {
+		
+		if (!Quest.given && Dungeon.visible[getPos()]) {
+			if (!seenBefore) {
+				say( Utils.format( TXT_HEY, Dungeon.hero.className() ) );
+			}
+			seenBefore = true;
+		} else {
+			seenBefore = false;
+		}
+		
+		throwItem();
+		
+		return super.act();
+	}
+	
+	@Override
+	public int defenseSkill( Char enemy ) {
+		return 1000;
+	}
+	
+	@Override
+	public String defenseVerb() {
+		return Game.getVar(R.string.Imp_Defense);
+	}
+	
+	@Override
+	public void damage( int dmg, Object src ) {
+	}
+	
+	@Override
+	public void add( Buff buff ) {
+	}
+	
+	@Override
+	public boolean reset() {
+		return true;
+	}
+	
+	@Override
+	public boolean interact(final Hero hero) {
+		
+		getSprite().turnTo( getPos(), hero.getPos() );
+		if (Quest.given) {
+			
+			DwarfToken tokens = hero.belongings.getItem( DwarfToken.class );
+			if (tokens != null && (tokens.quantity() >= 8 || (!Quest.alternative && tokens.quantity() >= 6))) {
+				GameScene.show( new WndImp( this, tokens ) );
+			} else {
+				tell( Quest.alternative ? TXT_MONKS2 : TXT_GOLEMS2, hero.className() );
+			}
+			
+		} else {
+			tell( Quest.alternative ? TXT_MONKS1 : TXT_GOLEMS1 );
+			Quest.given = true;
+			Quest.completed = false;
+			
+			Journal.add( Journal.Feature.IMP );
+		}
+		
+		return true;
+	}
+	
+	private void tell( String format, Object...args ) {
+		GameScene.show( 
+			new WndQuest( this, Utils.format( format, args ) ) );
+	}
+	
+	public void flee() {
+		
+		say( Utils.format( TXT_CYA, Dungeon.hero.className() ) );
+		
+		destroy();
+		getSprite().die();
+	}
+		
+	public static class Quest {
+		
+		private static boolean alternative;
+		
+		private static boolean spawned;
+		private static boolean given;
+		private static boolean completed;
+		
+		public static Ring reward;
+		
+		public static void reset() {
+			spawned = false;
+
+			reward = null;
+		}
+		
+		private static final String NODE		= "demon";
+		
+		private static final String ALTERNATIVE	= "alternative";
+		private static final String SPAWNED		= "spawned";
+		private static final String GIVEN		= "given";
+		private static final String COMPLETED	= "completed";
+		private static final String REWARD		= "reward";
+		
+		public static void storeInBundle( Bundle bundle ) {
+			
+			Bundle node = new Bundle();
+			
+			node.put( SPAWNED, spawned );
+			
+			if (spawned) {
+				node.put( ALTERNATIVE, alternative );
+				
+				node.put( GIVEN, given );
+				node.put( COMPLETED, completed );
+				node.put( REWARD, reward );
+			}
+			
+			bundle.put( NODE, node );
+		}
+		
+		public static void restoreFromBundle( Bundle bundle ) {
+
+			Bundle node = bundle.getBundle( NODE );
+			
+			if (!node.isNull() && (spawned = node.getBoolean( SPAWNED ))) {
+				alternative	= node.getBoolean( ALTERNATIVE );
+				
+				given = node.getBoolean( GIVEN );
+				completed = node.getBoolean( COMPLETED );
+				reward = (Ring)node.get( REWARD );
+			}
+		}
+		
+		public static void spawn( CityLevel level, Room room ) {
+			if (!spawned && Dungeon.depth > 16 && Random.Int( 20 - Dungeon.depth ) == 0) {
+				
+				Imp npc = new Imp();
+				do {
+					npc.setPos(level.randomRespawnCell());
+				} while (npc.getPos() == -1 || level.getHeap( npc.getPos() ) != null);
+				level.mobs.add( npc );
+				Actor.occupyCell( npc );
+				
+				spawned = true;	
+				alternative = Random.Int( 2 ) == 0;
+				
+				given = false;
+				
+				do {
+					reward = (Ring)Generator.random( Generator.Category.RING );
+				} while (reward.cursed);
+				reward.upgrade( 2 );
+				reward.cursed = true;
+			}
+		}
+		
+		public static void process( Mob mob ) {
+			if (spawned && given && !completed) {
+				if ((alternative && mob instanceof Monk) ||
+					(!alternative && mob instanceof Golem)) {
+					
+					Dungeon.level.drop( new DwarfToken(), mob.getPos() ).sprite.drop();
+				}
+			}
+		}
+		
+		public static void complete() {
+			reward = null;
+			completed = true;
+			
+			Journal.remove( Journal.Feature.IMP );
+		}
+		
+		public static boolean isCompleted() {
+			return completed;
+		}
+	}
+}

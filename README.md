@@ -1,27 +1,4 @@
-Remixed Pixel Dungeon [![Build Status](https://travis-ci.org/NYRDS/pixel-dungeon-remix.svg?branch=master)](https://travis-ci.org/NYRDS/pixel-dungeon-remix)
+Pixel Ponies! [![Build Status](https://annatala.com/pixelponies/pixelponies.svg?branch=master)](https://annatala.com/pixelponies)
 =====================
 
-Classic roguelike with pixel graphics and simple interface.
-
-This is fork of Famous Pixel Dungeon featuring English and Russian localization.
-
-Remixed Pixel Dungeon in Google Play: 
-
-https://play.google.com/store/apps/details?id=com.nyrds.pixeldungeon.ml
-
-Remixed Pixel Dungeon translation project:
-
-https://www.transifex.com/projects/p/remixed-pixel-dungeon/
-
-Классический рогалик с пиксельной графикой и простым интерфейсом.
-
-Это форк Знаменитой Pixel Dungeoun с Английской и Русской локализацией.
-
-Remixed Pixel Dungeon в Google Play: 
-
-https://play.google.com/store/apps/details?id=com.nyrds.pixeldungeon.ml
-
-Проект по переводу Remixed Pixel Dungeon:
-
-https://www.transifex.com/projects/p/remixed-pixel-dungeon/
-
+This is fork of NYRDS' Remixed Pixel Dungeon fork of Watabou's Pixel Dungeon. With ponies. /)^3^(\

@@ -111,23 +111,6 @@
     <string name="RingOfStoneWalking_Info">This strange ring is made of some sturdy stone. What you first thought was a ruby is actually liquid blood being held in place! Inside is an arrow pointing at what appears to be a wall, along with a broken heart... What might it do?</string>
     <string name="RingOfStoneWalking_ImmuredInStone"> You have been immured in stone. Forever.</string>
 
-    <!-- STRINGS OF ChaosCrystal CLASS -->
-    <string name="ChaosCrystal_Name">Strange Crystal</string>
-    <string name="ChaosCrystal_Name_1">Chaotic Crystal</string>
-    <string name="ChaosCrystal_Name_2">Chaos Crystal</string>
-    <string name="ChaosCrystal_Info">You feel streams of energy, running through your hooves while you holding it.</string>
-    <string name="ChaosCrystal_Info_1">Chaotic powers flow through this crystal. Maybe it might be useful.</string>
-    <string name="ChaosCrystal_Info_2">Yes! Now you know, that you can fuse it with one of your items, but what\'s next?</string>
-    <string name="ChaosCrystal_Use">USE</string>
-    <string name="ChaosCrystal_Fuse">FUSE</string>
-    <string name="ChaosCrystal_Prompt">Choose place to set Chaos Mark</string>
-    <string name="ChaosCrystal_SelectForFuse">Choose item to fuse Chaos Crystal in</string>
-    <string name="ChaosCrystal_ScrollFused">Crystal absorbed by rune inscribed on scroll, and now it is a %s</string>
-    <string name="ChaosCrystal_SwordFused">Crystal absorbs your weapon, and took the form of a Sword</string>
-    <string name="ChaosCrystal_BowFused">Crystal absorbs your bow, and took the form of a Bow</string>
-    <string name="ChaosCrystal_StaffFused">Crystal absorbs your wand, and took the form of a Staff</string>
-    <string name="ChaosCrystal_BardingFused">Crystal absorbs your barding, and took the form of composite barding</string>
-
     <!-- STRINGS OF RatKingCrown CLASS -->
     <string name="RatKingCrown_Name">Crown of rat king</string>
     <string name="RatKingCrown_Info">Gold crown of His Ratness, symbol of everrating Power</string>

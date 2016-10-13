@@ -1,0 +1,110 @@
+/*
+ * Pixel Dungeon
+ * Copyright (C) 2012-2014  Oleg Dolya
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+package com.annatala.pixelponies.items.wands;
+
+import com.annatala.pixelponies.android.R;
+import com.annatala.noosa.Game;
+import com.annatala.pixelponies.Dungeon;
+import com.annatala.pixelponies.DungeonTilemap;
+import com.annatala.pixelponies.actors.Actor;
+import com.annatala.pixelponies.actors.Char;
+import com.annatala.pixelponies.effects.CellEmitter;
+import com.annatala.pixelponies.effects.DeathRay;
+import com.annatala.pixelponies.effects.particles.PurpleParticle;
+import com.annatala.pixelponies.levels.Terrain;
+import com.annatala.pixelponies.mechanics.Ballistica;
+import com.annatala.pixelponies.scenes.GameScene;
+import com.annatala.utils.Callback;
+import com.annatala.utils.Random;
+
+import java.util.ArrayList;
+
+public class WandOfDisintegration extends SimpleWand  {
+	{
+		hitChars = false;
+	}
+	
+	@Override
+	protected void onZap( int cell ) {
+		
+		boolean terrainAffected = false;
+		
+		int level = effectiveLevel();
+		
+		int maxDistance = distance();
+		Ballistica.distance = Math.min( Ballistica.distance, maxDistance );
+		
+		ArrayList<Char> chars = new ArrayList<>();
+		
+		for (int i=1; i < Ballistica.distance; i++) {
+			
+			int c = Ballistica.trace[i];
+			
+			Char ch;
+			if ((ch = Actor.findChar( c )) != null) {
+				chars.add( ch );
+			}
+			
+			int terr = Dungeon.level.map[c];
+			if (terr == Terrain.DOOR || terr == Terrain.BARRICADE) {
+				
+				Dungeon.level.set( c, Terrain.EMBERS );
+				GameScene.updateMap( c );
+				terrainAffected = true;
+				
+			} else if (terr == Terrain.HIGH_GRASS) {
+				
+				Dungeon.level.set( c, Terrain.GRASS );
+				GameScene.updateMap( c );
+				terrainAffected = true;
+				
+			}
+			
+			CellEmitter.center( c ).burst( PurpleParticle.BURST, Random.IntRange( 1, 2 ) );
+		}
+		
+		if (terrainAffected) {
+			Dungeon.observe();
+		}
+		
+		int lvl = level + chars.size();
+		int dmgMin = lvl;
+		int dmgMax = 8 + lvl * lvl / 3;
+		for (Char ch : chars) {
+			ch.damage( Random.NormalIntRange( dmgMin, dmgMax ), this );
+			ch.getSprite().centerEmitter().burst( PurpleParticle.BURST, Random.IntRange( 1, 2 ) );
+			ch.getSprite().flash();
+		}
+	}
+	
+	private int distance() {
+		return effectiveLevel() + 4;
+	}
+	
+	@Override
+	protected void fx( int cell, Callback callback ) {
+		cell = Ballistica.trace[Math.min( Ballistica.distance, distance() ) - 1];
+		wandUser.getSprite().getParent().add( new DeathRay( wandUser.getSprite().center(), DungeonTilemap.tileCenterToWorld( cell ) ) );		
+		callback.call();
+	}
+	
+	@Override
+	public String desc() {
+		return Game.getVar(R.string.WandOfDisintegration_Info);
+	}
+}

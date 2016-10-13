@@ -1,0 +1,150 @@
+/*
+ * Pixel Dungeon
+ * Copyright (C) 2012-2014  Oleg Dolya
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+package com.annatala.pixelponies.actors.mobs;
+
+import com.annatala.noosa.Game;
+import com.annatala.pixelponies.Dungeon;
+import com.annatala.pixelponies.android.R;
+import com.annatala.pixelponies.ResultDescriptions;
+import com.annatala.pixelponies.actors.Actor;
+import com.annatala.pixelponies.actors.Char;
+import com.annatala.pixelponies.actors.buffs.Light;
+import com.annatala.pixelponies.actors.buffs.Terror;
+import com.annatala.pixelponies.effects.CellEmitter;
+import com.annatala.pixelponies.effects.particles.PurpleParticle;
+import com.annatala.pixelponies.plants.Dewdrop;
+import com.annatala.pixelponies.items.wands.WandOfDisintegration;
+import com.annatala.pixelponies.items.weapon.enchantments.Death;
+import com.annatala.pixelponies.items.weapon.enchantments.Leech;
+import com.annatala.pixelponies.mechanics.Ballistica;
+import com.annatala.pixelponies.sprites.CharSprite;
+import com.annatala.pixelponies.sprites.EyeSprite;
+import com.annatala.utils.GLog;
+import com.annatala.utils.Utils;
+import com.annatala.utils.Random;
+
+public class Eye extends Mob {
+	
+	private static final String TXT_DEATHGAZE_KILLED = Game.getVar(R.string.Eye_Kill);
+	
+	public Eye() {
+		spriteClass = EyeSprite.class;
+		
+		hp(ht(100));
+		defenseSkill = 20;
+		viewDistance = Light.DISTANCE;
+		
+		EXP = 13;
+		maxLvl = 25;
+		
+		flying = true;
+		
+		loot = new Dewdrop();
+		lootChance = 0.5f;
+		
+		RESISTANCES.add( WandOfDisintegration.class );
+		RESISTANCES.add( Death.class );
+		RESISTANCES.add( Leech.class );
+		
+		IMMUNITIES.add( Terror.class );
+	}
+	
+	@Override
+	public int dr() {
+		return 10;
+	}
+	
+	private int hitCell;
+	
+	@Override
+	protected boolean canAttack( Char enemy ) {
+		
+		hitCell = Ballistica.cast( getPos(), enemy.getPos(), true, false );
+		
+		for (int i=1; i < Ballistica.distance; i++) {
+			if (Ballistica.trace[i] == enemy.getPos()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public int attackSkill( Char target ) {
+		return 30;
+	}
+	
+	@Override
+	protected float attackDelay() {
+		return 1.6f;
+	}
+	
+	@Override
+	protected boolean doAttack( Char enemy ) {
+
+		spend( attackDelay() );
+		
+		boolean rayVisible = false;
+		
+		for (int i=0; i < Ballistica.distance; i++) {
+			if (Dungeon.visible[Ballistica.trace[i]]) {
+				rayVisible = true;
+			}
+		}
+		
+		if (rayVisible) {
+			getSprite().attack( hitCell );
+			return false;
+		} else {
+			attack( enemy );
+			return true;
+		}
+	}
+	
+	@Override
+	public boolean attack( Char enemy ) {
+		
+		for (int i=1; i < Ballistica.distance; i++) {
+			
+			int pos = Ballistica.trace[i];
+			
+			Char ch = Actor.findChar( pos );
+			if (ch == null) {
+				continue;
+			}
+			
+			if (hit( this, ch, true )) {
+				ch.damage( Random.NormalIntRange( 14, 20 ), this );
+				
+				if (Dungeon.visible[pos]) {
+					ch.getSprite().flash();
+					CellEmitter.center( pos ).burst( PurpleParticle.BURST, Random.IntRange( 1, 2 ) );
+				}
+				
+				if (!ch.isAlive() && ch == Dungeon.hero) {
+					Dungeon.fail( Utils.format( ResultDescriptions.MOB, Utils.indefinite( getName() ), Dungeon.depth ) );
+					GLog.n( TXT_DEATHGAZE_KILLED, getName() );
+				}
+			} else {
+				ch.getSprite().showStatus( CharSprite.NEUTRAL,  ch.defenseVerb() );
+			}
+		}
+		
+		return true;
+	}
+}

@@ -225,22 +225,7 @@
     <string name="Kusarigama_Info">This weapon that consists of a sickle on a metal chain with a heavy iron weight at the end.</string>
     <string name="Kusarigama_Gender">feminine</string>
     <string name="Kusarigama_Pull">PULL</string>
-    
-    <!-- STRINGS OF ChaosSword CLASS -->
-    <string name="ChaosSword_Name">chaos sword</string>
-    <string name="ChaosSword_Info">The blade of this sword is made of pure chaos and it mildly vibrates sometimes. Great power is stored inside the weapon, that can cut in half almost anything. However, great skills are needed to cope the mighty force of the weapon.</string>
-    <string name="ChaosSword_Gender">masculine</string>
-    
-    <!-- STRINGS OF ChaosBow CLASS -->
-    <string name="ChaosBow_Name">chaos bow</string>
-    <string name="ChaosBow_Info">A dreadful bow filled with the power of Chaos. Each arrow it shoots will carry piece of chaos energy within it. But if you miss...</string>
-    <string name="ChaosBow_Gender">masculine</string>
-    
-    <!-- STRINGS OF ChaosStaff CLASS -->
-    <string name="ChaosStaff_Name">chaos staff</string>
-    <string name="ChaosStaff_Info">A staff imbued with the power of Chaos, every ambitious mage\'s dream.</string>
-    <string name="ChaosStaff_Gender">masculine</string>
-    
+
     <!-- STRINGS OF SacrificialSword CLASS -->
     <string name="SacrificialSword_Name">sacrificial sword</string>
     <string name="SacrificialSword_Info">At first glance this aged bronze sword, covered with patina stains, looks totally useless. However, you can sense that old, archaic powers sleep within. Those powers can turn almost any creature into a mindless slave, if only they could be unlocked.</string>

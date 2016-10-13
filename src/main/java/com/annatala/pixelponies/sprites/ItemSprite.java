@@ -1,0 +1,243 @@
+/*
+ * Pixel Dungeon
+ * Copyright (C) 2012-2014  Oleg Dolya
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+package com.annatala.pixelponies.sprites;
+
+import android.graphics.Bitmap;
+import android.util.Log;
+
+import com.annatala.pixelponies.android.R;
+import com.annatala.opengl.TextureCache;
+import com.annatala.noosa.Game;
+import com.annatala.noosa.MovieClip;
+import com.annatala.noosa.TextureFilm;
+import com.annatala.noosa.audio.Sample;
+import com.annatala.pixelponies.Assets;
+import com.annatala.pixelponies.Dungeon;
+import com.annatala.pixelponies.DungeonTilemap;
+import com.annatala.pixelponies.effects.CellEmitter;
+import com.annatala.pixelponies.effects.Speck;
+import com.annatala.pixelponies.items.Gold;
+import com.annatala.pixelponies.items.Heap;
+import com.annatala.pixelponies.items.Item;
+import com.annatala.pixelponies.scenes.GameScene;
+import com.annatala.utils.Utils;
+import com.annatala.utils.PointF;
+import com.annatala.utils.Random;
+
+public class ItemSprite extends MovieClip {
+
+	public static final int SIZE	= 16;
+	
+	private static final float DROP_INTERVAL = 0.4f;
+
+	protected TextureFilm film;
+
+	public Heap heap;
+	
+	private Glowing glowing;
+	private float phase;
+	private boolean glowUp;
+	
+	private float dropInterval;
+	
+	public ItemSprite() {
+		this( ItemSpriteSheet.SMTH, null );
+	}
+	
+	public ItemSprite( Item item ) {
+		this(item.imageFile(), item.image(), item.glowing() );
+	}
+	
+	public ItemSprite( int image, Glowing glowing ) {
+		this(Assets.ITEMS, image, glowing);
+	}
+	
+	private ItemSprite(String file, int imageIndex, Glowing glowing ) {
+		super();
+		
+		view(file, imageIndex, glowing );
+	}
+	
+	public ItemSprite(Heap heap) {
+		super();
+		
+		link(heap);
+	}
+
+	private void updateTexture(String file) {
+		texture(file);
+		film = new TextureFilm( texture, SIZE, SIZE );
+	}
+	
+	public void originToCenter() {
+		origin.set(SIZE / 2 );
+	}
+	
+	public void link() {
+		link( heap );
+	}
+	
+	public void link( Heap heap ) {
+		this.heap = heap;
+		view(heap.imageFile(), heap.image(), heap.glowing() );
+		place( heap.pos );
+	}
+	
+	@Override
+	public void revive() {
+		super.revive();
+		
+		speed.set( 0 );
+		acc.set( 0 );
+		dropInterval = 0;
+		
+		heap = null;
+	}
+	
+	public PointF worldToCamera( int cell ) {
+		final int csize = DungeonTilemap.SIZE;
+		
+		return new PointF(
+			cell % Dungeon.level.getWidth() * csize + (csize - SIZE) * 0.5f,
+			cell / Dungeon.level.getWidth() * csize + (csize - SIZE) * 0.5f
+		);
+	}
+	
+	public void place( int p ) {
+		point( worldToCamera( p ) );
+	}
+	
+	public void drop() {
+
+		if (heap.isEmpty()) {
+			return;
+		}
+			
+		dropInterval = DROP_INTERVAL;
+		
+		speed.set( 0, -100 );
+		acc.set( 0, -speed.y / DROP_INTERVAL * 2 );
+		
+		if (getVisible() && heap != null && heap.peek() instanceof Gold) {
+			CellEmitter.center( heap.pos ).burst( Speck.factory( Speck.COIN ), 5 );
+			Sample.INSTANCE.play( Assets.SND_GOLD, 1, 1, Random.Float( 0.9f, 1.1f ) );
+		}
+	}
+	
+	public void drop( int from ) {
+
+		if (heap.pos == from) {
+			drop();
+		} else {
+			
+			float px = x;
+			float py = y;		
+			drop();
+			
+			place( from );
+	
+			speed.offset( (px-x) / DROP_INTERVAL, (py-y) / DROP_INTERVAL );
+			
+			Log.d( "GAME", toString() );
+			Log.d( "GAME", Utils.format(Game.getVar(R.string.ItemSprite_Info1), speed.x, speed.y ) );
+		}
+	}
+	
+	public ItemSprite view(String file, int image, Glowing glowing ) {
+		
+		updateTexture(file);
+		
+		frame( film.get( image ) );
+		if ((this.glowing = glowing) == null) {
+			resetColor();
+		}
+		return this;
+	}
+	
+	@Override
+	public void update() {
+		super.update();
+
+		// Visibility
+		setVisible(heap == null || Dungeon.visible[heap.pos]);
+		
+		// Dropping
+		if (dropInterval > 0 && (dropInterval -= Game.elapsed) <= 0) {
+			
+			speed.set( 0 );
+			acc.set( 0 );
+			place( heap.pos );
+			
+			if (Dungeon.level.water[heap.pos]) {
+				GameScene.ripple( heap.pos );
+			}
+		}
+		
+		// Glowing
+		if (getVisible() && glowing != null) {
+			if (glowUp && (phase += Game.elapsed) > glowing.period) {
+				
+				glowUp = false;
+				phase = glowing.period;
+				
+			} else if (!glowUp && (phase -= Game.elapsed) < 0) {
+				
+				glowUp = true;
+				phase = 0;
+				
+			}
+			
+			float value = phase / glowing.period * 0.6f;
+			
+			rm = gm = bm = 1 - value;
+			ra = glowing.red * value;
+			ga = glowing.green * value;
+			ba = glowing.blue * value;
+		}
+	}
+	
+	public static int pick( int index, int x, int y ) {
+		Bitmap bmp = TextureCache.get( Assets.ITEMS ).bitmap;
+		int rows = bmp.getWidth() / SIZE;
+		int row = index / rows;
+		int col = index % rows;
+		return bmp.getPixel( col * SIZE + x, row * SIZE + y );
+	}
+	
+	public static class Glowing {
+		
+		public static final Glowing WHITE = new Glowing( 0xFFFFFF, 0.6f );
+		
+		public float red;
+		public float green;
+		public float blue;
+		public float period;
+		
+		public Glowing( int color ) {
+			this( color, 1f );
+		}
+		
+		public Glowing( int color, float period ) {
+			red = (color >> 16) / 255f;
+			green = ((color >> 8) & 0xFF) / 255f;
+			blue = (color & 0xFF) / 255f;
+			
+			this.period = period;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- PACKAGE pixeldungeon/plants -->
+    <!-- PACKAGE pixelponies/plants -->
     <!-- STRINGS OF Plant CLASS -->
     <string name="Plant_ACPlant">PLANT</string>
     <string name="Plant_Info">Throw this seed to the place where you want to grow %1$s.\n\n%2$s</string>

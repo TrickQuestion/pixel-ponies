@@ -25,7 +25,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
     defaultConfig {
-        applicationId "com.nyrds.pixeldungeon.ml"
+        applicationId "com.annatala.pixelponies.android"
         minSdkVersion 9
         targetSdkVersion 23
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'

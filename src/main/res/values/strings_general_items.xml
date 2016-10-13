@@ -62,11 +62,6 @@
     <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
     <string name="TomeOfMastery_WayAlreadyChosen">You cannot change your way!</string>
 
-    <!-- STRINGS OF SoulShard CLASS -->
-    <string name="SoulShard_Name">soul shard</string>
-    <string name="SoulShard_Info">It\'s a shard you\'ve taken from remnants of Jar of Souls. It\'s glowing with mystical energy, maybe there is someone, who could be interested in such thing.</string>
-    <string name="SoulShard_Gender">masculine</string>
-
     <!-- STRINGS OF Torch CLASS -->
     <string name="Torch_Name">torch</string>
     <string name="Torch_ACLight">LIGHT</string>
