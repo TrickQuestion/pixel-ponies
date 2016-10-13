@@ -20,6 +20,7 @@ package com.annatala.pixelponies.actors.hero;
 
 import android.support.annotation.NonNull;
 
+import com.annatala.pixelponies.items.barding.ChainmailBarding;
 import com.annatala.pixelponies.items.weapon.melee.Claymore;
 import com.annatala.pixelponies.android.BuildConfig;
 import com.annatala.pixelponies.android.R;
@@ -165,7 +166,6 @@ public enum HeroClass {
 		hero.collect(new RingOfThorns());
 		hero.collect(new RingOfHaste().upgrade().identify());
 		hero.collect(new Spear().upgrade().identify());
-
 
 		hero.ht(1000);
 		hero.hp(1000);

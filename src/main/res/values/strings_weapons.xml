@@ -231,7 +231,7 @@
     <string name="SacrificialSword_Info">At first glance this aged bronze sword, covered with patina stains, looks totally useless. However, you can sense that old, archaic powers sleep within. Those powers can turn almost any creature into a mindless slave, if only they could be unlocked.</string>
     <string name="SacrificialSword_Gender">masculine</string>
 
-    <!-- STRINGS OF BroadSword CLASS -->
+    <!-- STRINGS OF Claymore CLASS -->
     <string name="Claymore_Name">Claymore</string>
     <string name="Claymore_Info">This massive sword should be able to cut through anything, but only the most honest and true of ponies can hope to wield its massive power.</string>
     <string name="Claymore_Gender">masculine</string>

@@ -51,18 +51,10 @@ public class PixelPonies extends Game {
 	public PixelPonies() {
 		super(TitleScene.class);
 		
-		// remix 0.5
+		// Not 100% sure how necessary this thing is, nor how to remove it.
 		com.annatala.utils.Bundle.addAlias(
 				com.annatala.pixelponies.items.food.Ration.class,
 				"com.annatala.pixelponies.items.food.Food");
-		// remix 23.1.alpha
-		com.annatala.utils.Bundle.addAlias(
-				com.annatala.pixelponies.actors.mobs.guts.SuspiciousRat.class,
-				"com.annatala.pixelponies.actors.mobs.guts.Wererat");
-		// remix 23.2.alpha
-		com.annatala.utils.Bundle.addAlias(
-				Claymore.class,
-				"com.annatala.pixelponies.items.weapon.melee.BroadSword");
 
 	}
 

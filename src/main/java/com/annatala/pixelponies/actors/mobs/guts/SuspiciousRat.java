@@ -79,10 +79,10 @@ public class SuspiciousRat extends Mob {
 				PlayZap();
 				return true;
 			} else {
-				int wereratPos = this.getPos();
-				if (Dungeon.level.cellValid(wereratPos)) {
+				int suspiciousRatPos = this.getPos();
+				if (Dungeon.level.cellValid(suspiciousRatPos)) {
 					PseudoRat mob = new PseudoRat();
-					mob.setPos(wereratPos);
+					mob.setPos(suspiciousRatPos);
 					Dungeon.level.spawnMob(mob, 0);
 					Sample.INSTANCE.play(Assets.SND_CURSED);
 				}
