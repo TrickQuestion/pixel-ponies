@@ -95,7 +95,7 @@ public class Scythe extends MeleeWeapon {
 	private final WndBag.Listener itemSelector = new WndBag.Listener() {
 		@Override
 		public void onSelect( Item item ) {
-			if (item != null && !(item instanceof Boomerang)) {
+			if (item != null && !(item instanceof Boomerang) && !(item instanceof RubberChicken)) {
 				
 				Sample.INSTANCE.play( Assets.SND_EVOKE );
 				ScrollOfUpgrade.upgrade( getCurUser() );

@@ -115,7 +115,7 @@ public class ItemSpriteSheet {
 	public static final int SCROLL_YAVAYA	= 129;
 	public static final int SCROLL_IBEKU	= 130;
 	public static final int SCROLL_MALENKI	= 131;
-	public static final int SCROLL_METAR	= 150;
+	public static final int SCROLL_METAR	= 147;
 	
 	// Seeds
 	public static final int SEED_FIREBLOOM	= 88;
@@ -164,7 +164,7 @@ public class ItemSpriteSheet {
 		
 	// Misc
 	public static final int ANKH	= 1;
-	public static final int GOLD	= 14;
+//	public static final int GOLD	= 14;
 	public static final int STYLUS	= 80;
 	public static final int DEWDROP	= 81;
 	public static final int MASTERY	= 82;
@@ -172,19 +172,30 @@ public class ItemSpriteSheet {
 	public static final int BEACON	= 85;
 	public static final int KIT		= 86;
 	public static final int AMULET	= 87;
-	public static final int VIAL	= 120;
+//	public static final int VIAL	= 120;
 	public static final int WEIGHT	= 123;
-	public static final int CODEX   = 132;
-	
-	public static final int BOW_WOODEN      = 134;
-	public static final int BOW_COMPOUND    = 135;
-	public static final int BOW_RUBY        = 136;
+
+	public static final int COMMON_CODEX    = 132;
+	public static final int UNCOMMON_CODEX  = 138;
+	public static final int RARE_CODEX      = 139;
+
+	public static final int SPELLBOOK		= 148;
+
+//	public static final int BOW_WOODEN      = 134;
+//	public static final int BOW_COMPOUND    = 135;
+//	public static final int BOW_RUBY        = 136;
 
 	public static final int QUIVER_COMMON     = 137;
 
-	public static final int ARROW_FROST      = 140;
-	public static final int ARROW_COMMON     = 141;
-	public static final int ARROW_FIRE       = 142;
-	public static final int ARROW_POISON     = 143;
-	public static final int ARROW_PARALYSIS  = 144;
+//	public static final int ARROW_FROST      = 140;
+//	public static final int ARROW_COMMON     = 141;
+//	public static final int ARROW_FIRE       = 142;
+//	public static final int ARROW_POISON     = 143;
+//	public static final int ARROW_PARALYSIS  = 144;
+
+	public static final int SELTZER_BOTTLE   = 149;
+	public static final int CREAM_PIE        = 150;
+	public static final int FUNNY_GLASSES    = 151;
+	public static final int RUBBER_CHICKEN   = 152;
+
 }

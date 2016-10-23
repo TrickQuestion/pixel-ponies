@@ -18,6 +18,10 @@
 package com.annatala.pixelponies.items;
 
 import com.annatala.pixelponies.android.util.TrackedRuntimeException;
+import com.annatala.pixelponies.items.utility.Codex;
+import com.annatala.pixelponies.items.utility.CommonCodex;
+import com.annatala.pixelponies.items.utility.RareCodex;
+import com.annatala.pixelponies.items.utility.UncommonCodex;
 import com.annatala.pixelponies.items.weapon.melee.GoldenSword;
 import com.annatala.pixelponies.items.weapon.melee.SacrificialSword;
 import com.annatala.pixelponies.items.barding.AncientBarding;
@@ -151,7 +155,8 @@ public class Generator {
 		FOOD	( 0,	Food.class ),
 		GOLD	( 50,	Gold.class ),
 		RANGED  ( 2,	Bow.class),
-		BULLETS ( 5,	Arrow.class);
+		BULLETS ( 5,	Arrow.class),
+		CODEX   ( 0,    Codex.class);
 		
 		public Class<?>[] classes;
 		public float[] probs;
@@ -331,6 +336,14 @@ public class Generator {
 		Category.BULLETS.probs = new float[]{ 10, 2, 2, 2 };
 		Category.BULLETS.luckyProbs = new float[]{ 10, 3, 3, 3 };
 
+		Category.CODEX.classes = new Class<?>[]{
+				CommonCodex.class,
+				UncommonCodex.class,
+				RareCodex.class
+		};
+		Category.CODEX.probs = new float[] { 25, 5, 1 };
+		Category.CODEX.luckyProbs = new float[] { 9, 3, 1 };
+
 	}
 	
 	public static void reset() {
@@ -370,7 +383,7 @@ public class Generator {
 		}
 	}
 	
-	public static Barding randomBarding() throws Exception {
+	private static Barding randomBarding() throws Exception {
 		
 		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		
@@ -386,7 +399,7 @@ public class Generator {
 		return Math.abs( curStr - a1.minHonesty) < Math.abs( curStr - a2.minHonesty) ? a1 : a2;
 	}
 	
-	public static Weapon randomWeapon() throws Exception {
+	private static Weapon randomWeapon() throws Exception {
 		
 		int curStr = Hero.STARTING_HONESTY + Dungeon.potionsOfHonesty;
 		

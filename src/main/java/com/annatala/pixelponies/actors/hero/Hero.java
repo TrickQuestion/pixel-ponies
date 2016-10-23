@@ -74,6 +74,7 @@ import com.annatala.pixelponies.effects.Speck;
 import com.annatala.pixelponies.items.utility.Amulet;
 import com.annatala.pixelponies.items.utility.Ankh;
 import com.annatala.pixelponies.items.utility.DewVial;
+import com.annatala.pixelponies.items.utility.Spellbook;
 import com.annatala.pixelponies.items.weapon.missiles.CommonArrow;
 import com.annatala.pixelponies.plants.Dewdrop;
 import com.annatala.pixelponies.items.Heap;
@@ -129,6 +130,7 @@ import java.util.Set;
 public class Hero extends Char {
 
 	private static final String TXT_LEAVE = Game.getVar(R.string.Hero_Leave);
+	private static final String TXT_COME_TOO_FAR = Game.getVar(R.string.Hero_ComeTooFar);
 
 	private static final String TXT_LEVEL_UP = Game.getVar(R.string.Hero_LevelUp);
 	private static final String TXT_NEW_LEVEL = Game.getVar(R.string.Hero_NewLevel);
@@ -185,8 +187,8 @@ public class Hero extends Char {
 	public Class<? extends Arrow> lastArrowType = CommonArrow.class;
 	public Belongings belongings;
 
-    private int honesty;	// done
-	private int loyalty;	// Add evasion chance; change from level-based to oath scrolls
+    private int honesty;
+	private int loyalty;
 	private int laughter;	// Luck and saves (need to add support) (joke books and shopkeeper pranks)
 	private int generosity;	// Awareness, but not detect radius (store donations, buy-outs, quest option to forfeit)
 	private int kindness;	// Stealth (quests, bosses, level skips?, minus if kill fleeing)
@@ -818,7 +820,8 @@ public class Hero extends Char {
 
 		if ((item instanceof ScrollOfUpgrade && ((ScrollOfUpgrade) item).isKnown())
 				|| (item instanceof PotionOfHonesty && ((PotionOfHonesty) item).isKnown())
-				|| (item instanceof ScrollOfLoyalOath && ((ScrollOfLoyalOath) item).isKnown())) {
+				|| (item instanceof ScrollOfLoyalOath && ((ScrollOfLoyalOath) item).isKnown())
+				|| (item instanceof Spellbook)) {
 			GLog.p(TXT_YOU_NOW_HAVE, item.name());
 		} else {
 			GLog.i(TXT_YOU_NOW_HAVE, item.name());
@@ -945,7 +948,10 @@ public class Hero extends Char {
 		int stairs = action.dst;
 		if (getPos() == stairs && getPos() == Dungeon.level.entrance) {
 
-			if (Dungeon.depth == 1) {
+			if (Dungeon.depth == 0) {
+				GameScene.show(new WndMessage(TXT_COME_TOO_FAR));
+				ready();
+			} else if (Dungeon.depth == 1) {
 
 				if (belongings.getItem(Amulet.class) == null) {
 					GameScene.show(new WndMessage(TXT_LEAVE));

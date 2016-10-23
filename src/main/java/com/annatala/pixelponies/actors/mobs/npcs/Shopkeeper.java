@@ -27,9 +27,11 @@ import com.annatala.pixelponies.effects.particles.ElmoParticle;
 import com.annatala.pixelponies.items.Heap;
 import com.annatala.pixelponies.items.Item;
 import com.annatala.pixelponies.scenes.GameScene;
+import com.annatala.pixelponies.sprites.CharSprite;
 import com.annatala.pixelponies.sprites.ShopkeeperSprite;
 import com.annatala.pixelponies.windows.WndBag;
 import com.annatala.pixelponies.windows.WndTradeItem;
+import com.annatala.utils.GLog;
 
 public class Shopkeeper extends NPC {
 
@@ -69,6 +71,12 @@ public class Shopkeeper extends NPC {
 		
 		getSprite().killAndErase();
 		CellEmitter.get( getPos() ).burst( ElmoParticle.FACTORY, 6 );
+
+		Dungeon.hero.setLaughter(Dungeon.hero.laughter() + 1);
+		Dungeon.hero.getSprite().showStatus(CharSprite.POSITIVE, Game.getVar(R.string.Shopkeeper_StaApply));
+		GLog.p(Game.getVar(R.string.Shopkeeper_GoneApply));
+		//Badges.validateLaughterAttained();
+
 	}
 	
 	@Override

@@ -72,9 +72,15 @@ public class Dungeon {
 	public static int 	  potionsOfHonesty;
 	public static int     scrollsOfUpgrade;
 	public static int	  scrollsOfLoyalOath;
+	public static int	  spellbooks;
 	public static int     arcaneStyli;
-	public static boolean dewVial; // true if the dew vial can be spawned
-	public static int     transmutation; // depth number for a well of transmutation
+	public static boolean dewVial; 			// true iff the dew vial can be spawned
+	public static int     transmutation; 	// depth number for a well of transmutation
+	public static int[]   comedyItems;		// depths at which comedy items should be spawned
+	public static final int RUBBER_CHICKEN = 0;
+	public static final int CREAM_PIE = 1;
+	public static final int FUNNY_GLASSES = 2;
+	public static final int SELTZER_BOTTLE = 3;
 
 	public static int challenges;
 
@@ -125,9 +131,13 @@ public class Dungeon {
 		potionsOfHonesty = 0;
 		scrollsOfUpgrade = 0;
 		scrollsOfLoyalOath = 0;
+		spellbooks = 0;
 		arcaneStyli = 0;
 		dewVial = true;
 		transmutation = Random.IntRange(6, 14);
+
+		comedyItems = new int[4];
+		resetComedy();
 
 		chapters = new HashSet<>();
 
@@ -152,6 +162,26 @@ public class Dungeon {
 
 	public static boolean isChallenged(int mask) {
 		return (challenges & mask) != 0;
+	}
+
+	private static void resetComedy() {
+		for (int i = 0 ; i < 4 ; i++) {
+			comedyItems[i] = -1;
+		}
+		for (int i = 0 ; i < 4 ; i++) {
+			int tier = Random.Int(5);
+			while (tier == comedyItems[0] || tier == comedyItems[1] || tier == comedyItems[2] ||
+					tier == comedyItems[3]) {
+				tier = Random.Int(5);
+			}
+			comedyItems[i] = tier;
+		}
+		for (int i = 0 ; i < 4 ; i++) {
+			comedyItems[i] = comedyItems[i] * 5 + Random.Int(4);
+			if (comedyItems[i] == 21 || comedyItems[i] == 25 || comedyItems[i] == 26) {
+				comedyItems[i] += Random.Int(3);
+			}
+		}
 	}
 
 	private static void updateStatistics() {
@@ -188,24 +218,7 @@ public class Dungeon {
 	}
 
 	public static String tip() {
-		if (level instanceof DeadEndLevel) {
-
-			return Game.getVar(R.string.Dungeon_DeadEnd);
-
-		} else {
-			String[] tips = Game.getVars(R.array.Dungeon_Tips);
-			int index = depth - 1;
-
-			if (index == -1) {
-				return "Welcome to test level";
-			}
-
-			if (index < tips.length) {
-				return tips[index];
-			} else {
-				return Game.getVar(R.string.Dungeon_NoTips);
-			}
-		}
+		return level.getSign(hero.getPos()%level.getWidth(), hero.getPos()/level.getWidth());
 	}
 
 	public static boolean shopOnLevel() {
@@ -254,7 +267,12 @@ public class Dungeon {
 
 	public static boolean soloNeeded() {
 		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
-		return chance (quota, scrollsOfLoyalOath);
+		return chance(quota, scrollsOfLoyalOath);
+	}
+
+	public static boolean sbNeeded() {
+		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
+		return chance(quota, spellbooks);
 	}
 
 	public static boolean souNeeded() {
@@ -288,6 +306,7 @@ public class Dungeon {
 	private static final String P_HONESTY  = "potionsOfHonesty";
 	private static final String SOU        = "scrollsOfUpgrade";
 	private static final String SOLO	   = "scrollsOfLoyalOath";
+	private static final String SB		   = "spellbooks";
 	private static final String AS         = "arcaneStyli";
 	private static final String DV         = "dewVial";
 	private static final String WT         = "transmutation";
@@ -311,6 +330,7 @@ public class Dungeon {
 		bundle.put(P_HONESTY, potionsOfHonesty);
 		bundle.put(SOU, scrollsOfUpgrade);
 		bundle.put(SOLO, scrollsOfLoyalOath);
+		bundle.put(SB, spellbooks);
 		bundle.put(AS, arcaneStyli);
 		bundle.put(DV, dewVial);
 		bundle.put(WT, transmutation);
@@ -415,6 +435,7 @@ public class Dungeon {
 		potionsOfHonesty = bundle.getInt(P_HONESTY);
 		scrollsOfUpgrade = bundle.getInt(SOU);
 		scrollsOfLoyalOath = bundle.getInt(SOLO);
+		spellbooks = bundle.getInt(SB);
 		arcaneStyli = bundle.getInt(AS);
 		dewVial = bundle.getBoolean(DV);
 		transmutation = bundle.getInt(WT);

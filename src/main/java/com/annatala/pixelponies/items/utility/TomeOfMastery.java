@@ -73,6 +73,7 @@ public class TomeOfMastery extends Item {
 
 			if(hero.subClass != HeroSubClass.NONE) {
 				GLog.w( TXT_WAY_ALREADY_CHOSEN );
+				detach( getCurUser().belongings.backpack );
 				return;
 			}
 
@@ -105,7 +106,7 @@ public class TomeOfMastery extends Item {
 	}
 	
 	public void choose( HeroSubClass way ) {
-		
+
 		detach( getCurUser().belongings.backpack );
 				
 		getCurUser().subClass = way;

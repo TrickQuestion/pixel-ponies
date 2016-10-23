@@ -27,9 +27,10 @@ public class GoldenSword extends SpecialWeapon {
 	public void proc( Char attacker, Char defender, int damage ) {
 
 		// Gold proc (less likely sword will get destroyed if hero is lucky)
+		// ...although I'm not sure if this destroys the sword or not?
 		if (Random.Int(8) == 0 && !Random.luckBonus() ){
 			int price = this.price() / 10;
-			if ( price > 500) { price = 500;}
+			if ( price > 500 ) { price = 500;}
 			Dungeon.level.drop(new Gold(price), defender.getPos());
 		}
 		usedForHit();

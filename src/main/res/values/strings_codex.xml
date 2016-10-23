@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- STRINGS OF Codex CLASS -->
-    <string name="Codex_Name">Codex</string>
-    <string name="Codex_ACRead">READ</string>
-    <string name="Codex_Info">One of the many books that can be found in any library</string>
-    <string name="Codex_Blinded">You can\'t read while blinded</string>
 
-    <!-- Temporary stuff, eventually will replace Codex system with this. -->
-    <string name="Codex_Library">
-        <item>
-            <name>The Art of Invisibility Spells</name>
-            <scarcity></scarcity>
-            <desc></desc>
-        </item>
-        <item>
-            <name>The Art of the To-Do List</name>
-            <scarcity></scarcity>
-            <desc></desc>
-        </item>
-        <item>
-            <name>The Astronomical Astronomer\'s Almanac to All Things Astronomy</name>
-            <scarcity></scarcity>
-            <desc></desc>
-        </item>
-        <item>
-            <name>A Brief History of the Wagon Harness</name>
-            <scarcity>common</scarcity>
-            <desc>This paperback book doesn\'t seem very interesting by its title, but it does
+    <!-- STRINGS OF TomeOfMastery CLASS -->
+    <string name="TomeOfMastery_Name">Tome of Mastery</string>
+    <string name="TomeOfMastery_ACRead">READ</string>
+    <string name="TomeOfMastery_Blinded">You can\'t read while blinded!</string>
+    <string name="TomeOfMastery_Info">This is the fanciest book you\'ve ever seen! With its ancient knowledge you can improve yourself as an adventurer, so you wouldn\'t dare part with it.</string>
+    <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
+    <string name="TomeOfMastery_WayAlreadyChosen">You cannot change your way!</string>
+
+    <!-- STRINGS OF Codex CLASS -->
+    <string name="Codex_ACRead">READ</string>
+    <string name="Codex_Blinded">You can\'t read while blinded!</string>
+
+    <!-- STRINGS OF CommonCodex CLASS -->
+    <string name="CommonCodex_Info">This common paperback book looks cheap and well-used, but perhaps that implies the knowledge inside it is valuable?</string>
+
+    <string-array name="CommonCodex_Titles">
+        <item>A Brief History of the Wagon Harness</item>
+        <item>Bygone Griffins of Greatness</item>
+        <item>Slumber 101</item>
+        <item>The Art of Invisibility Spells</item>
+        <item>Ferrets of Fairyland</item>
+        <item>Modern Spellcasting</item>
+        <item>The Virtues of Harmony: A Reference Guide</item>
+    </string-array>
+
+    <string-array name="CommonCodex_Stories">
+         <item>
+                This paperback book doesn\'t seem very interesting by its title, but it does
                 contain some useful information about the merits of honesty.
                 \n\n
                 \"Honesty is a necessary virtue for the proper use of any kind of harness or barding.
@@ -50,12 +52,9 @@
                 will not confer any bonus to damage. Although there are old legends of tiger-striped
                 equines possessing the ability to throw weapons more forcefully with honesty, this
                 is not a book in ancient mythology so we shall not elaborate further.\"
-            </desc>
         </item>
         <item>
-            <name>Bygone Griffins of Greatness</name>
-            <scarcity>common</scarcity>
-            <desc>This paperback history guide reads more like a tourist brochure. Nonetheless, even
+                This paperback history guide reads more like a tourist brochure. Nonetheless, even
                 though it wasn\'t written by ponies, it contains a lot of practical information on
                 the virtue of loyalty.
                 \n\n
@@ -77,19 +76,16 @@
                 weapon\'s minimum requirement, the more severe these penalties are.\"
                 \n\n
                 \"There is no special benefit to having excess loyalty for a weapon\'s requirements,
-                however due to the everpresent accuracy benefit loyalty applies to all weapons,
+                however due to the everpresent accuracy benefit loyalty offers to all weapons,
                 the most loyal soldiers and crew are generally the most valuable regardless as to
                 whether the weapons in employ are primitive slings or monster cloud-turrets.\"
-            </desc>
         </item>
         <item>
-            <name>Slumber 101</name>
-            <scarcity>common</scarcity>
-            <desc>This silly-looking paperback manual describes how to have fun at sleepovers.
+                This silly-looking manual describes how to have fun at sleepovers.
                 While that might not seem particularly useful in your present situation, it also
                 contains useful information about the virtue of laughter.
                 \n\n
-                \"The number one think you\'re supposed to do at a sleepover is have fun! Laughter is
+                \"The number one thing you\'re supposed to do at a sleepover is have fun! Laughter is
                 an extremely important virtue for ponies of all ages, for a number of reasons.\"
                 \n\n
                 \"First of all, humor keeps you in good shape by quickening your wit and reflexes.
@@ -102,68 +98,157 @@
                 overall.\"
                 \n\n
                 \"There\'s a reason for the expression \'happy-go-lucky\': when you laugh, things
-                just seem to go your way more often! This comes up in all sorts of different areas,
-                whether it\'s finding just the thing you need or other sorts of \'random\'
-                situations, fortune will smile upon you.\"
+                just seem to go your way more often! This comes up in all sorts of different areas.
+                Whether it\'s finding just the thing you need or handling other kinds of \'random\'
+                situations, fortune will smile upon the stout of heart.\"
                 \n\n
                 \"And finally, the rumor is true: laughter is the best medicine! Not only will
-                laughter help good things happen to you, it protects you from bad things and makes
-                them go away more quickly.\"
-            </desc>
+                laughter help good things happen to you, it will protect you from bad things and make
+                misery go away more quickly.\"
         </item>
+        <item>
+                What looks at first like a guide on obscure magic spells is actually a manual on
+                how to maximize the virtue of generosity through surreptitious giving. One passage
+                in particular catches your eye:\n\n
+                \"Fortunately, generosity is its own reward. Being generous gives one a discerning
+                eye which can aid during a giving spree. Generosity is the largest contributor to
+                one\'s powers of observation. While it won\'t make it any easier to see things from
+                a distance, it will at least increase the odds you\'ll notice something important
+                before accidentally stepping on it.\"\n\n
+                \"In addition to general observation powers, generosity also helps you identify the
+                quality of equipment you\'re holding. The highly generous can discern the quality of
+                their wielded items (be they weapons, barding, or accessories) in no time at
+                all.\"\n\n
+                \"And if that weren\'t enough, generosity also improves a body\'s natural ability
+                to heal. The more generous you are, the faster your health will recover from injury.
+                Sadly, this doesn\'t apply to illnesses or poison: for those, you\'ll need laughter
+                or magic, respectively.\"
+        </item>
+        <item>
+                You don\'t think a children\'s fairy tale would be of much use to you, but as luck
+                would have it, this particular story is all about practical applications of the
+                virtue of kindness.\n\n
+                \"Kindness is a difficult virtue to express when you\'re being surrounded by scary
+                monsters that want to gobble you up, but this is when it\'s most important! There
+                are several essential benefits to the virtue of kindness that everypony should know
+                about.\"\n\n
+                \"First, kindness makes it easier to avoid detection. The more altruistic you are,
+                the more you\'ll seem to fade into the background. This isn\'t always a good thing,
+                but in dangerous situations it can come in very useful.\"\n\n
+                \"Second, kindness makes it harder for scary things to hit you! This is probably
+                the most important benefit of kindness, and it\'s the one you\'re likely to notice
+                the most. Nothing protects you from attack better than the virtue of kindness.\"\n\n
+                \"Finally, if you\'re especially kind, you can get discounts on the goods and
+                services you haggle for. However, be forewarned: this won\'t work if you\'re an
+                incurable pushover (whimper-squeak).\"
+        </item>
+        <item>
+                It\'s a dime-store magazine about spellcasting, filled with an unusual amount of
+                information on the virtue of magic.\n\n
+                \"Even if you\'re not a mage, the virtue of magic is one you shouldn\'t shirk from.
+                Magic plays a central role in pony technology, and even if you\'re a humble earth
+                pony who eschews direct manipulation of mana, knowing a trick or two could one day
+                save your life!\"\n\n
+                \"Magic is a prerequisite for the use of some magic items, but not others. Magic
+                scrolls are safe to cast by anypony, but use of magic wands requires a minimum level
+                of magic competence. If you lack the magical competence for a wand, every time you
+                fire the wand there\'s a chance something will go very wrong. The required magic can
+                be reduced by upgrading the wand.\"\n\n
+                \"Magic rings and accessories have similar requirements. If you wield a magical
+                accessory on your mane or tail, you must meet the minimum magic requirement of the
+                accessory. Failure to do this means the accessory will occasionally \'backfire\'
+                and do something bad to you. The larger the discrepancy, the more frequently you\'ll
+                suffer the consequences. This is especially annoying if the accessory itself is
+                cursed, in which case you can be affected negatively in two ways!\"\n\n
+                \"In some cases, having a strong connection to magic will cause certain magic
+                effects to be more powerful, such as a casting of Psionic Blast. In other cases, it
+                will protect you from negative consequences: you\'re less likely to cause magic
+                cancellations when upgrading an imbued weapon or enchanted armor, for example.\"\n\n
+                \"One last area of importance: magic is the only virtue that can help you to resist
+                health-based damage that ignores all armor, such as damage from poison, deadly gas,
+                or electricity. These forms of injury are frequently deadly, so magic\'s role in
+                mitigating disaster cannot be overstated.\"
+        </item>
+        <item>
+                It\'s well and good that an adventurer knows their survival depends upon the virtues
+                of honesty, loyalty, laughter, generosity, kindness, and magic. But how can a hero
+                embark upon a quest for self-improvement while adventuring at the same time?\n\n
+                Honesty, loyalty, and magic are easy enough to improve: potions of honesty, scrolls
+                of loyalty, and books of magic require no special ability to use. However, like all
+                virtue-raising devices, they are limited in number and must be actively sought.\n\n
+                Generosity is a stat best gained by assisting others, so be on the lookout for
+                quests and opportunities to donate your time and resources.\n\n
+                Kindness is similar in many ways. Offering your assistance may be all that is
+                required to gain in kindness, but kindness is the one stat that you must preserve
+                in order to improve. Attacking fleeing monsters or monsters who can\'t reach
+                you isn\'t very sporting.\n\n
+                Finally, who can say about laughter? There are plenty of different ways to improve
+                your sense of humor, most of which make no sense at all. You might need to find a
+                more specialized guide on the subject.
+        </item>
+    </string-array>
 
-            <name>Perplexing Pony Plagues</name>
-        <name>The Virtues of Friendship: A Reference Guide</name>
+
+    <!-- STRINGS OF UncommonCodex CLASS -->
+    <string name="UncommonCodex_Info">This typical-looking book is small, but very well-made. It\'s probably worth something.</string>
+
+    <string-array name="UncommonCodex_Titles">
+        <item>Glyph Enchantments, Vol. I of II</item>
+        <item>Glyph Enchantments, Vol. II of II</item>
+        <item>Weapon Imbuements, Vol. I of III</item>
+        <item>Weapon Imbuements, Vol. II of III</item>
+        <item>Weapon Imbuements, Vol. III of III</item>
+    </string-array>
 
 
+    <string-array name="UncommonCodex_Stories">
+    <item>
+        Bounce Glyph - Causes enemies to be pushed back after hitting the Hero.\n\n
+        Affection Glyph - The enemy will be charmed for few turns, while the Hero will be charmed for a few turns too, but never more than the enemy.\n\n
+        Anti-entropy Glyph - The Hero will be illuminated and catch fire, and the enemy will be frozen.\n\n
+        Multiplicity Glyph - This effect causes the Hero to spawn a mirror image but be damaged. This can kill the Hero.\n\n
+        Potential Glyph - This unleashes a lightning-style blast that will damage the enemy which attacked the player and will damage the Hero on average half the damage done to the enemy.
+    </item>
+    <item>
+        Metabolism Glyph - The Hero will be partially healed before the enemy damage is applied, but hunger will increase considerably. Only works if not starving.\n\n
+        Stench Glyph - The Hero will release a cloud of toxic gas when hit.\n\n
+        Viscosity Glyph - The hero will obtain the damage deferred debuff, which will cause the Hero to receive 1 damage per turn, instead of receiving the whole amount in one shot.\n\n
+        Displacement Glyph - Whenever the Hero is hit, there is a chance that the Hero will be teleported to a random visible tile. This glyph does not work on boss levels.\n\n
+        Entanglement Glyph - The hero may receive herbal barding, but also be rooted at the same time.
+    </item>
+    <item>
+        General upgrades improve the damage of weapons, but make them no easier to hit with: skill is still a prerequisite. Enchantments, on the other hoof, add a special magic effect.\n\n
+        Grim weapon - On successful hit, may instantly kill the target (or deal up to 2x damage to a boss).\n\n
+        Blazing weapon - On successful hit, deals extra damage to target and may burn it.\n\n
+        Eldritch weapon - On successful hit, enemy may flee in Terror.
+    </item>
+    <item>
+        Unstable weapon - On successful hit, may apply the effect of any random enchantment.\n\n
+        Vampiric weapon - On successful hit, may heal the Hero for part of the damage dealt to the enemy.\n\n
+        Lucky weapon - almost completely ignores enemy barding, and does much more damage.\n\n
+        Stunning weapon - On successful hit, may paralyze target.
+    </item>
+    <item>
+        Piercing weapon -  On successful hit, may damage all enemies in a straight line behind the target.\n\n
+        Venomous weapon - On successful hit, may poison target.\n\n
+        Chilling weapon - On successful hit, may slow target and will prevent it from burning.\n\n
+        Wild weapon - On successful hit, may damage all enemies adjacent to the target.
+    </item>
 
-        <name>Daring Do books (numerous, don\'t use the name)</name>
-        <name>Ferrets of Fairyland</name>
-        <name>Ghost, Goblins, and Ghoulish Figures</name>
-        <name>Haycarte\'s Treatise on Ponies</name>
-        <name>Inspiration Manifestation</name>
-        <name>The Journal of the Two Sisters</name>
-        <name>The Life and Times of Marwari the Maneless</name>
-        <name>Magical Compendium</name>
-        <name>Modern Spellcasting</name>
-        <name>Mythological Mysteries</name>
-
-        <name>Predictions and Prophesies</name>
-        <name>Principles of Magic</name>
-
-        <name>Super Naturals</name>
+    </string-array>
 
 
-    </string>
+    <!-- STRINGS OF RareCodex CLASS -->
+    <string name="RareCodex_Info">This pleather-bound book is embossed with gold foil, and its pages are illuminated in rich hues. It looks expensive!</string>
+
+    <string-array name="RareCodex_Titles">
+        <item>No Rare Books Yet (Testing 1, 2, 3)</item>
+    </string-array>
+
+    <string-array name="RareCodex_Stories">
+        <item>This is a test of the emergency bookhorse system. Were this actual bookhorse, nicker whinney snort.</item>
+    </string-array>
 
 
-    <string-array name="Codex_Story">
-        <item>Bounce Glyph - Causes enemies to be pushed back after hitting the Hero.</item>
-        <item>Affection Glyph - The enemy will be charmed for few turns, while the Hero will be charmed for a few turns too, but never more than the enemy.</item>
-        <item>Anti-entropy Glyph - The Hero will be illuminated and catch fire, and the enemy will be frozen.</item>
-        <item>Multiplicity Glyph - This effect causes the Hero to spawn a mirror image but be damaged. This can kill the Hero.</item>
-        <item>Potential Glyph - This unleashes a lightning-style blast that will damage the enemy which attacked the player and will damage the Hero on average half the damage done to the enemy.</item>
-        <item>Metabolism Glyph - The Hero will be partially healed before the enemy damage is applied, but hunger will increase considerably. Only works if not starving,.</item>
-        <item>Stench Glyph - The Hero will release a cloud of toxic gas when hit.</item>
-        <item>Viscosity Glyph - The hero will obtain the damage deferred debuff, which will cause the Hero to receive 1 damage per turn, instead of receiving the whole amount in one shot.</item>
-        <item>Displacement Glyph - Whenever the Hero is hit, there is a chance that the Hero will be teleported to a random visible tile. This glyph does not work on boss levels.</item>
-        <item>Entanglement Glyph - The hero may receive herbal barding, but also be rooted at the same time.</item>
-        
-        <item>Grim weapon - On successful hit, may instantly kill the target (or deal up to 2x damage to a boss).</item>
-        <item>Blazing weapon - On successful hit, deals extra damage to target and may burn it.</item>
-        <item>Eldritch weapon - On successful hit, enemy may flee in Terror.</item>
-        <item>Unstable weapon - On successful hit, may apply the effect of any random enchantment.</item>
-        <item>Vampiric weapon - On successful hit, may heal the Hero for part of the damage dealt to the enemy.</item>
-        <item>Lucky weapon - almost completely ignores enemy barding, and does much more damage.</item>
-        <item>Stunning weapon - On successful hit, may paralyze target.</item>
-        <item>Piercing weapon -  On successful hit, may damage all enemies in a straight line behind the target.</item>
-        <item>Venomous weapon - On successful hit, may poison target.</item>
-        <item>Chilling weapon - On successful hit, may slow target and will prevent it from burning.</item>
-        <item>Wild weapon - On successful hit, may damage all enemies adjacent to the target.</item>
-        
-        <item>This book is written in ancient griffon.</item>
-        <item>This book is written in Breezie language.</item>
-        <item>This book is written in ancient minotaur.</item>
-   </string-array>
 
 </resources>

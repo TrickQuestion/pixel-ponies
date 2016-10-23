@@ -54,14 +54,6 @@
     <string name="Stylus_SelectBarding">Select an item to inscribe on</string>
     <string name="Stylus_Inscribed">you inscribed the %1$s on your %2$s</string>
 
-    <!-- STRINGS OF TomeOfMastery CLASS -->
-    <string name="TomeOfMastery_Name">Tome of Mastery</string>
-    <string name="TomeOfMastery_ACRead">READ</string>
-    <string name="TomeOfMastery_Info">This worn pleather book is not very thick, but it seems to have rare and valuable information. It may take a while to read, however.</string>
-    <string name="TomeOfMastery_Blinded">You can\'t read while blinded!</string>
-    <string name="TomeOfMastery_Choose">You have chosen the way of the %s!</string>
-    <string name="TomeOfMastery_WayAlreadyChosen">You cannot change your way!</string>
-
     <!-- STRINGS OF Torch CLASS -->
     <string name="Torch_Name">torch</string>
     <string name="Torch_ACLight">LIGHT</string>
@@ -78,6 +70,13 @@
     <string name="Weightstone_WndSpeed">For speed</string>
     <string name="Weightstone_WndAccuracy">For accuracy</string>
     <string name="Weightstone_WndCancel">Never mind</string>
+
+    <!-- STRINGS OF Spellbook CLASS -->
+    <string name="Spellbook_Name">spellbook</string>
+    <string name="Spellbook_Info">This handy little book can increase your magic ability by one point. Since it\'s inherently magic, it will only take a short time for you to study it.</string>
+    <string name="Spellbook_ACStudy">STUDY</string>
+    <string name="Spellbook_StaApply">+1 Magic</string>
+    <string name="Spellbook_Apply">You feel magic coursing through your body.</string>
 
     <!-- PACKAGE /actors/hero -->
     <!-- STRINGS OF Belongings CLASS -->

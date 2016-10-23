@@ -3,7 +3,8 @@
     <!-- STRINGS OF Hero CLASS -->
     <string name="Hero_Name">you</string>
     <string name="Hero_Name_Objective">you</string>
-    <string name="Hero_Leave">One does not simply leave Pixel Dungeon.</string>
+    <string name="Hero_Leave">After all the trouble of breaking in here, you\'re not about to leave empty-hooved.</string>
+    <string name="Hero_ComeTooFar">You\'ve come too far on your quest to give up now!</string>
     <string name="Hero_LevelUp">level up!</string>
     <string name="Hero_NewLevel">Welcome to level %d! Now you are healthier and more focused. It\'s easier for you to hit enemies and dodge their attacks.</string>
     <string name="Hero_YouNowHave">You now have %s</string>
@@ -26,6 +27,10 @@
     <string name="Hero_StaCripple">You are crippled!</string>
     <string name="Hero_StaBleeding">You are bleeding!</string>
     <string name="Hero_StaVertigo">Everything is spinning around you!</string>
+
+    <!-- STRINGS OF Shopkeeper CLASS -->
+    <string name="Shopkeeper_StaApply">+1 Laughter</string>
+    <string name="Shopkeeper_GoneApply">You pranked the shopkeeper!</string>
 
     <!-- STRINGS OF HeroClass CLASS -->
     <string name="HeroClass_EarthPony">earth pony</string>

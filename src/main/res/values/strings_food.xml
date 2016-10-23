@@ -57,5 +57,12 @@
     <!-- STRINGS OF ChangelingPie CLASS -->
     <string name="ChangelingPie_Name">apple pie</string>
     <string name="ChangelingPie_Info">This looks like a mouthwatering apple pie.</string>
+
+    <!-- STRINGS OF CreamPie CLASS -->
+    <string name="CreamPie_Name">cream pie</string>
+    <string name="CreamPie_Info">This looks like a mouthwatering cream pie. What the hay is it doing here, anyway?</string>
+    <string name="CreamPie_Message">That food tasted delicious! It wasn\'t very filling, however.</string>
+    <string name="CreamPie_Missile">You smash the enemy in the face, blinding them! It isn\'t as funny as you\'d hoped, though.</string>
+    <string name="CreamPie_Laugh">You smash yourself in the face with a pie?! Now THAT\'S funny!</string>
     
 </resources>

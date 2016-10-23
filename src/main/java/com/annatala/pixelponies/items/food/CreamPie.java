@@ -15,35 +15,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.annatala.pixelponies.items.potions;
+package com.annatala.pixelponies.items.food;
 
 import com.annatala.noosa.Game;
-import com.annatala.pixelponies.Badges;
+import com.annatala.pixelponies.actors.buffs.Hunger;
 import com.annatala.pixelponies.android.R;
-import com.annatala.pixelponies.actors.hero.Hero;
-import com.annatala.pixelponies.sprites.CharSprite;
-import com.annatala.utils.GLog;
+import com.annatala.pixelponies.items.Item;
+import com.annatala.pixelponies.sprites.ItemSpriteSheet;
 
-public class PotionOfHonesty extends Potion {
+public class CreamPie extends Pie {
 
-	@Override
-	protected void apply( Hero hero ) {
-		setKnown();
-		
-		hero.setHonesty(hero.honesty() + 1);
-		hero.getSprite().showStatus( CharSprite.POSITIVE, Game.getVar(R.string.PotionOfHonesty_StaApply));
-		GLog.p(Game.getVar(R.string.PotionOfHonesty_Apply));
-		
-		Badges.validateHonestyAttained();
+	{
+		image = ItemSpriteSheet.CREAM_PIE;
+		energy = Hunger.STARVING - Hunger.HUNGRY;
+		message = Game.getVar(R.string.CreamPie_Message);
 	}
 
 	@Override
-	public String desc() {
-		return Game.getVar(R.string.PotionOfHonesty_Info);
+	public boolean isFunnySplat() {
+		return true;
 	}
 	
 	@Override
 	public int price() {
-		return isKnown() ? 100 * quantity() : super.price();
+		return 100 * quantity();
 	}
+	
 }

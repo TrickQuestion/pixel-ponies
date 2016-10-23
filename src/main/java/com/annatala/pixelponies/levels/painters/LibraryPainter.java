@@ -23,6 +23,7 @@ import com.annatala.pixelponies.items.Item;
 import com.annatala.pixelponies.items.keys.IronKey;
 import com.annatala.pixelponies.items.scrolls.BlankScroll;
 import com.annatala.pixelponies.items.scrolls.Scroll;
+import com.annatala.pixelponies.items.utility.CommonCodex;
 import com.annatala.pixelponies.levels.Level;
 import com.annatala.pixelponies.levels.Room;
 import com.annatala.pixelponies.levels.Terrain;
@@ -83,12 +84,15 @@ public class LibraryPainter extends Painter {
 			if (Random.luckBonus()) luckTest--;
 
 			if (Random.Int(luckTest) == 0) {
-				level.drop(new Codex(), pos);
+				level.drop(Generator.random(Generator.Category.CODEX), pos);
 			} else {
 				if (Random.Int(luckTest) == 0) {
 					level.drop(new BlankScroll(), pos);
 				}
 			}
+		}
+		if (Random.Int(3) == 0 && Random.luckBonus()) {
+			level.drop(Generator.random(Generator.Category.CODEX), room.random(level));
 		}
 
 		entrance.set(Room.Door.Type.LOCKED);

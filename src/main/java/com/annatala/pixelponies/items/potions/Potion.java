@@ -108,7 +108,7 @@ public class Potion extends Item {
 	}
 	
 	
-	private boolean shatterd = false;
+	private boolean shattered = false;
 	
 	private static String[] getColors(){
 		if(colors == null){
@@ -207,7 +207,7 @@ public class Potion extends Item {
 	}
 	
 	protected void drink( Hero hero ) {
-		
+
 		detach( hero.belongings.backpack );
 		
 		hero.spend( TIME_TO_DRINK );
@@ -251,8 +251,8 @@ public class Potion extends Item {
 	}
 
 	protected boolean canShatter() {
-		if(!shatterd) {
-			shatterd = true;
+		if(!shattered) {
+			shattered = true;
 			return true;
 		}
 		return false;

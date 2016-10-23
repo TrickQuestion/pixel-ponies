@@ -204,6 +204,7 @@
     <string name="WndSadGhost_Farewell">Farewell, adventurer!</string>
 
     <!-- STRINGS OF WndStory CLASS -->
+    <string name="WndStory_Start">After months of planning, you\'ve managed to find and break into the Enchanted Castle. This is the former location of the Pegacorn Pendant, an artifact so powerful the Princess destroyed it to prevent it from being used for evil. Fortunately, the castle holds another dark secret: a Magic Mirror which can teleport you into the past, to before the Pendant was destroyed!\n\nThe Mirror is very close now. You\'re eager to begin your quest before the Princess can find and stop you. However, you see a metal key lying on the floor, and there are several locked rooms here which might contain useful equipment. You\'re not sure which door would be best to open...</string>
     <string name="WndStory_Sewers">The Dungeon lies right beneath the City, its upper levels actually constitute the City\'s sewer system. Being nominally a part of the City, these levels are not that dangerous. No one will call it a safe place, but at least you won\'t need to deal with much evil magic here.</string>
     <string name="WndStory_Prision">Many years ago an underground prison was built here for the most dangerous criminals. At the time it seemed like a very clever idea, because this place indeed was very hard to escape. But soon dark miasma started to permeate from below, driving prisoners and guards insane. In the end the prison was abandoned, though some convicts were left locked up here.</string>
     <string name="WndStory_Caves">The caves, which stretch down under the abandoned prison, are sparsely populated. They lie too deep to be exploited by the City and they are too poor in minerals to interest the dwarves. In the past there was a trade outpost somewhere here on the route between these two states, but it has perished since the decline of the Dwarven Metropolis. Only omnipresent gnolls and subterranean animals dwell here now.</string>
@@ -261,7 +262,7 @@
     <string name="ParalyticGas_Info">A cloud of paralytic gas is swirling here.</string>
     <!-- STRINGS OF ToxicGas CLASS -->
     <string name="ToxicGas_Info">A greenish cloud of toxic gas is swirling here.</string>
-    <string name="ToxicGas_Info1">You died from breathing toxic gas..</string>
+    <string name="ToxicGas_Info1">You died from breathing toxic gas...</string>
     <!-- STRINGS OF WaterOfAwareness CLASS -->
     <string name="WaterOfAwareness_Info"> The power of knowledge radiates from the water of this well. Take a sip from it to reveal all secrets of your equipped items.</string>
     <string name="WaterOfAwareness_Procced">As you take a sip, you feel the knowledge pour into your mind. You now know everything about your equipped items. Also, you sense all items on the level and know all of its secrets.</string>

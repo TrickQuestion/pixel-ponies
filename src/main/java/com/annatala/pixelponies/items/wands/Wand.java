@@ -134,15 +134,15 @@ public abstract class Wand extends KindOfWeapon {
 		actions.remove(AC_EQUIP);
 		actions.remove(AC_UNEQUIP);
 		
-		if (hero.heroClass == HeroClass.UNICORN
-			|| hero.subClass == HeroSubClass.SHAMAN) {
-			
-			if(hero.belongings.weapon == this) {
-				actions.add(AC_UNEQUIP); 
-			} else {
-				actions.add(AC_EQUIP);
-			}
-		}
+//		if (hero.heroClass == HeroClass.UNICORN
+//			|| hero.subClass == HeroSubClass.SHAMAN) {
+//
+//			if(hero.belongings.weapon == this) {
+//				actions.add(AC_UNEQUIP);
+//			} else {
+//				actions.add(AC_EQUIP);
+//			}
+//		}
 		return actions;
 	}
 

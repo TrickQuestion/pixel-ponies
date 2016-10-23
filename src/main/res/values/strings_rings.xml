@@ -115,7 +115,6 @@
     <string name="RatKingCrown_Name">Crown of rat king</string>
     <string name="RatKingCrown_Info">Gold crown of His Ratness, symbol of everrating Power</string>
 
-
     <!-- STRINGS OF CorpseDust CLASS -->
     <string name="CorpseDust_Name">corpse dust</string>
     <string name="CorpseDust_Info">The ball of corpse dust doesn\'t differ outwardly from a regular dust ball. However, you know somehow that it\'s better to get rid of it as soon as possible.</string>
@@ -142,5 +141,10 @@
     <string name="BlackSkull_Gender">masculine</string>
     <string name="BlackSkull_Name_Awakened">awakened black skull</string>
     <string name="BlackSkull_Info_Awakened">The skull is pulsating with power, you can see it pouring from skull\'s empty eyes. And as you hold it in your hoof you can hear dreadful voice saying: \"The death marches\"</string>
+
+    <!-- STRINGS OF FunnyGlasses CLASS -->
+    <string name="FunnyGlasses_Name">funny glasses</string>
+    <string name="FunnyGlasses_Info">These glasses sure look funny! Especially with the moustache, since most ponies don\'t have those. They might fit best on your mane or tail.</string>
+    <string name="FunnyGlasses_Gender">masculine</string>
 
 </resources>

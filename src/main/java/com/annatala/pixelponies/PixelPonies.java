@@ -64,9 +64,8 @@ public class PixelPonies extends Game {
 
 		EventCollector.init(this);
 
-		if(!isAlpha()) {
-			PixelPonies.realtime(false);
-		}
+		// I don't think I ever want to make this an rT game.
+		PixelPonies.realtime(false);
 		
 		ModdingMode.selectMod(PixelPonies.activeMod());
 		PixelPonies.activeMod(ModdingMode.activeMod());

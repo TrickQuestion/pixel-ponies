@@ -52,6 +52,9 @@ import com.annatala.pixelponies.items.Generator;
 import com.annatala.pixelponies.items.Gold;
 import com.annatala.pixelponies.items.Heap;
 import com.annatala.pixelponies.items.Item;
+import com.annatala.pixelponies.items.food.CreamPie;
+import com.annatala.pixelponies.items.rings.FunnyGlasses;
+import com.annatala.pixelponies.items.utility.Spellbook;
 import com.annatala.pixelponies.items.utility.Stylus;
 import com.annatala.pixelponies.items.barding.Barding;
 import com.annatala.pixelponies.items.food.ChangelingPie;
@@ -60,6 +63,8 @@ import com.annatala.pixelponies.items.potions.PotionOfHealing;
 import com.annatala.pixelponies.items.potions.PotionOfHonesty;
 import com.annatala.pixelponies.items.scrolls.ScrollOfLoyalOath;
 import com.annatala.pixelponies.items.scrolls.ScrollOfUpgrade;
+import com.annatala.pixelponies.items.weapon.melee.RubberChicken;
+import com.annatala.pixelponies.items.utility.SeltzerBottle;
 import com.annatala.pixelponies.levels.features.Chasm;
 import com.annatala.pixelponies.levels.features.Door;
 import com.annatala.pixelponies.levels.features.HighGrass;
@@ -95,6 +100,29 @@ public abstract class Level implements Bundlable {
 			return exitMap.get(index);
 		} else {
 			throw new TrackedRuntimeException("no exit with index: " + index.toString());
+		}
+	}
+
+	// By default, every sign on a level will just feature a dungeon tip, x and y be damned.
+	// We'll override this behavior for PredesignedLevels.
+	public String getSign(int x, int y) {
+		if (this instanceof DeadEndLevel) {
+
+			return Game.getVar(R.string.Dungeon_DeadEnd);
+
+		} else {
+			String[] tips = Game.getVars(R.array.Dungeon_Tips);
+			int index = Dungeon.depth - 1;
+
+			if (index < 0) {
+				return Game.getVar(R.string.Dungeon_NoTips);
+			}
+
+			if (index < tips.length) {
+				return tips[index];
+			} else {
+				return Game.getVar(R.string.Dungeon_NoTips);
+			}
 		}
 	}
 
@@ -288,9 +316,29 @@ public abstract class Level implements Bundlable {
 				addItemToSpawn(new ScrollOfUpgrade());
 				Dungeon.scrollsOfUpgrade++;
 			}
+			if (Dungeon.sbNeeded()) {
+				addItemToSpawn(new Spellbook());
+				Dungeon.spellbooks++;
+			}
 			if (Dungeon.asNeeded()) {
 				addItemToSpawn(new Stylus());
 				Dungeon.arcaneStyli++;
+			}
+			if (Dungeon.comedyItems[Dungeon.RUBBER_CHICKEN] == Dungeon.depth) {
+				addItemToSpawn(new RubberChicken());
+				Dungeon.comedyItems[Dungeon.RUBBER_CHICKEN] = -1;
+			}
+			if (Dungeon.comedyItems[Dungeon.CREAM_PIE] == Dungeon.depth) {
+				addItemToSpawn(new CreamPie());
+				Dungeon.comedyItems[Dungeon.CREAM_PIE] = -1;
+			}
+			if (Dungeon.comedyItems[Dungeon.FUNNY_GLASSES] == Dungeon.depth) {
+				addItemToSpawn(new FunnyGlasses());
+				Dungeon.comedyItems[Dungeon.FUNNY_GLASSES] = -1;
+			}
+			if (Dungeon.comedyItems[Dungeon.SELTZER_BOTTLE] == Dungeon.depth) {
+				addItemToSpawn(new SeltzerBottle());
+				Dungeon.comedyItems[Dungeon.SELTZER_BOTTLE] = -1;
 			}
 
 			if (Random.Int(5) == 0) {

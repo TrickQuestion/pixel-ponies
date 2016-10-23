@@ -52,9 +52,7 @@ public class PredesignedLevel extends CommonLevel {
 		return mLevelDesc.optString("tiles_x", null);
 	}
 
-	public String waterTex() {
-		return mLevelDesc.optString("water", "water0.png");
-	}
+	public String waterTex() { return mLevelDesc.optString("water", "water0.png"); }
 
 	@Override
 	public void create(int w, int h) {
@@ -164,6 +162,31 @@ public class PredesignedLevel extends CommonLevel {
 			throw new TrackedRuntimeException(e);
 		}
 	}
+
+	@Override
+	public String getSign(int atX, int atY) {
+		try {
+			if (mLevelDesc.has("signs")) {
+				JSONArray signs = mLevelDesc.getJSONArray("signs");
+
+				for (int i = 0; i < signs.length(); ++i) {
+					JSONObject itemDesc = signs.optJSONObject(i);
+					int x = itemDesc.getInt("x");
+					int y = itemDesc.getInt("y");
+					if (x == atX && y == atY) {
+						return itemDesc.getString("text");
+					}
+
+				}
+			}
+		} catch (JSONException e) {
+			throw new TrackedRuntimeException("bad signs description", e);
+		} catch (Exception e) {
+			throw new TrackedRuntimeException(e);
+		}
+		return super.getSign(atX, atY);
+	}
+
 
 	@Override
 	protected int nTraps() {

@@ -17,60 +17,67 @@
  */
 package com.annatala.pixelponies.items.utility;
 
-import com.annatala.pixelponies.android.R;
 import com.annatala.noosa.Game;
-import com.annatala.pixelponies.actors.buffs.Blindness;
+import com.annatala.pixelponies.Badges;
 import com.annatala.pixelponies.actors.hero.Hero;
+import com.annatala.pixelponies.android.R;
 import com.annatala.pixelponies.items.Item;
+import com.annatala.pixelponies.sprites.CharSprite;
 import com.annatala.pixelponies.sprites.ItemSpriteSheet;
 import com.annatala.utils.GLog;
-import com.annatala.pixelponies.windows.WndStory;
-import com.annatala.utils.Bundle;
-import com.annatala.utils.Random;
 
 import java.util.ArrayList;
 
-public abstract class Codex extends Item {
+public class Spellbook extends Item {
 
-	protected static final String TXT_BLINDED	= Game.getVar(R.string.Codex_Blinded);
-	public static final String AC_READ	= Game.getVar(R.string.Codex_ACRead);
+	public static final String AC_STUDY	  = Game.getVar(R.string.Spellbook_ACStudy);
+	public static final float TIME_TO_STUDY = 3F;
 
-	protected static String idTag;
-	protected int maxId;
-	protected int id;
-
-	protected String text;
-
-	public Codex(){
-		stackable = false;
+	{
+		stackable = true;
+		name = Game.getVar(R.string.Spellbook_Name);
+		image = ItemSpriteSheet.SPELLBOOK;
 	}
-	
+
 	@Override
-	public ArrayList<String> actions( Hero hero ) {
+	public ArrayList<String> actions(Hero hero ) {
 		ArrayList<String> actions = super.actions( hero );
-		actions.add( AC_READ );
+		actions.add( AC_STUDY );
 		return actions;
+	}
+
+	@Override
+	public void execute( Hero hero, String action ) {
+		if (action.equals( AC_STUDY )) {
+
+			detach( hero.belongings.backpack );
+			hero.spend( TIME_TO_STUDY );
+			hero.setMagic(hero.magic() + 1);
+			hero.getSprite().showStatus(CharSprite.POSITIVE, Game.getVar(R.string.Spellbook_StaApply));
+			GLog.p(Game.getVar(R.string.Spellbook_Apply));
+			//Badges.validateMagicAttained();
+		} else {
+			super.execute( hero, action );
+		}
+	}
+
+	@Override
+	public boolean isUpgradable() {
+		return false;
 	}
 	
 	@Override
 	public boolean isIdentified() {
 		return true;
 	}
+
+	@Override
+	public String desc() {
+		return Game.getVar(R.string.Spellbook_Info);
+	}
 	
 	@Override
-	public boolean isUpgradable() {
-		return false;
+	public int price() {
+		return 100 * quantity();
 	}
-
-	@Override
-	public void storeInBundle( Bundle bundle ) {
-		super.storeInBundle(bundle);
-		bundle.put(idTag, id);
-	}
-
-	@Override
-	public Item burn(int cell){
-		return null;
-	}
-
 }

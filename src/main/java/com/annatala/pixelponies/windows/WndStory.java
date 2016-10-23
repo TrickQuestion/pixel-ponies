@@ -39,7 +39,8 @@ public class WndStory extends Window {
 	private static final float bgR	= 0.77f;
 	private static final float bgG	= 0.73f;
 	private static final float bgB	= 0.62f;
-	
+
+	public static final int ID_START 		= -1;
 	public static final int ID_SEWERS		= 0;
 	public static final int ID_PRISON		= 1;
 	public static final int ID_CAVES		= 2;
@@ -51,6 +52,7 @@ public class WndStory extends Window {
 	private static final SparseArray<String> CHAPTERS = new SparseArray<>();
 	
 	static {
+		CHAPTERS.put(ID_START,		Game.getVar(R.string.WndStory_Start));
 		CHAPTERS.put(ID_SEWERS,     Game.getVar(R.string.WndStory_Sewers));
 		CHAPTERS.put(ID_PRISON,     Game.getVar(R.string.WndStory_Prision));
 		CHAPTERS.put(ID_CAVES,      Game.getVar(R.string.WndStory_Caves));

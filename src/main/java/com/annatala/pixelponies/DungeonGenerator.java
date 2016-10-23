@@ -34,6 +34,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class DungeonGenerator {
+	public static final String START_LEVEL 	  = "PredesignedLevel";
 	public static final String DEAD_END_LEVEL = "DeadEndLevel";
 	public static final String HALLS_LEVEL    = "HallsLevel";
 	public static final String CITY_LEVEL     = "CityLevel";
@@ -211,6 +212,7 @@ public class DungeonGenerator {
 	public static void showStory(Level level) {
 		if (mStoryMap == null) {
 			mStoryMap = new HashMap<>();
+			mStoryMap.put(START_LEVEL, WndStory.ID_START);
 			mStoryMap.put(SEWER_LEVEL, WndStory.ID_SEWERS);
 			mStoryMap.put(SPIDER_LEVEL, WndStory.ID_SPIDERS);
 			mStoryMap.put(PRISON_LEVEL, WndStory.ID_PRISON);

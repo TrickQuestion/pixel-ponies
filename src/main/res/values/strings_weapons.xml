@@ -246,5 +246,22 @@
     <string name="GoldenSword_Info">Usually weapon made of such soft metal as gold won\'t be useful for anything but decoration. Despite that, this blade seems to be able to cut through things pretty well. It must be magical.</string>
     <string name="GoldenSword_Gender">masculine</string>
 
+    <!-- STRINGS OF RubberChicken CLASS -->
+    <string name="RubberChicken_Name">rubber chicken</string>
+    <string name="RubberChicken_Info">It\'s a rubber chicken. You could probably smack monsters with it, if you were feeling especially silly.</string>
+    <string name="RubberChicken_Gender">feminine</string>
+    <string name="RubberChicken_Smash">The rubber chicken explodes into shreds!</string>
+    <string name="RubberChicken_StaApply">+1 Laughter</string>
+
+    <!-- STRINGS OF SeltzerBottle CLASS -->
+    <string name="SeltzerBottle_Name">seltzer bottle</string>
+    <string name="SeltzerBottle_Info">It\'s a seltzer bottle, used for spraying things with water (generally to comedic effect).</string>
+    <string name="SeltzerBottle_Squirts">There are %1$d squirts remaining in it.</string>
+    <string name="SeltzerBottle_Squirt">It has a single squirt left in it.</string>
+    <string name="SeltzerBottle_Empty">It\'s empty, and you see no way to refill it.</string>
+    <string name="SeltzerBottle_Gender">masculine</string>
+    <string name="SeltzerBottle_Spray">SPRAY</string>
+    <string name="SeltzerBottle_Splash">The spray sends the flying creature whizzing in circles!</string>
+    <string name="SeltzerBottle_StaApply">+1 Laughter</string>
 
 </resources>

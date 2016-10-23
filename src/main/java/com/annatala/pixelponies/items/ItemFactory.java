@@ -1,7 +1,13 @@
 package com.annatala.pixelponies.items;
 
 import com.annatala.pixelponies.android.util.TrackedRuntimeException;
+import com.annatala.pixelponies.items.food.CreamPie;
+import com.annatala.pixelponies.items.rings.FunnyGlasses;
 import com.annatala.pixelponies.items.rings.RatKingCrown;
+import com.annatala.pixelponies.items.utility.CommonCodex;
+import com.annatala.pixelponies.items.utility.RareCodex;
+import com.annatala.pixelponies.items.utility.UncommonCodex;
+import com.annatala.pixelponies.items.weapon.melee.RubberChicken;
 import com.annatala.pixelponies.items.weapon.melee.SacrificialSword;
 import com.annatala.pixelponies.items.barding.SpiderBarding;
 import com.annatala.pixelponies.items.quest.HeartOfDarkness;
@@ -18,10 +24,10 @@ import com.annatala.noosa.Game;
 import com.annatala.pixelponies.actors.mobs.npcs.WandMaker;
 import com.annatala.pixelponies.items.utility.Amulet;
 import com.annatala.pixelponies.items.utility.Ankh;
-import com.annatala.pixelponies.items.utility.Codex;
 import com.annatala.pixelponies.items.utility.DewVial;
 import com.annatala.pixelponies.items.weapon.melee.GoldenSword;
 import com.annatala.pixelponies.items.weapon.melee.SteelHorseshoes;
+import com.annatala.pixelponies.items.utility.SeltzerBottle;
 import com.annatala.pixelponies.plants.Dewdrop;
 import com.annatala.pixelponies.items.utility.LloydsBeacon;
 import com.annatala.pixelponies.items.utility.SpiderCharm;
@@ -155,7 +161,7 @@ import com.annatala.pixelponies.plants.Firebloom;
 import com.annatala.pixelponies.plants.Icecap;
 import com.annatala.pixelponies.plants.Sorrowmoss;
 import com.annatala.pixelponies.plants.Sungrass;
-import com.annatala.utils.Random;
+import com.annatala.pixelponies.items.utility.Spellbook;
 
 import java.util.HashMap;
 
@@ -178,7 +184,9 @@ public class ItemFactory {
 		registerItemClass(Amulet.class);
 		registerItemClass(Ankh.class);
 		registerItemClass(CrystallingKit.class);
-		registerItemClass(Codex.class);
+		registerItemClass(CommonCodex.class);
+		registerItemClass(UncommonCodex.class);
+		registerItemClass(RareCodex.class);
 		registerItemClass(Dewdrop.class);
 		registerItemClass(DewVial.class);
 		registerItemClass(Gold.class);
@@ -329,10 +337,11 @@ public class ItemFactory {
 		registerItemClass(GoldenSword.class);
 		registerItemClass(BlackSkull.class);
 		registerItemClass(SpiderBarding.class);
-	}
-	
-	public static Class<? extends Item> itemClassRandom() {
-		return Random.element(mItemsList.values());
+		registerItemClass(Spellbook.class);
+		registerItemClass(CreamPie.class);
+		registerItemClass(RubberChicken.class);
+		registerItemClass(SeltzerBottle.class);
+		registerItemClass(FunnyGlasses.class);
 	}
 
 	public static boolean isValidItemClass(String itemClass) {
@@ -350,13 +359,13 @@ public class ItemFactory {
 	}
 
 
-		public static Class<? extends Item> itemsClassByName(String selectedItemClass) {
+	public static Class<? extends Item> itemsClassByName(String selectedItemClass) {
 
 		Class<? extends Item> itemClass = mItemsList.get(selectedItemClass);
 		if(itemClass != null) {
 			return itemClass;
 		} else {
-			Game.toast("Unknown iten: [%s], spawning Gold instead",selectedItemClass);
+			Game.toast("Unknown item: [%s], spawning Gold instead",selectedItemClass);
 			return Gold.class;
 		}
 	}
