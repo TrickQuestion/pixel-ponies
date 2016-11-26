@@ -58,6 +58,7 @@ public class SeltzerBottle extends Item {
 	@Override
 	public void execute( final Hero hero, String action ) {
 		if (action.equals(AC_SPRAY)) {
+			setCurUser(hero);
 			GameScene.selectCell(sprayer);
 			squirts--;
 		} else {
