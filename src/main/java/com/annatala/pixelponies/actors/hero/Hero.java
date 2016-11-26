@@ -194,6 +194,11 @@ public class Hero extends Char {
 	private int kindness;	// Stealth (quests, bosses, level skips?, minus if kill fleeing)
 	private int magic;		// Wand power (rare books)
 
+	public boolean hasHadLaughterIncreasedByPie = false;
+	public boolean hasHadLaughterIncreasedBySeltzerBottle = false;
+	public boolean hasHadLaughterIncreasedByFunnyGlasses = false;
+	public boolean hasHadLaughterIncreasedByRubberChicken = false;
+
 	public boolean weakened = false;
     public boolean sugarRush = false;
 

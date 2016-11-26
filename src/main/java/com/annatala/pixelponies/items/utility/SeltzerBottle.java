@@ -43,8 +43,6 @@ public class SeltzerBottle extends Item {
 	public static final String TXT_EMPTY = Game.getVar(R.string.SeltzerBottle_Empty);
 	private static final float TIME_TO_SPRAY = 1.0F;
 
-	public static boolean squirted = false;
-
 	private int squirts;
 
 	{
