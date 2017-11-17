@@ -90,7 +90,7 @@ public abstract class Pie extends MissileWeapon {
         } else if (action.equals(AC_THROW)) {
             setCurUser(hero);
             curItem = this;
-            doThrow(hero); //test
+            doThrow(hero);
 
             // For the big picture: there are six stats, and each stat can be boosted nine times.
             // Honesty is only potions. Loyalty is scrolls, Magic is spellbooks. Kindness and Generosity are

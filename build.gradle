@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:3.0.0'
     }
 }
 
@@ -23,7 +23,7 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.annatala.pixelponies.android"
         minSdkVersion 9
@@ -49,6 +49,9 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    flavorDimensions "tier"
+
     productFlavors {
         GooglePlay {
         }
